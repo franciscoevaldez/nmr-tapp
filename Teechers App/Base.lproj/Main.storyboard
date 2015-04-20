@@ -313,7 +313,7 @@
                                         <color key="textColor" red="0.98823529409999999" green="0.97254901959999995" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write or paste your students names right below and Teechers App will add them to your new class." lineBreakMode="clip" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dND-w2-T68">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Step 1: Add Students" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dND-w2-T68">
                                         <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="250" id="tjd-J7-8zb"/>
@@ -337,9 +337,9 @@
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="dND-w2-T68" secondAttribute="bottom" constant="20" id="3Kb-jn-xYe"/>
                                     <constraint firstItem="dND-w2-T68" firstAttribute="leading" secondItem="czr-1M-JHo" secondAttribute="leading" id="BlO-nb-f95"/>
-                                    <constraint firstItem="dND-w2-T68" firstAttribute="top" secondItem="czr-1M-JHo" secondAttribute="bottom" id="J8R-IJ-aKP"/>
+                                    <constraint firstItem="dND-w2-T68" firstAttribute="top" secondItem="czr-1M-JHo" secondAttribute="bottom" constant="-5" id="J8R-IJ-aKP"/>
                                     <constraint firstItem="czr-1M-JHo" firstAttribute="leading" secondItem="MLg-Kh-5SI" secondAttribute="leading" constant="20" id="esl-Lx-RvM"/>
-                                    <constraint firstAttribute="height" constant="190" id="hhj-ec-LJt"/>
+                                    <constraint firstAttribute="height" constant="130" id="hhj-ec-LJt"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="subviews">
@@ -371,7 +371,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SAr-dy-O6d" userLabel="Body">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" keyboardDismissMode="onDrag" text="Write or paste your students names right here and Teechers App will add them to your new class." translatesAutoresizingMaskIntoConstraints="NO" id="WGe-tJ-Gfn">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" keyboardDismissMode="onDrag" text="Write or paste your students names right here and Teechers App will add them to your new class." translatesAutoresizingMaskIntoConstraints="NO" id="WGe-tJ-Gfn">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="no"/>
@@ -379,10 +379,10 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="WGe-tJ-Gfn" firstAttribute="leading" secondItem="SAr-dy-O6d" secondAttribute="leading" constant="20" id="LTy-xW-087"/>
-                                    <constraint firstAttribute="trailing" secondItem="WGe-tJ-Gfn" secondAttribute="trailing" constant="20" id="OXN-4G-LHB"/>
-                                    <constraint firstAttribute="bottom" secondItem="WGe-tJ-Gfn" secondAttribute="bottom" constant="20" id="r84-Wq-nGh"/>
-                                    <constraint firstItem="WGe-tJ-Gfn" firstAttribute="top" secondItem="SAr-dy-O6d" secondAttribute="top" constant="20" id="uPJ-1U-ash"/>
+                                    <constraint firstItem="WGe-tJ-Gfn" firstAttribute="leading" secondItem="SAr-dy-O6d" secondAttribute="leading" constant="16" id="LTy-xW-087"/>
+                                    <constraint firstAttribute="trailing" secondItem="WGe-tJ-Gfn" secondAttribute="trailing" constant="16" id="OXN-4G-LHB"/>
+                                    <constraint firstAttribute="bottom" secondItem="WGe-tJ-Gfn" secondAttribute="bottom" constant="16" id="r84-Wq-nGh"/>
+                                    <constraint firstItem="WGe-tJ-Gfn" firstAttribute="top" secondItem="SAr-dy-O6d" secondAttribute="top" constant="16" id="uPJ-1U-ash"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="subviews">
