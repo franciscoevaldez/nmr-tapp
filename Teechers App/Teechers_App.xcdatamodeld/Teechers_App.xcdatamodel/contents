@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14C109" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="AClass" syncable="YES">
+        <attribute name="classColor" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="classID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dateEnd" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="dateStart" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="institution" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="classDays" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ClassDay" inverseName="forClass" inverseEntity="ClassDay" syncable="YES"/>
+        <relationship name="evaluations" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Evaluation" inverseName="forClass" inverseEntity="Evaluation" syncable="YES"/>
+        <relationship name="students" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Student" inverseName="inClass" inverseEntity="Student" syncable="YES"/>
+    </entity>
+    <entity name="AttendanceRecord" syncable="YES">
+        <attribute name="excused" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="orderIndex" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="forClassDay" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ClassDay" inverseName="attendanceRecords" inverseEntity="ClassDay" syncable="YES"/>
+        <relationship name="forStudent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Student" inverseName="attendanceRecord" inverseEntity="Student" syncable="YES"/>
+    </entity>
+    <entity name="ClassDay" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="dayID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="attendanceRecords" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AttendanceRecord" inverseName="forClassDay" inverseEntity="AttendanceRecord" syncable="YES"/>
+        <relationship name="forClass" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AClass" inverseName="classDays" inverseEntity="AClass" syncable="YES"/>
+    </entity>
+    <entity name="Evaluation" syncable="YES">
+        <attribute name="gradeID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="minToPass" optional="YES" attributeType="Float" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="range" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="rules" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="valuesLong" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="valuesShort" optional="YES" attributeType="Binary" syncable="YES"/>
+        <relationship name="forClass" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AClass" inverseName="evaluations" inverseEntity="AClass" syncable="YES"/>
+        <relationship name="gradesRecords" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GradeRecord" inverseName="forEvaluation" inverseEntity="GradeRecord" syncable="YES"/>
+    </entity>
+    <entity name="GradeRecord" syncable="YES">
+        <attribute name="grade" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="gradeLong" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="gradeShort" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="orderIndex" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="passed" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="percentage" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="forEvaluation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Evaluation" inverseName="gradesRecords" inverseEntity="Evaluation" syncable="YES"/>
+        <relationship name="forStudent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Student" inverseName="gradesRecord" inverseEntity="Student" syncable="YES"/>
+    </entity>
+    <entity name="Student" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="studentID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="surname" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="attendanceRecord" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AttendanceRecord" inverseName="forStudent" inverseEntity="AttendanceRecord" syncable="YES"/>
+        <relationship name="gradesRecord" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GradeRecord" inverseName="forStudent" inverseEntity="GradeRecord" syncable="YES"/>
+        <relationship name="inClass" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AClass" inverseName="students" inverseEntity="AClass" syncable="YES"/>
+        <relationship name="picture" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="StudentPicture" inverseName="forStudent" inverseEntity="StudentPicture" syncable="YES"/>
+        <relationship name="summary" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="StudentSummary" inverseName="forStudent" inverseEntity="StudentSummary" syncable="YES"/>
+    </entity>
+    <entity name="StudentPicture" syncable="YES">
+        <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
+        <relationship name="forStudent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Student" inverseName="picture" inverseEntity="Student" syncable="YES"/>
+    </entity>
+    <entity name="StudentSummary" syncable="YES">
+        <attribute name="attAbsents" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="attLates" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="attPercentage" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="attTotal" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="attWarning" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="grdFailed" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="grdPassed" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="grdPercentage" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="grdTotal" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="grdWarning" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="forStudent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Student" inverseName="summary" inverseEntity="Student" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="AClass" positionX="-72" positionY="18" width="128" height="178"/>
+        <element name="Student" positionX="160" positionY="290" width="128" height="163"/>
+        <element name="Evaluation" positionX="178" positionY="36" width="128" height="193"/>
+        <element name="ClassDay" positionX="151" positionY="-144" width="128" height="118"/>
+        <element name="AttendanceRecord" positionX="358" positionY="-144" width="128" height="118"/>
+        <element name="GradeRecord" positionX="414" positionY="36" width="128" height="163"/>
+        <element name="StudentSummary" positionX="493" positionY="314" width="128" height="208"/>
+        <element name="StudentPicture" positionX="495" positionY="225" width="128" height="73"/>
+    </elements>
+</model>
