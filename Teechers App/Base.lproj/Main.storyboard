@@ -138,12 +138,12 @@
                                 <exclude reference="6a2-dh-jjA"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="Af6-55-Aqp"/>
                                 <exclude reference="nak-ZH-jQ3"/>
                                 <exclude reference="rR4-gA-PPI"/>
                                 <exclude reference="wqX-ap-Etz"/>
                                 <exclude reference="NUF-Nb-DSW"/>
                                 <exclude reference="QnF-s2-Iuz"/>
-                                <exclude reference="Af6-55-Aqp"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -153,12 +153,12 @@
                                 <include reference="6a2-dh-jjA"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="Af6-55-Aqp"/>
                                 <include reference="nak-ZH-jQ3"/>
                                 <include reference="rR4-gA-PPI"/>
                                 <include reference="wqX-ap-Etz"/>
                                 <include reference="NUF-Nb-DSW"/>
                                 <include reference="QnF-s2-Iuz"/>
-                                <include reference="Af6-55-Aqp"/>
                             </mask>
                         </variation>
                     </view>
@@ -176,6 +176,7 @@
                         <viewControllerLayoutGuide type="bottom" id="onm-VD-BKy"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="AmR-0o-hyi">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Presentes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dC3-gb-Qtg">
@@ -229,6 +230,7 @@
                         <viewControllerLayoutGuide type="bottom" id="a8T-Ck-bxf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="wJk-92-DxJ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alumnos" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yU4-Dt-HGL">
@@ -302,6 +304,7 @@
                         <viewControllerLayoutGuide type="bottom" id="dtv-t2-ZM1"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="b0v-HX-mDg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MLg-Kh-5SI" userLabel="Header">
@@ -457,6 +460,9 @@
                                                 <include reference="NOd-LO-DCs"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <action selector="nextButtonPressed:" destination="7Mv-Ec-zTG" eventType="touchUpInside" id="HTq-Bd-Gra"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -474,10 +480,10 @@
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="4mT-qA-CcU"/>
+                                        <exclude reference="YyB-nj-cHz"/>
                                         <exclude reference="7JV-my-utG"/>
                                         <exclude reference="RBI-Mg-EFw"/>
                                         <exclude reference="g6Q-Kz-MKm"/>
-                                        <exclude reference="YyB-nj-cHz"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
@@ -487,10 +493,10 @@
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="4mT-qA-CcU"/>
+                                        <include reference="YyB-nj-cHz"/>
                                         <include reference="7JV-my-utG"/>
                                         <include reference="RBI-Mg-EFw"/>
                                         <include reference="g6Q-Kz-MKm"/>
-                                        <include reference="YyB-nj-cHz"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -515,16 +521,16 @@
                                 <exclude reference="Q7L-WO-g0v"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="4Id-jG-cZz"/>
                                 <exclude reference="CRK-wR-fcs"/>
                                 <exclude reference="LSX-PI-PhQ"/>
                                 <exclude reference="O8A-vW-yF0"/>
-                                <exclude reference="GQm-KG-rIE"/>
-                                <exclude reference="mgC-oM-j2r"/>
-                                <exclude reference="uBe-J2-oeQ"/>
                                 <exclude reference="RrC-sG-i8j"/>
                                 <exclude reference="ThW-9i-Ehh"/>
                                 <exclude reference="Zw5-Me-3Vz"/>
-                                <exclude reference="4Id-jG-cZz"/>
+                                <exclude reference="GQm-KG-rIE"/>
+                                <exclude reference="mgC-oM-j2r"/>
+                                <exclude reference="uBe-J2-oeQ"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -534,16 +540,16 @@
                                 <include reference="Q7L-WO-g0v"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="4Id-jG-cZz"/>
                                 <include reference="CRK-wR-fcs"/>
                                 <include reference="LSX-PI-PhQ"/>
                                 <include reference="O8A-vW-yF0"/>
-                                <include reference="GQm-KG-rIE"/>
-                                <include reference="mgC-oM-j2r"/>
-                                <include reference="uBe-J2-oeQ"/>
                                 <include reference="RrC-sG-i8j"/>
                                 <include reference="ThW-9i-Ehh"/>
                                 <include reference="Zw5-Me-3Vz"/>
-                                <include reference="4Id-jG-cZz"/>
+                                <include reference="GQm-KG-rIE"/>
+                                <include reference="mgC-oM-j2r"/>
+                                <include reference="uBe-J2-oeQ"/>
                             </mask>
                         </variation>
                     </view>
@@ -557,6 +563,23 @@
             </objects>
             <point key="canvasLocation" x="1356" y="1330"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="9nB-g7-by7">
+            <objects>
+                <viewController id="cvl-RY-4Xt" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PzT-zF-K2V"/>
+                        <viewControllerLayoutGuide type="bottom" id="nSl-dk-NkO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BT1-5X-uq5">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1m1-VI-UcK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2250" y="1330"/>
+        </scene>
         <!--Grades-->
         <scene sceneID="eV1-aY-OpF">
             <objects>
@@ -566,6 +589,7 @@
                         <viewControllerLayoutGuide type="bottom" id="jnG-P6-yrc"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="IN7-di-gR5">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grades" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wse-C1-HvM">

@@ -72,6 +72,33 @@
 }
 
 
+#pragma mark - Next Button
+- (IBAction)nextButtonPressed:(id)sender {
+    
+    // procesar los datos del input
+    NSArray *studentsArray = [NSArray arrayWithArray:[self parseInput]];
+    NSLog(@"%@", studentsArray);
+    
+}
+
+
+#pragma mark - Input Parse
+// Parse the input information, each line is a student name. Surnames and other data will be ignored for now.
+- (NSArray*)parseInput
+{
+    // get the input text to a variable
+    NSString *inputData = self.tchStudentsTextArea.text;
+    
+    // split input data into array (each line a new element)
+    NSArray *newStudents = [inputData componentsSeparatedByString:@"\n"];
+    
+    // return the completed array
+    return newStudents;
+    
+}
+
+
+
 #pragma mark - Navigation
 
 /*
