@@ -18,6 +18,7 @@
 		A14E132E1AE554AD00A1CB95 /* tchMainMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A14E132D1AE554AD00A1CB95 /* tchMainMenuVC.m */; };
 		A14E13361AE5609400A1CB95 /* ClassesData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A14E13341AE5609400A1CB95 /* ClassesData.xcdatamodeld */; };
 		A14E133D1AE5A4F000A1CB95 /* tchImport1VC.m in Sources */ = {isa = PBXBuildFile; fileRef = A14E133C1AE5A4F000A1CB95 /* tchImport1VC.m */; };
+		A1BDCC141AE6AA08000B0328 /* tchImport2VC.m in Sources */ = {isa = PBXBuildFile; fileRef = A1BDCC131AE6AA08000B0328 /* tchImport2VC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		A14E13351AE5609400A1CB95 /* ClassesData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ClassesData.xcdatamodel; sourceTree = "<group>"; };
 		A14E133B1AE5A4F000A1CB95 /* tchImport1VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchImport1VC.h; path = ImportSequence/tchImport1VC.h; sourceTree = "<group>"; };
 		A14E133C1AE5A4F000A1CB95 /* tchImport1VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchImport1VC.m; path = ImportSequence/tchImport1VC.m; sourceTree = "<group>"; };
+		A1BDCC121AE6AA08000B0328 /* tchImport2VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchImport2VC.h; path = ImportSequence/tchImport2VC.h; sourceTree = "<group>"; };
+		A1BDCC131AE6AA08000B0328 /* tchImport2VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchImport2VC.m; path = ImportSequence/tchImport2VC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +176,8 @@
 			children = (
 				A14E133B1AE5A4F000A1CB95 /* tchImport1VC.h */,
 				A14E133C1AE5A4F000A1CB95 /* tchImport1VC.m */,
+				A1BDCC121AE6AA08000B0328 /* tchImport2VC.h */,
+				A1BDCC131AE6AA08000B0328 /* tchImport2VC.m */,
 			);
 			name = ImportSequence;
 			sourceTree = "<group>";
@@ -283,6 +288,7 @@
 				A14E130B1AE5470700A1CB95 /* MasterViewController.m in Sources */,
 				A14E13051AE5470700A1CB95 /* AppDelegate.m in Sources */,
 				A14E13021AE5470700A1CB95 /* main.m in Sources */,
+				A1BDCC141AE6AA08000B0328 /* tchImport2VC.m in Sources */,
 				A14E133D1AE5A4F000A1CB95 /* tchImport1VC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -478,6 +484,7 @@
 				A14E13271AE5470700A1CB95 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A14E13281AE5470700A1CB95 /* Build configuration list for PBXNativeTarget "Teechers AppTests" */ = {
 			isa = XCConfigurationList;
@@ -486,6 +493,7 @@
 				A14E132A1AE5470700A1CB95 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

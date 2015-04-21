@@ -1,30 +1,28 @@
 //
-//  tchImport1VC.m
+//  tchImport2VC.m
 //  Teechers App
 //
-//  Created by fran on 4/20/15.
+//  Created by fran on 4/21/15.
 //  Copyright (c) 2015 nmr. All rights reserved.
 //
 
-#import "tchImport1VC.h"
 #import "tchImport2VC.h"
 
-@interface tchImport1VC ()
-@property (strong, nonatomic) IBOutlet NSLayoutConstraint *tchBottomMarginConst;
-@property (strong, nonatomic) IBOutlet UITextView *tchStudentsTextArea;
+@interface tchImport2VC ()
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *tchBottomConstraint;
+@property (strong, nonatomic) IBOutlet UITextField *tchClassName;
+@property (strong, nonatomic) IBOutlet UITextField *tchInstitutionName;
+
 @end
 
-@implementation tchImport1VC
+@implementation tchImport2VC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    // configurar los listeners del teclado
+    // register the keyboard listeners
     [self registerForKeyboardNotifications];
-    
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,6 +30,18 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - acciones de text fields
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if (textField == self.tchClassName) {
+        [textField resignFirstResponder];
+        [self.tchInstitutionName becomeFirstResponder];
+    } else if (textField == self.tchInstitutionName) {
+        // here you can define what happens
+        // when user presses return on the email field
+        NSLog(@"siguiente!");
+    }
+    return YES;
+}
 
 #pragma mark - keyboard adjustments & listeners
 // registrar los listeners para el teclado
@@ -52,13 +62,13 @@
 {
     
     // keyboard is shown, change the constraint to adjust the content:
-
+    
     // get notification info & keyboard frame
     NSDictionary* info = [aNotification userInfo];
     CGRect kKeyBoardFrame = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
     
     // add frame height to the constraint's constant
-    self.tchBottomMarginConst.constant = kKeyBoardFrame.size.height;
+    self.tchBottomConstraint.constant = kKeyBoardFrame.size.height;
     
 }
 
@@ -67,59 +77,18 @@
 {
     
     // keyboard will be hidden, return bottom constraint to 0:
-    self.tchBottomMarginConst.constant = 0;
+    self.tchBottomConstraint.constant = 0;
     
 }
 
-
-#pragma mark - Input Parse
-// Parse the input information, each line is a student name. Surnames and other data will be ignored for now.
-- (NSArray*)parseInput
-{
-    // get the input text to a variable
-    NSString *inputData = self.tchStudentsTextArea.text;
-    
-    // split input data into array (each line a new element)
-    NSArray *newStudents = [inputData componentsSeparatedByString:@"\n"];
-    
-    // return the completed array
-    return newStudents;
-    
-}
-
-
-
+/*
 #pragma mark - Navigation
-
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    if ([[segue identifier]isEqualToString:@"toNextStep"]) {
-        
-        // procesar los datos del input
-        NSArray *studentsArray = [NSArray arrayWithArray:[self parseInput]];
-        
-        //pasar el managed context al siguiente VC
-        tchImport2VC *nextViewController = [segue destinationViewController];
-        nextViewController.managedObjectContext = self.managedObjectContext;
-        
-        // pass the students array to the next VC
-        nextViewController.studentsData = studentsArray;
-        
-    }
-    
-    
 }
-
-// unwind to main menu function
--(IBAction)prepareForUnwind:(UIStoryboardSegue *)segue {
-    
-}
-
-
-
+*/
 
 @end
