@@ -78,7 +78,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="7Mv-Ec-zTG" kind="show" id="B2h-q8-SFR"/>
+                                            <segue destination="7Mv-Ec-zTG" kind="showDetail" identifier="toAddAClass" id="B2h-q8-SFR"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -296,7 +296,7 @@
         <!--Add Class - Step1-->
         <scene sceneID="PxK-Tl-OwL">
             <objects>
-                <viewController title="Add Class - Step 1" id="7Mv-Ec-zTG" userLabel="Add Class - Step1" sceneMemberID="viewController">
+                <viewController title="Add Class - Step 1" id="7Mv-Ec-zTG" userLabel="Add Class - Step1" customClass="tchImport1VC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Zro-gk-cPT"/>
                         <viewControllerLayoutGuide type="bottom" id="dtv-t2-ZM1"/>
@@ -374,7 +374,7 @@
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" keyboardDismissMode="onDrag" text="Write or paste your students names right here and Teechers App will add them to your new class." translatesAutoresizingMaskIntoConstraints="NO" id="WGe-tJ-Gfn">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="no"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no"/>
                                     </textView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -432,7 +432,7 @@
                                             </mask>
                                         </variation>
                                         <connections>
-                                            <segue destination="2m8-5x-aym" kind="show" id="ASb-LJ-DUK"/>
+                                            <segue destination="Ord-l9-G4c" kind="unwind" unwindAction="prepareForUnwind:" id="Ymk-kA-nrR"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w39-Fi-Gch">
@@ -459,7 +459,7 @@
                                         </variation>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.94562555280000005" green="0.95244948309999999" blue="0.83954002650000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="4mT-qA-CcU"/>
                                     <constraint firstItem="xAi-Vu-Hdv" firstAttribute="baseline" secondItem="w39-Fi-Gch" secondAttribute="baseline" id="7JV-my-utG"/>
@@ -547,8 +547,13 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="tchBottomMarginConst" destination="4Id-jG-cZz" id="jMB-W9-Fw4"/>
+                        <outlet property="tchStudentsTextArea" destination="WGe-tJ-Gfn" id="fIy-Qv-SJQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1dS-T5-zPt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Ord-l9-G4c" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1356" y="1330"/>
         </scene>
@@ -611,6 +616,6 @@
         <image name="Previous" width="13" height="11"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ASb-LJ-DUK"/>
+        <segue reference="ySL-Ac-Wlf"/>
     </inferredMetricsTieBreakers>
 </document>

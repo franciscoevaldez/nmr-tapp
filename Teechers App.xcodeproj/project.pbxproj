@@ -17,6 +17,7 @@
 		A14E13221AE5470700A1CB95 /* Teechers_AppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A14E13211AE5470700A1CB95 /* Teechers_AppTests.m */; };
 		A14E132E1AE554AD00A1CB95 /* tchMainMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A14E132D1AE554AD00A1CB95 /* tchMainMenuVC.m */; };
 		A14E13361AE5609400A1CB95 /* ClassesData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A14E13341AE5609400A1CB95 /* ClassesData.xcdatamodeld */; };
+		A14E133D1AE5A4F000A1CB95 /* tchImport1VC.m in Sources */ = {isa = PBXBuildFile; fileRef = A14E133C1AE5A4F000A1CB95 /* tchImport1VC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,8 @@
 		A14E132C1AE554AD00A1CB95 /* tchMainMenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchMainMenuVC.h; path = MainMenu/tchMainMenuVC.h; sourceTree = "<group>"; };
 		A14E132D1AE554AD00A1CB95 /* tchMainMenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchMainMenuVC.m; path = MainMenu/tchMainMenuVC.m; sourceTree = "<group>"; };
 		A14E13351AE5609400A1CB95 /* ClassesData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ClassesData.xcdatamodel; sourceTree = "<group>"; };
+		A14E133B1AE5A4F000A1CB95 /* tchImport1VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchImport1VC.h; path = ImportSequence/tchImport1VC.h; sourceTree = "<group>"; };
+		A14E133C1AE5A4F000A1CB95 /* tchImport1VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchImport1VC.m; path = ImportSequence/tchImport1VC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +95,7 @@
 				A14E13301AE556C200A1CB95 /* assets_images */,
 				A14E13311AE556F100A1CB95 /* data */,
 				A14E132B1AE5543900A1CB95 /* MainMenu */,
+				A14E133A1AE5A49F00A1CB95 /* ImportSequence */,
 				A14E13031AE5470700A1CB95 /* AppDelegate.h */,
 				A14E13041AE5470700A1CB95 /* AppDelegate.m */,
 				A14E130F1AE5470700A1CB95 /* Main.storyboard */,
@@ -162,6 +166,15 @@
 				A14E13341AE5609400A1CB95 /* ClassesData.xcdatamodeld */,
 			);
 			name = data;
+			sourceTree = "<group>";
+		};
+		A14E133A1AE5A49F00A1CB95 /* ImportSequence */ = {
+			isa = PBXGroup;
+			children = (
+				A14E133B1AE5A4F000A1CB95 /* tchImport1VC.h */,
+				A14E133C1AE5A4F000A1CB95 /* tchImport1VC.m */,
+			);
+			name = ImportSequence;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,6 +283,7 @@
 				A14E130B1AE5470700A1CB95 /* MasterViewController.m in Sources */,
 				A14E13051AE5470700A1CB95 /* AppDelegate.m in Sources */,
 				A14E13021AE5470700A1CB95 /* main.m in Sources */,
+				A14E133D1AE5A4F000A1CB95 /* tchImport1VC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
