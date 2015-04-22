@@ -8,8 +8,11 @@
 
 #import "tchMainMenuVC.h"
 #import "tchImport1VC.h"
+#import "AClass.h"
+#import "tchClassTableDS.h"
 
 @interface tchMainMenuVC ()
+@property (strong, nonatomic) IBOutlet tchClassTableDS *tchClassTableDataSource;
 
 @end
 
@@ -18,6 +21,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    // fetch the classes
+    NSArray *activeClasses = [self fetchClassesForTable];
+    
+    // pass them to the table data source
+    self.tchClassTableDataSource.classesArray = activeClasses;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -25,6 +35,21 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Fetch Classes
+- (NSArray*)fetchClassesForTable {
+    
+    // get classes stored in core data
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"AClass" inManagedObjectContext:self.managedObjectContext];
+    [request setEntity:entity];
+    
+    NSError *error = nil;
+    NSArray *results = [self.managedObjectContext executeFetchRequest:request error:&error];
+
+    return results;
+    
+}
 
 #pragma mark - Navigation
 

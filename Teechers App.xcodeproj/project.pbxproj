@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A106AF931AE80449001323E5 /* tchClassTableDS.m in Sources */ = {isa = PBXBuildFile; fileRef = A106AF921AE80449001323E5 /* tchClassTableDS.m */; };
 		A14E13021AE5470700A1CB95 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A14E13011AE5470700A1CB95 /* main.m */; };
 		A14E13051AE5470700A1CB95 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A14E13041AE5470700A1CB95 /* AppDelegate.m */; };
 		A14E130B1AE5470700A1CB95 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A14E130A1AE5470700A1CB95 /* MasterViewController.m */; };
@@ -42,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A106AF911AE80449001323E5 /* tchClassTableDS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchClassTableDS.h; path = MainMenu/tchClassTableDS.h; sourceTree = "<group>"; };
+		A106AF921AE80449001323E5 /* tchClassTableDS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchClassTableDS.m; path = MainMenu/tchClassTableDS.m; sourceTree = "<group>"; };
 		A14E12FC1AE5470700A1CB95 /* Teechers App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Teechers App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A14E13001AE5470700A1CB95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A14E13011AE5470700A1CB95 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -170,6 +173,8 @@
 			children = (
 				A14E132C1AE554AD00A1CB95 /* tchMainMenuVC.h */,
 				A14E132D1AE554AD00A1CB95 /* tchMainMenuVC.m */,
+				A106AF911AE80449001323E5 /* tchClassTableDS.h */,
+				A106AF921AE80449001323E5 /* tchClassTableDS.m */,
 			);
 			name = MainMenu;
 			sourceTree = "<group>";
@@ -347,6 +352,7 @@
 				A1BDCC1A1AE716BF000B0328 /* tchClassImporter.m in Sources */,
 				A14E13021AE5470700A1CB95 /* main.m in Sources */,
 				A1BDCC141AE6AA08000B0328 /* tchImport2VC.m in Sources */,
+				A106AF931AE80449001323E5 /* tchClassTableDS.m in Sources */,
 				A1BDCC381AE71F10000B0328 /* GradeRecord.m in Sources */,
 				A14E133D1AE5A4F000A1CB95 /* tchImport1VC.m in Sources */,
 				A1BDCC4A1AE71F12000B0328 /* Evaluation.m in Sources */,
