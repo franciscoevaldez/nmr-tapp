@@ -561,7 +561,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1dS-T5-zPt" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Ord-l9-G4c" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1356" y="1330"/>
+            <point key="canvasLocation" x="723" y="1330"/>
         </scene>
         <!--Add Class - Step2-->
         <scene sceneID="YvD-Tf-msa">
@@ -809,7 +809,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="16"/>
                                         <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="20" maxY="0.0"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="-155" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="-80" maxY="0.0"/>
                                         <state key="normal" title="Continue" image="Next">
                                             <color key="titleColor" red="0.2274509804" green="0.63137254899999995" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -826,6 +826,7 @@
                                         </variation>
                                         <connections>
                                             <action selector="nextButtonPressed:" destination="7Mv-Ec-zTG" eventType="touchUpInside" id="c0q-5E-zdy"/>
+                                            <segue destination="NTl-Hx-U2Q" kind="show" identifier="toConfirmationStep" id="4Cr-yX-Ky9"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -919,14 +920,146 @@
                     </view>
                     <connections>
                         <outlet property="tchBottomConstraint" destination="chx-i9-Fdo" id="Wb9-JV-Xqv"/>
+                        <outlet property="tchClassImporter" destination="PPH-JJ-WZw" id="K4o-CL-mqE"/>
                         <outlet property="tchClassName" destination="nYb-C1-NPw" id="Wew-vL-tRX"/>
                         <outlet property="tchInstitutionName" destination="2UJ-in-SPj" id="EwZ-sr-p9Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oD0-3U-byZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="KhV-NE-qV9" userLabel="Exit" sceneMemberID="exit"/>
+                <customObject id="PPH-JJ-WZw" customClass="tchClassImporter"/>
             </objects>
-            <point key="canvasLocation" x="2301" y="1330"/>
+            <point key="canvasLocation" x="1527" y="1330"/>
+        </scene>
+        <!--Add Class - End-->
+        <scene sceneID="Knj-q0-tW4">
+            <objects>
+                <viewController title="Add Class - End" id="NTl-Hx-U2Q" customClass="tchImportConfVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GMA-E0-HY7"/>
+                        <viewControllerLayoutGuide type="bottom" id="GQE-tE-woF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zoY-dz-qJg">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Class added!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dsP-6h-Zgc">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="28"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Everythings done!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7nl-D2-q9Z">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kST-M2-wpB" userLabel="Footer">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GGV-fV-POm">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="180" id="Z4H-52-AkX"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="16"/>
+                                        <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="20" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="-112" maxY="0.0"/>
+                                        <state key="normal" title="Back to menu" image="Next">
+                                            <color key="titleColor" red="0.2274509804" green="0.63137254899999995" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="Z4H-52-AkX"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="Z4H-52-AkX"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <action selector="nextButtonPressed:" destination="7Mv-Ec-zTG" eventType="touchUpInside" id="kAK-c7-Sxh"/>
+                                            <segue destination="2m8-5x-aym" kind="show" identifier="toMainMenu" id="3sk-Ak-MQV"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerY" secondItem="GGV-fV-POm" secondAttribute="centerY" id="X2p-Jz-ZgZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="GGV-fV-POm" secondAttribute="trailing" constant="20" id="ZL3-3g-hwQ"/>
+                                    <constraint firstAttribute="height" constant="60" id="kUQ-48-R8q"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="GGV-fV-POm"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <exclude reference="kUQ-48-R8q"/>
+                                        <exclude reference="X2p-Jz-ZgZ"/>
+                                        <exclude reference="ZL3-3g-hwQ"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="subviews">
+                                        <include reference="GGV-fV-POm"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <include reference="kUQ-48-R8q"/>
+                                        <include reference="X2p-Jz-ZgZ"/>
+                                        <include reference="ZL3-3g-hwQ"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.2274509804" green="0.63137254899999995" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="kST-M2-wpB" secondAttribute="trailing" id="7XB-YW-sF7"/>
+                            <constraint firstItem="dsP-6h-Zgc" firstAttribute="leading" secondItem="zoY-dz-qJg" secondAttribute="leading" constant="20" id="8Vp-DO-Rs3"/>
+                            <constraint firstItem="7nl-D2-q9Z" firstAttribute="top" secondItem="dsP-6h-Zgc" secondAttribute="bottom" id="WgD-TB-XHi"/>
+                            <constraint firstItem="GQE-tE-woF" firstAttribute="top" secondItem="kST-M2-wpB" secondAttribute="bottom" id="abN-BT-WPr"/>
+                            <constraint firstItem="kST-M2-wpB" firstAttribute="leading" secondItem="zoY-dz-qJg" secondAttribute="leading" id="tpu-bI-2TP"/>
+                            <constraint firstItem="dsP-6h-Zgc" firstAttribute="top" secondItem="GMA-E0-HY7" secondAttribute="bottom" constant="110" id="uiB-cI-RZr"/>
+                            <constraint firstItem="dsP-6h-Zgc" firstAttribute="leading" secondItem="7nl-D2-q9Z" secondAttribute="leading" id="ukE-d2-yVw"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="dsP-6h-Zgc"/>
+                                <exclude reference="7nl-D2-q9Z"/>
+                                <exclude reference="kST-M2-wpB"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="8Vp-DO-Rs3"/>
+                                <exclude reference="uiB-cI-RZr"/>
+                                <exclude reference="ukE-d2-yVw"/>
+                                <exclude reference="WgD-TB-XHi"/>
+                                <exclude reference="7XB-YW-sF7"/>
+                                <exclude reference="tpu-bI-2TP"/>
+                                <exclude reference="abN-BT-WPr"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="dsP-6h-Zgc"/>
+                                <include reference="7nl-D2-q9Z"/>
+                                <include reference="kST-M2-wpB"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="8Vp-DO-Rs3"/>
+                                <include reference="uiB-cI-RZr"/>
+                                <include reference="ukE-d2-yVw"/>
+                                <include reference="WgD-TB-XHi"/>
+                                <include reference="7XB-YW-sF7"/>
+                                <include reference="tpu-bI-2TP"/>
+                                <include reference="abN-BT-WPr"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kpM-4E-kcq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2302.5" y="1330"/>
         </scene>
         <!--Grades-->
         <scene sceneID="eV1-aY-OpF">
@@ -988,6 +1121,6 @@
         <image name="Previous" width="13" height="11"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ySL-Ac-Wlf"/>
+        <segue reference="3sk-Ak-MQV"/>
     </inferredMetricsTieBreakers>
 </document>

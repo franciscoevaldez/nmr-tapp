@@ -7,11 +7,14 @@
 //
 
 #import "tchImport2VC.h"
+#import "tchImportConfVC.h"
+#import "tchClassImporter.h"
 
 @interface tchImport2VC ()
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *tchBottomConstraint;
 @property (strong, nonatomic) IBOutlet UITextField *tchClassName;
 @property (strong, nonatomic) IBOutlet UITextField *tchInstitutionName;
+@property (strong, nonatomic) IBOutlet tchClassImporter *tchClassImporter;
 
 @end
 
@@ -28,6 +31,26 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - calling the new class importer
+- (void)callNewClassImporter
+{
+    // pass the managed object context
+    self.tchClassImporter.managedObjectContext = self.managedObjectContext;
+    
+    // pass the new class name
+    self.tchClassImporter.theNewClassName = self.tchClassName.text;
+    
+    // pass the institution name
+    self.tchClassImporter.institutionName = self.tchInstitutionName.text;
+    
+    // pass the students array
+    self.tchClassImporter.studentsArray = self.studentsData;
+    
+    // call the importing magic
+    [self.tchClassImporter parseAndSaveANewClass];
+    
 }
 
 #pragma mark - acciones de text fields
@@ -81,14 +104,27 @@
     
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([[segue identifier]isEqualToString:@"toConfirmationStep"]) {
+        
+        // call the class importer
+        [self callNewClassImporter];
+        
+        // pass managed object context to confirmation
+        tchImportConfVC *nextViewController = [segue destinationViewController];
+        nextViewController.managedObjectContext = self.managedObjectContext;
+        
+        
+    }
+    
 }
-*/
+
 
 @end
