@@ -1,36 +1,38 @@
 //
-//  tchOneClassTVC.m
+//  tchStudentDeployableTVC.m
 //  Teechers App
 //
 //  Created by fran on 4/23/15.
 //  Copyright (c) 2015 nmr. All rights reserved.
 //
 
-#import "tchOneClassTVC.h"
+#import "tchStudentDeployableTVC.h"
 
-@interface tchOneClassTVC ()
+@interface tchStudentDeployableTVC ()
 
-@property (strong, nonatomic) IBOutlet UILabel *classNameLabel;
-
+@property (strong, nonatomic) IBOutlet UILabel *studentNameLabel;
 
 @end
 
-@implementation tchOneClassTVC
+@implementation tchStudentDeployableTVC
 
 - (void)awakeFromNib {
     // Initialization code
 }
 
-// setup the cell
-- (void)setupCellForClass:(AClass*)classForThisCell{
+// setup cell taking the student
+- (void)setupCellForStudent:(Student*)student{
     
-    // pass the class to the cell
-    self.classInCell = classForThisCell;
+    // pass the student to the cell
+    self.studentForCell = student;
     
     // set the label
-    self.classNameLabel.text = self.classInCell.name;
+    self.studentNameLabel.text = self.studentForCell.name;
     
 }
+
+
+// handling highlight
 
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -40,7 +42,6 @@
     
     // Deselect in the end
     [super setSelected:NO animated:YES];
-
 }
 
 @end

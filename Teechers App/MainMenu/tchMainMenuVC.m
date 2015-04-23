@@ -7,9 +7,12 @@
 //
 
 #import "tchMainMenuVC.h"
-#import "tchImport1VC.h"
 #import "AClass.h"
 #import "tchClassTableDS.h"
+
+#import "tchImport1VC.h"
+#import "tchClassTabBarVC.h"
+#import "tchOneClassTVC.h"
 
 @interface tchMainMenuVC ()
 @property (strong, nonatomic) IBOutlet tchClassTableDS *tchClassTableDataSource;
@@ -72,6 +75,16 @@
         
     }
     
+    // Segue to class tab controller
+    if ([[segue identifier]isEqualToString:@"toClassTabController"]) {
+        
+        // get the selected class from the cell
+        tchOneClassTVC *selectedCell = sender;
+        
+        tchClassTabBarVC *destinationVC = [segue destinationViewController];
+        destinationVC.activeClass = selectedCell.classInCell;
+        
+    }
     
 }
 

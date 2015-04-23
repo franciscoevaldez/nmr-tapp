@@ -8,6 +8,8 @@
 
 #import "tchClassTabBarVC.h"
 
+#import "tchStudentsVC.h"
+
 @interface tchClassTabBarVC ()
 
 @end
@@ -21,6 +23,13 @@
 
 
 - (void)viewWillAppear:(BOOL)animated{
+    
+    
+    // Distribuir la clase a los view controllers
+    tchStudentsVC *studentsViewController = [self.viewControllers objectAtIndex:0];
+    studentsViewController.activeClass = self.activeClass;
+    
+    
     
     // Image setup for different tabs
     [(UITabBarItem*)[[[self tabBar] items] objectAtIndex:0] setImage:[UIImage imageNamed:@"Students - Rest"]];
