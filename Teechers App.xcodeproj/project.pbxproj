@@ -19,6 +19,7 @@
 		A14E132E1AE554AD00A1CB95 /* tchMainMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A14E132D1AE554AD00A1CB95 /* tchMainMenuVC.m */; };
 		A14E13361AE5609400A1CB95 /* ClassesData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A14E13341AE5609400A1CB95 /* ClassesData.xcdatamodeld */; };
 		A14E133D1AE5A4F000A1CB95 /* tchImport1VC.m in Sources */ = {isa = PBXBuildFile; fileRef = A14E133C1AE5A4F000A1CB95 /* tchImport1VC.m */; };
+		A15D3C871AE87CC6004A6DF1 /* tchClassTabBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A15D3C861AE87CC6004A6DF1 /* tchClassTabBarVC.m */; };
 		A1BDCC141AE6AA08000B0328 /* tchImport2VC.m in Sources */ = {isa = PBXBuildFile; fileRef = A1BDCC131AE6AA08000B0328 /* tchImport2VC.m */; };
 		A1BDCC171AE7161D000B0328 /* tchImportConfVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A1BDCC161AE7161D000B0328 /* tchImportConfVC.m */; };
 		A1BDCC1A1AE716BF000B0328 /* tchClassImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = A1BDCC191AE716BF000B0328 /* tchClassImporter.m */; };
@@ -65,6 +66,8 @@
 		A14E13351AE5609400A1CB95 /* ClassesData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ClassesData.xcdatamodel; sourceTree = "<group>"; };
 		A14E133B1AE5A4F000A1CB95 /* tchImport1VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchImport1VC.h; path = ImportSequence/tchImport1VC.h; sourceTree = "<group>"; };
 		A14E133C1AE5A4F000A1CB95 /* tchImport1VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchImport1VC.m; path = ImportSequence/tchImport1VC.m; sourceTree = "<group>"; };
+		A15D3C851AE87CC6004A6DF1 /* tchClassTabBarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchClassTabBarVC.h; path = ClassTabs/tchClassTabBarVC.h; sourceTree = "<group>"; };
+		A15D3C861AE87CC6004A6DF1 /* tchClassTabBarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchClassTabBarVC.m; path = ClassTabs/tchClassTabBarVC.m; sourceTree = "<group>"; };
 		A1BDCC121AE6AA08000B0328 /* tchImport2VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchImport2VC.h; path = ImportSequence/tchImport2VC.h; sourceTree = "<group>"; };
 		A1BDCC131AE6AA08000B0328 /* tchImport2VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchImport2VC.m; path = ImportSequence/tchImport2VC.m; sourceTree = "<group>"; };
 		A1BDCC151AE7161D000B0328 /* tchImportConfVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchImportConfVC.h; path = ImportSequence/tchImportConfVC.h; sourceTree = "<group>"; };
@@ -131,6 +134,7 @@
 				A14E13301AE556C200A1CB95 /* assets_images */,
 				A14E13311AE556F100A1CB95 /* data */,
 				A14E132B1AE5543900A1CB95 /* MainMenu */,
+				A15D3C841AE87C58004A6DF1 /* ClassTabs */,
 				A14E133A1AE5A49F00A1CB95 /* ImportSequence */,
 				A14E13031AE5470700A1CB95 /* AppDelegate.h */,
 				A14E13041AE5470700A1CB95 /* AppDelegate.m */,
@@ -237,6 +241,15 @@
 			name = ImportSequence;
 			sourceTree = "<group>";
 		};
+		A15D3C841AE87C58004A6DF1 /* ClassTabs */ = {
+			isa = PBXGroup;
+			children = (
+				A15D3C851AE87CC6004A6DF1 /* tchClassTabBarVC.h */,
+				A15D3C861AE87CC6004A6DF1 /* tchClassTabBarVC.m */,
+			);
+			name = ClassTabs;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -340,6 +353,7 @@
 				A14E13361AE5609400A1CB95 /* ClassesData.xcdatamodeld in Sources */,
 				A14E132E1AE554AD00A1CB95 /* tchMainMenuVC.m in Sources */,
 				A1BDCC3E1AE71F10000B0328 /* StudentSummary.m in Sources */,
+				A15D3C871AE87CC6004A6DF1 /* tchClassTabBarVC.m in Sources */,
 				A1BDCC411AE71F10000B0328 /* StudentPicture.m in Sources */,
 				A1BDCC3B1AE71F10000B0328 /* Student.m in Sources */,
 				A1BDCC471AE71F11000B0328 /* ClassDay.m in Sources */,
