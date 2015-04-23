@@ -36,14 +36,6 @@
     UIColor *highlightColor = [UIColor colorWithRed:60.0/255 green:160.0/255 blue:203.0/255 alpha:1.0];
     
     // font styles
-    /*[UITabBarItem.appearance setTitleTextAttributes: @{
-                                                       NSForegroundColorAttributeName: [UIColor colorWithRed:214.0/255
-                                                                                                       green:69.0/255
-                                                                                                        blue:65.0/255
-                                                                                                       alpha:1.0],
-                                                       NSFontAttributeName : [UIFont fontWithName:@"Avenir" size:10.0f]
-                                                       } forState:UIControlStateNormal];*/
-    
     [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
                                                        [UIFont fontWithName:@"Avenir-Heavy" size:10.0f], NSFontAttributeName,
                                                        nil]

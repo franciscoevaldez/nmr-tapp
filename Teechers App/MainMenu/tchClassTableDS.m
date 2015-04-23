@@ -8,6 +8,7 @@
 
 #import "tchClassTableDS.h"
 #import "AClass.h"
+#import "tchOneClassTVC.h"
 
 @implementation tchClassTableDS
 
@@ -26,17 +27,22 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     // create the new cell
-    UITableViewCell *newCell = [tableView dequeueReusableCellWithIdentifier:@"aClassCell"];
+    //UITableViewCell *newCell = [tableView dequeueReusableCellWithIdentifier:@"aClassCell"];
+    //UITableViewCell *newCell = [tableView dequeueReusableCellWithIdentifier:@"secondClassCell"];
+    tchOneClassTVC *newCell = [tableView dequeueReusableCellWithIdentifier:@"aClassCell"];
     
     // get the class for this new cell
     AClass *currentClass = [self.classesArray objectAtIndex:indexPath.row];
     
+    [newCell setupCellForClass:currentClass];
+    
     // get the name of the class
-    NSString *currentClassName = currentClass.name;
+    //NSString *currentClassName = currentClass.name;
     
     // setup the label
-    UILabel *cellLabel = (UILabel *)[newCell viewWithTag:1];
-    cellLabel.text = [NSString stringWithFormat:@"%@", currentClassName];
+    //UILabel *classNameLabel = (UILabel *)[newCell viewWithTag:1];
+    //classNameLabel.text = currentClass.name;
+    //newCell.textLabel.text = currentClass.name;
     
     return newCell;
     

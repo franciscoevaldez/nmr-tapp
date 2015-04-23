@@ -20,6 +20,7 @@
 		A14E13361AE5609400A1CB95 /* ClassesData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A14E13341AE5609400A1CB95 /* ClassesData.xcdatamodeld */; };
 		A14E133D1AE5A4F000A1CB95 /* tchImport1VC.m in Sources */ = {isa = PBXBuildFile; fileRef = A14E133C1AE5A4F000A1CB95 /* tchImport1VC.m */; };
 		A15D3C871AE87CC6004A6DF1 /* tchClassTabBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A15D3C861AE87CC6004A6DF1 /* tchClassTabBarVC.m */; };
+		A15D3C8A1AE961C7004A6DF1 /* tchOneClassTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A15D3C891AE961C7004A6DF1 /* tchOneClassTVC.m */; };
 		A1BDCC141AE6AA08000B0328 /* tchImport2VC.m in Sources */ = {isa = PBXBuildFile; fileRef = A1BDCC131AE6AA08000B0328 /* tchImport2VC.m */; };
 		A1BDCC171AE7161D000B0328 /* tchImportConfVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A1BDCC161AE7161D000B0328 /* tchImportConfVC.m */; };
 		A1BDCC1A1AE716BF000B0328 /* tchClassImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = A1BDCC191AE716BF000B0328 /* tchClassImporter.m */; };
@@ -68,6 +69,8 @@
 		A14E133C1AE5A4F000A1CB95 /* tchImport1VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchImport1VC.m; path = ImportSequence/tchImport1VC.m; sourceTree = "<group>"; };
 		A15D3C851AE87CC6004A6DF1 /* tchClassTabBarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchClassTabBarVC.h; path = ClassTabs/tchClassTabBarVC.h; sourceTree = "<group>"; };
 		A15D3C861AE87CC6004A6DF1 /* tchClassTabBarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchClassTabBarVC.m; path = ClassTabs/tchClassTabBarVC.m; sourceTree = "<group>"; };
+		A15D3C881AE961C7004A6DF1 /* tchOneClassTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchOneClassTVC.h; path = MainMenu/tchOneClassTVC.h; sourceTree = "<group>"; };
+		A15D3C891AE961C7004A6DF1 /* tchOneClassTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchOneClassTVC.m; path = MainMenu/tchOneClassTVC.m; sourceTree = "<group>"; };
 		A1BDCC121AE6AA08000B0328 /* tchImport2VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchImport2VC.h; path = ImportSequence/tchImport2VC.h; sourceTree = "<group>"; };
 		A1BDCC131AE6AA08000B0328 /* tchImport2VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchImport2VC.m; path = ImportSequence/tchImport2VC.m; sourceTree = "<group>"; };
 		A1BDCC151AE7161D000B0328 /* tchImportConfVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchImportConfVC.h; path = ImportSequence/tchImportConfVC.h; sourceTree = "<group>"; };
@@ -179,6 +182,8 @@
 				A14E132D1AE554AD00A1CB95 /* tchMainMenuVC.m */,
 				A106AF911AE80449001323E5 /* tchClassTableDS.h */,
 				A106AF921AE80449001323E5 /* tchClassTableDS.m */,
+				A15D3C881AE961C7004A6DF1 /* tchOneClassTVC.h */,
+				A15D3C891AE961C7004A6DF1 /* tchOneClassTVC.m */,
 			);
 			name = MainMenu;
 			sourceTree = "<group>";
@@ -364,6 +369,7 @@
 				A1BDCC171AE7161D000B0328 /* tchImportConfVC.m in Sources */,
 				A1BDCC441AE71F11000B0328 /* AClass.m in Sources */,
 				A1BDCC1A1AE716BF000B0328 /* tchClassImporter.m in Sources */,
+				A15D3C8A1AE961C7004A6DF1 /* tchOneClassTVC.m in Sources */,
 				A14E13021AE5470700A1CB95 /* main.m in Sources */,
 				A1BDCC141AE6AA08000B0328 /* tchImport2VC.m in Sources */,
 				A106AF931AE80449001323E5 /* tchClassTableDS.m in Sources */,

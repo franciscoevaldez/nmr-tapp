@@ -22,6 +22,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    // before the view loads
+    
     // fetch the classes
     NSArray *activeClasses = [self fetchClassesForTable];
     
