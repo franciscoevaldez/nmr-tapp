@@ -9,6 +9,7 @@
 #import "tchClassTabBarVC.h"
 
 #import "tchStudentsVC.h"
+#import "tchAttendanceVC.h"
 
 @interface tchClassTabBarVC ()
 
@@ -28,6 +29,10 @@
     // Distribuir la clase a los view controllers
     tchStudentsVC *studentsViewController = [self.viewControllers objectAtIndex:0];
     studentsViewController.activeClass = self.activeClass;
+    
+    tchAttendanceVC *attendanceViewController = [self.viewControllers objectAtIndex:1];
+    attendanceViewController.activeClass = self.activeClass;
+    
     
     
     

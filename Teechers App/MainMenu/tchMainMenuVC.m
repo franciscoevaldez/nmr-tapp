@@ -89,7 +89,7 @@
 }
 
 // unwind to main menu function
--(IBAction)prepareForUnwind:(UIStoryboardSegue *)segue {
+-(IBAction)prepareForUnwindToMainMenu:(UIStoryboardSegue *)segue {
     
 }
 
