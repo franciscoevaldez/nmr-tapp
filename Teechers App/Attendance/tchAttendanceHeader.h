@@ -14,4 +14,7 @@
 @property (strong,nonatomic) AClass *activeClass;
 - (void)setupHeaderForClass:(AClass*)classForHeader;
 
+- (void)swipeDoneLeft;
+- (void)swipeDoneRight;
+
 @end

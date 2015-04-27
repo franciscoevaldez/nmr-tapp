@@ -10,6 +10,7 @@
 
 #import "tchAttendanceHeader.h"
 #import "tchAttendanceTableDS.h"
+#import "tchAttDayBandColDS.h"
 
 #import "ClassDay.h"
 
@@ -17,6 +18,8 @@
 
 @property (strong, nonatomic) IBOutlet tchAttendanceHeader *tchAttendanceHeader;
 @property (strong, nonatomic) IBOutlet tchAttendanceTableDS *tchAttendanceTableDataSource;
+@property (strong, nonatomic) IBOutlet tchAttDayBandColDS *tchDayBandColVDS;
+@property (strong, nonatomic) IBOutlet UICollectionView *dayCollectionView;
 
 @end
 
@@ -32,11 +35,31 @@
     // Setup the header for this class
     [self.tchAttendanceHeader setupHeaderForClass:self.activeClass];
     
+    // Setup the day band for this class
+    [self.tchDayBandColVDS setupForClass:self.activeClass];
+    
     // Pass the class to the Students data source
     [self.tchAttendanceTableDataSource setupForClass:self.activeClass];
     
 }
 
+#pragma mark - Swipe Handling
+- (IBAction)swipeLeftDone:(id)sender {
+
+    // Tell the header of the swipe
+    [self.tchAttendanceHeader swipeDoneLeft];
+    
+}
+
+- (IBAction)swipeRightDone:(id)sender {
+    
+    // Tell the header of the swipe
+    [self.tchAttendanceHeader swipeDoneRight];
+    
+}
+
+
+#pragma mark - TEMP: Add days (Remove!!)
 - (IBAction)addDaysHotfix:(id)sender {
     // ONLY WHILE TESTING AND DEVELOPING: FEED A FAKE ARRAY WITH 5 DAYS ------------------------------
      
