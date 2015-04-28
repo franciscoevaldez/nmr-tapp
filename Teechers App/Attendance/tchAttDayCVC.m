@@ -44,4 +44,16 @@
     
 }
 
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    
+    [super setSelected:selected];
+    
+    // Configure the view for the selected state
+    
+    // Deselect in the end
+    [super setSelected:NO];
+    
+}
+
 @end

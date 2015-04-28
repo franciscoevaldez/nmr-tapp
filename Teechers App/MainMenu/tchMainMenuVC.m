@@ -32,33 +32,14 @@
 - (void)viewWillAppear:(BOOL)animated{
     // before the view loads
     
-    // fetch the classes
-    NSArray *activeClasses = [self fetchClassesForTable];
-    
-    // pass them to the table data source
-    self.tchClassTableDataSource.classesArray = activeClasses;
+    // tell the class table data source to setup itself
+    [self.tchClassTableDataSource setupClasses:self.managedObjectContext];
     
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-#pragma mark - Fetch Classes
-- (NSArray*)fetchClassesForTable {
-    
-    // get classes stored in core data
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"AClass" inManagedObjectContext:self.managedObjectContext];
-    [request setEntity:entity];
-    
-    NSError *error = nil;
-    NSArray *results = [self.managedObjectContext executeFetchRequest:request error:&error];
-
-    return results;
-    
 }
 
 #pragma mark - Navigation

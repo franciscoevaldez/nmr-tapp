@@ -9,12 +9,20 @@
 #import <UIKit/UIKit.h>
 #import "AClass.h"
 
+@protocol tchHeaderDelegate <NSObject>
+
+- (void)headerWasTapped;
+
+@end
+
 @interface tchAttendanceHeader : UIView
 
+@property (nonatomic, weak) id <tchHeaderDelegate> delegate;
 @property (strong,nonatomic) AClass *activeClass;
 - (void)setupHeaderForClass:(AClass*)classForHeader;
 
 - (void)swipeDoneLeft;
 - (void)swipeDoneRight;
+- (void)performDayScrollToIndex:(NSInteger)newIndex;
 
 @end

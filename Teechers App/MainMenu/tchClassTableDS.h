@@ -12,5 +12,6 @@
 @interface tchClassTableDS : NSObject <UITableViewDataSource>
 
 @property (strong, nonatomic) NSArray *classesArray;
+-(void)setupClasses:(NSManagedObjectContext*)managedObjectContext;
 
 @end

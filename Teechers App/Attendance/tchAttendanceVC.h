@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "AClass.h"
 
-@interface tchAttendanceVC : UIViewController
+#import "tchAttendanceHeader.h"
+#import "tchAttDayBandColDel.h"
+
+@interface tchAttendanceVC : UIViewController <tchHeaderDelegate, tchDayBandDelegate>
 
 @property (strong,nonatomic) AClass *activeClass;
 

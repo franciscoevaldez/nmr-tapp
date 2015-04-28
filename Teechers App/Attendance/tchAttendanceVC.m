@@ -8,18 +8,23 @@
 
 #import "tchAttendanceVC.h"
 
-#import "tchAttendanceHeader.h"
+//#import "tchAttendanceHeader.h"
 #import "tchAttendanceTableDS.h"
 #import "tchAttDayBandColDS.h"
+#import "tchAttendanceMenu.h"
 
 #import "ClassDay.h"
 
-@interface tchAttendanceVC ()
+@interface tchAttendanceVC () 
 
 @property (strong, nonatomic) IBOutlet tchAttendanceHeader *tchAttendanceHeader;
 @property (strong, nonatomic) IBOutlet tchAttendanceTableDS *tchAttendanceTableDataSource;
 @property (strong, nonatomic) IBOutlet tchAttDayBandColDS *tchDayBandColVDS;
+@property (strong, nonatomic) IBOutlet tchAttDayBandColDel *tchDayBandDelegate;
+@property (strong, nonatomic) IBOutlet tchAttendanceMenu *tchAttendanceMenu;
 @property (strong, nonatomic) IBOutlet UICollectionView *dayCollectionView;
+
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *menuHeightConstraint;
 
 @end
 
@@ -35,29 +40,91 @@
     // Setup the header for this class
     [self.tchAttendanceHeader setupHeaderForClass:self.activeClass];
     
-    // Setup the day band for this class
+    // Setup the day band for this class (CHANGE!!!!)
     [self.tchDayBandColVDS setupForClass:self.activeClass];
+    
+    // set header delegate
+    self.tchAttendanceHeader.delegate = self;
+    
+    // set day band delegate
+    self.tchDayBandDelegate.delegate = self;
     
     // Pass the class to the Students data source
     [self.tchAttendanceTableDataSource setupForClass:self.activeClass];
     
+    // Hide the menu
+    [self.tchAttendanceMenu setupMenu];
+
+    
 }
+
+
+#pragma mark - Day Jumping
+- (void)scrollToIndex:(NSInteger)newIndex{
+//- (void)scrollToIndex{
+        
+    // Tell header to scroll to new index
+    [self.tchAttendanceHeader performDayScrollToIndex:newIndex];
+    
+    // close menu
+    [UIView animateWithDuration:0.5 animations:^{
+        self.menuHeightConstraint.constant = 0;
+        [self.view layoutIfNeeded];
+    }];
+    
+    [self.tchAttendanceMenu toggleMenu];
+
+
+}
+
 
 #pragma mark - Swipe Handling
 - (IBAction)swipeLeftDone:(id)sender {
 
-    // Tell the header of the swipe
-    [self.tchAttendanceHeader swipeDoneLeft];
+    // (check if menu is deployed)
+    if(!self.tchAttendanceMenu.deployed){
+        
+        // Tell the header of the swipe
+        [self.tchAttendanceHeader swipeDoneLeft];
+        
+    }
     
 }
 
 - (IBAction)swipeRightDone:(id)sender {
     
-    // Tell the header of the swipe
-    [self.tchAttendanceHeader swipeDoneRight];
+    // (check if menu is deployed)
+    if(!self.tchAttendanceMenu.deployed){
+        
+        // Tell the header of the swipe
+        [self.tchAttendanceHeader swipeDoneRight];
+        
+    }
     
 }
 
+#pragma mark - Header tapped
+- (void)headerWasTapped {
+    
+    if (!self.tchAttendanceMenu.deployed) {
+        
+        [UIView animateWithDuration:0.5 animations:^{
+            self.menuHeightConstraint.constant = 180;
+            [self.view layoutIfNeeded];
+        }];
+        
+    } else {
+        
+        [UIView animateWithDuration:0.5 animations:^{
+            self.menuHeightConstraint.constant = 0;
+            [self.view layoutIfNeeded];
+        }];
+        
+    }
+    
+    [self.tchAttendanceMenu toggleMenu];
+    
+}
 
 #pragma mark - TEMP: Add days (Remove!!)
 - (IBAction)addDaysHotfix:(id)sender {

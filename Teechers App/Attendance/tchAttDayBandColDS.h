@@ -1,5 +1,6 @@
 //
 //  tchAttDayBandColDS.h
+//  Day Band Collection Data Source
 //  Teechers App
 //
 //  Created by fran on 27/4/15.

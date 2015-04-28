@@ -10,7 +10,34 @@
 #import "AClass.h"
 #import "tchOneClassTVC.h"
 
+@interface tchClassTableDS ()
+
+@property (strong,nonatomic) NSManagedObjectContext *managedObjectContext;
+
+@end
+
 @implementation tchClassTableDS
+
+#pragma mark - Fetch classes
+
+-(void)setupClasses:(NSManagedObjectContext*)managedObjectContext{
+    
+    // get classes stored in core data
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    
+    self.managedObjectContext = managedObjectContext;
+    
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"AClass" inManagedObjectContext:self.managedObjectContext];
+    [request setEntity:entity];
+    
+    NSError *error = nil;
+    NSArray *results = [self.managedObjectContext executeFetchRequest:request error:&error];
+    
+    self.classesArray = results;
+    
+}
+
+
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
