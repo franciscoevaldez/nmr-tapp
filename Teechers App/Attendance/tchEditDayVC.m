@@ -1,31 +1,34 @@
 //
-//  tchImport2VC.m
+//  tchEditDayVC.m
 //  Teechers App
 //
-//  Created by fran on 4/21/15.
+//  Created by fran on 28/4/15.
 //  Copyright (c) 2015 nmr. All rights reserved.
 //
 
-#import "tchImport2VC.h"
-#import "tchImportConfVC.h"
-#import "tchClassImporter.h"
+#import "tchEditDayVC.h"
 
-@interface tchImport2VC ()
-@property (strong, nonatomic) IBOutlet NSLayoutConstraint *tchBottomConstraint;
-@property (strong, nonatomic) IBOutlet UITextField *tchClassName;
-@property (strong, nonatomic) IBOutlet UITextField *tchInstitutionName;
-@property (strong, nonatomic) IBOutlet tchClassImporter *tchClassImporter;
+@interface tchEditDayVC ()
+
+@property (strong, nonatomic) IBOutlet UILabel *viewTitle;
+@property (strong, nonatomic) IBOutlet UITextField *dateInput;
+@property (strong, nonatomic) IBOutlet UITextField *titleInput;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *bottomConstraint;
 
 @end
 
-@implementation tchImport2VC
+@implementation tchEditDayVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    // register the keyboard listeners
+    // register keyboard notifications
     [self registerForKeyboardNotifications];
+    
+    // give the focus to the first input
+    [self.dateInput becomeFirstResponder];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,35 +36,18 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - calling the new class importer
-- (void)callNewClassImporter
-{
-    // pass the managed object context
-    self.tchClassImporter.managedObjectContext = self.managedObjectContext;
-    
-    // pass the new class name
-    self.tchClassImporter.theNewClassName = self.tchClassName.text;
-    
-    // pass the institution name
-    self.tchClassImporter.institutionName = self.tchInstitutionName.text;
-    
-    // pass the students array
-    self.tchClassImporter.studentsArray = self.studentsData;
-    
-    // call the importing magic
-    [self.tchClassImporter parseAndSaveANewClass];
-    
-}
 
+
+// pass focus on return
 #pragma mark - acciones de text fields
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     
-    if (textField == self.tchClassName) {
+    if (textField == self.dateInput) {
         
         [textField resignFirstResponder];
-        [self.tchInstitutionName becomeFirstResponder];
+        [self.titleInput becomeFirstResponder];
         
-    } else if (textField == self.tchInstitutionName) {
+    } else if (textField == self.titleInput) {
         
         // here you can define what happens
         // when user presses return on the email field
@@ -96,7 +82,7 @@
     CGRect kKeyBoardFrame = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
     
     // add frame height to the constraint's constant
-    self.tchBottomConstraint.constant = kKeyBoardFrame.size.height;
+    self.bottomConstraint.constant = kKeyBoardFrame.size.height;
     
 }
 
@@ -105,31 +91,44 @@
 {
     
     // keyboard will be hidden, return bottom constraint to 0:
-    self.tchBottomConstraint.constant = 0;
+    self.bottomConstraint.constant = 0;
     
 }
 
+#pragma mark - dismiss view
+- (IBAction)dismissVC:(id)sender {
+    
+    [self dismissViewControllerAnimated:YES completion:^{
+        NSLog(@"about to dismiss?");
+    }];
+    
+}
 
+#pragma mark - confirm view
+- (IBAction)confirmVC:(id)sender {
+    
+    // get data from the inputs
+    NSString *newDate = self.dateInput.text;
+    NSString *newTitle = self.titleInput.text;
+    
+    // tell the data coordinator to add a new day
+    NSLog(@"date: %@", newDate);
+    NSLog(@"title: %@", newTitle);
+    
+    // dismiss the view
+    [self dismissViewControllerAnimated:YES completion:^{
+    }];
+    
+}
+
+/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    if ([[segue identifier]isEqualToString:@"toConfirmationStep"]) {
-        
-        // call the class importer
-        [self callNewClassImporter];
-        
-        // pass managed object context to confirmation
-        tchImportConfVC *nextViewController = [segue destinationViewController];
-        nextViewController.managedObjectContext = self.managedObjectContext;
-        
-        
-    }
-    
 }
-
+*/
 
 @end

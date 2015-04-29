@@ -17,6 +17,10 @@
 @property (strong,nonatomic) IBOutlet UICollectionView *dayCollection;
 @property (assign,nonatomic) NSInteger activeDayIndex;
 
+@property (assign,nonatomic) BOOL menuIsDeployed;
+
+@property (strong,nonatomic) IBOutlet UIImageView *deployIndicator;
+
 @end
 
 @implementation tchAttendanceHeader
@@ -35,6 +39,9 @@
     
     // initialize day index:
     self.activeDayIndex = 0;
+    
+    // menu starts undeployed
+    self.menuIsDeployed = NO;
     
 }
 
@@ -85,6 +92,54 @@
     
 }
 
+
+#pragma mark - menu reaction
+- (void)menuWasToggled{
+    
+    // if menu is closed
+    if (!self.menuIsDeployed) {
+        
+        // darken background color
+        UIColor *darkerColor = [UIColor colorWithRed:(35/255.0) green:(90/255.0) blue:(172/255.0) alpha:1.0f];
+        //self.layer.backgroundColor = darkerColor.CGColor;
+        
+        [UIView animateWithDuration:0.5 animations:^{
+            self.layer.backgroundColor = darkerColor.CGColor;
+        }];
+        
+        // change deploy indicator
+        self.deployIndicator.image = [UIImage imageNamed:@"Deployed - white"];
+        
+        // lighten collection view
+        self.dayCollection.layer.opacity = 0.25f;
+        
+        // change the value
+        self.menuIsDeployed = !self.menuIsDeployed;
+        
+    } else {
+        
+        // go back to original color
+        UIColor *originalColor = [UIColor colorWithRed:(60/255.0) green:(160/255.0) blue:(203/255.0) alpha:1.0f];
+        //self.layer.backgroundColor = originalColor.CGColor;
+        
+        [UIView animateWithDuration:0.5 animations:^{
+            self.layer.backgroundColor = originalColor.CGColor;
+        }];
+        
+        // change deploy indicator
+        self.deployIndicator.image = [UIImage imageNamed:@"Deployable - white"];
+        
+        // collection view back to full swing
+        self.dayCollection.layer.opacity = 1.0f;
+        
+        // change toggled value
+        self.menuIsDeployed = !self.menuIsDeployed;
+        
+    }
+    
+    
+    
+}
 
 /*
  // Only override drawRect: if you perform custom drawing.

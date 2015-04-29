@@ -34,6 +34,7 @@
 		A1B349A71AEE7D89008B5671 /* tchAttDayBandColDS.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B349A61AEE7D89008B5671 /* tchAttDayBandColDS.m */; };
 		A1B349AD1AEE9329008B5671 /* tchAttendanceMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B349AC1AEE9329008B5671 /* tchAttendanceMenu.m */; };
 		A1B349B11AEF01B8008B5671 /* tchAttDayBandColDel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B349B01AEF01B8008B5671 /* tchAttDayBandColDel.m */; };
+		A1B349B51AEFEA01008B5671 /* tchEditDayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B349B41AEFEA01008B5671 /* tchEditDayVC.m */; };
 		A1BDCC141AE6AA08000B0328 /* tchImport2VC.m in Sources */ = {isa = PBXBuildFile; fileRef = A1BDCC131AE6AA08000B0328 /* tchImport2VC.m */; };
 		A1BDCC171AE7161D000B0328 /* tchImportConfVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A1BDCC161AE7161D000B0328 /* tchImportConfVC.m */; };
 		A1BDCC1A1AE716BF000B0328 /* tchClassImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = A1BDCC191AE716BF000B0328 /* tchClassImporter.m */; };
@@ -110,6 +111,8 @@
 		A1B349AC1AEE9329008B5671 /* tchAttendanceMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchAttendanceMenu.m; path = Attendance/tchAttendanceMenu.m; sourceTree = "<group>"; };
 		A1B349AF1AEF01B8008B5671 /* tchAttDayBandColDel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchAttDayBandColDel.h; path = Attendance/tchAttDayBandColDel.h; sourceTree = "<group>"; };
 		A1B349B01AEF01B8008B5671 /* tchAttDayBandColDel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchAttDayBandColDel.m; path = Attendance/tchAttDayBandColDel.m; sourceTree = "<group>"; };
+		A1B349B31AEFEA01008B5671 /* tchEditDayVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchEditDayVC.h; path = Attendance/tchEditDayVC.h; sourceTree = "<group>"; };
+		A1B349B41AEFEA01008B5671 /* tchEditDayVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchEditDayVC.m; path = Attendance/tchEditDayVC.m; sourceTree = "<group>"; };
 		A1BDCC121AE6AA08000B0328 /* tchImport2VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchImport2VC.h; path = ImportSequence/tchImport2VC.h; sourceTree = "<group>"; };
 		A1BDCC131AE6AA08000B0328 /* tchImport2VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchImport2VC.m; path = ImportSequence/tchImport2VC.m; sourceTree = "<group>"; };
 		A1BDCC151AE7161D000B0328 /* tchImportConfVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchImportConfVC.h; path = ImportSequence/tchImportConfVC.h; sourceTree = "<group>"; };
@@ -324,6 +327,7 @@
 				A1B349B21AEF01C4008B5671 /* Day Band */,
 				A1B349AB1AEE9329008B5671 /* tchAttendanceMenu.h */,
 				A1B349AC1AEE9329008B5671 /* tchAttendanceMenu.m */,
+				A1B349B61AEFEA0B008B5671 /* Edit Day */,
 			);
 			name = Attendance;
 			sourceTree = "<group>";
@@ -350,6 +354,15 @@
 				A1B349B01AEF01B8008B5671 /* tchAttDayBandColDel.m */,
 			);
 			name = "Day Band";
+			sourceTree = "<group>";
+		};
+		A1B349B61AEFEA0B008B5671 /* Edit Day */ = {
+			isa = PBXGroup;
+			children = (
+				A1B349B31AEFEA01008B5671 /* tchEditDayVC.h */,
+				A1B349B41AEFEA01008B5671 /* tchEditDayVC.m */,
+			);
+			name = "Edit Day";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -473,6 +486,7 @@
 				A1B349B11AEF01B8008B5671 /* tchAttDayBandColDel.m in Sources */,
 				A1BDCC441AE71F11000B0328 /* AClass.m in Sources */,
 				A1BDCC1A1AE716BF000B0328 /* tchClassImporter.m in Sources */,
+				A1B349B51AEFEA01008B5671 /* tchEditDayVC.m in Sources */,
 				A15D3C8A1AE961C7004A6DF1 /* tchOneClassTVC.m in Sources */,
 				A1AA546D1AEA824100318744 /* tchAttendanceInputTVC.m in Sources */,
 				A15D3C941AE98659004A6DF1 /* tchStudentDeployableTVC.m in Sources */,

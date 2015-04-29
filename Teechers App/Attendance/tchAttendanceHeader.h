@@ -25,4 +25,6 @@
 - (void)swipeDoneRight;
 - (void)performDayScrollToIndex:(NSInteger)newIndex;
 
+- (void)menuWasToggled;
+
 @end
