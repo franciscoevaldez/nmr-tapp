@@ -35,6 +35,7 @@
 		A1B349AD1AEE9329008B5671 /* tchAttendanceMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B349AC1AEE9329008B5671 /* tchAttendanceMenu.m */; };
 		A1B349B11AEF01B8008B5671 /* tchAttDayBandColDel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B349B01AEF01B8008B5671 /* tchAttDayBandColDel.m */; };
 		A1B349B51AEFEA01008B5671 /* tchEditDayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B349B41AEFEA01008B5671 /* tchEditDayVC.m */; };
+		A1B349BC1AF17118008B5671 /* tchDatePickerField.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B349BB1AF17118008B5671 /* tchDatePickerField.m */; };
 		A1BDCC141AE6AA08000B0328 /* tchImport2VC.m in Sources */ = {isa = PBXBuildFile; fileRef = A1BDCC131AE6AA08000B0328 /* tchImport2VC.m */; };
 		A1BDCC171AE7161D000B0328 /* tchImportConfVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A1BDCC161AE7161D000B0328 /* tchImportConfVC.m */; };
 		A1BDCC1A1AE716BF000B0328 /* tchClassImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = A1BDCC191AE716BF000B0328 /* tchClassImporter.m */; };
@@ -113,6 +114,8 @@
 		A1B349B01AEF01B8008B5671 /* tchAttDayBandColDel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchAttDayBandColDel.m; path = Attendance/tchAttDayBandColDel.m; sourceTree = "<group>"; };
 		A1B349B31AEFEA01008B5671 /* tchEditDayVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchEditDayVC.h; path = Attendance/tchEditDayVC.h; sourceTree = "<group>"; };
 		A1B349B41AEFEA01008B5671 /* tchEditDayVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchEditDayVC.m; path = Attendance/tchEditDayVC.m; sourceTree = "<group>"; };
+		A1B349BA1AF17118008B5671 /* tchDatePickerField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchDatePickerField.h; path = Attendance/tchDatePickerField.h; sourceTree = "<group>"; };
+		A1B349BB1AF17118008B5671 /* tchDatePickerField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchDatePickerField.m; path = Attendance/tchDatePickerField.m; sourceTree = "<group>"; };
 		A1BDCC121AE6AA08000B0328 /* tchImport2VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchImport2VC.h; path = ImportSequence/tchImport2VC.h; sourceTree = "<group>"; };
 		A1BDCC131AE6AA08000B0328 /* tchImport2VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchImport2VC.m; path = ImportSequence/tchImport2VC.m; sourceTree = "<group>"; };
 		A1BDCC151AE7161D000B0328 /* tchImportConfVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchImportConfVC.h; path = ImportSequence/tchImportConfVC.h; sourceTree = "<group>"; };
@@ -361,6 +364,8 @@
 			children = (
 				A1B349B31AEFEA01008B5671 /* tchEditDayVC.h */,
 				A1B349B41AEFEA01008B5671 /* tchEditDayVC.m */,
+				A1B349BA1AF17118008B5671 /* tchDatePickerField.h */,
+				A1B349BB1AF17118008B5671 /* tchDatePickerField.m */,
 			);
 			name = "Edit Day";
 			sourceTree = "<group>";
@@ -474,6 +479,7 @@
 				A1BDCC411AE71F10000B0328 /* StudentPicture.m in Sources */,
 				A1BDCC3B1AE71F10000B0328 /* Student.m in Sources */,
 				A1BDCC471AE71F11000B0328 /* ClassDay.m in Sources */,
+				A1B349BC1AF17118008B5671 /* tchDatePickerField.m in Sources */,
 				A14E130E1AE5470700A1CB95 /* DetailViewController.m in Sources */,
 				A14E130B1AE5470700A1CB95 /* MasterViewController.m in Sources */,
 				A1B349AD1AEE9329008B5671 /* tchAttendanceMenu.m in Sources */,

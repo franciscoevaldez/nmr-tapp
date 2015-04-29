@@ -28,6 +28,7 @@
     
     // give the focus to the first input
     [self.dateInput becomeFirstResponder];
+
     
 }
 
@@ -36,6 +37,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+// pick up date changes
+- (void)datePickerChanged{
+    
+    NSLog(@"change!");
+    
+}
 
 
 // pass focus on return
