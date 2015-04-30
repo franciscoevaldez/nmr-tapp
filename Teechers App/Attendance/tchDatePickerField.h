@@ -10,6 +10,7 @@
 
 @interface tchDatePickerField : UITextField
 
+- (void)changeDatePicker:(NSDate*)newDate;
 @property (strong,nonatomic) NSDate *pickedDate;
 
 @end

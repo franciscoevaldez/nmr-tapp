@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AClass.h"
+#import "AClass+tchAClassExt.h"
 
 @protocol tchHeaderDelegate <NSObject>
 
@@ -26,5 +26,6 @@
 - (void)performDayScrollToIndex:(NSInteger)newIndex;
 
 - (void)menuWasToggled;
+- (void)reloadData;
 
 @end

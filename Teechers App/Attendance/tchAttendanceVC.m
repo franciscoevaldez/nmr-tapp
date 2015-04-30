@@ -10,7 +10,6 @@
 
 //#import "tchAttendanceHeader.h"
 #import "tchAttendanceTableDS.h"
-#import "tchAttDayBandColDS.h"
 #import "tchAttendanceMenu.h"
 #import "tchEditDayVC.h"
 
@@ -20,12 +19,13 @@
 
 @property (strong, nonatomic) IBOutlet tchAttendanceHeader *tchAttendanceHeader;
 @property (strong, nonatomic) IBOutlet tchAttendanceTableDS *tchAttendanceTableDataSource;
-@property (strong, nonatomic) IBOutlet tchAttDayBandColDS *tchDayBandColVDS;
 @property (strong, nonatomic) IBOutlet tchAttDayBandColDel *tchDayBandDelegate;
 @property (strong, nonatomic) IBOutlet tchAttendanceMenu *tchAttendanceMenu;
-@property (strong, nonatomic) IBOutlet UICollectionView *dayCollectionView;
+@property (strong, nonatomic) tchEditDayVC *dayEditViewController;
 
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *menuHeightConstraint;
+
+@property (assign, nonatomic) NSInteger currentDayIndex;
 
 @end
 
@@ -42,7 +42,7 @@
     [self.tchAttendanceHeader setupHeaderForClass:self.activeClass];
     
     // Setup the day band for this class (CHANGE!!!!)
-    [self.tchDayBandColVDS setupForClass:self.activeClass];
+    [self.tchAttendanceMenu setupForClass:self.activeClass];
     
     // set header delegate
     self.tchAttendanceHeader.delegate = self;
@@ -62,20 +62,37 @@
 
 #pragma mark - Day Jumping
 - (void)scrollToIndex:(NSInteger)newIndex{
-//- (void)scrollToIndex{
-        
+    
     // Tell header to scroll to new index
     [self.tchAttendanceHeader performDayScrollToIndex:newIndex];
     
-    // close menu
-    [UIView animateWithDuration:0.5 animations:^{
-        self.menuHeightConstraint.constant = 0;
-        [self.view layoutIfNeeded];
-    }];
+    // If menu is deployed, close it
+    if (self.tchAttendanceMenu.deployed) {
+        
+        // close menu
+        [UIView animateWithDuration:0.5 animations:^{
+            self.menuHeightConstraint.constant = 0;
+            [self.view layoutIfNeeded];
+        }];
+        
+        [self.tchAttendanceMenu toggleMenu];
+        [self.tchAttendanceHeader menuWasToggled];
+        
+    }
     
-    [self.tchAttendanceMenu toggleMenu];
-    [self.tchAttendanceHeader menuWasToggled];
+    // get the new index to VC property
+    self.currentDayIndex = newIndex;
 
+}
+
+- (void)scrollToDay:(ClassDay*)classDay{
+    
+    // get the index for the class day
+    NSInteger newIndex = [self.activeClass getSortIndexForDay:classDay];
+    
+    // call scroll to the index of that day
+    [self scrollToIndex:newIndex];
+    
 }
 
 
@@ -125,6 +142,26 @@
     
     [self.tchAttendanceMenu toggleMenu];
     [self.tchAttendanceHeader menuWasToggled];
+    
+}
+
+#pragma mark - Edit Day Modal handling
+- (void)editDayWasDismissed:(ClassDay*)changedDay{
+    
+    // if there was actually a change when editing
+    if (changedDay) {
+        
+        // refresh the header data source
+        [self.tchAttendanceHeader reloadData];
+        
+        // refresh the menu
+        [self.tchAttendanceMenu reloadData];
+        
+        // scroll to the edited day
+        [self scrollToDay:changedDay];
+        
+    }
+    
     
 }
 
@@ -207,9 +244,49 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     
+    // to new day
+    if ([[segue identifier]isEqualToString:@"toCreateDay"]) {
+        
+        // toggle the menu
+        [self headerWasTapped];
+        
+        // prepare the edit/create view controller
+        tchEditDayVC *destinationVC = [segue destinationViewController];
+        
+        // set view controller as delegate
+        destinationVC.delegate = self;
+        
+        // theres no day to edit
+        destinationVC.dayToEdit = nil;
+        
+        // pass the active class
+        destinationVC.activeClass = self.activeClass;
+        
+    }
+    
+    // to edit this day
     if ([[segue identifier]isEqualToString:@"toEditDay"]) {
         
+        // toggle the menu
+        [self headerWasTapped];
+        
+        // get currently selected day
+        if (!self.currentDayIndex) {
+            self.currentDayIndex = 0;
+        }
+        
+        NSArray *sortedDays = [self.activeClass getDaysSorted];
+        ClassDay *currentDay = [sortedDays objectAtIndex:self.currentDayIndex];
+        
+        // prepare the edit/create view controller
         tchEditDayVC *destinationVC = [segue destinationViewController];
+        // set view controller as delegate
+        destinationVC.delegate = self;
+        
+        // pass current day for edition
+        destinationVC.dayToEdit = currentDay;
+        
+        // pass the active class
         destinationVC.activeClass = self.activeClass;
         
     }

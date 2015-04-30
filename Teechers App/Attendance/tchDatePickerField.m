@@ -64,6 +64,9 @@
         // get the nsstring for that date
         NSString *dateAsText = [formatter stringFromDate:[NSDate date]];
         
+        // pass picked date to accesible property
+        self.pickedDate =  self.inputDayPicker.date;
+        
         // write the date in the label
         self.text = dateAsText;
 
@@ -92,6 +95,27 @@
     
 }
 
+// setting the date and text
+- (void)changeDatePicker:(NSDate*)newDate{
+    
+    // set new date as picked date
+    self.inputDayPicker.date = newDate;
+    
+    // pass picked date to accesible property
+    self.pickedDate =  self.inputDayPicker.date;
+    
+    // display the picked date as text
+    // setup the formatter
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"MMM dd yyyy"];
+    
+    // get the nsstring for that date
+    NSString *dateAsText = [formatter stringFromDate:self.inputDayPicker.date];
+    
+    // write the date in the label
+    self.text = dateAsText;
+    
+}
 
 
 /*

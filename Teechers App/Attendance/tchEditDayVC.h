@@ -8,9 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import "AClass.h"
+#import "ClassDay.h"
+
+@protocol tchEditDayVCDelegate <NSObject>
+
+- (void)editDayWasDismissed:(ClassDay*)changedDay;
+
+@end
 
 @interface tchEditDayVC : UIViewController
 
+@property (nonatomic, weak) id <tchEditDayVCDelegate> delegate;
 @property (strong, nonatomic) AClass *activeClass;
+@property (strong, nonatomic) ClassDay *dayToEdit;
 
 @end

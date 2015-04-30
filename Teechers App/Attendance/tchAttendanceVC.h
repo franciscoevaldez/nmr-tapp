@@ -11,8 +11,9 @@
 
 #import "tchAttendanceHeader.h"
 #import "tchAttDayBandColDel.h"
+#import "tchEditDayVC.h"
 
-@interface tchAttendanceVC : UIViewController <tchHeaderDelegate, tchDayBandDelegate>
+@interface tchAttendanceVC : UIViewController <tchHeaderDelegate, tchDayBandDelegate, tchEditDayVCDelegate>
 
 @property (strong,nonatomic) AClass *activeClass;
 

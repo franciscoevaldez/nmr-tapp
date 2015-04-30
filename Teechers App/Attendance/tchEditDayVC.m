@@ -8,12 +8,16 @@
 
 #import "tchEditDayVC.h"
 
+#import "tchStoreCoordinator.h"
+#import "tchDatePickerField.h"
+
 @interface tchEditDayVC ()
 
 @property (strong, nonatomic) IBOutlet UILabel *viewTitle;
-@property (strong, nonatomic) IBOutlet UITextField *dateInput;
+@property (strong, nonatomic) IBOutlet tchDatePickerField *dateInput;
 @property (strong, nonatomic) IBOutlet UITextField *titleInput;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *bottomConstraint;
+@property (strong, nonatomic) IBOutlet tchStoreCoordinator *storeCoordinator;
 
 @end
 
@@ -23,11 +27,29 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    // if there is a class to edit…
+    if (self.dayToEdit) {
+        
+        // change the view title
+        self.viewTitle.text = @"Edit day";
+        
+        // set the date into the input
+        [self.dateInput changeDatePicker:self.dayToEdit.date];
+        
+        // set the name into the input
+        self.titleInput.text = self.dayToEdit.name;
+        
+        
+    }
+    
     // register keyboard notifications
     [self registerForKeyboardNotifications];
     
     // give the focus to the first input
     [self.dateInput becomeFirstResponder];
+    
+    // pass the active class to the store coordinator
+    self.storeCoordinator.activeClass = self.activeClass;
 
     
 }
@@ -35,14 +57,6 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-
-// pick up date changes
-- (void)datePickerChanged{
-    
-    NSLog(@"change!");
-    
 }
 
 
@@ -106,9 +120,12 @@
 #pragma mark - dismiss view
 - (IBAction)dismissVC:(id)sender {
     
-    [self dismissViewControllerAnimated:YES completion:^{
-        NSLog(@"about to dismiss?");
-    }];
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    // tell delegate (view controller)
+    //if ([_delegate respondsToSelector:@selector(editDayWasDismissed:changedDay:)]) {
+    [_delegate editDayWasDismissed:nil];
+    //}
     
 }
 
@@ -116,16 +133,38 @@
 - (IBAction)confirmVC:(id)sender {
     
     // get data from the inputs
-    NSString *newDate = self.dateInput.text;
+    NSDate *newDate = self.dateInput.pickedDate;
     NSString *newTitle = self.titleInput.text;
     
-    // tell the data coordinator to add a new day
-    NSLog(@"date: %@", newDate);
-    NSLog(@"title: %@", newTitle);
+    //ClassDay *newDay = [[ClassDay alloc] init];
     
-    // dismiss the view
-    [self dismissViewControllerAnimated:YES completion:^{
-    }];
+    // if theres no day to edit (means we are creating)
+    if (!self.dayToEdit) {
+        
+        // tell the data coordinator to add a new day
+        ClassDay *newDay = [self.storeCoordinator createAndStoreNewDay:newDate withName:newTitle];
+        
+        // dismiss the view
+        [self dismissViewControllerAnimated:YES completion:nil];
+        
+        // pass the new day to the delegate
+        [_delegate editDayWasDismissed:newDay];
+        
+    } else {
+        
+        // tell the data coordinator to edit the day with the new data
+        ClassDay *newDay = [self.storeCoordinator updateAndStoreDay:self.dayToEdit withDate:newDate withName:newTitle];
+        
+        // dismiss the view
+        [self dismissViewControllerAnimated:YES completion:nil];
+        
+        // pass the new day to the delegate
+        [_delegate editDayWasDismissed:newDay];
+        
+    }
+    
+    
+    
     
 }
 

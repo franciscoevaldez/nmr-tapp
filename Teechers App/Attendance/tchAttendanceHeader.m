@@ -81,6 +81,14 @@
     
 }
 
+#pragma mark - reload collection's data
+- (void)reloadData{
+    
+    // tell collection view to reload data
+    [self.dayCollection reloadData];
+    [self.dayCollection reloadSections:[NSIndexSet indexSetWithIndex:0]];
+    
+}
 
 #pragma mark - touch event
 - (IBAction)touchUpInside{

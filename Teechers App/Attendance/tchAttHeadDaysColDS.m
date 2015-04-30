@@ -23,17 +23,7 @@
 // setup and sort the students for usage
 - (void)setupForClass:(AClass*)activeClass{
     
-    // get the days into an array
-    NSMutableArray *tempArray = [NSMutableArray arrayWithArray:[activeClass.classDays allObjects]];
-    
-    // setup the sort descriptor
-    NSSortDescriptor *studentsSortDescr = [NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES];
-    
-    // sort the array
-    [tempArray sortUsingDescriptors:[NSArray arrayWithObject:studentsSortDescr]];
-    
-    // pass the array to the data source class
-    self.daysArray = tempArray;
+    self.activeClass = activeClass;
     
     [self.dayCollection reloadData];
     
@@ -41,6 +31,12 @@
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    
+    // get the sorted array from the class
+    NSArray *tempArray = [self.activeClass getDaysSorted];
+    
+    // pass the array to the data source class
+    self.daysArray = tempArray;
     
     // Number of rows is the number of days in the array
     return [self.daysArray count];

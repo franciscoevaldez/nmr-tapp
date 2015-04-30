@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "AClass.h"
+#import "AClass+tchAClassExt.h"
 
 @interface tchAttHeadDaysColDS : NSObject <UICollectionViewDataSource>
 

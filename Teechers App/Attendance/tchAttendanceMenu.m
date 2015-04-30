@@ -7,10 +7,13 @@
 //
 
 #import "tchAttendanceMenu.h"
+#import "tchAttDayBandColDS.h"
 
 @interface tchAttendanceMenu ()
 
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *heightConstraint;
+@property (strong, nonatomic) IBOutlet tchAttDayBandColDS *tchDayBandDataSource;
+@property (strong, nonatomic) IBOutlet UICollectionView *dayBandCollection;
 
 @end
 
@@ -25,32 +28,23 @@
 
 -(void)toggleMenu{
     
-    if (self.deployed == FALSE) {
-        
-        //self.heightConstraint.constant = 180.0f;
-        /*
-        [UIView animateWithDuration:2 animations:^{
-            self.heightConstraint.constant = 180;
-            [self layoutIfNeeded];
-        }];
-         */
-        
-        self.deployed = !self.deployed;
-        
-    } else {
-        
-        /*
-        [UIView animateWithDuration:2 animations:^{
-            self.heightConstraint.constant = 0;
-            [self layoutIfNeeded];
-        }];
-        */
-        
-        self.deployed = !self.deployed;
-        
-    }
+    self.deployed = !self.deployed;
     
+}
+
+// setup the menu for the class coming from the view controller
+-(void)setupForClass:(AClass *)activeClass{
+
+    // set the day band data source
+    [self.tchDayBandDataSource setupForClass:activeClass];
     
+}
+
+#pragma mark - react to data reload
+- (void)reloadData{
+    
+    [self.dayBandCollection reloadData];
+    [self.dayBandCollection reloadSections:[NSIndexSet indexSetWithIndex:0]];
     
 }
 

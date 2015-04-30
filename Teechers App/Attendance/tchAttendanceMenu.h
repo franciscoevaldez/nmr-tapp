@@ -7,11 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AClass+tchAClassExt.h"
 
 @interface tchAttendanceMenu : UIView
 
 -(void)toggleMenu;
 -(void)setupMenu;
 @property (assign,nonatomic) BOOL deployed;
+
+-(void)setupForClass:(AClass *)activeClass;
+- (void)reloadData;
 
 @end
