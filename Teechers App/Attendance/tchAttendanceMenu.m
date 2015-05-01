@@ -8,12 +8,16 @@
 
 #import "tchAttendanceMenu.h"
 #import "tchAttDayBandColDS.h"
+#import "tchStoreCoordinator.h"
+#import "ClassDay.h"
 
 @interface tchAttendanceMenu ()
 
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *heightConstraint;
 @property (strong, nonatomic) IBOutlet tchAttDayBandColDS *tchDayBandDataSource;
 @property (strong, nonatomic) IBOutlet UICollectionView *dayBandCollection;
+@property (strong, nonatomic) IBOutlet tchStoreCoordinator *storeCoordinator;
+
 
 @end
 
@@ -37,6 +41,49 @@
 
     // set the day band data source
     [self.tchDayBandDataSource setupForClass:activeClass];
+    
+}
+
+#pragma mark - Delete a day
+-(IBAction)removeDay:(UIButton *)sender{
+    
+    // Alert style
+    UIAlertController *alert = [UIAlertController
+                                alertControllerWithTitle:@"Remove this day?"
+                                message:@"This action CANNOT be undone. Are you sure?"
+                                preferredStyle:UIAlertControllerStyleAlert];
+    
+    // Make choices for the user using alert actions.
+    UIAlertAction *doDisregard = [UIAlertAction
+                                  actionWithTitle:@"No, leave it."
+                                  style:UIAlertActionStyleCancel
+                                  handler:nil];
+    
+    
+    UIAlertAction *doDelete = [UIAlertAction
+                               actionWithTitle:@"Yes, delete it."
+                               style:UIAlertActionStyleDestructive
+                               handler:^(UIAlertAction *action) {
+                                   
+                                   // get the current day
+                                   ClassDay *currentDay = [_delegate getCurrentDay];
+                                   
+                                   // tell the store coordinator to delete that day
+                                   [self.storeCoordinator deleteClassDay:currentDay];
+                                   
+                                   // tell the delegate to reload data
+                                   [_delegate reloadViewsData];
+                                   
+                                   
+                               }];
+    
+    // Add actions to the controller so they will appear
+    [alert addAction:doDisregard];
+    [alert addAction:doDelete];
+    
+    // tell the delegate to delete the selected day and pass the alert
+    [_delegate showAlert:alert];
+
     
 }
 

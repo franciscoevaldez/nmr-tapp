@@ -334,12 +334,10 @@
 				A1AA54691AEA7FC200318744 /* tchAttendanceTableDS.m */,
 				A1AA546B1AEA824000318744 /* tchAttendanceInputTVC.h */,
 				A1AA546C1AEA824100318744 /* tchAttendanceInputTVC.m */,
-				A1B349AB1AEE9329008B5671 /* tchAttendanceMenu.h */,
-				A1B349AC1AEE9329008B5671 /* tchAttendanceMenu.m */,
 				A1B349BD1AF1A35C008B5671 /* tchStoreCoordinator.h */,
 				A1B349BE1AF1A35C008B5671 /* tchStoreCoordinator.m */,
 				A1B349AE1AEF0019008B5671 /* Header */,
-				A1B349B21AEF01C4008B5671 /* Day Band */,
+				A1B349B21AEF01C4008B5671 /* Menu */,
 				A1B349B61AEFEA0B008B5671 /* Edit Day */,
 			);
 			name = Attendance;
@@ -358,15 +356,17 @@
 			name = Header;
 			sourceTree = "<group>";
 		};
-		A1B349B21AEF01C4008B5671 /* Day Band */ = {
+		A1B349B21AEF01C4008B5671 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				A1B349AB1AEE9329008B5671 /* tchAttendanceMenu.h */,
+				A1B349AC1AEE9329008B5671 /* tchAttendanceMenu.m */,
 				A1B349A51AEE7D89008B5671 /* tchAttDayBandColDS.h */,
 				A1B349A61AEE7D89008B5671 /* tchAttDayBandColDS.m */,
 				A1B349AF1AEF01B8008B5671 /* tchAttDayBandColDel.h */,
 				A1B349B01AEF01B8008B5671 /* tchAttDayBandColDel.m */,
 			);
-			name = "Day Band";
+			name = Menu;
 			sourceTree = "<group>";
 		};
 		A1B349B61AEFEA0B008B5671 /* Edit Day */ = {

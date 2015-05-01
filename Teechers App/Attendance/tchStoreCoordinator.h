@@ -15,5 +15,6 @@
 
 - (ClassDay*)createAndStoreNewDay:(NSDate*)date withName:(NSString*)name;
 - (ClassDay*)updateAndStoreDay:(ClassDay*)classDayToUpdate withDate:(NSDate*)date withName:(NSString*)name;
+- (void)deleteClassDay:(ClassDay*)classDayToDelete;
 
 @end

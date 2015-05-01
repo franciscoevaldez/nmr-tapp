@@ -63,6 +63,20 @@
     return returnIndex;
 }
 
+// get the day for the index passed
+- (ClassDay*)getDayForIndex:(NSInteger)index
+{
+    
+    // get the sorted days array
+    NSArray *sortedArray = [self getDaysSorted];
+    
+    // get the day for the index
+    ClassDay *returnDay = [sortedArray objectAtIndex:index];
+    
+    // return it
+    return returnDay;
+    
+}
 
 
 

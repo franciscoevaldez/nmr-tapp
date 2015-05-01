@@ -86,13 +86,25 @@
     
 }
 
+// delete a class day
+- (void)deleteClassDay:(ClassDay*)classDayToDelete
+{
+    
+    // get managed object context
+    NSManagedObjectContext *managedOC = classDayToDelete.managedObjectContext;
+    
+    // deleted the object
+    [managedOC deleteObject:classDayToDelete];
+    
+    // write in permanent store
+    NSError *dayError;
+    if (![managedOC save:&dayError]) {
+        NSLog(@"error en: %@", [dayError localizedDescription]);
+    }
+    
+    
+}
 
-/*
- @property (nonatomic, retain) NSDate * date;
- @property (nonatomic, retain) NSString * dayID;
- @property (nonatomic, retain) NSString * name;
- @property (nonatomic, retain) NSSet *attendanceRecords;
- @property (nonatomic, retain) AClass *forClass;
- */
+
 
 @end

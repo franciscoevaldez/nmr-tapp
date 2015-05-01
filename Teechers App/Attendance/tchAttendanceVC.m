@@ -8,9 +8,7 @@
 
 #import "tchAttendanceVC.h"
 
-//#import "tchAttendanceHeader.h"
 #import "tchAttendanceTableDS.h"
-#import "tchAttendanceMenu.h"
 #import "tchEditDayVC.h"
 
 #import "ClassDay.h"
@@ -21,7 +19,6 @@
 @property (strong, nonatomic) IBOutlet tchAttendanceTableDS *tchAttendanceTableDataSource;
 @property (strong, nonatomic) IBOutlet tchAttDayBandColDel *tchDayBandDelegate;
 @property (strong, nonatomic) IBOutlet tchAttendanceMenu *tchAttendanceMenu;
-@property (strong, nonatomic) tchEditDayVC *dayEditViewController;
 
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *menuHeightConstraint;
 
@@ -49,6 +46,9 @@
     
     // set day band delegate
     self.tchDayBandDelegate.delegate = self;
+    
+    // set menu delegate
+    self.tchAttendanceMenu.delegate = self;
     
     // Pass the class to the Students data source
     [self.tchAttendanceTableDataSource setupForClass:self.activeClass];
@@ -145,23 +145,62 @@
     
 }
 
+#pragma mark - Reloading data
+// tell views to reload its data
+- (void)reloadViewsData
+{
+    
+    // refresh the header data source
+    [self.tchAttendanceHeader reloadData];
+    
+    // refresh the menu
+    [self.tchAttendanceMenu reloadData];
+    
+}
+
 #pragma mark - Edit Day Modal handling
 - (void)editDayWasDismissed:(ClassDay*)changedDay{
     
     // if there was actually a change when editing
     if (changedDay) {
         
-        // refresh the header data source
-        [self.tchAttendanceHeader reloadData];
-        
-        // refresh the menu
-        [self.tchAttendanceMenu reloadData];
+        [self reloadViewsData];
         
         // scroll to the edited day
         [self scrollToDay:changedDay];
         
     }
     
+    
+}
+
+#pragma mark - Present Alert
+- (void)showAlert:(UIAlertController*)alertController
+{
+    
+    // Present the dialog
+    [self presentViewController:alertController animated:YES completion:nil];
+    
+    // If menu is deployed, close it
+    if (self.tchAttendanceMenu.deployed) {
+        
+        [self headerWasTapped];
+        
+    }
+    
+}
+
+- (ClassDay*)getCurrentDay
+{
+    
+    // get the current day index
+    NSInteger dayIndex = self.currentDayIndex;
+    
+    // get the day for that index
+    ClassDay *currentDay = [self.activeClass getDayForIndex:dayIndex];
+    
+    // return the current Day
+    return currentDay;
     
 }
 

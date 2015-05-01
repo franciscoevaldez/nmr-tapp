@@ -9,13 +9,22 @@
 #import <UIKit/UIKit.h>
 #import "AClass+tchAClassExt.h"
 
+@protocol tchMenuDelegate <NSObject>
+
+- (void)showAlert:(UIAlertController*)alertController;
+- (ClassDay*)getCurrentDay;
+- (void)reloadViewsData;
+
+@end
+
 @interface tchAttendanceMenu : UIView
 
 -(void)toggleMenu;
 -(void)setupMenu;
-@property (assign,nonatomic) BOOL deployed;
-
 -(void)setupForClass:(AClass *)activeClass;
 - (void)reloadData;
+
+@property (assign,nonatomic) BOOL deployed;
+@property (nonatomic, weak) id <tchMenuDelegate> delegate;
 
 @end
