@@ -10,6 +10,7 @@
 
 #import "tchAttendanceTableDS.h"
 #import "tchEditDayVC.h"
+#import "tchStudentsTableV.h"
 
 #import "ClassDay.h"
 
@@ -19,6 +20,7 @@
 @property (strong, nonatomic) IBOutlet tchAttendanceTableDS *tchAttendanceTableDataSource;
 @property (strong, nonatomic) IBOutlet tchAttDayBandColDel *tchDayBandDelegate;
 @property (strong, nonatomic) IBOutlet tchAttendanceMenu *tchAttendanceMenu;
+@property (strong, nonatomic) IBOutlet tchStudentsTableV *tchStudentsTable;
 
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *menuHeightConstraint;
 
@@ -66,6 +68,9 @@
     // Tell header to scroll to new index
     [self.tchAttendanceHeader performDayScrollToIndex:newIndex];
     
+    // Tell the table to perform the scroll
+    [self.tchStudentsTable performDayScrollToIndex:newIndex];
+    
     // If menu is deployed, close it
     if (self.tchAttendanceMenu.deployed) {
         
@@ -98,12 +103,12 @@
 
 #pragma mark - Swipe Handling
 - (IBAction)swipeLeftDone:(id)sender {
-
-    // (check if menu is deployed)
-    if(!self.tchAttendanceMenu.deployed){
+    
+    NSInteger maxScroll = [[self.activeClass.classDays allObjects] count];
+    
+    if (self.currentDayIndex < (maxScroll-1)){
         
-        // Tell the header of the swipe
-        [self.tchAttendanceHeader swipeDoneLeft];
+        [self scrollToIndex:self.currentDayIndex+1];
         
     }
     
@@ -111,11 +116,10 @@
 
 - (IBAction)swipeRightDone:(id)sender {
     
-    // (check if menu is deployed)
-    if(!self.tchAttendanceMenu.deployed){
+    // check the scroll is available
+    if (self.currentDayIndex > 0 && (!self.tchAttendanceMenu.deployed)) {
         
-        // Tell the header of the swipe
-        [self.tchAttendanceHeader swipeDoneRight];
+        [self scrollToIndex:self.currentDayIndex-1];
         
     }
     

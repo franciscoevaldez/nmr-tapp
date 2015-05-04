@@ -45,28 +45,6 @@
     
 }
 
-#pragma mark - handling swipes
-- (void)swipeDoneLeft{
-    
-    NSInteger dayCount = [[self.activeClass.classDays allObjects] count];
-    
-    if (self.activeDayIndex < (dayCount-1)) {
-        
-        [self performDayScrollToIndex:self.activeDayIndex+1];
-        
-    }
-    
-}
-
-- (void)swipeDoneRight{
-    
-    if (self.activeDayIndex>0) {
-        
-        [self performDayScrollToIndex:self.activeDayIndex-1];
-        
-    }
-    
-}
 
 - (void)performDayScrollToIndex:(NSInteger)newIndex{
     

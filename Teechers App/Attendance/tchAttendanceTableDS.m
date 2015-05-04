@@ -9,7 +9,7 @@
 #import "tchAttendanceTableDS.h"
 
 #import "Student.h"
-#import "tchAttendanceInputTVC.h"
+#import "tchStudentDataTVC.h"
 
 @interface tchAttendanceTableDS ()
 
@@ -51,13 +51,13 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     // create the new cell
-    tchAttendanceInputTVC *newCell = [tableView dequeueReusableCellWithIdentifier:@"attendanceInputCell"];
+    tchStudentDataTVC *newCell = [tableView dequeueReusableCellWithIdentifier:@"studentCellWithData"];
     
     // get the student for this new cell
     Student *currentStudent = [self.studentsArray objectAtIndex:indexPath.row];
     
     // setup the cell
-    [newCell setupCellForStudent:currentStudent];
+    [newCell setupCellForStudent:currentStudent atScrollIndex:self.currentScrollIndex];
     
     // return the cell
     return newCell;

@@ -21,8 +21,6 @@
 @property (strong,nonatomic) AClass *activeClass;
 - (void)setupHeaderForClass:(AClass*)classForHeader;
 
-- (void)swipeDoneLeft;
-- (void)swipeDoneRight;
 - (void)performDayScrollToIndex:(NSInteger)newIndex;
 
 - (void)menuWasToggled;

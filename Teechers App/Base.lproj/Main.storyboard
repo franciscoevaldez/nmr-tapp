@@ -763,11 +763,11 @@
                                     <outlet property="tchDayBandDataSource" destination="gvJ-Ve-nFq" id="9cE-0e-tUb"/>
                                 </connections>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="n1z-qS-gbS" userLabel="Body Table">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="n1z-qS-gbS" userLabel="Body Table" customClass="tchStudentsTableV">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="attendanceInputCell" id="zZH-Kc-3Bo" customClass="tchAttendanceInputTVC">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="studentCellWithData" id="zZH-Kc-3Bo" customClass="tchStudentDataTVC">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zZH-Kc-3Bo" id="rd1-dz-iFq">
@@ -779,40 +779,156 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5MA-gJ-SMx" userLabel="Data Collection">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="QSF-Mv-8VV"/>
+                                                        <constraint firstAttribute="width" constant="60" id="uZX-xc-5CW"/>
+                                                    </constraints>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="lvG-Db-0rH">
+                                                        <size key="itemSize" width="60" height="60"/>
+                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    </collectionViewFlowLayout>
+                                                    <cells>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="studentDataCell" id="Bss-ga-amD" userLabel="Data Cell" customClass="tchAttendanceColumnVC">
+                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                                <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <view alpha="0.25" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6BR-bD-PA4" userLabel="Line">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="30" id="6YL-Hy-kXO"/>
+                                                                            <constraint firstAttribute="width" constant="1" id="Yph-lc-TWa"/>
+                                                                        </constraints>
+                                                                        <variation key="default">
+                                                                            <mask key="constraints">
+                                                                                <exclude reference="6YL-Hy-kXO"/>
+                                                                                <exclude reference="Yph-lc-TWa"/>
+                                                                            </mask>
+                                                                        </variation>
+                                                                        <variation key="widthClass=compact">
+                                                                            <mask key="constraints">
+                                                                                <include reference="6YL-Hy-kXO"/>
+                                                                                <include reference="Yph-lc-TWa"/>
+                                                                            </mask>
+                                                                        </variation>
+                                                                    </view>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XX" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zf0-Q5-rj8">
+                                                                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="22"/>
+                                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                            </view>
+                                                            <constraints>
+                                                                <constraint firstAttribute="centerY" secondItem="6BR-bD-PA4" secondAttribute="centerY" id="93b-UR-nCP"/>
+                                                                <constraint firstItem="6BR-bD-PA4" firstAttribute="leading" secondItem="Bss-ga-amD" secondAttribute="leading" id="J77-FB-t0k"/>
+                                                                <constraint firstItem="Zf0-Q5-rj8" firstAttribute="leading" secondItem="Bss-ga-amD" secondAttribute="leading" constant="4" id="bsD-2J-pHm"/>
+                                                                <constraint firstAttribute="centerY" secondItem="Zf0-Q5-rj8" secondAttribute="centerY" id="ce5-Ar-CD8"/>
+                                                                <constraint firstAttribute="trailing" secondItem="Zf0-Q5-rj8" secondAttribute="trailing" constant="4" id="i2X-wN-Xdp"/>
+                                                            </constraints>
+                                                            <variation key="default">
+                                                                <mask key="subviews">
+                                                                    <exclude reference="6BR-bD-PA4"/>
+                                                                    <exclude reference="Zf0-Q5-rj8"/>
+                                                                </mask>
+                                                                <mask key="constraints">
+                                                                    <exclude reference="bsD-2J-pHm"/>
+                                                                    <exclude reference="ce5-Ar-CD8"/>
+                                                                    <exclude reference="i2X-wN-Xdp"/>
+                                                                    <exclude reference="93b-UR-nCP"/>
+                                                                    <exclude reference="J77-FB-t0k"/>
+                                                                </mask>
+                                                            </variation>
+                                                            <variation key="widthClass=compact">
+                                                                <mask key="subviews">
+                                                                    <include reference="6BR-bD-PA4"/>
+                                                                    <include reference="Zf0-Q5-rj8"/>
+                                                                </mask>
+                                                                <mask key="constraints">
+                                                                    <include reference="bsD-2J-pHm"/>
+                                                                    <include reference="ce5-Ar-CD8"/>
+                                                                    <include reference="i2X-wN-Xdp"/>
+                                                                    <include reference="93b-UR-nCP"/>
+                                                                    <include reference="J77-FB-t0k"/>
+                                                                </mask>
+                                                            </variation>
+                                                            <connections>
+                                                                <outlet property="dataLabel" destination="Zf0-Q5-rj8" id="q0f-wX-cH5"/>
+                                                            </connections>
+                                                        </collectionViewCell>
+                                                    </cells>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="QSF-Mv-8VV"/>
+                                                            <exclude reference="uZX-xc-5CW"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="widthClass=compact">
+                                                        <mask key="constraints">
+                                                            <include reference="QSF-Mv-8VV"/>
+                                                            <include reference="uZX-xc-5CW"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="Jul-EE-czT" id="igf-qS-Yq6"/>
+                                                    </connections>
+                                                </collectionView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="qpr-Ta-avV" secondAttribute="trailing" constant="100" id="2Tq-2Z-qwz"/>
+                                                <constraint firstAttribute="trailing" secondItem="5MA-gJ-SMx" secondAttribute="trailing" id="6z4-aO-gL6"/>
                                                 <constraint firstItem="qpr-Ta-avV" firstAttribute="leading" secondItem="rd1-dz-iFq" secondAttribute="leading" constant="20" id="94f-Cl-db6"/>
+                                                <constraint firstItem="5MA-gJ-SMx" firstAttribute="top" secondItem="rd1-dz-iFq" secondAttribute="top" id="akU-8o-oie"/>
                                                 <constraint firstAttribute="centerY" secondItem="qpr-Ta-avV" secondAttribute="centerY" id="gPt-Yl-yC9"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="subviews">
                                                     <exclude reference="qpr-Ta-avV"/>
+                                                    <exclude reference="5MA-gJ-SMx"/>
                                                 </mask>
                                                 <mask key="constraints">
                                                     <exclude reference="2Tq-2Z-qwz"/>
                                                     <exclude reference="94f-Cl-db6"/>
                                                     <exclude reference="gPt-Yl-yC9"/>
+                                                    <exclude reference="6z4-aO-gL6"/>
+                                                    <exclude reference="akU-8o-oie"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
                                                 <mask key="subviews">
                                                     <include reference="qpr-Ta-avV"/>
+                                                    <include reference="5MA-gJ-SMx"/>
                                                 </mask>
                                                 <mask key="constraints">
                                                     <include reference="2Tq-2Z-qwz"/>
                                                     <include reference="94f-Cl-db6"/>
                                                     <include reference="gPt-Yl-yC9"/>
+                                                    <include reference="6z4-aO-gL6"/>
+                                                    <include reference="akU-8o-oie"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="1" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <outlet property="studentNameLabel" destination="qpr-Ta-avV" id="IqB-bk-PAh"/>
+                                            <outlet property="columnCollection" destination="5MA-gJ-SMx" id="LPl-g6-pTr"/>
+                                            <outlet property="columnDataSource" destination="Jul-EE-czT" id="NiX-10-JNg"/>
+                                            <outlet property="dataCollection" destination="5MA-gJ-SMx" id="6Sl-RT-LYx"/>
+                                            <outlet property="studentNameLabel" destination="qpr-Ta-avV" id="MJu-RW-9dI"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
+                                    <outlet property="attendanceTableDS" destination="f8p-3b-WyO" id="nIN-UP-3o4"/>
                                     <outlet property="dataSource" destination="f8p-3b-WyO" id="HL0-WS-DMn"/>
                                 </connections>
                             </tableView>
@@ -911,6 +1027,7 @@
                         <outlet property="tchAttendanceMenu" destination="fI6-QL-4Oq" id="Z7m-lt-neN"/>
                         <outlet property="tchAttendanceTableDataSource" destination="f8p-3b-WyO" id="Mwl-Rf-kJO"/>
                         <outlet property="tchDayBandDelegate" destination="l25-rv-LpT" id="WUR-1e-Wsg"/>
+                        <outlet property="tchStudentsTable" destination="n1z-qS-gbS" id="L8D-yY-5qi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VNp-jN-M7J" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -927,6 +1044,7 @@
                     </connections>
                 </customObject>
                 <customObject id="l25-rv-LpT" userLabel="DayBand Col Delegate" customClass="tchAttDayBandColDel"/>
+                <customObject id="Jul-EE-czT" customClass="tchStudentAttendanceDS"/>
                 <customObject id="xtM-7w-OMb" customClass="tchStoreCoordinator"/>
                 <swipeGestureRecognizer direction="left" id="OFh-3Z-piv" userLabel="Left Swipe Recognizer">
                     <connections>

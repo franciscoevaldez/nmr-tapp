@@ -16,4 +16,6 @@
 
 - (void)setupForClass:(AClass*)activeClass;
 
+@property (assign,nonatomic) NSInteger currentScrollIndex;
+
 @end
