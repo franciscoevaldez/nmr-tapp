@@ -37,8 +37,9 @@
     
     
     // update table view
-    [tableView beginUpdates];
-    [tableView endUpdates];
+    //[tableView beginUpdates];
+    //[tableView endUpdates];
+    [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
@@ -51,7 +52,7 @@
     //check if the index actually exists
     if(self.thereIsSelection && self.selectedCell.row == indexPath.row) {
         
-        return 240;
+        return 241;
         
     }
     
