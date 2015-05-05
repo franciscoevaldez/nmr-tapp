@@ -53,7 +53,6 @@
 		A1BDCC441AE71F11000B0328 /* AClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A1BDCC431AE71F11000B0328 /* AClass.m */; };
 		A1BDCC471AE71F11000B0328 /* ClassDay.m in Sources */ = {isa = PBXBuildFile; fileRef = A1BDCC461AE71F11000B0328 /* ClassDay.m */; };
 		A1BDCC4A1AE71F12000B0328 /* Evaluation.m in Sources */ = {isa = PBXBuildFile; fileRef = A1BDCC491AE71F12000B0328 /* Evaluation.m */; };
-		A1F0ADA21AF7DB6D001935A9 /* tchStudentsTableDel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F0ADA11AF7DB6D001935A9 /* tchStudentsTableDel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,8 +156,6 @@
 		A1BDCC461AE71F11000B0328 /* ClassDay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ClassDay.m; path = Data/ClassDay.m; sourceTree = "<group>"; };
 		A1BDCC481AE71F11000B0328 /* Evaluation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Evaluation.h; path = Data/Evaluation.h; sourceTree = "<group>"; };
 		A1BDCC491AE71F12000B0328 /* Evaluation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Evaluation.m; path = Data/Evaluation.m; sourceTree = "<group>"; };
-		A1F0ADA01AF7DB6D001935A9 /* tchStudentsTableDel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchStudentsTableDel.h; path = Attendance/tchStudentsTableDel.h; sourceTree = "<group>"; };
-		A1F0ADA11AF7DB6D001935A9 /* tchStudentsTableDel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchStudentsTableDel.m; path = Attendance/tchStudentsTableDel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,8 +192,6 @@
 		A14CBAD11AF52EE2009F140E /* Students Table */ = {
 			isa = PBXGroup;
 			children = (
-				A1F0ADA01AF7DB6D001935A9 /* tchStudentsTableDel.h */,
-				A1F0ADA11AF7DB6D001935A9 /* tchStudentsTableDel.m */,
 				A14CBACE1AF52ED8009F140E /* tchStudentsTableV.h */,
 				A14CBACF1AF52ED8009F140E /* tchStudentsTableV.m */,
 				A1AA54681AEA7FC200318744 /* tchAttendanceTableDS.h */,
@@ -522,7 +517,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1AA54701AEA890800318744 /* tchAttendanceHeader.m in Sources */,
-				A1F0ADA21AF7DB6D001935A9 /* tchStudentsTableDel.m in Sources */,
 				A14CBACD1AF41679009F140E /* Student+tchStudentsExt.m in Sources */,
 				A14CBABE1AF27A2F009F140E /* AClass+tchAClassExt.m in Sources */,
 				A14CBAC21AF3E947009F140E /* tchStudentAttendanceDS.m in Sources */,
