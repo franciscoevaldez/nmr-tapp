@@ -17,6 +17,7 @@
 
 @implementation tchAttendanceColumnVC
 
+# pragma mark - Cell Setup
 // setup the cell for the given record
 - (void) setupForRecord:(AttendanceRecord*)record orDate:(ClassDay*)classDay
 {
@@ -43,6 +44,7 @@
     
 }
 
+# pragma mark - Temporary setup (for testing only)
 - (void) tempSetup:(NSInteger)currentIndex
 {
     
