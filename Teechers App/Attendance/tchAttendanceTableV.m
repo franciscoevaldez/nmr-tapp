@@ -1,24 +1,24 @@
 //
-//  tchStudentsTableV.m
+//  tchAttendanceTableV.m
 //  Teechers App
 //
 //  Created by fran on 2/5/15.
 //  Copyright (c) 2015 nmr. All rights reserved.
 //
 
-#import "tchStudentsTableV.h"
+#import "tchAttendanceTableV.h"
 #import "tchAttendanceColumnVC.h"
 #import "tchAttendanceTableDS.h"
 #import "tchStudentDataTVC.h"
 
-@interface tchStudentsTableV ()
+@interface tchAttendanceTableV ()
 
 @property (assign,nonatomic) NSInteger currentColumnIndex;
 @property (strong,nonatomic) IBOutlet tchAttendanceTableDS *attendanceTableDS;
 
 @end
 
-@implementation tchStudentsTableV
+@implementation tchAttendanceTableV
 
 #pragma mark - handling cell scroll
 - (void)performDayScrollToIndex:(NSInteger)newIndex{

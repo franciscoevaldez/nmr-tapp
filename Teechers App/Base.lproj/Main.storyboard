@@ -763,7 +763,7 @@
                                     <outlet property="tchDayBandDataSource" destination="gvJ-Ve-nFq" id="9cE-0e-tUb"/>
                                 </connections>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="n1z-qS-gbS" userLabel="Body Table" customClass="tchStudentsTableV">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="n1z-qS-gbS" userLabel="Body Table" customClass="tchAttendanceTableV">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -888,8 +888,8 @@
                                                 <constraint firstAttribute="trailing" secondItem="qpr-Ta-avV" secondAttribute="trailing" constant="100" id="2Tq-2Z-qwz"/>
                                                 <constraint firstAttribute="trailing" secondItem="5MA-gJ-SMx" secondAttribute="trailing" id="6z4-aO-gL6"/>
                                                 <constraint firstItem="qpr-Ta-avV" firstAttribute="leading" secondItem="rd1-dz-iFq" secondAttribute="leading" constant="20" id="94f-Cl-db6"/>
+                                                <constraint firstItem="qpr-Ta-avV" firstAttribute="top" secondItem="rd1-dz-iFq" secondAttribute="top" constant="19" id="QLj-fW-crp"/>
                                                 <constraint firstItem="5MA-gJ-SMx" firstAttribute="top" secondItem="rd1-dz-iFq" secondAttribute="top" id="akU-8o-oie"/>
-                                                <constraint firstAttribute="centerY" secondItem="qpr-Ta-avV" secondAttribute="centerY" id="gPt-Yl-yC9"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="subviews">
@@ -899,7 +899,7 @@
                                                 <mask key="constraints">
                                                     <exclude reference="2Tq-2Z-qwz"/>
                                                     <exclude reference="94f-Cl-db6"/>
-                                                    <exclude reference="gPt-Yl-yC9"/>
+                                                    <exclude reference="QLj-fW-crp"/>
                                                     <exclude reference="6z4-aO-gL6"/>
                                                     <exclude reference="akU-8o-oie"/>
                                                 </mask>
@@ -912,7 +912,7 @@
                                                 <mask key="constraints">
                                                     <include reference="2Tq-2Z-qwz"/>
                                                     <include reference="94f-Cl-db6"/>
-                                                    <include reference="gPt-Yl-yC9"/>
+                                                    <include reference="QLj-fW-crp"/>
                                                     <include reference="6z4-aO-gL6"/>
                                                     <include reference="akU-8o-oie"/>
                                                 </mask>
@@ -928,8 +928,9 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="attendanceTableDS" destination="f8p-3b-WyO" id="nIN-UP-3o4"/>
-                                    <outlet property="dataSource" destination="f8p-3b-WyO" id="HL0-WS-DMn"/>
+                                    <outlet property="attendanceTableDS" destination="f8p-3b-WyO" id="dZa-Ej-QWB"/>
+                                    <outlet property="dataSource" destination="f8p-3b-WyO" id="l1U-0U-WHl"/>
+                                    <outlet property="delegate" destination="k18-Jj-hrF" id="Cls-ka-2CY"/>
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rv2-09-qbH">
@@ -1032,7 +1033,8 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VNp-jN-M7J" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Wi2-2n-5On" userLabel="Exit" sceneMemberID="exit"/>
-                <customObject id="f8p-3b-WyO" userLabel="Students Data Source" customClass="tchAttendanceTableDS"/>
+                <customObject id="f8p-3b-WyO" userLabel="Tch Attendance Table DS" customClass="tchAttendanceTableDS"/>
+                <customObject id="k18-Jj-hrF" customClass="tchAttendanceTableDel"/>
                 <customObject id="D9m-Qg-ZJP" userLabel="Days Col Data Source" customClass="tchAttHeadDaysColDS">
                     <connections>
                         <outlet property="dayCollection" destination="T4D-pI-1qx" id="2NX-h8-01E"/>

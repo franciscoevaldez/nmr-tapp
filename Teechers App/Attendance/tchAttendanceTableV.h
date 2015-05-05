@@ -1,5 +1,5 @@
 //
-//  tchStudentsTableV.h
+//  tchAttendanceTableV.h
 //  Teechers App
 //
 //  Created by fran on 2/5/15.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface tchStudentsTableV : UITableView
+@interface tchAttendanceTableV : UITableView
 
 - (void) performDayScrollToIndex:(NSInteger)newIndex;
 

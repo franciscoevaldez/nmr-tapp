@@ -10,7 +10,7 @@
 
 #import "tchAttendanceTableDS.h"
 #import "tchEditDayVC.h"
-#import "tchStudentsTableV.h"
+#import "tchAttendanceTableV.h"
 
 #import "ClassDay.h"
 
@@ -20,7 +20,7 @@
 @property (strong, nonatomic) IBOutlet tchAttendanceTableDS *tchAttendanceTableDataSource;
 @property (strong, nonatomic) IBOutlet tchAttDayBandColDel *tchDayBandDelegate;
 @property (strong, nonatomic) IBOutlet tchAttendanceMenu *tchAttendanceMenu;
-@property (strong, nonatomic) IBOutlet tchStudentsTableV *tchStudentsTable;
+@property (strong, nonatomic) IBOutlet tchAttendanceTableV *tchStudentsTable;
 
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *menuHeightConstraint;
 
