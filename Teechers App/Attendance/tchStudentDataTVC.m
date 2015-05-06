@@ -9,13 +9,18 @@
 #import "tchStudentDataTVC.h"
 
 #import "tchStudentAttendanceDS.h"
+#import "tchAttInputV.h"
+
+#import "tchCollectionIndexed.h"
 
 @interface tchStudentDataTVC ()
 
 @property (strong,nonatomic) IBOutlet UILabel *studentNameLabel;
 @property (strong,nonatomic) IBOutlet tchStudentAttendanceDS *columnDataSource;
-@property (strong,nonatomic) IBOutlet UICollectionView *columnCollection;
+@property (strong,nonatomic) IBOutlet tchCollectionIndexed *columnCollection;
+@property (strong,nonatomic) IBOutlet tchAttInputV *inputView;
 
+@property (strong,nonatomic) NSIndexPath *indexPath;
 @property (assign,nonatomic) NSInteger activeColumn;
 
 @end
@@ -28,7 +33,10 @@
 
 
 // setup cell taking the student
-- (void)setupCellForStudent:(Student*)student atScrollIndex:(NSInteger)scrollIndex{
+- (void)setupCellForStudent:(Student*)student
+              atScrollIndex:(NSInteger)scrollIndex
+              withIndexPath:(NSIndexPath*)indexPath
+                andDelegate:(id)tableView{
     
     // pass the student to the cell
     self.studentForCell = student;
@@ -36,8 +44,13 @@
     // set the label
     self.studentNameLabel.text = self.studentForCell.name;
     
+    // set the student to the column collection
+    self.columnCollection.student = student;
+    
     // set up the columns data source
     [self.columnDataSource setupForStudent:student];
+    
+    // tell the column to reload
     [self.columnCollection reloadData];
     
     // create a new index path
@@ -49,7 +62,20 @@
     // store the new index to the property
     self.activeColumn = scrollIndex;
     
+    // pass the student to the input view
+    [self.inputView setupForStudent:student];
     
+    // set self as delegate for input view
+    self.inputView.delegate = self;
+    
+    // set column for the input
+    [self.inputView updateActiveColumn:scrollIndex];
+    
+    // set the indexPath for self
+    self.indexPath = indexPath;
+    
+    // set the table as delegate of this cell
+    self.delegate = tableView;
     
 }
 
@@ -66,9 +92,20 @@
     // store the new index to the property
     self.activeColumn = newIndex;
     
+    // warn the input of the change
+    [self.inputView updateActiveColumn:newIndex];
+    
 }
 
-
+#pragma mark - Input dismiss
+- (void)inputShouldDismiss
+{
+        
+    // tell the table a cell was selected
+    [_delegate dismissInputAtIndexPath:self.indexPath];
+    
+    
+}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

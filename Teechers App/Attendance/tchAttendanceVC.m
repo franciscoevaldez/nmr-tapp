@@ -17,7 +17,6 @@
 @interface tchAttendanceVC () 
 
 @property (strong, nonatomic) IBOutlet tchAttendanceHeader *tchAttendanceHeader;
-@property (strong, nonatomic) IBOutlet tchAttendanceTableDS *tchAttendanceTableDataSource;
 @property (strong, nonatomic) IBOutlet tchAttDayBandColDel *tchDayBandDelegate;
 @property (strong, nonatomic) IBOutlet tchAttendanceMenu *tchAttendanceMenu;
 @property (strong, nonatomic) IBOutlet tchAttendanceTableV *tchStudentsTable;
@@ -33,9 +32,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-}
-
-- (void)viewWillAppear:(BOOL)animated{
+    
+    // Pass the class to the Students data source
+    [self.tchStudentsTable setupForClass:self.activeClass];
     
     // Setup the header for this class
     [self.tchAttendanceHeader setupHeaderForClass:self.activeClass];
@@ -52,14 +51,11 @@
     // set menu delegate
     self.tchAttendanceMenu.delegate = self;
     
-    // Pass the class to the Students data source
-    [self.tchAttendanceTableDataSource setupForClass:self.activeClass];
-    
     // Hide the menu
     [self.tchAttendanceMenu setupMenu];
-
     
 }
+
 
 
 #pragma mark - Day Jumping
@@ -159,6 +155,7 @@
     
     // refresh the menu
     [self.tchAttendanceMenu reloadData];
+    
     
 }
 

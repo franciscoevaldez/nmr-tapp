@@ -8,6 +8,7 @@
 
 #import "tchStudentAttendanceDS.h"
 #import "tchAttendanceColumnVC.h"
+#import "tchCollectionIndexed.h"
 
 @interface tchStudentAttendanceDS ()
 
@@ -25,10 +26,10 @@
 }
 
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    
+- (NSInteger)collectionView:(tchCollectionIndexed *)collectionView numberOfItemsInSection:(NSInteger)section{
+        
     // get amount of days
-    NSInteger dayCount = [[self.activeStudent.inClass.classDays allObjects] count];
+    NSInteger dayCount = [[collectionView.student.inClass.classDays allObjects] count];
     
     // get the sorted days array into the cell
     self.daysArray = [self.activeStudent.inClass getDaysSorted];
@@ -39,7 +40,7 @@
 }
 
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+- (UICollectionViewCell *)collectionView:(tchCollectionIndexed *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     // create the new cell
     tchAttendanceColumnVC *newCell = [collectionView
@@ -50,7 +51,7 @@
     ClassDay *currentDay = [self.daysArray objectAtIndex:indexPath.row];
     
     // look for the record belonging to that day
-    AttendanceRecord* currentRecord = [self.activeStudent getAttendanceRecordForDay:currentDay];
+    AttendanceRecord* currentRecord = [collectionView.student getAttendanceRecordForDay:currentDay];
     
     // tell the cell to configure itself for that record
     [newCell setupForRecord:currentRecord orDate:currentDay];

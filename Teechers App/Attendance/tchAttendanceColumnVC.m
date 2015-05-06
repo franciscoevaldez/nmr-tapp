@@ -31,13 +31,13 @@
     NSString *labelText = @"-";
     
     // if the record exists…
-    if (record) {
+    if (record.status) {
         
         // get the text for the label
         labelText = record.status;
         
     }
-    
+        
     // write on the label
     self.dataLabel.text = labelText;
     

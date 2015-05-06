@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AClass+tchAClassExt.h"
+#import "tchStudentDataTVC.h"
 
-@interface tchAttendanceTableV : UITableView
+@interface tchAttendanceTableV : UITableView <tchStudentCellProtocol>
 
 - (void) performDayScrollToIndex:(NSInteger)newIndex;
+- (void)setupForClass:(AClass*)activeClass;
 
 @end

@@ -27,7 +27,7 @@
 
 
 - (void)setupHeaderForClass:(AClass*)classForHeader{
-    
+        
     // call collection view controller to get ready
     [self.tchHeaderDaysDataSource setupForClass:classForHeader];
     

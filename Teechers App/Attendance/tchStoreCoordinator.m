@@ -9,6 +9,7 @@
 #import "tchStoreCoordinator.h"
 
 #import "ClassDay.h"
+#import "AttendanceRecord+tchAttExt.h"
 
 @implementation tchStoreCoordinator
 
@@ -105,6 +106,61 @@
     
 }
 
+
+#pragma mark - Attendance Record Handling
+// create or update an attendance record
+- (void)createAttendanceRecordForStudent:(Student*)student
+                                   atDay:(ClassDay*)classDay
+                              withStatus:(NSString*)status
+                           andOrderIndex:(NSInteger)index
+{
+    
+    // check if a record already exists
+    
+    // if record doesnt exist
+    // get the managed object context
+    NSManagedObjectContext *managedOC = student.managedObjectContext;
+    
+    // create the day object
+    AttendanceRecord *newRecord = [NSEntityDescription
+                                   insertNewObjectForEntityForName:@"AttendanceRecord"
+                                   inManagedObjectContext:managedOC];
+    
+    
+    // set the value
+    [newRecord setValue:status forKey:@"status"];
+    
+    // set the order index
+    [newRecord setValue:[NSNumber numberWithInt:index] forKey:@"orderIndex"];
+    
+    // set excused to false
+    [newRecord setValue:[NSNumber numberWithBool:tchAttendanceRecExcusedNO] forKey:@"excused"];
+    
+    // set the day of the class
+    [newRecord setValue:classDay forKey:@"classDay"];
+    
+    // set the student it belongs to
+    [newRecord setValue:student forKey:@"student"];
+    
+    
+    // write in permanent store
+    
+    NSError *recordError;
+    if (![managedOC save:&recordError]) {
+        NSLog(@"error en: %@", [recordError localizedDescription]);
+    }
+    
+        
+}
+
+
+/*
+ @property (nonatomic, retain) NSNumber * excused;
+ @property (nonatomic, retain) NSNumber * orderIndex;
+ @property (nonatomic, retain) NSString * status;
+ @property (nonatomic, retain) ClassDay *classDay;
+ @property (nonatomic, retain) Student *student;
+ */
 
 
 @end

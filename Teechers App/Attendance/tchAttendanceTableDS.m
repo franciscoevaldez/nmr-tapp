@@ -41,7 +41,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
+        
     // Number of rows is the number of classes in the array
     return [self.studentsArray count];
     
@@ -57,7 +57,10 @@
     Student *currentStudent = [self.studentsArray objectAtIndex:indexPath.row];
     
     // setup the cell
-    [newCell setupCellForStudent:currentStudent atScrollIndex:self.currentScrollIndex];
+    [newCell setupCellForStudent:currentStudent
+                   atScrollIndex:self.currentScrollIndex
+                   withIndexPath:indexPath
+                     andDelegate:tableView];
     
     // return the cell
     return newCell;

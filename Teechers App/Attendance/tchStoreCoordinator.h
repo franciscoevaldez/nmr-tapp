@@ -7,7 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AClass.h"
+
+#import "AClass+tchAClassExt.h"
+#import "Student+tchStudentsExt.h"
 
 @interface tchStoreCoordinator : NSObject
 
@@ -17,4 +19,8 @@
 - (ClassDay*)updateAndStoreDay:(ClassDay*)classDayToUpdate withDate:(NSDate*)date withName:(NSString*)name;
 - (void)deleteClassDay:(ClassDay*)classDayToDelete;
 
+- (void)createAttendanceRecordForStudent:(Student*)student
+                                   atDay:(ClassDay*)classDay
+                              withStatus:(NSString*)status
+                           andOrderIndex:(NSInteger)index;
 @end

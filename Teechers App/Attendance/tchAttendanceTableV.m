@@ -9,16 +9,24 @@
 #import "tchAttendanceTableV.h"
 #import "tchAttendanceColumnVC.h"
 #import "tchAttendanceTableDS.h"
+#import "tchAttendanceTableDel.h"
 #import "tchStudentDataTVC.h"
 
 @interface tchAttendanceTableV ()
 
 @property (assign,nonatomic) NSInteger currentColumnIndex;
 @property (strong,nonatomic) IBOutlet tchAttendanceTableDS *attendanceTableDS;
+@property (strong,nonatomic) IBOutlet tchAttendanceTableDel *attendanceTableDel;
 
 @end
 
 @implementation tchAttendanceTableV
+
+- (void)setupForClass:(AClass*)activeClass{
+        
+    [self.attendanceTableDS setupForClass:activeClass];
+    
+}
 
 #pragma mark - handling cell scroll
 - (void)performDayScrollToIndex:(NSInteger)newIndex{
@@ -39,6 +47,17 @@
     
     // tell the attendance data source the new index
     self.attendanceTableDS.currentScrollIndex = self.currentColumnIndex;
+    
+}
+
+#pragma mark - Input should dismiss
+- (void)dismissInputAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    // tell the table that a cell was selected
+    [self selectRowAtIndexPath:indexPath animated:TRUE scrollPosition:UITableViewScrollPositionNone];
+    
+    [self.attendanceTableDel tableView:self didSelectRowAtIndexPath:indexPath];
     
 }
 

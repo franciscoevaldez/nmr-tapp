@@ -21,7 +21,6 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    
     // check the already selected cell
     if (self.thereIsSelection && self.selectedCell.row == indexPath.row) {
         
