@@ -15,4 +15,7 @@
 - (void) performDayScrollToIndex:(NSInteger)newIndex;
 - (void)setupForClass:(AClass*)activeClass;
 
+@property (nonatomic) NSIndexPath* selectedPath;
+@property (nonatomic) BOOL thereIsSelection;
+
 @end
