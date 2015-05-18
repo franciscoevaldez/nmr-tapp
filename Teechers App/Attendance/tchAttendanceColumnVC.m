@@ -7,6 +7,7 @@
 //
 
 #import "tchAttendanceColumnVC.h"
+#import "UIColor+appColorPresets.h"
 
 @interface tchAttendanceColumnVC()
 
@@ -29,12 +30,22 @@
     
     // initialize cell label
     NSString *labelText = @"-";
+    self.dataLabel.textColor = [UIColor tchTextColor];
     
     // if the record exists…
     if (record.status) {
         
         // get the text for the label
         labelText = record.status;
+        
+        // it the record is absent
+        if ([record.status isEqual: tchAttendanceRecAbsent] &&
+            [record.excused isEqual: tchAttendanceRecExcusedNO]) {
+            
+            // set the label color to red
+            self.dataLabel.textColor = [UIColor tchRed];
+            
+        }
         
     }
         

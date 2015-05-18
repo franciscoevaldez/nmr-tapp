@@ -10,6 +10,7 @@
 
 #import "Student.h"
 #import "tchStudentDataTVC.h"
+#import "tchAttendanceTableV.h"
 
 @interface tchAttendanceTableDS ()
 
@@ -40,7 +41,7 @@
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(tchAttendanceTableV *)tableView numberOfRowsInSection:(NSInteger)section {
         
     // Number of rows is the number of classes in the array
     return [self.studentsArray count];
@@ -48,10 +49,20 @@
 }
 
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *)tableView:(tchAttendanceTableV*)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     // create the new cell
-    tchStudentDataTVC *newCell = [tableView dequeueReusableCellWithIdentifier:@"studentCellWithData"];
+    tchStudentDataTVC *newCell = [[tchStudentDataTVC alloc] init];
+    
+    if (tableView.thereIsSelection && tableView.selectedPath.row == indexPath.row) {
+        
+        newCell = [tableView dequeueReusableCellWithIdentifier:@"studentCellWithInput"];
+        
+    } else {
+        
+        newCell = [tableView dequeueReusableCellWithIdentifier:@"studentCellWithData"];
+        
+    }
     
     // get the student for this new cell
     Student *currentStudent = [self.studentsArray objectAtIndex:indexPath.row];

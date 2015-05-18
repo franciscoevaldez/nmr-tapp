@@ -57,19 +57,19 @@
     NSIndexPath *indexForScroll = [NSIndexPath indexPathForRow:scrollIndex inSection:0];
     
     // perform the scroll
-    [self.columnCollection scrollToItemAtIndexPath:indexForScroll atScrollPosition:UICollectionViewScrollPositionLeft animated:YES];
+    [self.columnCollection scrollToItemAtIndexPath:indexForScroll atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
     
     // store the new index to the property
     self.activeColumn = scrollIndex;
     
     // pass the student to the input view
-    [self.inputView setupForStudent:student];
+    [self.inputView setupForStudent:student andColumn:scrollIndex];
     
     // set self as delegate for input view
     self.inputView.delegate = self;
     
     // set column for the input
-    [self.inputView updateActiveColumn:scrollIndex];
+    //[self.inputView updateActiveColumn:scrollIndex];
     
     // set the indexPath for self
     self.indexPath = indexPath;
@@ -79,6 +79,13 @@
     
 }
 
+#pragma mark - Reload Columns
+- (void)reloadColumns
+{
+    
+    [self.columnCollection reloadData];
+    
+}
 
 #pragma mark - Handling column scroll
 - (void)performDayScrollToIndex:(NSInteger)newIndex{

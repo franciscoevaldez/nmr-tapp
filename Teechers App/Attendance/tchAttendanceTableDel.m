@@ -7,49 +7,47 @@
 //
 
 #import "tchAttendanceTableDel.h"
-
-@interface tchAttendanceTableDel ()
-
-@property (strong,nonatomic) NSIndexPath *selectedCell;
-@property (nonatomic) BOOL thereIsSelection;
-
-@end
+#import "tchAttendanceTableV.h"
 
 @implementation tchAttendanceTableDel
 
 // Handling row selection
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(tchAttendanceTableV *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
     // check the already selected cell
-    if (self.thereIsSelection && self.selectedCell.row == indexPath.row) {
+    if (tableView.thereIsSelection && tableView.selectedPath.row == indexPath.row) {
         
-        self.thereIsSelection = FALSE;
-        self.selectedCell = nil;
+        tableView.thereIsSelection = FALSE;
+        tableView.selectedPath = nil;
+        
+        tableView.scrollEnabled = TRUE;
     
     } else {
         
-        self.thereIsSelection = TRUE;
-        self.selectedCell = indexPath;
+        tableView.thereIsSelection = TRUE;
+        tableView.selectedPath = indexPath;
+        
+        tableView.scrollEnabled = FALSE;
         
     }
     
-    
     // update table view
-    //[tableView beginUpdates];
-    //[tableView endUpdates];
     [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    // scroll the selected cell to top
+    [tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
     
 }
 
 
 // Handling row size
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (CGFloat)tableView:(tchAttendanceTableV *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     //check if the index actually exists
-    if(self.thereIsSelection && self.selectedCell.row == indexPath.row) {
+    if(tableView.thereIsSelection && tableView.selectedPath.row == indexPath.row) {
         
         return 241;
         

@@ -106,6 +106,33 @@
     
 }
 
+- (AttendanceRecord*)getRecordForStudent:(Student*)student andDay:(ClassDay*)classDay{
+    
+    
+    AttendanceRecord* resultRecord;
+    
+    // get the existing records in a new array
+    NSArray* existingRecs = [student.attendanceRecords allObjects];
+    
+    for (AttendanceRecord* currentRec in existingRecs) {
+        
+        // check for coincidence
+        if ([currentRec.classDay isEqual:classDay]) {
+            
+            // if they are, set the returning record to this one
+            resultRecord = currentRec;
+            
+            // and exit the loop
+            return resultRecord;
+            
+        }
+        
+    }
+    
+    return resultRecord;
+    
+}
+
 
 #pragma mark - Attendance Record Handling
 // create or update an attendance record
@@ -115,32 +142,43 @@
                            andOrderIndex:(NSInteger)index
 {
     
-    // check if a record already exists
-    
-    // if record doesnt exist
     // get the managed object context
     NSManagedObjectContext *managedOC = student.managedObjectContext;
     
-    // create the day object
-    AttendanceRecord *newRecord = [NSEntityDescription
-                                   insertNewObjectForEntityForName:@"AttendanceRecord"
-                                   inManagedObjectContext:managedOC];
+    // create object of record
+    AttendanceRecord *recordToSave;
+
+    // get a previous record
+    AttendanceRecord *prevRecord = [self getRecordForStudent:student andDay:classDay];
+    
+    // if that previous record exists, use it, otherwise create a new one
+    if (prevRecord) {
+        
+        recordToSave = prevRecord;
+        
+    } else {
+        
+        recordToSave = [NSEntityDescription
+                        insertNewObjectForEntityForName:@"AttendanceRecord"
+                        inManagedObjectContext:managedOC];
+        
+    }
     
     
     // set the value
-    [newRecord setValue:status forKey:@"status"];
+    [recordToSave setValue:status forKey:@"status"];
     
     // set the order index
-    [newRecord setValue:[NSNumber numberWithInt:index] forKey:@"orderIndex"];
+    [recordToSave setValue:[NSNumber numberWithInt:index] forKey:@"orderIndex"];
     
     // set excused to false
-    [newRecord setValue:[NSNumber numberWithBool:tchAttendanceRecExcusedNO] forKey:@"excused"];
+    [recordToSave setValue:[NSNumber numberWithBool:tchAttendanceRecExcusedNO] forKey:@"excused"];
     
     // set the day of the class
-    [newRecord setValue:classDay forKey:@"classDay"];
+    [recordToSave setValue:classDay forKey:@"classDay"];
     
     // set the student it belongs to
-    [newRecord setValue:student forKey:@"student"];
+    [recordToSave setValue:student forKey:@"student"];
     
     
     // write in permanent store
@@ -153,14 +191,70 @@
         
 }
 
+- (BOOL)toggleExcusedForStudent:(Student*)student
+                          atDay:(ClassDay*)classDay
+                      withIndex:(NSInteger)dayIndex
+{
+    
+    // get the managed object context
+    NSManagedObjectContext *managedOC = student.managedObjectContext;
+    
+    // create reference to editable record
+    AttendanceRecord *recordToEdit;
+    
+    // and to the excused status;
+    BOOL isExcused = FALSE;
+    
+    // get if a record for this day already exists
+    AttendanceRecord *previousRecord = [self getRecordForStudent:student andDay:classDay];
+    
+    // if it does, get the excused status
+    if (previousRecord) {
+        
+        recordToEdit = previousRecord;
+        isExcused = [recordToEdit.excused boolValue];
+        
+    } else {
+        
+        // if it doesn't, create it
+        recordToEdit = [NSEntityDescription
+                        insertNewObjectForEntityForName:@"AttendanceRecord"
+                        inManagedObjectContext:managedOC];
+        
+        // set the value
+        [recordToEdit setValue:tchAttendanceRecAbsent forKey:@"status"];
+        
+        // set the order index
+        [recordToEdit setValue:[NSNumber numberWithInt:dayIndex] forKey:@"orderIndex"];
+        
+        // set the day of the class
+        [recordToEdit setValue:classDay forKey:@"classDay"];
+        
+        // set the student it belongs to
+        [recordToEdit setValue:student forKey:@"student"];
+        
+        
+    }
+    
+    // invert the excused status
+    isExcused = !isExcused;
+    
+    // set the new status to the record
+    recordToEdit.excused = [NSNumber numberWithBool:isExcused];
+    
+    // save the record to the permanent store
+    NSError *recordError;
+    if (![managedOC save:&recordError]) {
+        NSLog(@"error en: %@", [recordError localizedDescription]);
+    }
+    
+    // return the new value
+    return isExcused;
+    
+}
 
-/*
- @property (nonatomic, retain) NSNumber * excused;
- @property (nonatomic, retain) NSNumber * orderIndex;
- @property (nonatomic, retain) NSString * status;
- @property (nonatomic, retain) ClassDay *classDay;
- @property (nonatomic, retain) Student *student;
- */
+
+
 
 
 @end

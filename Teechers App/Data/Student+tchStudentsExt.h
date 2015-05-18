@@ -8,9 +8,11 @@
 
 #import "Student.h"
 #import "AttendanceRecord.h"
+#import "AClass+tchAClassExt.h"
 
 @interface Student (tchStudentsExt)
 
 - (AttendanceRecord*)getAttendanceRecordForDay:(ClassDay*)classday;
+- (AttendanceRecord*)getAttendanceRecordForIndex:(NSInteger)dayIndex;
 
 @end

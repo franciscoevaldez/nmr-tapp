@@ -41,4 +41,21 @@
     
 }
 
+- (AttendanceRecord*)getAttendanceRecordForIndex:(NSInteger)dayIndex
+{
+    
+    // get the class for this student
+    AClass *myClass = self.inClass;
+    
+    // get the day for the index
+    ClassDay *classDay = [myClass getDayForIndex:dayIndex];
+    
+    // get the record for this day
+    AttendanceRecord *record = [self getAttendanceRecordForDay:classDay];
+    
+    // return it
+    return record;
+    
+}
+
 @end

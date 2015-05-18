@@ -57,6 +57,7 @@
 		A1BDCC441AE71F11000B0328 /* AClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A1BDCC431AE71F11000B0328 /* AClass.m */; };
 		A1BDCC471AE71F11000B0328 /* ClassDay.m in Sources */ = {isa = PBXBuildFile; fileRef = A1BDCC461AE71F11000B0328 /* ClassDay.m */; };
 		A1BDCC4A1AE71F12000B0328 /* Evaluation.m in Sources */ = {isa = PBXBuildFile; fileRef = A1BDCC491AE71F12000B0328 /* Evaluation.m */; };
+		A1D1A58F1B0A2E0E009245EB /* UIColor+appColorPresets.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D1A58E1B0A2E0E009245EB /* UIColor+appColorPresets.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -168,6 +169,8 @@
 		A1BDCC461AE71F11000B0328 /* ClassDay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ClassDay.m; path = Data/ClassDay.m; sourceTree = "<group>"; };
 		A1BDCC481AE71F11000B0328 /* Evaluation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Evaluation.h; path = Data/Evaluation.h; sourceTree = "<group>"; };
 		A1BDCC491AE71F12000B0328 /* Evaluation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Evaluation.m; path = Data/Evaluation.m; sourceTree = "<group>"; };
+		A1D1A58D1B0A2E0E009245EB /* UIColor+appColorPresets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+appColorPresets.h"; path = "Custom Controls/UIColor+appColorPresets.h"; sourceTree = "<group>"; };
+		A1D1A58E1B0A2E0E009245EB /* UIColor+appColorPresets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+appColorPresets.m"; path = "Custom Controls/UIColor+appColorPresets.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -438,6 +441,8 @@
 		A1B713801AFAD10000A8B094 /* Custom Controls */ = {
 			isa = PBXGroup;
 			children = (
+				A1D1A58D1B0A2E0E009245EB /* UIColor+appColorPresets.h */,
+				A1D1A58E1B0A2E0E009245EB /* UIColor+appColorPresets.m */,
 				A1B713811AFAD13600A8B094 /* tchCollectionIndexed.h */,
 				A1B713821AFAD13600A8B094 /* tchCollectionIndexed.m */,
 			);
@@ -577,6 +582,7 @@
 				A1028AB21AF94A6800315DE5 /* AttendanceRecord+tchAttExt.m in Sources */,
 				A15D3C8A1AE961C7004A6DF1 /* tchOneClassTVC.m in Sources */,
 				A1028AAF1AF920D900315DE5 /* tchAttInputV.m in Sources */,
+				A1D1A58F1B0A2E0E009245EB /* UIColor+appColorPresets.m in Sources */,
 				A1B713831AFAD13600A8B094 /* tchCollectionIndexed.m in Sources */,
 				A1AA546D1AEA824100318744 /* tchStudentDataTVC.m in Sources */,
 				A15D3C941AE98659004A6DF1 /* tchStudentDeployableTVC.m in Sources */,
