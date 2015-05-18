@@ -81,7 +81,7 @@
     [self saveRecordWithStatus:tchAttendanceRecPresent];
     
     // tell the cell to dismiss the input
-    [_delegate inputShouldDismiss];
+    [self.delegate inputShouldDismiss];
     
 }
 
@@ -92,7 +92,7 @@
     [self saveRecordWithStatus:tchAttendanceRecAbsent];
     
     // tell the cell to dismiss the input
-    [_delegate inputShouldDismiss];
+    [self.delegate inputShouldDismiss];
     
 }
 
@@ -120,7 +120,7 @@
     [self saveRecordWithStatus:tchAttendanceRecLate];
     
     // tell the cell to dismiss the input
-    [_delegate inputShouldDismiss];
+    [self.delegate inputShouldDismiss];
     
 }
 

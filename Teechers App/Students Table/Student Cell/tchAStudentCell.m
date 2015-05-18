@@ -10,6 +10,7 @@
 
 #import "Student+tchStudentsExt.h"
 #import "tchColumnsCollection.h"
+#import "tchInputView.h"
 
 @interface tchAStudentCell ()
 
@@ -18,6 +19,7 @@
 @property (strong,nonatomic) NSIndexPath *indexPath;
 
 @property (strong,nonatomic) IBOutlet tchColumnsCollection *columnsCollection;
+@property (strong,nonatomic) IBOutlet tchInputView *inputView;
 @property (strong,nonatomic) IBOutlet UILabel *studentNameLabel;
 
 @end
@@ -41,24 +43,26 @@
     // set the label
     self.studentNameLabel.text = self.studentForCell.name;
     
-    // tell the column controller to set itself up
-    [self.columnsCollection setupForStudent:student];
-    [self.columnsCollection reloadData];
+    // if the cell has a column collection…
+    if (self.columnsCollection) {
+        
+        // …tell the column controller to set itself up
+        [self.columnsCollection setupForStudent:student];
+        [self.columnsCollection reloadData];
+        
+    }
     
-    // set the student to the column collection
-    //self.columnCollection.student = student;
+    // if the cell has an input…
+    if (self.inputView) {
+        
+        // …tell the input to set itself up
+        [self.inputView setupForStudent:student andColumn:scrollIndex];
+        
+    }
+
     
-    // set up the columns data source
-    //[self.columnDataSource setupForStudent:student];
-    
-    // tell the column to reload
-    //[self.columnCollection reloadData];
     
     // create a new index path
-    //NSIndexPath *indexForScroll = [NSIndexPath indexPathForRow:scrollIndex inSection:0];
-    
-    // perform the scroll
-    //[self.columnCollection scrollToItemAtIndexPath:indexForScroll atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
     
     // store the new index to the property
     //self.activeColumn = scrollIndex;

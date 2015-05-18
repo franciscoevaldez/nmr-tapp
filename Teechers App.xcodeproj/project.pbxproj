@@ -18,6 +18,7 @@
 		A1113EE71B0A74760095CD14 /* tchColumnsCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = A1113EE61B0A74760095CD14 /* tchColumnsCollection.m */; };
 		A1113EEB1B0A7F1F0095CD14 /* tchGradesColumnsDS.m in Sources */ = {isa = PBXBuildFile; fileRef = A1113EEA1B0A7F1F0095CD14 /* tchGradesColumnsDS.m */; };
 		A1113EEE1B0A876F0095CD14 /* tchColumnCollectionDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A1113EED1B0A876F0095CD14 /* tchColumnCollectionDataSource.m */; };
+		A1113EF21B0A93A90095CD14 /* tchInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1113EF11B0A93A90095CD14 /* tchInputView.m */; };
 		A14CBABE1AF27A2F009F140E /* AClass+tchAClassExt.m in Sources */ = {isa = PBXBuildFile; fileRef = A14CBABD1AF27A2F009F140E /* AClass+tchAClassExt.m */; };
 		A14CBAC21AF3E947009F140E /* tchStudentAttendanceDS.m in Sources */ = {isa = PBXBuildFile; fileRef = A14CBAC11AF3E947009F140E /* tchStudentAttendanceDS.m */; };
 		A14CBAC81AF41074009F140E /* tchAttendanceColumnVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A14CBAC71AF41074009F140E /* tchAttendanceColumnVC.m */; };
@@ -101,6 +102,8 @@
 		A1113EEA1B0A7F1F0095CD14 /* tchGradesColumnsDS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchGradesColumnsDS.m; path = Grades/tchGradesColumnsDS.m; sourceTree = "<group>"; };
 		A1113EEC1B0A876E0095CD14 /* tchColumnCollectionDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchColumnCollectionDataSource.h; path = "Students Table/Columns Collection/tchColumnCollectionDataSource.h"; sourceTree = "<group>"; };
 		A1113EED1B0A876F0095CD14 /* tchColumnCollectionDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchColumnCollectionDataSource.m; path = "Students Table/Columns Collection/tchColumnCollectionDataSource.m"; sourceTree = "<group>"; };
+		A1113EF01B0A93A90095CD14 /* tchInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchInputView.h; path = "Students Table/Input Collection/tchInputView.h"; sourceTree = "<group>"; };
+		A1113EF11B0A93A90095CD14 /* tchInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchInputView.m; path = "Students Table/Input Collection/tchInputView.m"; sourceTree = "<group>"; };
 		A14CBABC1AF27A2F009F140E /* AClass+tchAClassExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "AClass+tchAClassExt.h"; path = "Data/AClass+tchAClassExt.h"; sourceTree = "<group>"; };
 		A14CBABD1AF27A2F009F140E /* AClass+tchAClassExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "AClass+tchAClassExt.m"; path = "Data/AClass+tchAClassExt.m"; sourceTree = "<group>"; };
 		A14CBAC01AF3E947009F140E /* tchStudentAttendanceDS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchStudentAttendanceDS.h; path = Attendance/tchStudentAttendanceDS.h; sourceTree = "<group>"; };
@@ -220,6 +223,7 @@
 			children = (
 				A1113EE11B0A67FE0095CD14 /* Student Cell */,
 				A1113EE81B0A747F0095CD14 /* Columns Collection */,
+				A1113EEF1B0A91F00095CD14 /* Input Collection */,
 				A1113ED81B0A4E2F0095CD14 /* tchStudentsTableView.h */,
 				A1113ED91B0A4E2F0095CD14 /* tchStudentsTableView.m */,
 				A1113EDB1B0A59C30095CD14 /* tchStudentsTableDataSource.h */,
@@ -248,6 +252,15 @@
 				A1113EED1B0A876F0095CD14 /* tchColumnCollectionDataSource.m */,
 			);
 			name = "Columns Collection";
+			sourceTree = "<group>";
+		};
+		A1113EEF1B0A91F00095CD14 /* Input Collection */ = {
+			isa = PBXGroup;
+			children = (
+				A1113EF01B0A93A90095CD14 /* tchInputView.h */,
+				A1113EF11B0A93A90095CD14 /* tchInputView.m */,
+			);
+			name = "Input Collection";
 			sourceTree = "<group>";
 		};
 		A14CBABF1AF3E811009F140E /* Student Cell */ = {
@@ -656,6 +669,7 @@
 				A1B349B51AEFEA01008B5671 /* tchEditDayVC.m in Sources */,
 				A1028AB21AF94A6800315DE5 /* AttendanceRecord+tchAttExt.m in Sources */,
 				A1113EEE1B0A876F0095CD14 /* tchColumnCollectionDataSource.m in Sources */,
+				A1113EF21B0A93A90095CD14 /* tchInputView.m in Sources */,
 				A15D3C8A1AE961C7004A6DF1 /* tchOneClassTVC.m in Sources */,
 				A1028AAF1AF920D900315DE5 /* tchAttInputV.m in Sources */,
 				A1D1A58F1B0A2E0E009245EB /* UIColor+appColorPresets.m in Sources */,

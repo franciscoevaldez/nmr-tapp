@@ -16,7 +16,9 @@
 
 @end
 
-@interface tchStudentDataTVC : UITableViewCell <tchInputProtocol>
+
+
+@interface tchStudentDataTVC : UITableViewCell <tchInputViewProtocol>
 
 @property (nonatomic, weak) id <tchStudentCellProtocol> delegate;
 

@@ -122,4 +122,8 @@
     
 }
 
+
+-(void)setupForStudent:(Student *)student andColumn:(NSInteger)columnIndex{}
+-(void)updateActiveColumn:(NSInteger)columnIndex{};
+
 @end

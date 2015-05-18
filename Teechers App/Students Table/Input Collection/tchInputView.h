@@ -1,39 +1,32 @@
 //
-//  tchAttInputV.h
+//  tchInputView.h
 //  Teechers App
 //
-//  Created by fran on 5/5/15.
+//  Created by fran on 18/5/15.
 //  Copyright (c) 2015 nmr. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-#import "tchInputView.h"
-
-/*
 #import "Student+tchStudentsExt.h"
 
-@protocol tchInputProtocol <NSObject>
+@protocol tchInputViewProtocol <NSObject>
 
 -(void)inputShouldDismiss;
 
-@end
-*/
-
-@interface tchAttInputV : tchInputView
-
+@required
 - (void)setupForStudent:(Student*)student andColumn:(NSInteger)columnIndex;
 - (void)updateActiveColumn:(NSInteger)columnIndex;
 
 @end
 
-/*
-@interface tchAttInputV : UIView
 
-@property (nonatomic, weak) id <tchInputProtocol> delegate;
 
+
+@interface tchInputView : UIView
+
+@property (nonatomic, weak) id <tchInputViewProtocol> delegate;
 - (void)setupForStudent:(Student*)student andColumn:(NSInteger)columnIndex;
 - (void)updateActiveColumn:(NSInteger)columnIndex;
 
 @end
-*/
