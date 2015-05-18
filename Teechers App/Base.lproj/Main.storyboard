@@ -3186,7 +3186,7 @@
         <!--Grades-->
         <scene sceneID="eV1-aY-OpF">
             <objects>
-                <viewController title="Grades" id="Qms-b9-6Wh" sceneMemberID="viewController">
+                <viewController title="Grades" id="Qms-b9-6Wh" customClass="tchGradesVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="A67-XG-aqx"/>
                         <viewControllerLayoutGuide type="bottom" id="jnG-P6-yrc"/>
@@ -3448,7 +3448,7 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="HAY-Sl-Vf7" userLabel="Students Table" customClass="tchAttendanceTableV">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="HAY-Sl-Vf7" userLabel="Students Table" customClass="tchStudentsTableView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -3603,6 +3603,10 @@
                                         <color key="backgroundColor" red="1" green="1" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="qYg-xV-98e" id="K6D-ho-VKE"/>
+                                    <outlet property="delegate" destination="Ruw-xh-3i9" id="ZSw-6X-6Z9"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -3658,8 +3662,13 @@
                         </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Grades" id="WcR-dQ-EkV"/>
+                    <connections>
+                        <outlet property="studentsTableView" destination="HAY-Sl-Vf7" id="U9w-su-ACa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ccy-AL-sGl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="qYg-xV-98e" customClass="tchStudentsTableDataSource"/>
+                <customObject id="Ruw-xh-3i9" customClass="tchStudentsTableDelegate"/>
                 <exit id="hiM-87-NOV" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2809.5" y="533"/>

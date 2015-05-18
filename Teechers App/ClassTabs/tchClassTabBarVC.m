@@ -10,6 +10,7 @@
 
 #import "tchStudentsVC.h"
 #import "tchAttendanceVC.h"
+#import "tchGradesVC.h"
 
 @interface tchClassTabBarVC ()
 
@@ -32,6 +33,9 @@
     
     tchAttendanceVC *attendanceViewController = [self.viewControllers objectAtIndex:1];
     attendanceViewController.activeClass = self.activeClass;
+    
+    tchGradesVC *gradesViewController = [self.viewControllers objectAtIndex:2];
+    gradesViewController.activeClass = self.activeClass;
     
     
     

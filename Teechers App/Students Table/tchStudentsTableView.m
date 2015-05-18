@@ -1,36 +1,41 @@
 //
-//  tchAttendanceTableV.m
+//  tchStudentsTableView.m
 //  Teechers App
 //
-//  Created by fran on 2/5/15.
+//  Created by fran on 18/5/15.
 //  Copyright (c) 2015 nmr. All rights reserved.
 //
 
-#import "tchAttendanceTableV.h"
-//#import "tchAttendanceColumnVC.h"
-#import "tchAttendanceTableDS.h"
-#import "tchAttendanceTableDel.h"
-#import "tchStudentDataTVC.h"
+#import "tchStudentsTableView.h"
 
-@interface tchAttendanceTableV ()
+// importar el Data Source de esta tabla
+#import "tchStudentsTableDataSource.h"
+
+// importar el Delegate de esta tabla
+#import "tchStudentsTableDelegate.h"
+
+
+@interface tchStudentsTableView()
 
 @property (assign,nonatomic) NSInteger currentColumnIndex;
-@property (strong,nonatomic) IBOutlet tchAttendanceTableDS *attendanceTableDS;
-@property (strong,nonatomic) IBOutlet tchAttendanceTableDel *attendanceTableDel;
+//@property (strong,nonatomic) IBOutlet tchStudentsTableDataSource *tchDataSource;
+//@property (strong,nonatomic) IBOutlet tchStudentsTableDelegate *tchDelegate;
+@property (strong,nonatomic) tchStudentsTableDataSource *tchDataSource;
 
 @end
 
-@implementation tchAttendanceTableV
+
+@implementation tchStudentsTableView
 
 - (void)setupForClass:(AClass*)activeClass{
-        
-    [self.attendanceTableDS setupForClass:activeClass];
+    
+    self.tchDataSource = self.dataSource;
+    [self.tchDataSource setupForClass:activeClass];
     
 }
 
 #pragma mark - Full Reloading
-- (void) fullReload
-{
+- (void)reloadAllData{
     
     // reload the cells
     [self reloadData];
@@ -50,7 +55,7 @@
 }
 
 #pragma mark - handling cell scroll
-- (void) performDayScrollToIndex:(NSInteger)newIndex{
+- (void)performDayScrollToIndex:(NSInteger)newIndex{
     
     // tell every cell to skip to the new index
     NSArray *visibleCells = [self visibleCells];
@@ -67,27 +72,19 @@
     self.currentColumnIndex = newIndex;
     
     // tell the attendance data source the new index
-    self.attendanceTableDS.currentScrollIndex = self.currentColumnIndex;
+    self.tchDataSource.currentScrollIndex = self.currentColumnIndex;
     
 }
 
 #pragma mark - Input should dismiss
-- (void)dismissInputAtIndexPath:(NSIndexPath *)indexPath
+- (void)collapseCellAtIndexPath:(NSIndexPath *)indexPath
 {
     
     // tell the table that a cell was selected
     [self selectRowAtIndexPath:indexPath animated:TRUE scrollPosition:UITableViewScrollPositionNone];
     
-    [self.attendanceTableDel tableView:self didSelectRowAtIndexPath:indexPath];
+    [self.delegate tableView:self didSelectRowAtIndexPath:indexPath];
     
 }
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
 
 @end

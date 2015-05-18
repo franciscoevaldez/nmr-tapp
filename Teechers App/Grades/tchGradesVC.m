@@ -8,7 +8,11 @@
 
 #import "tchGradesVC.h"
 
+#import "tchStudentsTableView.h"
+
 @interface tchGradesVC ()
+
+@property (strong,nonatomic) IBOutlet tchStudentsTableView *studentsTableView;
 
 @end
 
@@ -17,6 +21,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    // Tell the students table to setup itself
+    [self.studentsTableView setupForClass:self.activeClass];
+    
 }
 
 - (void)didReceiveMemoryWarning {
