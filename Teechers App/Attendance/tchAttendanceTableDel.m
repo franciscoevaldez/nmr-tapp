@@ -20,21 +20,25 @@
         
         tableView.thereIsSelection = FALSE;
         tableView.selectedPath = nil;
+        
+        tableView.scrollEnabled = TRUE;
     
     } else {
         
         tableView.thereIsSelection = TRUE;
         tableView.selectedPath = indexPath;
         
+        tableView.scrollEnabled = FALSE;
+        
     }
     
-    
     // update table view
-    //[tableView beginUpdates];
-    //[tableView endUpdates];
     [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    // scroll the selected cell to top
+    [tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
     
 }
 

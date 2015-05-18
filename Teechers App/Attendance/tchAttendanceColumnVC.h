@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AttendanceRecord.h"
+#import "AttendanceRecord+tchAttExt.h"
 #import "ClassDay.h"
 
 @interface tchAttendanceColumnVC : UICollectionViewCell
