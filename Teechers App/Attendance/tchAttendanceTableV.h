@@ -13,7 +13,8 @@
 @interface tchAttendanceTableV : UITableView <tchStudentCellProtocol>
 
 - (void) performDayScrollToIndex:(NSInteger)newIndex;
-- (void)setupForClass:(AClass*)activeClass;
+- (void) setupForClass:(AClass*)activeClass;
+- (void) fullReload;
 
 @property (nonatomic) NSIndexPath* selectedPath;
 @property (nonatomic) BOOL thereIsSelection;

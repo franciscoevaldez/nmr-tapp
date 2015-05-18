@@ -20,7 +20,7 @@
 
 @property (nonatomic, weak) id <tchInputProtocol> delegate;
 
-- (void)setupForStudent:(Student*)student;
+- (void)setupForStudent:(Student*)student andColumn:(NSInteger)columnIndex;
 - (void)updateActiveColumn:(NSInteger)columnIndex;
 
 

@@ -150,6 +150,9 @@
 - (void)reloadViewsData
 {
     
+    // refresh the students table
+    [self.tchStudentsTable fullReload];
+    
     // refresh the header data source
     [self.tchAttendanceHeader reloadData];
     

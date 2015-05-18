@@ -28,8 +28,29 @@
     
 }
 
+#pragma mark - Full Reloading
+- (void) fullReload
+{
+    
+    // reload the cells
+    [self reloadData];
+    
+    // tell the visible cells to reload columns
+    NSArray *visibleCells = [self visibleCells];
+    
+    // loop through every cell
+    for (tchStudentDataTVC *currentCell in visibleCells) {
+        
+        // tell each one to scroll
+        [currentCell reloadColumns];
+        
+    }
+    
+    
+}
+
 #pragma mark - handling cell scroll
-- (void)performDayScrollToIndex:(NSInteger)newIndex{
+- (void) performDayScrollToIndex:(NSInteger)newIndex{
     
     // tell every cell to skip to the new index
     NSArray *visibleCells = [self visibleCells];

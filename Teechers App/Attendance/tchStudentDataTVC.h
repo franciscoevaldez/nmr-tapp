@@ -28,6 +28,7 @@
               withIndexPath:(NSIndexPath*)indexPath
                 andDelegate:(id)tableView;
 
+- (void)reloadColumns;
 - (void)performDayScrollToIndex:(NSInteger)newIndex;
 
 @end

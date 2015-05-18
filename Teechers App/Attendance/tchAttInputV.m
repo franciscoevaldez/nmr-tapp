@@ -18,23 +18,56 @@
 @property (strong,nonatomic) Student *activeStudent;
 @property (nonatomic) NSInteger activeColumn;
 @property (strong,nonatomic) IBOutlet tchStoreCoordinator *storeCoordinator;
+@property (strong,nonatomic) IBOutlet UIImageView *excusedCheck;
 
 @end
 
 @implementation tchAttInputV
 
 
-- (void)setupForStudent:(Student*)student
+- (void)setupForStudent:(Student*)student andColumn:(NSInteger)columnIndex
 {
-    
+        
     // get the passed student to the view
     self.activeStudent = student;
+    
+    // get the passed column to this view
+    self.activeColumn = columnIndex;
+    
+    // mark the checked (or not) -----
+    // set default for no
+    BOOL isExcused = FALSE;
+    // and uncheck
+    self.excusedCheck.image = [UIImage imageNamed:@"input check unchecked"];
+    
+    // get if a record exists
+    AttendanceRecord *existingRecord = [self.activeStudent getAttendanceRecordForIndex:columnIndex];
+    
+    // if the record exists…
+    if (existingRecord) {
+        
+        // …pass the excused to a variable
+        isExcused = [existingRecord.excused boolValue];
+        
+        // and if the excused is true…
+        if (isExcused) {
+            
+            // change the image of the check
+            self.excusedCheck.image = [UIImage imageNamed:@"input check checked"];
+            
+        }
+        
+        
+    }
+    
     
 }
 
 
 - (void)updateActiveColumn:(NSInteger)columnIndex
 {
+    
+    NSLog(@"change column");
     
     self.activeColumn = columnIndex;
     
@@ -67,7 +100,15 @@
 - (IBAction)excusedPressed:(id)sender
 {
     
-    NSLog(@"excused for student: %@ :: day: %i", self.activeStudent.name, self.activeColumn);
+    // call method for toggling excused
+    BOOL isExcused = [self toggleExcused];
+    
+    // change the is excused image
+    if (isExcused) {
+        self.excusedCheck.image = [UIImage imageNamed:@"input check checked"];
+    } else {
+        self.excusedCheck.image = [UIImage imageNamed:@"input check unchecked"];
+    }
     
 }
 
@@ -97,6 +138,25 @@
                                                       atDay:activeDay
                                                  withStatus:newStatus
                                               andOrderIndex:self.activeColumn];
+    
+}
+
+- (BOOL)toggleExcused
+{
+    
+    // get the active class
+    AClass* activeClass = self.activeStudent.inClass;
+    
+    // get the active day from active index
+    ClassDay* activeDay = [activeClass getDayForIndex:self.activeColumn];
+    
+    // tell the store coordinator to toggle excused for this student and day
+    BOOL newExcused = [self.storeCoordinator toggleExcusedForStudent:self.activeStudent
+                                                               atDay:activeDay
+                                                           withIndex:self.activeColumn];
+    
+    // return the new excused value
+    return newExcused;
     
 }
 

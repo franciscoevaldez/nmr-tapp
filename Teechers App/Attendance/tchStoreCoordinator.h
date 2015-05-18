@@ -23,4 +23,10 @@
                                    atDay:(ClassDay*)classDay
                               withStatus:(NSString*)status
                            andOrderIndex:(NSInteger)index;
+
+- (BOOL)toggleExcusedForStudent:(Student*)student
+                          atDay:(ClassDay*)classDay
+                      withIndex:(NSInteger)dayIndex;
+
+
 @end

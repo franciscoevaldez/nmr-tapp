@@ -52,12 +52,16 @@
 - (UITableViewCell *)tableView:(tchAttendanceTableV*)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     // create the new cell
-    tchStudentDataTVC *newCell = [tableView dequeueReusableCellWithIdentifier:@"studentCellWithData"];
+    tchStudentDataTVC *newCell = [[tchStudentDataTVC alloc] init];
     
     if (tableView.thereIsSelection && tableView.selectedPath.row == indexPath.row) {
-        NSLog(@"ich bin selected");
+        
+        newCell = [tableView dequeueReusableCellWithIdentifier:@"studentCellWithInput"];
+        
     } else {
-        NSLog(@"ich bin keine selected");
+        
+        newCell = [tableView dequeueReusableCellWithIdentifier:@"studentCellWithData"];
+        
     }
     
     // get the student for this new cell
