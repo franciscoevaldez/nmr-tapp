@@ -3452,7 +3452,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="studentCellWithData" rowHeight="60" id="ORI-Fe-UHP" customClass="tchStudentDataTVC">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="studentCellWithData" rowHeight="60" id="ORI-Fe-UHP" customClass="tchAStudentCell">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ORI-Fe-UHP" id="W3V-KW-34e">
@@ -3464,7 +3464,7 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="LR8-Hf-M78" userLabel="ColumnCollection" customClass="tchCollectionIndexed">
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="LR8-Hf-M78" userLabel="ColumnCollection" customClass="tchColumnsCollection">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                                     <color key="backgroundColor" red="1" green="1" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
@@ -3564,6 +3564,9 @@
                                                             <include reference="vep-eA-FzL"/>
                                                         </mask>
                                                     </variation>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="aEP-oV-y2R" id="piA-No-cxV"/>
+                                                    </connections>
                                                 </collectionView>
                                             </subviews>
                                             <constraints>
@@ -3601,6 +3604,10 @@
                                             </variation>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="1" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="columnsCollection" destination="LR8-Hf-M78" id="aoq-Us-BKU"/>
+                                            <outlet property="studentNameLabel" destination="cmh-pF-HUV" id="8va-EP-96w"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -3669,6 +3676,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ccy-AL-sGl" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="qYg-xV-98e" customClass="tchStudentsTableDataSource"/>
                 <customObject id="Ruw-xh-3i9" customClass="tchStudentsTableDelegate"/>
+                <customObject id="aEP-oV-y2R" customClass="tchGradesColumnsDS"/>
                 <exit id="hiM-87-NOV" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2809.5" y="533"/>
