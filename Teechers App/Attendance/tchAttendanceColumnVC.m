@@ -39,8 +39,8 @@
         labelText = record.status;
         
         // it the record is absent
-        if ([record.status isEqual: tchAttendanceRecAbsent] &&
-            [record.excused isEqual: tchAttendanceRecExcusedNO]) {
+        if ([record.status isEqual: tchAttendanceRecAbsent]
+            && ([record.excused intValue] == tchAttendanceRecExcusedNO)) {
             
             // set the label color to red
             self.dataLabel.textColor = [UIColor tchRed];

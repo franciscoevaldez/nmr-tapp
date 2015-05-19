@@ -12,21 +12,28 @@
 
 @protocol tchInputViewProtocol <NSObject>
 
--(void)inputShouldDismiss;
-
 @required
 - (void)setupForStudent:(Student*)student andColumn:(NSInteger)columnIndex;
+- (void)setupDelegate:(id)delegate;
 - (void)updateActiveColumn:(NSInteger)columnIndex;
 
 @end
 
 
+@protocol tchInputDelegateProtocol <NSObject>
+
+-(void)cellShouldDismiss;
+
+@end
+
 
 
 @interface tchInputView : UIView
 
-@property (nonatomic, weak) id <tchInputViewProtocol> delegate;
+@property (nonatomic, weak) id <tchInputDelegateProtocol> delegate;
+
 - (void)setupForStudent:(Student*)student andColumn:(NSInteger)columnIndex;
+- (void)setupDelegate:(id)delegate;
 - (void)updateActiveColumn:(NSInteger)columnIndex;
 
 @end

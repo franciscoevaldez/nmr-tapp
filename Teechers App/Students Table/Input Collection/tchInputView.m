@@ -14,8 +14,9 @@
 
 @implementation tchInputView
 
-- (void)setupForStudent:(Student*)student andColumn:(NSInteger)columnIndex{};
-- (void)updateActiveColumn:(NSInteger)columnIndex{};
+-(void)setupForStudent:(Student*)student andColumn:(NSInteger)columnIndex{};
+-(void)setupDelegate:(id)delegate{};
+-(void)updateActiveColumn:(NSInteger)columnIndex{};
 
 /*
 // Only override drawRect: if you perform custom drawing.

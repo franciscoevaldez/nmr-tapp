@@ -17,5 +17,6 @@
 - (void)performColumnScrollToIndex:(NSInteger)newIndex;
 
 @property (assign,nonatomic) NSInteger activeColumn;
+@property (strong,nonatomic) Student *activeStudent;
 
 @end

@@ -11,7 +11,7 @@
 
 @interface tchColumnsCollection ()
 
-@property (strong,nonatomic) Student *activeStudent;
+
 
 @end
 

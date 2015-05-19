@@ -10,7 +10,9 @@
 
 #import "tchAttendanceTableDS.h"
 #import "tchEditDayVC.h"
-#import "tchAttendanceTableV.h"
+//#import "tchAttendanceTableV.h"
+
+#import "tchStudentsTableView.h"
 
 #import "ClassDay.h"
 
@@ -19,7 +21,9 @@
 @property (strong, nonatomic) IBOutlet tchAttendanceHeader *tchAttendanceHeader;
 @property (strong, nonatomic) IBOutlet tchAttDayBandColDel *tchDayBandDelegate;
 @property (strong, nonatomic) IBOutlet tchAttendanceMenu *tchAttendanceMenu;
-@property (strong, nonatomic) IBOutlet tchAttendanceTableV *tchStudentsTable;
+//@property (strong, nonatomic) IBOutlet tchAttendanceTableV *tchStudentsTable;
+@property (strong, nonatomic) IBOutlet tchStudentsTableView *tchStudentsTable;
+
 
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *menuHeightConstraint;
 
@@ -151,7 +155,8 @@
 {
     
     // refresh the students table
-    [self.tchStudentsTable fullReload];
+    //[self.tchStudentsTable fullReload];
+    [self.tchStudentsTable reloadAllData];
     
     // refresh the header data source
     [self.tchAttendanceHeader reloadData];

@@ -60,8 +60,8 @@
     if (tableView.thereIsACellDeployed && tableView.deployedPath.row == indexPath.row) {
         
         // dequeue it as cell with input…
-        //newCell = [tableView dequeueReusableCellWithIdentifier:@"studentCellWithInput"];
-        newCell = [tableView dequeueReusableCellWithIdentifier:@"studentCellWithData"];
+        newCell = [tableView dequeueReusableCellWithIdentifier:@"studentCellWithInput"];
+        //newCell = [tableView dequeueReusableCellWithIdentifier:@"studentCellWithData"];
         
     } else {
         

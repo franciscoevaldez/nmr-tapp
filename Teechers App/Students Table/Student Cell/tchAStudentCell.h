@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "tchInputView.h"
 
 @protocol tchStudentCellProtocol <NSObject>
 
@@ -16,7 +17,7 @@
 
 
 
-@interface tchAStudentCell : UITableViewCell
+@interface tchAStudentCell : UITableViewCell <tchInputDelegateProtocol>
 
 @property (nonatomic, weak) id <tchStudentCellProtocol> delegate;
 

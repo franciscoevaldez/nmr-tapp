@@ -57,6 +57,7 @@
         
         // …tell the input to set itself up
         [self.inputView setupForStudent:student andColumn:scrollIndex];
+        [self.inputView setupDelegate:self];
         
     }
 

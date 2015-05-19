@@ -63,11 +63,13 @@
     
 }
 
+- (void)setupDelegate:(id)delegate
+{
+    self.myDelegate = delegate;
+}
 
 - (void)updateActiveColumn:(NSInteger)columnIndex
 {
-    
-    NSLog(@"change column");
     
     self.activeColumn = columnIndex;
     
@@ -81,7 +83,7 @@
     [self saveRecordWithStatus:tchAttendanceRecPresent];
     
     // tell the cell to dismiss the input
-    [self.delegate inputShouldDismiss];
+    [_myDelegate cellShouldDismiss];
     
 }
 
@@ -92,7 +94,7 @@
     [self saveRecordWithStatus:tchAttendanceRecAbsent];
     
     // tell the cell to dismiss the input
-    [self.delegate inputShouldDismiss];
+    [_myDelegate cellShouldDismiss];
     
 }
 
@@ -120,7 +122,7 @@
     [self saveRecordWithStatus:tchAttendanceRecLate];
     
     // tell the cell to dismiss the input
-    [self.delegate inputShouldDismiss];
+    [_myDelegate cellShouldDismiss];
     
 }
 

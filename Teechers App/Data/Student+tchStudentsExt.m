@@ -13,7 +13,7 @@
 // get the attendance record for that day
 - (AttendanceRecord*)getAttendanceRecordForDay:(ClassDay*)classday
 {
-    
+        
     // initialize
     AttendanceRecord *returnRecord = nil;
     

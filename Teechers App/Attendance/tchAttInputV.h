@@ -10,20 +10,13 @@
 
 #import "tchInputView.h"
 
-/*
-#import "Student+tchStudentsExt.h"
 
-@protocol tchInputProtocol <NSObject>
-
--(void)inputShouldDismiss;
-
-@end
-*/
-
-@interface tchAttInputV : tchInputView
+@interface tchAttInputV : tchInputView <tchInputViewProtocol>
 
 - (void)setupForStudent:(Student*)student andColumn:(NSInteger)columnIndex;
 - (void)updateActiveColumn:(NSInteger)columnIndex;
+
+@property(nonatomic,assign) id<tchInputDelegateProtocol>   myDelegate;
 
 @end
 
