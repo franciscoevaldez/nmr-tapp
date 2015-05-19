@@ -9,10 +9,12 @@
 #import "tchGradesVC.h"
 
 #import "tchStudentsTableView.h"
+#import "tchGradesHeader.h"
 
 @interface tchGradesVC ()
 
 @property (strong,nonatomic) IBOutlet tchStudentsTableView *studentsTableView;
+@property (strong,nonatomic) IBOutlet tchGradesHeader *headerView;
 
 @end
 
@@ -24,6 +26,9 @@
     
     // Tell the students table to setup itself
     [self.studentsTableView setupForClass:self.activeClass];
+    
+    // Setup the header for this class
+    [self.headerView setupHeaderForClass:self.activeClass];
     
 }
 

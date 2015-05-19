@@ -34,4 +34,12 @@
     return [UIColor colorWithRed:(227.0/255.0) green:(168.0/255.0) blue:(19.0/255.0) alpha:1.0f];
 }
 
++ (UIColor *)tchBlueLight {
+    return [UIColor colorWithRed:(60/255.0) green:(160/255.0) blue:(203/255.0) alpha:1.0f];
+}
+
++ (UIColor *)tchBlueMedium {
+    return [UIColor colorWithRed:(35/255.0) green:(90/255.0) blue:(172/255.0) alpha:1.0f];
+}
+
 @end

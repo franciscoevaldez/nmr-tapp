@@ -14,5 +14,7 @@
 + (UIColor *)tchRed;
 + (UIColor *)tchGreen;
 + (UIColor *)tchYellow;
++ (UIColor *)tchBlueLight;
++ (UIColor *)tchBlueMedium;
 
 @end

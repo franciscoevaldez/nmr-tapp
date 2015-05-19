@@ -3189,7 +3189,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e5f-NI-gap" userLabel="Header" customClass="tchAttendanceHeader">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e5f-NI-gap" userLabel="Header" customClass="tchGradesHeader">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Izc-6O-L4f" userLabel="Back">
@@ -3248,7 +3248,7 @@
                                             </mask>
                                         </variation>
                                     </imageView>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4Ud-7K-I4d" userLabel="GradeCollection">
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4Ud-7K-I4d" userLabel="GradeCollection" customClass="tchHeaderColumnCollection">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -3349,7 +3349,7 @@
                                             </mask>
                                         </variation>
                                         <connections>
-                                            <outlet property="dataSource" destination="D9m-Qg-ZJP" id="OM8-FT-7Qh"/>
+                                            <outlet property="dataSource" destination="Fyv-u7-fTQ" id="0wH-wi-X8A"/>
                                         </connections>
                                     </collectionView>
                                 </subviews>
@@ -3419,10 +3419,9 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <outlet property="classNameLabel" destination="zgk-Ip-hHb" id="oNW-Dn-eIR"/>
-                                    <outlet property="dayCollection" destination="4Ud-7K-I4d" id="zHj-Y2-NhQ"/>
-                                    <outlet property="deployIndicator" destination="v0Q-mu-3m4" id="Oy2-1r-5XW"/>
-                                    <outlet property="tchHeaderDaysDataSource" destination="D9m-Qg-ZJP" id="ZXu-AG-jah"/>
+                                    <outlet property="deployIndicator" destination="v0Q-mu-3m4" id="4Ee-Jf-aJH"/>
+                                    <outlet property="subTitleLabel" destination="zgk-Ip-hHb" id="MNX-d4-W6R"/>
+                                    <outlet property="titleLabel" destination="XGb-I3-QRH" id="zdi-dt-eTY"/>
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4cY-Yd-huB" userLabel="Menu">
@@ -3664,6 +3663,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Grades" id="WcR-dQ-EkV"/>
                     <connections>
+                        <outlet property="headerView" destination="e5f-NI-gap" id="rYC-AO-8dk"/>
                         <outlet property="studentsTableView" destination="HAY-Sl-Vf7" id="U9w-su-ACa"/>
                     </connections>
                 </viewController>
@@ -3671,6 +3671,7 @@
                 <customObject id="qYg-xV-98e" customClass="tchStudentsTableDataSource"/>
                 <customObject id="Ruw-xh-3i9" customClass="tchStudentsTableDelegate"/>
                 <customObject id="aEP-oV-y2R" customClass="tchGradesColumnsDS"/>
+                <customObject id="Fyv-u7-fTQ" customClass="tchGradesHeaderDataSource"/>
                 <exit id="hiM-87-NOV" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2809.5" y="533"/>

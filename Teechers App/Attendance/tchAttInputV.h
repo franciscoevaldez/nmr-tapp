@@ -16,17 +16,6 @@
 - (void)setupForStudent:(Student*)student andColumn:(NSInteger)columnIndex;
 - (void)updateActiveColumn:(NSInteger)columnIndex;
 
-@property(nonatomic,assign) id<tchInputDelegateProtocol>   myDelegate;
+@property(nonatomic,assign) id<tchInputDelegateProtocol> myDelegate;
 
 @end
-
-/*
-@interface tchAttInputV : UIView
-
-@property (nonatomic, weak) id <tchInputProtocol> delegate;
-
-- (void)setupForStudent:(Student*)student andColumn:(NSInteger)columnIndex;
-- (void)updateActiveColumn:(NSInteger)columnIndex;
-
-@end
-*/
