@@ -14,12 +14,11 @@
 // importar el Delegate de esta tabla
 #import "tchStudentsTableDelegate.h"
 
+#import "tchAStudentCell.h"
 
 @interface tchStudentsTableView()
 
 @property (assign,nonatomic) NSInteger currentColumnIndex;
-//@property (strong,nonatomic) IBOutlet tchStudentsTableDataSource *tchDataSource;
-//@property (strong,nonatomic) IBOutlet tchStudentsTableDelegate *tchDelegate;
 @property (strong,nonatomic) tchStudentsTableDataSource *tchDataSource;
 
 @end
@@ -44,10 +43,10 @@
     NSArray *visibleCells = [self visibleCells];
     
     // loop through every cell
-    for (tchStudentDataTVC *currentCell in visibleCells) {
+    for (tchAStudentCell *currentCell in visibleCells) {
         
         // tell each one to scroll
-        [currentCell reloadColumns];
+        [currentCell reloadAllData];
         
     }
     
@@ -61,7 +60,7 @@
     NSArray *visibleCells = [self visibleCells];
     
     // loop through every cell
-    for (tchStudentDataTVC *currentColumn in visibleCells) {
+    for (tchAStudentCell *currentColumn in visibleCells) {
         
         // tell each one to scroll
         [currentColumn performDayScrollToIndex:newIndex];

@@ -1766,7 +1766,6 @@
                     </connections>
                 </customObject>
                 <customObject id="l25-rv-LpT" userLabel="DayBand Col Delegate" customClass="tchAttDayBandColDel"/>
-                <customObject id="Jul-EE-czT" customClass="tchStudentAttendanceDS"/>
                 <customObject id="xtM-7w-OMb" customClass="tchStoreCoordinator"/>
                 <customObject id="F1C-iv-z5P" customClass="tchStudentsTableDataSource"/>
                 <customObject id="fOF-El-GBc" customClass="tchStudentsTableDelegate"/>

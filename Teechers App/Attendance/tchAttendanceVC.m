@@ -8,10 +8,7 @@
 
 #import "tchAttendanceVC.h"
 
-#import "tchAttendanceTableDS.h"
 #import "tchEditDayVC.h"
-//#import "tchAttendanceTableV.h"
-
 #import "tchStudentsTableView.h"
 
 #import "ClassDay.h"
@@ -21,7 +18,6 @@
 @property (strong, nonatomic) IBOutlet tchAttendanceHeader *tchAttendanceHeader;
 @property (strong, nonatomic) IBOutlet tchAttDayBandColDel *tchDayBandDelegate;
 @property (strong, nonatomic) IBOutlet tchAttendanceMenu *tchAttendanceMenu;
-//@property (strong, nonatomic) IBOutlet tchAttendanceTableV *tchStudentsTable;
 @property (strong, nonatomic) IBOutlet tchStudentsTableView *tchStudentsTable;
 
 

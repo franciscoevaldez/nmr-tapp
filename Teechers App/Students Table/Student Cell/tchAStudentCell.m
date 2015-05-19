@@ -100,6 +100,14 @@
     
 }
 
+#pragma mark - Reload Columns
+- (void)reloadAllData
+{
+    
+    [self.columnsCollection reloadData];
+    
+}
+
 #pragma mark - Input dismiss
 - (void)cellShouldDismiss
 {

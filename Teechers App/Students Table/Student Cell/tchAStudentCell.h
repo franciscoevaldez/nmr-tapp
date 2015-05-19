@@ -21,6 +21,11 @@
 
 @property (nonatomic, weak) id <tchStudentCellProtocol> delegate;
 
+- (void)setupCellForStudent:(Student*)student
+              atScrollIndex:(NSInteger)scrollIndex
+              withIndexPath:(NSIndexPath*)indexPath
+                andDelegate:(id)tableView;
+- (void)reloadAllData;
 - (void)performDayScrollToIndex:(NSInteger)newIndex;
 
 @end

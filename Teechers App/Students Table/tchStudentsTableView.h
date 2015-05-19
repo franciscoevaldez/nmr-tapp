@@ -10,8 +10,6 @@
 
 #import "AClass+tchAClassExt.h"
 
-#import "tchStudentDataTVC.h"
-
 @interface tchStudentsTableView : UITableView
 //@interface tchStudentsTableView : UITableView <tchStudentCellProtocol>
 

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A1028AA91AF8FBA700315DE5 /* tchAttendanceTableDel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1028AA81AF8FBA700315DE5 /* tchAttendanceTableDel.m */; };
 		A1028AAF1AF920D900315DE5 /* tchAttInputV.m in Sources */ = {isa = PBXBuildFile; fileRef = A1028AAE1AF920D900315DE5 /* tchAttInputV.m */; };
 		A1028AB21AF94A6800315DE5 /* AttendanceRecord+tchAttExt.m in Sources */ = {isa = PBXBuildFile; fileRef = A1028AB11AF94A6800315DE5 /* AttendanceRecord+tchAttExt.m */; };
 		A106AF931AE80449001323E5 /* tchClassTableDS.m in Sources */ = {isa = PBXBuildFile; fileRef = A106AF921AE80449001323E5 /* tchClassTableDS.m */; };
@@ -21,10 +20,8 @@
 		A1113EF21B0A93A90095CD14 /* tchInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1113EF11B0A93A90095CD14 /* tchInputView.m */; };
 		A1113EF51B0AB2890095CD14 /* tchAttendanceColumnsDS.m in Sources */ = {isa = PBXBuildFile; fileRef = A1113EF41B0AB2890095CD14 /* tchAttendanceColumnsDS.m */; };
 		A14CBABE1AF27A2F009F140E /* AClass+tchAClassExt.m in Sources */ = {isa = PBXBuildFile; fileRef = A14CBABD1AF27A2F009F140E /* AClass+tchAClassExt.m */; };
-		A14CBAC21AF3E947009F140E /* tchStudentAttendanceDS.m in Sources */ = {isa = PBXBuildFile; fileRef = A14CBAC11AF3E947009F140E /* tchStudentAttendanceDS.m */; };
 		A14CBAC81AF41074009F140E /* tchAttendanceColumnVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A14CBAC71AF41074009F140E /* tchAttendanceColumnVC.m */; };
 		A14CBACD1AF41679009F140E /* Student+tchStudentsExt.m in Sources */ = {isa = PBXBuildFile; fileRef = A14CBACC1AF41679009F140E /* Student+tchStudentsExt.m */; };
-		A14CBAD01AF52ED8009F140E /* tchAttendanceTableV.m in Sources */ = {isa = PBXBuildFile; fileRef = A14CBACF1AF52ED8009F140E /* tchAttendanceTableV.m */; };
 		A14E13021AE5470700A1CB95 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A14E13011AE5470700A1CB95 /* main.m */; };
 		A14E13051AE5470700A1CB95 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A14E13041AE5470700A1CB95 /* AppDelegate.m */; };
 		A14E130B1AE5470700A1CB95 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A14E130A1AE5470700A1CB95 /* MasterViewController.m */; };
@@ -45,8 +42,6 @@
 		A16FD8D91AEAD12B00945877 /* tchAttDayCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A16FD8D81AEAD12B00945877 /* tchAttDayCVC.m */; };
 		A16FD8DC1AEAECEC00945877 /* tchAttHeadDaysColDS.m in Sources */ = {isa = PBXBuildFile; fileRef = A16FD8DB1AEAECEC00945877 /* tchAttHeadDaysColDS.m */; };
 		A1AA54671AEA7E7900318744 /* tchAttendanceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A1AA54661AEA7E7900318744 /* tchAttendanceVC.m */; };
-		A1AA546A1AEA7FC200318744 /* tchAttendanceTableDS.m in Sources */ = {isa = PBXBuildFile; fileRef = A1AA54691AEA7FC200318744 /* tchAttendanceTableDS.m */; };
-		A1AA546D1AEA824100318744 /* tchStudentDataTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A1AA546C1AEA824100318744 /* tchStudentDataTVC.m */; };
 		A1AA54701AEA890800318744 /* tchAttendanceHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = A1AA546F1AEA890800318744 /* tchAttendanceHeader.m */; };
 		A1B349A71AEE7D89008B5671 /* tchAttDayBandColDS.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B349A61AEE7D89008B5671 /* tchAttDayBandColDS.m */; };
 		A1B349AD1AEE9329008B5671 /* tchAttendanceMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B349AC1AEE9329008B5671 /* tchAttendanceMenu.m */; };
@@ -81,8 +76,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A1028AA71AF8FBA700315DE5 /* tchAttendanceTableDel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchAttendanceTableDel.h; path = Attendance/tchAttendanceTableDel.h; sourceTree = "<group>"; };
-		A1028AA81AF8FBA700315DE5 /* tchAttendanceTableDel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchAttendanceTableDel.m; path = Attendance/tchAttendanceTableDel.m; sourceTree = "<group>"; };
 		A1028AAD1AF920D900315DE5 /* tchAttInputV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchAttInputV.h; path = Attendance/tchAttInputV.h; sourceTree = "<group>"; };
 		A1028AAE1AF920D900315DE5 /* tchAttInputV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchAttInputV.m; path = Attendance/tchAttInputV.m; sourceTree = "<group>"; };
 		A1028AB01AF94A6800315DE5 /* AttendanceRecord+tchAttExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "AttendanceRecord+tchAttExt.h"; path = "Data/AttendanceRecord+tchAttExt.h"; sourceTree = "<group>"; };
@@ -109,14 +102,10 @@
 		A1113EF41B0AB2890095CD14 /* tchAttendanceColumnsDS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchAttendanceColumnsDS.m; path = Attendance/tchAttendanceColumnsDS.m; sourceTree = "<group>"; };
 		A14CBABC1AF27A2F009F140E /* AClass+tchAClassExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "AClass+tchAClassExt.h"; path = "Data/AClass+tchAClassExt.h"; sourceTree = "<group>"; };
 		A14CBABD1AF27A2F009F140E /* AClass+tchAClassExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "AClass+tchAClassExt.m"; path = "Data/AClass+tchAClassExt.m"; sourceTree = "<group>"; };
-		A14CBAC01AF3E947009F140E /* tchStudentAttendanceDS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchStudentAttendanceDS.h; path = Attendance/tchStudentAttendanceDS.h; sourceTree = "<group>"; };
-		A14CBAC11AF3E947009F140E /* tchStudentAttendanceDS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchStudentAttendanceDS.m; path = Attendance/tchStudentAttendanceDS.m; sourceTree = "<group>"; };
 		A14CBAC61AF41074009F140E /* tchAttendanceColumnVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchAttendanceColumnVC.h; path = Attendance/tchAttendanceColumnVC.h; sourceTree = "<group>"; };
 		A14CBAC71AF41074009F140E /* tchAttendanceColumnVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchAttendanceColumnVC.m; path = Attendance/tchAttendanceColumnVC.m; sourceTree = "<group>"; };
 		A14CBACB1AF41679009F140E /* Student+tchStudentsExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Student+tchStudentsExt.h"; path = "Data/Student+tchStudentsExt.h"; sourceTree = "<group>"; };
 		A14CBACC1AF41679009F140E /* Student+tchStudentsExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Student+tchStudentsExt.m"; path = "Data/Student+tchStudentsExt.m"; sourceTree = "<group>"; };
-		A14CBACE1AF52ED8009F140E /* tchAttendanceTableV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchAttendanceTableV.h; path = Attendance/tchAttendanceTableV.h; sourceTree = "<group>"; };
-		A14CBACF1AF52ED8009F140E /* tchAttendanceTableV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchAttendanceTableV.m; path = Attendance/tchAttendanceTableV.m; sourceTree = "<group>"; };
 		A14E12FC1AE5470700A1CB95 /* Teechers App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Teechers App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A14E13001AE5470700A1CB95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A14E13011AE5470700A1CB95 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -155,10 +144,6 @@
 		A16FD8DB1AEAECEC00945877 /* tchAttHeadDaysColDS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchAttHeadDaysColDS.m; path = Attendance/tchAttHeadDaysColDS.m; sourceTree = "<group>"; };
 		A1AA54651AEA7E7900318744 /* tchAttendanceVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchAttendanceVC.h; path = Attendance/tchAttendanceVC.h; sourceTree = "<group>"; };
 		A1AA54661AEA7E7900318744 /* tchAttendanceVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchAttendanceVC.m; path = Attendance/tchAttendanceVC.m; sourceTree = "<group>"; };
-		A1AA54681AEA7FC200318744 /* tchAttendanceTableDS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchAttendanceTableDS.h; path = Attendance/tchAttendanceTableDS.h; sourceTree = "<group>"; };
-		A1AA54691AEA7FC200318744 /* tchAttendanceTableDS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchAttendanceTableDS.m; path = Attendance/tchAttendanceTableDS.m; sourceTree = "<group>"; };
-		A1AA546B1AEA824000318744 /* tchStudentDataTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchStudentDataTVC.h; path = Attendance/tchStudentDataTVC.h; sourceTree = "<group>"; };
-		A1AA546C1AEA824100318744 /* tchStudentDataTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchStudentDataTVC.m; path = Attendance/tchStudentDataTVC.m; sourceTree = "<group>"; };
 		A1AA546E1AEA890800318744 /* tchAttendanceHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchAttendanceHeader.h; path = Attendance/tchAttendanceHeader.h; sourceTree = "<group>"; };
 		A1AA546F1AEA890800318744 /* tchAttendanceHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchAttendanceHeader.m; path = Attendance/tchAttendanceHeader.m; sourceTree = "<group>"; };
 		A1B349A51AEE7D89008B5671 /* tchAttDayBandColDS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchAttDayBandColDS.h; path = Attendance/tchAttDayBandColDS.h; sourceTree = "<group>"; };
@@ -264,33 +249,6 @@
 				A1113EF11B0A93A90095CD14 /* tchInputView.m */,
 			);
 			name = "Input Collection";
-			sourceTree = "<group>";
-		};
-		A14CBABF1AF3E811009F140E /* Student Cell */ = {
-			isa = PBXGroup;
-			children = (
-				A1AA546B1AEA824000318744 /* tchStudentDataTVC.h */,
-				A1AA546C1AEA824100318744 /* tchStudentDataTVC.m */,
-				A14CBAC01AF3E947009F140E /* tchStudentAttendanceDS.h */,
-				A14CBAC11AF3E947009F140E /* tchStudentAttendanceDS.m */,
-				A14CBAC61AF41074009F140E /* tchAttendanceColumnVC.h */,
-				A14CBAC71AF41074009F140E /* tchAttendanceColumnVC.m */,
-			);
-			name = "Student Cell";
-			sourceTree = "<group>";
-		};
-		A14CBAD11AF52EE2009F140E /* Students Table */ = {
-			isa = PBXGroup;
-			children = (
-				A14CBACE1AF52ED8009F140E /* tchAttendanceTableV.h */,
-				A14CBACF1AF52ED8009F140E /* tchAttendanceTableV.m */,
-				A1AA54681AEA7FC200318744 /* tchAttendanceTableDS.h */,
-				A1AA54691AEA7FC200318744 /* tchAttendanceTableDS.m */,
-				A1028AA71AF8FBA700315DE5 /* tchAttendanceTableDel.h */,
-				A1028AA81AF8FBA700315DE5 /* tchAttendanceTableDel.m */,
-				A14CBABF1AF3E811009F140E /* Student Cell */,
-			);
-			name = "Students Table";
 			sourceTree = "<group>";
 		};
 		A14E12F31AE5470600A1CB95 = {
@@ -464,17 +422,16 @@
 		A1AA54641AEA7E3100318744 /* Attendance */ = {
 			isa = PBXGroup;
 			children = (
-				A1113EF31B0AB2890095CD14 /* tchAttendanceColumnsDS.h */,
-				A1113EF41B0AB2890095CD14 /* tchAttendanceColumnsDS.m */,
 				A1AA54651AEA7E7900318744 /* tchAttendanceVC.h */,
 				A1AA54661AEA7E7900318744 /* tchAttendanceVC.m */,
-				A1B349BD1AF1A35C008B5671 /* tchStoreCoordinator.h */,
-				A1B349BE1AF1A35C008B5671 /* tchStoreCoordinator.m */,
+				A1113EF31B0AB2890095CD14 /* tchAttendanceColumnsDS.h */,
+				A1113EF41B0AB2890095CD14 /* tchAttendanceColumnsDS.m */,
+				A14CBAC61AF41074009F140E /* tchAttendanceColumnVC.h */,
+				A14CBAC71AF41074009F140E /* tchAttendanceColumnVC.m */,
 				A1028AAD1AF920D900315DE5 /* tchAttInputV.h */,
 				A1028AAE1AF920D900315DE5 /* tchAttInputV.m */,
 				A1B349AE1AEF0019008B5671 /* Header */,
 				A1B349B21AEF01C4008B5671 /* Menu */,
-				A14CBAD11AF52EE2009F140E /* Students Table */,
 			);
 			name = Attendance;
 			sourceTree = "<group>";
@@ -511,8 +468,6 @@
 			children = (
 				A1B349B31AEFEA01008B5671 /* tchEditDayVC.h */,
 				A1B349B41AEFEA01008B5671 /* tchEditDayVC.m */,
-				A1B349BA1AF17118008B5671 /* tchDatePickerField.h */,
-				A1B349BB1AF17118008B5671 /* tchDatePickerField.m */,
 			);
 			name = "Edit Day";
 			sourceTree = "<group>";
@@ -524,6 +479,10 @@
 				A1D1A58E1B0A2E0E009245EB /* UIColor+appColorPresets.m */,
 				A1B713811AFAD13600A8B094 /* tchCollectionIndexed.h */,
 				A1B713821AFAD13600A8B094 /* tchCollectionIndexed.m */,
+				A1B349BD1AF1A35C008B5671 /* tchStoreCoordinator.h */,
+				A1B349BE1AF1A35C008B5671 /* tchStoreCoordinator.m */,
+				A1B349BA1AF17118008B5671 /* tchDatePickerField.h */,
+				A1B349BB1AF17118008B5671 /* tchDatePickerField.m */,
 			);
 			name = "Custom Controls";
 			sourceTree = "<group>";
@@ -642,13 +601,11 @@
 				A1AA54701AEA890800318744 /* tchAttendanceHeader.m in Sources */,
 				A14CBACD1AF41679009F140E /* Student+tchStudentsExt.m in Sources */,
 				A14CBABE1AF27A2F009F140E /* AClass+tchAClassExt.m in Sources */,
-				A14CBAC21AF3E947009F140E /* tchStudentAttendanceDS.m in Sources */,
 				A14E13361AE5609400A1CB95 /* ClassesData.xcdatamodeld in Sources */,
 				A14E132E1AE554AD00A1CB95 /* tchMainMenuVC.m in Sources */,
 				A15D3C8E1AE96EEB004A6DF1 /* tchStudentsVC.m in Sources */,
 				A1BDCC3E1AE71F10000B0328 /* StudentSummary.m in Sources */,
 				A15D3C871AE87CC6004A6DF1 /* tchClassTabBarVC.m in Sources */,
-				A14CBAD01AF52ED8009F140E /* tchAttendanceTableV.m in Sources */,
 				A1BDCC411AE71F10000B0328 /* StudentPicture.m in Sources */,
 				A1BDCC3B1AE71F10000B0328 /* Student.m in Sources */,
 				A1BDCC471AE71F11000B0328 /* ClassDay.m in Sources */,
@@ -665,8 +622,6 @@
 				A1D1A5931B0A3831009245EB /* tchGradesVC.m in Sources */,
 				A1113EE41B0A6A160095CD14 /* tchAStudentCell.m in Sources */,
 				A1113EDA1B0A4E300095CD14 /* tchStudentsTableView.m in Sources */,
-				A1028AA91AF8FBA700315DE5 /* tchAttendanceTableDel.m in Sources */,
-				A1AA546A1AEA7FC200318744 /* tchAttendanceTableDS.m in Sources */,
 				A16FD8DC1AEAECEC00945877 /* tchAttHeadDaysColDS.m in Sources */,
 				A1BDCC171AE7161D000B0328 /* tchImportConfVC.m in Sources */,
 				A1B349B11AEF01B8008B5671 /* tchAttDayBandColDel.m in Sources */,
@@ -680,7 +635,6 @@
 				A1028AAF1AF920D900315DE5 /* tchAttInputV.m in Sources */,
 				A1D1A58F1B0A2E0E009245EB /* UIColor+appColorPresets.m in Sources */,
 				A1B713831AFAD13600A8B094 /* tchCollectionIndexed.m in Sources */,
-				A1AA546D1AEA824100318744 /* tchStudentDataTVC.m in Sources */,
 				A15D3C941AE98659004A6DF1 /* tchStudentDeployableTVC.m in Sources */,
 				A14E13021AE5470700A1CB95 /* main.m in Sources */,
 				A15D3C911AE9799D004A6DF1 /* tchStudentsTableDS.m in Sources */,

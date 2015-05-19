@@ -9,6 +9,8 @@
 #import "tchStudentsTableDataSource.h"
 #import "tchStudentsTableView.h"
 
+#import "tchAStudentCell.h"
+
 #import "Student+tchStudentsExt.h"
 
 @interface tchStudentsTableDataSource()
@@ -54,7 +56,7 @@
 - (UITableViewCell *)tableView:(tchStudentsTableView*)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     // create the new cell
-    tchStudentDataTVC *newCell = [[tchStudentDataTVC alloc] init];
+    tchAStudentCell *newCell = [[tchAStudentCell alloc] init];
     
     // if there is a cell deployed and is this one…
     if (tableView.thereIsACellDeployed && tableView.deployedPath.row == indexPath.row) {
