@@ -44,8 +44,6 @@
 		A1A876CD1B0B7E20001C4D52 /* tchAttendanceMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A876CA1B0B7E20001C4D52 /* tchAttendanceMenu.m */; };
 		A1A876D01B0B8323001C4D52 /* tchEditDayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A876CF1B0B8323001C4D52 /* tchEditDayVC.m */; };
 		A1A876D71B0B8398001C4D52 /* tchAttDayCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A876D21B0B8398001C4D52 /* tchAttDayCVC.m */; };
-		A1A876D81B0B8398001C4D52 /* tchAttendanceHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A876D41B0B8398001C4D52 /* tchAttendanceHeader.m */; };
-		A1A876D91B0B8398001C4D52 /* tchAttHeadDaysColDS.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A876D61B0B8398001C4D52 /* tchAttHeadDaysColDS.m */; };
 		A1A876DE1B0B83DE001C4D52 /* tchDatePickerField.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A876DB1B0B83DE001C4D52 /* tchDatePickerField.m */; };
 		A1A876DF1B0B83DE001C4D52 /* tchStoreCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A876DD1B0B83DE001C4D52 /* tchStoreCoordinator.m */; };
 		A1A876E31B0B8645001C4D52 /* tchHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A876E21B0B8645001C4D52 /* tchHeaderView.m */; };
@@ -155,10 +153,6 @@
 		A1A876CF1B0B8323001C4D52 /* tchEditDayVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchEditDayVC.m; path = "Attendance/Menu/Edit Day/tchEditDayVC.m"; sourceTree = "<group>"; };
 		A1A876D11B0B8398001C4D52 /* tchAttDayCVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchAttDayCVC.h; path = Attendance/Header/tchAttDayCVC.h; sourceTree = "<group>"; };
 		A1A876D21B0B8398001C4D52 /* tchAttDayCVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchAttDayCVC.m; path = Attendance/Header/tchAttDayCVC.m; sourceTree = "<group>"; };
-		A1A876D31B0B8398001C4D52 /* tchAttendanceHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchAttendanceHeader.h; path = Attendance/Header/tchAttendanceHeader.h; sourceTree = "<group>"; };
-		A1A876D41B0B8398001C4D52 /* tchAttendanceHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchAttendanceHeader.m; path = Attendance/Header/tchAttendanceHeader.m; sourceTree = "<group>"; };
-		A1A876D51B0B8398001C4D52 /* tchAttHeadDaysColDS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchAttHeadDaysColDS.h; path = Attendance/Header/tchAttHeadDaysColDS.h; sourceTree = "<group>"; };
-		A1A876D61B0B8398001C4D52 /* tchAttHeadDaysColDS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchAttHeadDaysColDS.m; path = Attendance/Header/tchAttHeadDaysColDS.m; sourceTree = "<group>"; };
 		A1A876DA1B0B83DE001C4D52 /* tchDatePickerField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchDatePickerField.h; path = "Custom Controls/tchDatePickerField.h"; sourceTree = "<group>"; };
 		A1A876DB1B0B83DE001C4D52 /* tchDatePickerField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchDatePickerField.m; path = "Custom Controls/tchDatePickerField.m"; sourceTree = "<group>"; };
 		A1A876DC1B0B83DE001C4D52 /* tchStoreCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchStoreCoordinator.h; path = "Custom Controls/tchStoreCoordinator.h"; sourceTree = "<group>"; };
@@ -478,12 +472,8 @@
 		A1B349AE1AEF0019008B5671 /* Header */ = {
 			isa = PBXGroup;
 			children = (
-				A1A876D31B0B8398001C4D52 /* tchAttendanceHeader.h */,
-				A1A876D41B0B8398001C4D52 /* tchAttendanceHeader.m */,
 				A1A876D11B0B8398001C4D52 /* tchAttDayCVC.h */,
 				A1A876D21B0B8398001C4D52 /* tchAttDayCVC.m */,
-				A1A876D51B0B8398001C4D52 /* tchAttHeadDaysColDS.h */,
-				A1A876D61B0B8398001C4D52 /* tchAttHeadDaysColDS.m */,
 			);
 			name = Header;
 			sourceTree = "<group>";
@@ -645,14 +635,12 @@
 				A14CBABE1AF27A2F009F140E /* AClass+tchAClassExt.m in Sources */,
 				A14E13361AE5609400A1CB95 /* ClassesData.xcdatamodeld in Sources */,
 				A14E132E1AE554AD00A1CB95 /* tchMainMenuVC.m in Sources */,
-				A1A876D81B0B8398001C4D52 /* tchAttendanceHeader.m in Sources */,
 				A15D3C8E1AE96EEB004A6DF1 /* tchStudentsVC.m in Sources */,
 				A1BDCC3E1AE71F10000B0328 /* StudentSummary.m in Sources */,
 				A15D3C871AE87CC6004A6DF1 /* tchClassTabBarVC.m in Sources */,
 				A1BDCC411AE71F10000B0328 /* StudentPicture.m in Sources */,
 				A1BDCC3B1AE71F10000B0328 /* Student.m in Sources */,
 				A1BDCC471AE71F11000B0328 /* ClassDay.m in Sources */,
-				A1A876D91B0B8398001C4D52 /* tchAttHeadDaysColDS.m in Sources */,
 				A1A876DF1B0B83DE001C4D52 /* tchStoreCoordinator.m in Sources */,
 				A14E130E1AE5470700A1CB95 /* DetailViewController.m in Sources */,
 				A14E130B1AE5470700A1CB95 /* MasterViewController.m in Sources */,

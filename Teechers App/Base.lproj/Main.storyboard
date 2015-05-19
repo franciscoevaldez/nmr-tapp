@@ -1755,7 +1755,6 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VNp-jN-M7J" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Wi2-2n-5On" userLabel="Exit" sceneMemberID="exit"/>
-                <customObject id="D9m-Qg-ZJP" userLabel="Days Col Data Source" customClass="tchAttHeadDaysColDS"/>
                 <customObject id="gvJ-Ve-nFq" userLabel="DayBand Col Data Source" customClass="tchAttDayBandColDS">
                     <connections>
                         <outlet property="dayCollection" destination="HuJ-cx-7M7" id="GoQ-WX-ml9"/>
