@@ -15,7 +15,7 @@
 
 @interface tchAttendanceVC () 
 
-@property (strong, nonatomic) IBOutlet tchAttendanceHeader *tchAttendanceHeader;
+@property (strong, nonatomic) IBOutlet tchAttHeader *tchAttendanceHeader;
 @property (strong, nonatomic) IBOutlet tchAttDayBandColDel *tchDayBandDelegate;
 @property (strong, nonatomic) IBOutlet tchAttendanceMenu *tchAttendanceMenu;
 @property (strong, nonatomic) IBOutlet tchStudentsTableView *tchStudentsTable;
@@ -62,7 +62,8 @@
 - (void)scrollToIndex:(NSInteger)newIndex{
     
     // Tell header to scroll to new index
-    [self.tchAttendanceHeader performDayScrollToIndex:newIndex];
+    //[self.tchAttendanceHeader performDayScrollToIndex:newIndex];
+    [self.tchAttendanceHeader performColumnScrollToIndex:newIndex];
     
     // Tell the table to perform the scroll
     [self.tchStudentsTable performDayScrollToIndex:newIndex];

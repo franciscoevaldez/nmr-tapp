@@ -33,6 +33,16 @@
     
 }
 
+#pragma mark - touch event
+- (IBAction)touchUpInside{
+    
+    // tell delegate (view controller)
+    if ([self.delegate respondsToSelector:@selector(headerWasTapped)]) {
+        [self.delegate headerWasTapped];
+    }
+    
+}
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

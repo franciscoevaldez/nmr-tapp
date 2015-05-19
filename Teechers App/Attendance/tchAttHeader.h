@@ -10,6 +10,8 @@
 
 @interface tchAttHeader : tchHeaderView <tchHeaderViewProtocol>
 
+
+
 - (void)setupHeaderForClass:(AClass*)classForHeader;
 
 @end

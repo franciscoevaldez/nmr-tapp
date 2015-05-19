@@ -238,7 +238,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vIL-7v-VuK" userLabel="Header" customClass="tchAttendanceHeader">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vIL-7v-VuK" userLabel="Header" customClass="tchAttHeader">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ezu-00-PSJ" userLabel="Back">
@@ -297,7 +297,7 @@
                                             </mask>
                                         </variation>
                                     </imageView>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="T4D-pI-1qx" userLabel="DaysCollection">
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="T4D-pI-1qx" userLabel="DaysCollection" customClass="tchHeaderColumnCollection">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -416,7 +416,7 @@
                                             </mask>
                                         </variation>
                                         <connections>
-                                            <outlet property="dataSource" destination="D9m-Qg-ZJP" id="4df-wo-uKo"/>
+                                            <outlet property="dataSource" destination="Cmm-ZW-uSJ" id="vSg-am-15m"/>
                                         </connections>
                                     </collectionView>
                                 </subviews>
@@ -486,10 +486,10 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <outlet property="classNameLabel" destination="nnE-Wz-hEs" id="0L2-FQ-QaN"/>
-                                    <outlet property="dayCollection" destination="T4D-pI-1qx" id="klD-ge-ctr"/>
-                                    <outlet property="deployIndicator" destination="wdf-vb-upe" id="mxE-eP-Qnh"/>
-                                    <outlet property="tchHeaderDaysDataSource" destination="D9m-Qg-ZJP" id="5tb-VR-4Xx"/>
+                                    <outlet property="columnCollection" destination="T4D-pI-1qx" id="czn-Vr-tk0"/>
+                                    <outlet property="deployIndicator" destination="wdf-vb-upe" id="Mzw-PP-nZv"/>
+                                    <outlet property="subTitleLabel" destination="nnE-Wz-hEs" id="KSF-R0-9hs"/>
+                                    <outlet property="titleLabel" destination="Y2b-hr-Peb" id="6pD-LQ-eSh"/>
                                     <outletCollection property="gestureRecognizers" destination="Bxw-iX-fEM" appends="YES" id="Cog-AJ-En6"/>
                                 </connections>
                             </view>
@@ -1755,11 +1755,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VNp-jN-M7J" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Wi2-2n-5On" userLabel="Exit" sceneMemberID="exit"/>
-                <customObject id="D9m-Qg-ZJP" userLabel="Days Col Data Source" customClass="tchAttHeadDaysColDS">
-                    <connections>
-                        <outlet property="dayCollection" destination="T4D-pI-1qx" id="2NX-h8-01E"/>
-                    </connections>
-                </customObject>
+                <customObject id="D9m-Qg-ZJP" userLabel="Days Col Data Source" customClass="tchAttHeadDaysColDS"/>
                 <customObject id="gvJ-Ve-nFq" userLabel="DayBand Col Data Source" customClass="tchAttDayBandColDS">
                     <connections>
                         <outlet property="dayCollection" destination="HuJ-cx-7M7" id="GoQ-WX-ml9"/>
@@ -1770,6 +1766,7 @@
                 <customObject id="F1C-iv-z5P" customClass="tchStudentsTableDataSource"/>
                 <customObject id="fOF-El-GBc" customClass="tchStudentsTableDelegate"/>
                 <customObject id="OLJ-Yn-rGL" customClass="tchAttendanceColumnsDS"/>
+                <customObject id="Cmm-ZW-uSJ" customClass="tchAttHeaderDataSource"/>
                 <swipeGestureRecognizer direction="left" id="OFh-3Z-piv" userLabel="Left Swipe Recognizer">
                     <connections>
                         <action selector="swipeLeftDone:" destination="HRB-Rw-Ffv" id="DC7-na-IaU"/>
@@ -1782,7 +1779,7 @@
                 </swipeGestureRecognizer>
                 <tapGestureRecognizer id="Bxw-iX-fEM" userLabel="Header Tap">
                     <connections>
-                        <action selector="touchUpInside" destination="vIL-7v-VuK" id="KCA-fZ-Eud"/>
+                        <action selector="touchUpInside" destination="vIL-7v-VuK" id="Lhj-l0-jjl"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
