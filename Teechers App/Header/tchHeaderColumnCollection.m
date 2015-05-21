@@ -22,7 +22,6 @@
     // pass the class to the data source
     [dataSource setupForClass:activeClass];
     
-    
 }
 
 /*

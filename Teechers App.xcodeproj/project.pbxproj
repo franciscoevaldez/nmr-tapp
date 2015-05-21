@@ -39,6 +39,9 @@
 		A15D3C911AE9799D004A6DF1 /* tchStudentsTableDS.m in Sources */ = {isa = PBXBuildFile; fileRef = A15D3C901AE9799D004A6DF1 /* tchStudentsTableDS.m */; };
 		A15D3C941AE98659004A6DF1 /* tchStudentDeployableTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A15D3C931AE98659004A6DF1 /* tchStudentDeployableTVC.m */; };
 		A15D3C971AE9B7DC004A6DF1 /* tchStudentsHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = A15D3C961AE9B7DC004A6DF1 /* tchStudentsHeader.m */; };
+		A16411B71B0CC83E00E2DBAE /* tchDropMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = A16411B61B0CC83E00E2DBAE /* tchDropMenuView.m */; };
+		A16411BA1B0CD33600E2DBAE /* tchGradesMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = A16411B91B0CD33600E2DBAE /* tchGradesMenu.m */; };
+		A16411BD1B0CD99500E2DBAE /* tchColumnCollectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A16411BC1B0CD99500E2DBAE /* tchColumnCollectionDelegate.m */; };
 		A1A876CB1B0B7E20001C4D52 /* tchAttDayBandColDel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A876C61B0B7E20001C4D52 /* tchAttDayBandColDel.m */; };
 		A1A876CC1B0B7E20001C4D52 /* tchAttDayBandColDS.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A876C81B0B7E20001C4D52 /* tchAttDayBandColDS.m */; };
 		A1A876CD1B0B7E20001C4D52 /* tchAttendanceMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A876CA1B0B7E20001C4D52 /* tchAttendanceMenu.m */; };
@@ -143,6 +146,12 @@
 		A15D3C931AE98659004A6DF1 /* tchStudentDeployableTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchStudentDeployableTVC.m; path = Students/tchStudentDeployableTVC.m; sourceTree = "<group>"; };
 		A15D3C951AE9B7DC004A6DF1 /* tchStudentsHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchStudentsHeader.h; path = Students/tchStudentsHeader.h; sourceTree = "<group>"; };
 		A15D3C961AE9B7DC004A6DF1 /* tchStudentsHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchStudentsHeader.m; path = Students/tchStudentsHeader.m; sourceTree = "<group>"; };
+		A16411B51B0CC83E00E2DBAE /* tchDropMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchDropMenuView.h; path = DropMenu/tchDropMenuView.h; sourceTree = "<group>"; };
+		A16411B61B0CC83E00E2DBAE /* tchDropMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchDropMenuView.m; path = DropMenu/tchDropMenuView.m; sourceTree = "<group>"; };
+		A16411B81B0CD33600E2DBAE /* tchGradesMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchGradesMenu.h; path = Grades/tchGradesMenu.h; sourceTree = "<group>"; };
+		A16411B91B0CD33600E2DBAE /* tchGradesMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchGradesMenu.m; path = Grades/tchGradesMenu.m; sourceTree = "<group>"; };
+		A16411BB1B0CD99500E2DBAE /* tchColumnCollectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchColumnCollectionDelegate.h; path = Header/tchColumnCollectionDelegate.h; sourceTree = "<group>"; };
+		A16411BC1B0CD99500E2DBAE /* tchColumnCollectionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchColumnCollectionDelegate.m; path = Header/tchColumnCollectionDelegate.m; sourceTree = "<group>"; };
 		A1A876C51B0B7E20001C4D52 /* tchAttDayBandColDel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchAttDayBandColDel.h; path = Attendance/Menu/tchAttDayBandColDel.h; sourceTree = "<group>"; };
 		A1A876C61B0B7E20001C4D52 /* tchAttDayBandColDel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchAttDayBandColDel.m; path = Attendance/Menu/tchAttDayBandColDel.m; sourceTree = "<group>"; };
 		A1A876C71B0B7E20001C4D52 /* tchAttDayBandColDS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchAttDayBandColDS.h; path = Attendance/Menu/tchAttDayBandColDS.h; sourceTree = "<group>"; };
@@ -296,6 +305,7 @@
 				A1AA54641AEA7E3100318744 /* Attendance */,
 				A1D1A5901B0A37EE009245EB /* Grades */,
 				A1A876E01B0B8545001C4D52 /* Header */,
+				A16411B41B0CC7C100E2DBAE /* DropMenu */,
 				A1113ED71B0A4DDC0095CD14 /* Students Table */,
 				A14E133A1AE5A49F00A1CB95 /* ImportSequence */,
 				A14E13031AE5470700A1CB95 /* AppDelegate.h */,
@@ -435,6 +445,15 @@
 			name = Students;
 			sourceTree = "<group>";
 		};
+		A16411B41B0CC7C100E2DBAE /* DropMenu */ = {
+			isa = PBXGroup;
+			children = (
+				A16411B51B0CC83E00E2DBAE /* tchDropMenuView.h */,
+				A16411B61B0CC83E00E2DBAE /* tchDropMenuView.m */,
+			);
+			name = DropMenu;
+			sourceTree = "<group>";
+		};
 		A1A876E01B0B8545001C4D52 /* Header */ = {
 			isa = PBXGroup;
 			children = (
@@ -444,6 +463,8 @@
 				A1A876E81B0BB154001C4D52 /* tchHeaderColumnCollection.m */,
 				A1A876ED1B0BB6B1001C4D52 /* tchHeaderColumnCollDataSource.h */,
 				A1A876EE1B0BB6B1001C4D52 /* tchHeaderColumnCollDataSource.m */,
+				A16411BB1B0CD99500E2DBAE /* tchColumnCollectionDelegate.h */,
+				A16411BC1B0CD99500E2DBAE /* tchColumnCollectionDelegate.m */,
 			);
 			name = Header;
 			sourceTree = "<group>";
@@ -527,6 +548,8 @@
 				A1A876E51B0B8EF7001C4D52 /* tchGradesHeader.m */,
 				A1A876EA1B0BB42B001C4D52 /* tchGradesHeaderDataSource.h */,
 				A1A876EB1B0BB42B001C4D52 /* tchGradesHeaderDataSource.m */,
+				A16411B81B0CD33600E2DBAE /* tchGradesMenu.h */,
+				A16411B91B0CD33600E2DBAE /* tchGradesMenu.m */,
 			);
 			name = Grades;
 			sourceTree = "<group>";
@@ -647,6 +670,7 @@
 				A1A876EC1B0BB42B001C4D52 /* tchGradesHeaderDataSource.m in Sources */,
 				A1A876DE1B0B83DE001C4D52 /* tchDatePickerField.m in Sources */,
 				A1A876CC1B0B7E20001C4D52 /* tchAttDayBandColDS.m in Sources */,
+				A16411BD1B0CD99500E2DBAE /* tchColumnCollectionDelegate.m in Sources */,
 				A1A876CB1B0B7E20001C4D52 /* tchAttDayBandColDel.m in Sources */,
 				A14CBAC81AF41074009F140E /* tchAttendanceColumnVC.m in Sources */,
 				A1A876EF1B0BB6B1001C4D52 /* tchHeaderColumnCollDataSource.m in Sources */,
@@ -656,6 +680,7 @@
 				A1A876E91B0BB154001C4D52 /* tchHeaderColumnCollection.m in Sources */,
 				A1BDCC351AE71F0B000B0328 /* AttendanceRecord.m in Sources */,
 				A1D1A5931B0A3831009245EB /* tchGradesVC.m in Sources */,
+				A16411BA1B0CD33600E2DBAE /* tchGradesMenu.m in Sources */,
 				A1113EE41B0A6A160095CD14 /* tchAStudentCell.m in Sources */,
 				A1A876E31B0B8645001C4D52 /* tchHeaderView.m in Sources */,
 				A1113EDA1B0A4E300095CD14 /* tchStudentsTableView.m in Sources */,
@@ -677,6 +702,7 @@
 				A15D3C911AE9799D004A6DF1 /* tchStudentsTableDS.m in Sources */,
 				A1113EDD1B0A59C30095CD14 /* tchStudentsTableDataSource.m in Sources */,
 				A15D3C971AE9B7DC004A6DF1 /* tchStudentsHeader.m in Sources */,
+				A16411B71B0CC83E00E2DBAE /* tchDropMenuView.m in Sources */,
 				A1A876CD1B0B7E20001C4D52 /* tchAttendanceMenu.m in Sources */,
 				A1113EEB1B0A7F1F0095CD14 /* tchGradesColumnsDS.m in Sources */,
 				A1113EE01B0A59FC0095CD14 /* tchStudentsTableDelegate.m in Sources */,

@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+
+#import "tchGradesHeader.h"
+
 #import "AClass+tchAClassExt.h"
 
-@interface tchGradesVC : UIViewController
+@interface tchGradesVC : UIViewController <tchHeaderDelegate>
 
 @property (strong,nonatomic) AClass *activeClass;
 

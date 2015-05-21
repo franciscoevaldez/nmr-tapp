@@ -9,12 +9,13 @@
 #import "tchGradesVC.h"
 
 #import "tchStudentsTableView.h"
-#import "tchGradesHeader.h"
+#import "tchGradesMenu.h"
 
 @interface tchGradesVC ()
 
 @property (strong,nonatomic) IBOutlet tchStudentsTableView *studentsTableView;
 @property (strong,nonatomic) IBOutlet tchGradesHeader *headerView;
+@property (strong,nonatomic) IBOutlet tchGradesMenu *dropMenu;
 
 @end
 
@@ -29,6 +30,34 @@
     
     // Setup the header for this class
     [self.headerView setupHeaderForClass:self.activeClass];
+    
+    // Setup the menu for this class
+    [self.dropMenu setupForClass:self.activeClass];
+    
+}
+
+#pragma mark - Header tapped
+- (void)headerWasTapped {
+        
+    if (!self.dropMenu.status) {
+        
+        [UIView animateWithDuration:0.5 animations:^{
+            self.dropMenu.heightConstraint.constant = self.dropMenu.heightForFullDeploy;
+            [self.view layoutIfNeeded];
+        }];
+        
+    } else {
+        
+        [UIView animateWithDuration:0.5 animations:^{
+            self.dropMenu.heightConstraint.constant = 0;
+            [self.view layoutIfNeeded];
+        }];
+        
+    }
+    
+    [self.dropMenu toggleMenu];
+    [self.headerView menuWasToggled];
+    
     
 }
 

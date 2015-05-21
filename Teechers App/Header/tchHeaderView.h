@@ -29,7 +29,7 @@
 
 @interface tchHeaderView : UIView
 
-@property(nonatomic,assign) id <tchHeaderDelegate> delegate;
+@property(nonatomic,assign) IBOutlet id <tchHeaderDelegate> delegate;
 
 - (void)setupHeaderForClass:(AClass*)classForHeader;
 - (void)performColumnScrollToIndex:(NSInteger)newIndex;
@@ -42,6 +42,8 @@
 @property (strong,nonatomic) IBOutlet UILabel *subTitleLabel;
 @property (strong,nonatomic) IBOutlet UIImageView *deployIndicator;
 @property (strong,nonatomic) IBOutlet tchHeaderColumnCollection *columnCollection;
+
+- (IBAction)touchUpInside;
 
 @property (strong,nonatomic) AClass *activeClass;
 @property (assign,nonatomic) NSInteger activeColumnIndex;
