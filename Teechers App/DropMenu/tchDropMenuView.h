@@ -27,10 +27,11 @@
 
 -(void)showAlert:(UIAlertController*)alertController;
 -(void)reloadViewsData;
+- (void)scrollToIndex:(NSInteger)newIndex;
 
 @end
 
-@interface tchDropMenuView : UIView
+@interface tchDropMenuView : UIView <tchColumnCollectionDelegate>
 
 
 @property (assign,nonatomic) int status;

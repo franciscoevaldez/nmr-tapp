@@ -79,7 +79,7 @@
     return YES;
 }
 
-#pragma mark - keyboard adjustments & listeners
+#pragma mark - keyboard adjustments & listeners (ABSTRACTABLE)
 // registrar los listeners para el teclado
 - (void)registerForKeyboardNotifications
 {

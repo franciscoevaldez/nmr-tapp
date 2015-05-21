@@ -12,11 +12,18 @@
 - (void)setupForClass:(AClass*)activeClass;
 @end
 
+@protocol tchColumnCollectionDelegate <NSObject>
+- (void)scrollToIndex:(NSInteger)newIndex;
+@end
+
 
 
 @interface tchHeaderColumnCollection : tchCollectionIndexed
 
+@property (nonatomic, weak) IBOutlet id <tchColumnCollectionDelegate> columnDelegate;
+
 @property (strong,nonatomic) AClass *activeClass;
 - (void)setupForClass:(AClass*)activeClass;
+- (void)columnWasSelected:(NSInteger)columnIndex;
 
 @end

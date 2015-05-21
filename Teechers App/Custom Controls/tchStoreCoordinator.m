@@ -10,6 +10,7 @@
 
 #import "ClassDay.h"
 #import "AttendanceRecord+tchAttExt.h"
+#import "Evaluation.h"
 
 @implementation tchStoreCoordinator
 
@@ -254,7 +255,43 @@
 }
 
 
-
+#pragma mark - Evaluations Handling
+- (Evaluation*)createAndStoreNewEvaluation:(NSString*)name
+                                    withID:(NSString*)newID
+                                  maxGrade:(int)maxGrade
+{
+    
+    // get the managed object context
+    NSManagedObjectContext *managedOC = self.activeClass.managedObjectContext;
+    
+    // create the evaluation object
+    Evaluation *newEvaluation = [NSEntityDescription
+                                 insertNewObjectForEntityForName:@"Evaluation"
+                                 inManagedObjectContext:managedOC];
+    
+    
+    // set the ID for the new day
+    [newEvaluation setValue:name forKey:@"gradeID"];
+    
+    // set the name for the new day
+    [newEvaluation setValue:[NSNumber numberWithInt:maxGrade] forKey:@"range"];
+    
+    // set the name for the new day
+    [newEvaluation setValue:[NSString stringWithFormat:@"number"] forKey:@"type"];
+    
+    // set the class for the new day
+    [newEvaluation setValue:self.activeClass forKey:@"forClass"];
+    
+    // write in permanent store
+    NSError *dayError;
+    if (![managedOC save:&dayError]) {
+        NSLog(@"error en: %@", [dayError localizedDescription]);
+    }
+    
+    // return the created day
+    return newEvaluation;
+    
+}
 
 
 @end

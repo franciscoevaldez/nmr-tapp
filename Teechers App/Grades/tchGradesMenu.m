@@ -17,22 +17,10 @@
     [self defaultInit];
     
     // heights
-    self.heightForFullDeploy = 150;
+    self.heightForFullDeploy = 160;
     self.heightForSemiDeploy = 50;
     
-    // set the day band data source
-    //[self.tchDayBandDataSource setupForClass:activeClass];
-    
-    // set self as delegate for the data source
-    tchColumnCollectionDelegate *columnBandDelegate = self.columnBandCollection.delegate;
-    columnBandDelegate.myDelegate = self;
-    
-    
 }
-
-- (void)scrollToIndex:(NSInteger)newIndex{
-    NSLog(@"new index to scroll: %i", newIndex);
-};
 
 -(IBAction)addGrade:(UIButton *)sender{
     

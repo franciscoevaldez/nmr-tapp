@@ -29,6 +29,14 @@
     
 }
 
+#pragma mark - Column in coleccion selected
+-(void)scrollToIndex:(NSInteger)newIndex{
+    
+    // tell delegate to scroll columns
+    [self.delegate scrollToIndex:newIndex];
+    
+}
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

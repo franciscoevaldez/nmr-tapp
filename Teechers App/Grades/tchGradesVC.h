@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 
 #import "tchGradesHeader.h"
+#import "tchEditGrade1VC.h"
 
 #import "AClass+tchAClassExt.h"
 
-@interface tchGradesVC : UIViewController <tchHeaderDelegate>
+@interface tchGradesVC : UIViewController <tchHeaderDelegate, tchEditDialogDelegate>
 
 @property (strong,nonatomic) AClass *activeClass;
 

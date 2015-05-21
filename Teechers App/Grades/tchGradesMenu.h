@@ -8,8 +8,6 @@
 
 #import "tchDropMenuView.h"
 
-#import "tchColumnCollectionDelegate.h"
-
-@interface tchGradesMenu : tchDropMenuView <tchDropMenuProtocol, tchColumnCollectionDelegate>
+@interface tchGradesMenu : tchDropMenuView <tchDropMenuProtocol>
 
 @end

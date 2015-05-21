@@ -9,17 +9,10 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@protocol tchColumnCollectionDelegate <NSObject>
-
-- (void)scrollToIndex:(NSInteger)newIndex;
-
-@end
-
-
 
 
 @interface tchColumnCollectionDelegate : NSObject <UICollectionViewDelegate>
 
-@property (nonatomic, weak) id <tchColumnCollectionDelegate> myDelegate;
+//@property (nonatomic, weak) id <tchColumnCollectionDelegate> myDelegate;
 
 @end

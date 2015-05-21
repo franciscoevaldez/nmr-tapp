@@ -24,6 +24,13 @@
     
 }
 
+- (void)columnWasSelected:(NSInteger)columnIndex{
+    
+    // tell the collection delegate to scroll
+    [_columnDelegate scrollToIndex:columnIndex];
+    
+}
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
