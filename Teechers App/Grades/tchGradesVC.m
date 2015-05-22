@@ -18,7 +18,7 @@
 @property (strong,nonatomic) IBOutlet tchGradesHeader *headerView;
 @property (strong,nonatomic) IBOutlet tchGradesMenu *dropMenuView;
 
-@property (assign, nonatomic) NSInteger currentDayIndex;
+@property (assign, nonatomic) NSInteger currentColumnIndex;
 
 @end
 
@@ -112,14 +112,24 @@
     return [[self.activeClass.classDays allObjects] count];
 }
 
+- (Evaluation*)getCurrentEvaluation{
+    
+    // get the day for that index
+    Evaluation *currentEvaluation = [self.activeClass getEvaluationForIndex:self.currentColumnIndex];
+    
+    // return the current Day
+    return currentEvaluation;
+    
+}
+
 #pragma mark - Column Handling (ABSTRACTABLE)
 - (IBAction)swipeLeftDone:(id)sender {
     
     NSInteger maxScroll = [self getMaxScroll];
     
-    if (self.currentDayIndex < (maxScroll-1) && (!self.dropMenuView.status)){
+    if (self.currentColumnIndex < (maxScroll-1) && (!self.dropMenuView.status)){
         
-        [self scrollToIndex:self.currentDayIndex+1];
+        [self scrollToIndex:self.currentColumnIndex+1];
         
     }
     
@@ -128,9 +138,9 @@
 - (IBAction)swipeRightDone:(id)sender {
     
     // check the scroll is available
-    if (self.currentDayIndex > 0 && (!self.dropMenuView.status)) {
+    if (self.currentColumnIndex > 0 && (!self.dropMenuView.status)) {
         
-        [self scrollToIndex:self.currentDayIndex-1];
+        [self scrollToIndex:self.currentColumnIndex-1];
         
     }
     
@@ -149,7 +159,7 @@
     [self dropMenuClose];
     
     // get the new index to VC property
-    self.currentDayIndex = newIndex;
+    self.currentColumnIndex = newIndex;
     
 }
 
@@ -164,7 +174,7 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
-    // to new day
+    // to new grade
     if ([[segue identifier]isEqualToString:@"toAddGradeSegue"]) {
         
         // toggle the menu
@@ -178,6 +188,26 @@
         
         // theres no day to edit
         destinationVC.evaluationToEdit = nil;
+        
+        // pass the active class
+        destinationVC.activeClass = self.activeClass;
+        
+    }
+    
+    // to new grade
+    if ([[segue identifier]isEqualToString:@"toEditGradeSegue"]) {
+        
+        // toggle the menu
+        [self headerWasTapped];
+        
+        // prepare the edit/create view controller
+        tchEditGrade1VC *destinationVC = [segue destinationViewController];
+        
+        // set view controller as delegate
+        destinationVC.delegate = self;
+        
+        // get the edit to pass
+        destinationVC.evaluationToEdit = [self getCurrentEvaluation];
         
         // pass the active class
         destinationVC.activeClass = self.activeClass;

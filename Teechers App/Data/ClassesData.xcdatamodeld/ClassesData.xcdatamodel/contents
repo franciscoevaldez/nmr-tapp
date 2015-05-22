@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14C109" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14D136" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="AClass" representedClassName="AClass" syncable="YES">
         <attribute name="classColor" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="classID" attributeType="String" indexed="YES" syncable="YES"/>
@@ -26,9 +26,11 @@
         <relationship name="forClass" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AClass" inverseName="classDays" inverseEntity="AClass" syncable="YES"/>
     </entity>
     <entity name="Evaluation" representedClassName="Evaluation" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="gradeID" attributeType="String" syncable="YES"/>
         <attribute name="minToPass" optional="YES" attributeType="Float" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nameShort" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="range" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="rules" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
@@ -78,7 +80,7 @@
         <element name="AClass" positionX="1267" positionY="198" width="128" height="178"/>
         <element name="AttendanceRecord" positionX="1789" positionY="81" width="128" height="118"/>
         <element name="ClassDay" positionX="1519" positionY="-45" width="128" height="118"/>
-        <element name="Evaluation" positionX="1530" positionY="189" width="128" height="193"/>
+        <element name="Evaluation" positionX="1530" positionY="189" width="128" height="225"/>
         <element name="GradeRecord" positionX="1816" positionY="243" width="128" height="163"/>
         <element name="Student" positionX="1503" positionY="461" width="128" height="163"/>
         <element name="StudentPicture" positionX="1843" positionY="473" width="128" height="73"/>

@@ -35,6 +35,9 @@
 		A14E133D1AE5A4F000A1CB95 /* tchImport1VC.m in Sources */ = {isa = PBXBuildFile; fileRef = A14E133C1AE5A4F000A1CB95 /* tchImport1VC.m */; };
 		A1573C741B0E343100B3AB50 /* tchEditGrade1VC.m in Sources */ = {isa = PBXBuildFile; fileRef = A1573C731B0E343100B3AB50 /* tchEditGrade1VC.m */; };
 		A1573C7B1B0E42FA00B3AB50 /* tchFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1573C7A1B0E42FA00B3AB50 /* tchFormViewController.m */; };
+		A1573C811B0EA95700B3AB50 /* Evaluation.m in Sources */ = {isa = PBXBuildFile; fileRef = A1573C801B0EA95700B3AB50 /* Evaluation.m */; };
+		A1573C841B0EB1C400B3AB50 /* tchEvalHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1573C831B0EB1C400B3AB50 /* tchEvalHeaderCell.m */; };
+		A1573C881B0EB3FE00B3AB50 /* tchEvalColumnCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1573C871B0EB3FE00B3AB50 /* tchEvalColumnCell.m */; };
 		A15D3C871AE87CC6004A6DF1 /* tchClassTabBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A15D3C861AE87CC6004A6DF1 /* tchClassTabBarVC.m */; };
 		A15D3C8A1AE961C7004A6DF1 /* tchOneClassTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A15D3C891AE961C7004A6DF1 /* tchOneClassTVC.m */; };
 		A15D3C8E1AE96EEB004A6DF1 /* tchStudentsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A15D3C8D1AE96EEB004A6DF1 /* tchStudentsVC.m */; };
@@ -70,7 +73,6 @@
 		A1BDCC411AE71F10000B0328 /* StudentPicture.m in Sources */ = {isa = PBXBuildFile; fileRef = A1BDCC401AE71F10000B0328 /* StudentPicture.m */; };
 		A1BDCC441AE71F11000B0328 /* AClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A1BDCC431AE71F11000B0328 /* AClass.m */; };
 		A1BDCC471AE71F11000B0328 /* ClassDay.m in Sources */ = {isa = PBXBuildFile; fileRef = A1BDCC461AE71F11000B0328 /* ClassDay.m */; };
-		A1BDCC4A1AE71F12000B0328 /* Evaluation.m in Sources */ = {isa = PBXBuildFile; fileRef = A1BDCC491AE71F12000B0328 /* Evaluation.m */; };
 		A1D1A58F1B0A2E0E009245EB /* UIColor+appColorPresets.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D1A58E1B0A2E0E009245EB /* UIColor+appColorPresets.m */; };
 		A1D1A5931B0A3831009245EB /* tchGradesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D1A5921B0A3831009245EB /* tchGradesVC.m */; };
 /* End PBXBuildFile section */
@@ -140,6 +142,12 @@
 		A1573C731B0E343100B3AB50 /* tchEditGrade1VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchEditGrade1VC.m; path = Grades/Edit/tchEditGrade1VC.m; sourceTree = "<group>"; };
 		A1573C791B0E42FA00B3AB50 /* tchFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchFormViewController.h; path = "Custom Controls/tchFormViewController.h"; sourceTree = "<group>"; };
 		A1573C7A1B0E42FA00B3AB50 /* tchFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchFormViewController.m; path = "Custom Controls/tchFormViewController.m"; sourceTree = "<group>"; };
+		A1573C7F1B0EA95700B3AB50 /* Evaluation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Evaluation.h; path = Data/Evaluation.h; sourceTree = "<group>"; };
+		A1573C801B0EA95700B3AB50 /* Evaluation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Evaluation.m; path = Data/Evaluation.m; sourceTree = "<group>"; };
+		A1573C821B0EB1C400B3AB50 /* tchEvalHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchEvalHeaderCell.h; path = Grades/Cells/tchEvalHeaderCell.h; sourceTree = "<group>"; };
+		A1573C831B0EB1C400B3AB50 /* tchEvalHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchEvalHeaderCell.m; path = Grades/Cells/tchEvalHeaderCell.m; sourceTree = "<group>"; };
+		A1573C861B0EB3FE00B3AB50 /* tchEvalColumnCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchEvalColumnCell.h; path = Grades/Cells/tchEvalColumnCell.h; sourceTree = "<group>"; };
+		A1573C871B0EB3FE00B3AB50 /* tchEvalColumnCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchEvalColumnCell.m; path = Grades/Cells/tchEvalColumnCell.m; sourceTree = "<group>"; };
 		A15D3C851AE87CC6004A6DF1 /* tchClassTabBarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchClassTabBarVC.h; path = ClassTabs/tchClassTabBarVC.h; sourceTree = "<group>"; };
 		A15D3C861AE87CC6004A6DF1 /* tchClassTabBarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchClassTabBarVC.m; path = ClassTabs/tchClassTabBarVC.m; sourceTree = "<group>"; };
 		A15D3C881AE961C7004A6DF1 /* tchOneClassTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchOneClassTVC.h; path = MainMenu/tchOneClassTVC.h; sourceTree = "<group>"; };
@@ -210,8 +218,6 @@
 		A1BDCC431AE71F11000B0328 /* AClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AClass.m; path = Data/AClass.m; sourceTree = "<group>"; };
 		A1BDCC451AE71F11000B0328 /* ClassDay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ClassDay.h; path = Data/ClassDay.h; sourceTree = "<group>"; };
 		A1BDCC461AE71F11000B0328 /* ClassDay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ClassDay.m; path = Data/ClassDay.m; sourceTree = "<group>"; };
-		A1BDCC481AE71F11000B0328 /* Evaluation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Evaluation.h; path = Data/Evaluation.h; sourceTree = "<group>"; };
-		A1BDCC491AE71F12000B0328 /* Evaluation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Evaluation.m; path = Data/Evaluation.m; sourceTree = "<group>"; };
 		A1D1A58D1B0A2E0E009245EB /* UIColor+appColorPresets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+appColorPresets.h"; path = "Custom Controls/UIColor+appColorPresets.h"; sourceTree = "<group>"; };
 		A1D1A58E1B0A2E0E009245EB /* UIColor+appColorPresets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+appColorPresets.m"; path = "Custom Controls/UIColor+appColorPresets.m"; sourceTree = "<group>"; };
 		A1D1A5911B0A3831009245EB /* tchGradesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchGradesVC.h; path = Grades/tchGradesVC.h; sourceTree = "<group>"; };
@@ -386,14 +392,14 @@
 			isa = PBXGroup;
 			children = (
 				A14E13341AE5609400A1CB95 /* ClassesData.xcdatamodeld */,
-				A1BDCC481AE71F11000B0328 /* Evaluation.h */,
-				A1BDCC491AE71F12000B0328 /* Evaluation.m */,
 				A1BDCC451AE71F11000B0328 /* ClassDay.h */,
 				A1BDCC461AE71F11000B0328 /* ClassDay.m */,
 				A1BDCC421AE71F11000B0328 /* AClass.h */,
 				A1BDCC431AE71F11000B0328 /* AClass.m */,
 				A14CBABC1AF27A2F009F140E /* AClass+tchAClassExt.h */,
 				A14CBABD1AF27A2F009F140E /* AClass+tchAClassExt.m */,
+				A1573C7F1B0EA95700B3AB50 /* Evaluation.h */,
+				A1573C801B0EA95700B3AB50 /* Evaluation.m */,
 				A14CBACB1AF41679009F140E /* Student+tchStudentsExt.h */,
 				A14CBACC1AF41679009F140E /* Student+tchStudentsExt.m */,
 				A1BDCC3F1AE71F10000B0328 /* StudentPicture.h */,
@@ -434,6 +440,17 @@
 				A1573C731B0E343100B3AB50 /* tchEditGrade1VC.m */,
 			);
 			name = Edit;
+			sourceTree = "<group>";
+		};
+		A1573C851B0EB1CB00B3AB50 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A1573C821B0EB1C400B3AB50 /* tchEvalHeaderCell.h */,
+				A1573C831B0EB1C400B3AB50 /* tchEvalHeaderCell.m */,
+				A1573C861B0EB3FE00B3AB50 /* tchEvalColumnCell.h */,
+				A1573C871B0EB3FE00B3AB50 /* tchEvalColumnCell.m */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		A15D3C841AE87C58004A6DF1 /* ClassTabs */ = {
@@ -568,6 +585,7 @@
 				A1A876EB1B0BB42B001C4D52 /* tchGradesHeaderDataSource.m */,
 				A16411B81B0CD33600E2DBAE /* tchGradesMenu.h */,
 				A16411B91B0CD33600E2DBAE /* tchGradesMenu.m */,
+				A1573C851B0EB1CB00B3AB50 /* Cells */,
 			);
 			name = Grades;
 			sourceTree = "<group>";
@@ -681,6 +699,7 @@
 				A15D3C871AE87CC6004A6DF1 /* tchClassTabBarVC.m in Sources */,
 				A1BDCC411AE71F10000B0328 /* StudentPicture.m in Sources */,
 				A1BDCC3B1AE71F10000B0328 /* Student.m in Sources */,
+				A1573C841B0EB1C400B3AB50 /* tchEvalHeaderCell.m in Sources */,
 				A1BDCC471AE71F11000B0328 /* ClassDay.m in Sources */,
 				A1A876DF1B0B83DE001C4D52 /* tchStoreCoordinator.m in Sources */,
 				A14E130E1AE5470700A1CB95 /* DetailViewController.m in Sources */,
@@ -691,6 +710,7 @@
 				A1A876CC1B0B7E20001C4D52 /* tchAttDayBandColDS.m in Sources */,
 				A16411BD1B0CD99500E2DBAE /* tchColumnCollectionDelegate.m in Sources */,
 				A1A876CB1B0B7E20001C4D52 /* tchAttDayBandColDel.m in Sources */,
+				A1573C811B0EA95700B3AB50 /* Evaluation.m in Sources */,
 				A14CBAC81AF41074009F140E /* tchAttendanceColumnVC.m in Sources */,
 				A1A876EF1B0BB6B1001C4D52 /* tchHeaderColumnCollDataSource.m in Sources */,
 				A1A876D01B0B8323001C4D52 /* tchEditDayVC.m in Sources */,
@@ -705,6 +725,7 @@
 				A1573C741B0E343100B3AB50 /* tchEditGrade1VC.m in Sources */,
 				A1113EDA1B0A4E300095CD14 /* tchStudentsTableView.m in Sources */,
 				A1BDCC171AE7161D000B0328 /* tchImportConfVC.m in Sources */,
+				A1573C881B0EB3FE00B3AB50 /* tchEvalColumnCell.m in Sources */,
 				A1BDCC441AE71F11000B0328 /* AClass.m in Sources */,
 				A1BDCC1A1AE716BF000B0328 /* tchClassImporter.m in Sources */,
 				A1028AB21AF94A6800315DE5 /* AttendanceRecord+tchAttExt.m in Sources */,
@@ -733,7 +754,6 @@
 				A1113EE71B0A74760095CD14 /* tchColumnsCollection.m in Sources */,
 				A1AA54671AEA7E7900318744 /* tchAttendanceVC.m in Sources */,
 				A14E133D1AE5A4F000A1CB95 /* tchImport1VC.m in Sources */,
-				A1BDCC4A1AE71F12000B0328 /* Evaluation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

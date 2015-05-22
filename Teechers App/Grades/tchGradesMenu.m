@@ -24,8 +24,6 @@
 
 -(IBAction)addGrade:(UIButton *)sender{
     
-    NSLog(@"add a grade process");
-    
 }
 
 -(IBAction)editGrade:(UIButton *)sender{

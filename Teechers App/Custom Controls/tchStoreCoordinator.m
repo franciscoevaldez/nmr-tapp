@@ -259,6 +259,7 @@
 - (Evaluation*)createAndStoreNewEvaluation:(NSString*)name
                                     withID:(NSString*)newID
                                   maxGrade:(int)maxGrade
+                                      date:(NSDate*)date
 {
     
     // get the managed object context
@@ -270,14 +271,21 @@
                                  inManagedObjectContext:managedOC];
     
     
-    // set the ID for the new day
-    [newEvaluation setValue:name forKey:@"gradeID"];
+    // set the ID for the new evaluation
+    [newEvaluation setValue:newID forKey:@"gradeID"];
+    [newEvaluation setValue:newID forKey:@"nameShort"];
     
-    // set the name for the new day
+    // set the name for the new evaluation
+    [newEvaluation setValue:name forKey:@"name"];
+    
+    // set the max grade for the new evaluation
     [newEvaluation setValue:[NSNumber numberWithInt:maxGrade] forKey:@"range"];
     
-    // set the name for the new day
+    // set the type for the new evaluation (number for now)
     [newEvaluation setValue:[NSString stringWithFormat:@"number"] forKey:@"type"];
+    
+    // set the date for the new evaluation
+    [newEvaluation setValue:date forKey:@"date"];
     
     // set the class for the new day
     [newEvaluation setValue:self.activeClass forKey:@"forClass"];

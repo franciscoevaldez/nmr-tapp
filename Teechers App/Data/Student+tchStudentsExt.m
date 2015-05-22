@@ -10,6 +10,7 @@
 
 @implementation Student (tchStudentsExt)
 
+#pragma mark - Attendance handling
 // get the attendance record for that day
 - (AttendanceRecord*)getAttendanceRecordForDay:(ClassDay*)classday
 {
@@ -57,5 +58,37 @@
     return record;
     
 }
+
+#pragma mark - Grade handling
+- (GradeRecord*)getGradeForEvaluation:(Evaluation*)evaluation
+{
+    
+    // initialize
+    GradeRecord *returnRecord = nil;
+    
+    // get the array of attendance records
+    NSArray *recordsArray = [self.gradeRecords allObjects];
+    
+    // loop through all of them
+    for (int i=0; i<[recordsArray count]; i++) {
+        
+        // current record
+        GradeRecord *currentRecord = [recordsArray objectAtIndex:i];
+        
+        // check coincidence
+        if (currentRecord.forClass == evaluation) {
+            
+            // store coincidence
+            returnRecord = currentRecord;
+            
+        }
+        
+        
+    }
+    
+    return returnRecord;
+    
+}
+
 
 @end

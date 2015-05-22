@@ -7,12 +7,16 @@
 //
 
 #import "Student.h"
-#import "AttendanceRecord.h"
 #import "AClass+tchAClassExt.h"
+
+#import "AttendanceRecord.h"
+#import "GradeRecord.h"
 
 @interface Student (tchStudentsExt)
 
 - (AttendanceRecord*)getAttendanceRecordForDay:(ClassDay*)classday;
 - (AttendanceRecord*)getAttendanceRecordForIndex:(NSInteger)dayIndex;
+
+- (GradeRecord*)getGradeForEvaluation:(Evaluation*)evaluation;
 
 @end

@@ -78,6 +78,41 @@
     
 }
 
+#pragma mark - Evaluations handling
+// return the day array sorted
+- (NSArray*)getEvaluationsSorted
+{
+    
+    // get the days into an array
+    NSMutableArray *evaluationsArray = [NSMutableArray arrayWithArray:[self.evaluations allObjects]];
+    
+    // setup the sort descriptor
+    NSSortDescriptor *studentsSortDescr = [NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES];
+    
+    // sort the array
+    [evaluationsArray sortUsingDescriptors:[NSArray arrayWithObject:studentsSortDescr]];
+    
+    // mutable to array
+    NSArray *returnArray = [NSArray arrayWithArray:evaluationsArray];
+    
+    // return the array
+    return returnArray;
+    
+}
 
+// get the day for the index passed
+- (Evaluation*)getEvaluationForIndex:(NSInteger)index
+{
+    
+    // get the sorted days array
+    NSArray *sortedArray = [self getEvaluationsSorted];
+    
+    // get the day for the index
+    Evaluation *returnEvaluation = [sortedArray objectAtIndex:index];
+    
+    // return it
+    return returnEvaluation;
+    
+}
 
 @end

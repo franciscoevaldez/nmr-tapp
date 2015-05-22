@@ -8,10 +8,11 @@
 
 #import "tchGradesColumnsDS.h"
 #import "tchColumnsCollection.h"
+#import "tchEvalColumnCell.h"
 
 @interface tchGradesColumnsDS ()
 
-@property (strong,nonatomic) NSArray *daysArray;
+@property (strong,nonatomic) NSArray *evaluationsArray;
 
 @end
 
@@ -28,40 +29,34 @@
     
     
     // get the sorted days array into the cell
-    self.daysArray = [self.activeStudent.inClass getDaysSorted];
+    self.evaluationsArray = [self.activeStudent.inClass getEvaluationsSorted];
     
     // get amount of days
-    NSInteger dayCount = [[self.activeStudent.inClass.classDays allObjects] count];
+    NSInteger evalCount = [self.evaluationsArray count];
     
     // Number of rows is the number of days in the array
-    return dayCount;
+    return evalCount;
     
 }
 
 
 - (UICollectionViewCell *)collectionView:(tchColumnsCollection *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    UICollectionViewCell *newCell = [collectionView
-                                     dequeueReusableCellWithReuseIdentifier:@"studentDataCell"
-                                     forIndexPath:indexPath];
+    //UICollectionViewCell *newCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"studentDataCell" forIndexPath:indexPath];
     
-    /*
+    
     // create the new cell
-    tchAttendanceColumnVC *newCell = [collectionView
-                                      dequeueReusableCellWithReuseIdentifier:@"studentDataCell"
-                                      forIndexPath:indexPath];
+    tchEvalColumnCell *newCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"studentDataCell" forIndexPath:indexPath];
     
     // get the current day
-    ClassDay *currentDay = [self.daysArray objectAtIndex:indexPath.row];
+    Evaluation *currentEvaluation = [self.evaluationsArray objectAtIndex:indexPath.row];
     
     // look for the record belonging to that day
-    AttendanceRecord* currentRecord = [collectionView.student getAttendanceRecordForDay:currentDay];
+    GradeRecord* currentRecord = [collectionView.student getGradeForEvaluation:currentEvaluation];
     
     // tell the cell to configure itself for that record
-    [newCell setupForRecord:currentRecord orDate:currentDay];
+    [newCell setupForRecord:currentRecord orEvaluation:currentEvaluation];
     
-    //[newCell tempSetup:indexPath.row];
-     */
     
     // return the cell
     return newCell;

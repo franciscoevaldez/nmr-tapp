@@ -29,7 +29,10 @@
                       withIndex:(NSInteger)dayIndex;
 
 
-- (Evaluation*)createAndStoreNewEvaluation:(NSString*)name withID:(NSString*)newID maxGrade:(int)maxGrade;
+- (Evaluation*)createAndStoreNewEvaluation:(NSString*)name
+                                    withID:(NSString*)newID
+                                  maxGrade:(int)maxGrade
+                                      date:(NSDate*)date;
 
 
 @end

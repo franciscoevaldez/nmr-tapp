@@ -3258,7 +3258,7 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="dayCell" id="VQ1-kb-ksv" userLabel="DayCell" customClass="tchAttDayCVC">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="columnCell" id="VQ1-kb-ksv" userLabel="ColumnCell" customClass="tchEvalHeaderCell">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -3285,7 +3285,7 @@
                                                                 </mask>
                                                             </variation>
                                                         </view>
-                                                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NNN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iqj-iQ-W7V" userLabel="Day">
+                                                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NNN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iqj-iQ-W7V" userLabel="Title">
                                                             <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="22"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -3328,7 +3328,7 @@
                                                     </mask>
                                                 </variation>
                                                 <connections>
-                                                    <outlet property="dayLabel" destination="iqj-iQ-W7V" id="mBA-cv-f8c"/>
+                                                    <outlet property="titleLabel" destination="iqj-iQ-W7V" id="lxQ-8q-zoo"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
@@ -3428,6 +3428,7 @@
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cTJ-3U-UbZ" userLabel="ColumnBand" customClass="tchHeaderColumnCollection">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                        <color key="backgroundColor" red="0.23529411759999999" green="0.62745098040000002" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="120" id="DDZ-ml-4p3">
                                                 <variation key="widthClass=compact" constant="60"/>
@@ -3440,7 +3441,7 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="dayCell" id="VlD-Ed-4mz" userLabel="DayCell" customClass="tchAttDayCVC">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="columnCell" id="VlD-Ed-4mz" userLabel="ColumnCell" customClass="tchEvalHeaderCell">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -3510,7 +3511,7 @@
                                                     </mask>
                                                 </variation>
                                                 <connections>
-                                                    <outlet property="dayLabel" destination="lZI-wU-6W0" id="lap-j0-DUl"/>
+                                                    <outlet property="titleLabel" destination="lZI-wU-6W0" id="Ps0-vG-TjC"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
@@ -3611,7 +3612,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.2274509804" green="0.63137254899999995" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.23529411759999999" green="0.62745098040000002" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="T5v-wU-IHD" firstAttribute="width" secondItem="4cY-Yd-huB" secondAttribute="width" multiplier="0.5" id="7ze-ng-Spq"/>
                                     <constraint firstItem="c6g-2X-88t" firstAttribute="top" secondItem="4cY-Yd-huB" secondAttribute="top" constant="95" id="JuR-rO-skr">
@@ -3631,7 +3632,9 @@
                                         <variation key="widthClass=compact" constant="0.0"/>
                                     </constraint>
                                     <constraint firstItem="6BU-Tm-zJz" firstAttribute="leading" secondItem="4cY-Yd-huB" secondAttribute="leading" id="eyH-RU-T1z"/>
-                                    <constraint firstAttribute="height" constant="240" id="fLI-0P-biI"/>
+                                    <constraint firstAttribute="height" constant="240" id="fLI-0P-biI">
+                                        <variation key="widthClass=compact" constant="170"/>
+                                    </constraint>
                                     <constraint firstItem="c6g-2X-88t" firstAttribute="leading" secondItem="4cY-Yd-huB" secondAttribute="leading" constant="2" id="qG3-tk-Dap">
                                         <variation key="widthClass=compact" constant="0.0"/>
                                     </constraint>
@@ -3728,7 +3731,7 @@
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="studentDataCell" id="nAs-b8-2cw" userLabel="Data Cell" customClass="tchAttendanceColumnVC">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="studentDataCell" id="nAs-b8-2cw" userLabel="Data Cell" customClass="tchEvalColumnCell">
                                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -3798,7 +3801,7 @@
                                                                 </mask>
                                                             </variation>
                                                             <connections>
-                                                                <outlet property="dataLabel" destination="XDA-XI-Qfv" id="WxW-W2-Pqf"/>
+                                                                <outlet property="dataLabel" destination="XDA-XI-Qfv" id="Vtv-qL-dMc"/>
                                                             </connections>
                                                         </collectionViewCell>
                                                     </cells>
@@ -3965,6 +3968,7 @@
                         <viewControllerLayoutGuide type="bottom" id="vhf-9r-B2j"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="KkS-Fd-NKJ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mGX-ap-9mt" userLabel="Header">
@@ -3992,9 +3996,9 @@
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="vaG-Zg-7fL"/>
+                                        <exclude reference="0jV-iE-bw5"/>
                                         <exclude reference="St2-WZ-GX7"/>
                                         <exclude reference="yaa-zQ-jrl"/>
-                                        <exclude reference="0jV-iE-bw5"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
@@ -4003,9 +4007,9 @@
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="vaG-Zg-7fL"/>
+                                        <include reference="0jV-iE-bw5"/>
                                         <include reference="St2-WZ-GX7"/>
                                         <include reference="yaa-zQ-jrl"/>
-                                        <include reference="0jV-iE-bw5"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -4086,11 +4090,11 @@
                                                     <mask key="constraints">
                                                         <exclude reference="FWK-YC-Upo"/>
                                                         <exclude reference="rsm-tK-F9s"/>
-                                                        <exclude reference="Lte-oS-uju"/>
-                                                        <exclude reference="RWD-1s-QSl"/>
                                                         <exclude reference="9JK-qn-aeB"/>
                                                         <exclude reference="ggu-tf-vwe"/>
                                                         <exclude reference="ueN-5z-aKL"/>
+                                                        <exclude reference="Lte-oS-uju"/>
+                                                        <exclude reference="RWD-1s-QSl"/>
                                                     </mask>
                                                 </variation>
                                                 <variation key="widthClass=compact">
@@ -4101,11 +4105,11 @@
                                                     <mask key="constraints">
                                                         <include reference="FWK-YC-Upo"/>
                                                         <include reference="rsm-tK-F9s"/>
-                                                        <include reference="Lte-oS-uju"/>
-                                                        <include reference="RWD-1s-QSl"/>
                                                         <include reference="9JK-qn-aeB"/>
                                                         <include reference="ggu-tf-vwe"/>
                                                         <include reference="ueN-5z-aKL"/>
+                                                        <include reference="Lte-oS-uju"/>
+                                                        <include reference="RWD-1s-QSl"/>
                                                     </mask>
                                                 </variation>
                                             </view>
@@ -4176,13 +4180,13 @@
                                                         <exclude reference="2hw-E3-J9d"/>
                                                     </mask>
                                                     <mask key="constraints">
-                                                        <exclude reference="8GE-uy-v3D"/>
                                                         <exclude reference="0Zd-b5-HYs"/>
-                                                        <exclude reference="Xar-8D-CkI"/>
-                                                        <exclude reference="nCD-tp-pdb"/>
-                                                        <exclude reference="7oJ-44-YjC"/>
+                                                        <exclude reference="8GE-uy-v3D"/>
                                                         <exclude reference="2Uv-Un-u7X"/>
                                                         <exclude reference="5Qq-nd-YTP"/>
+                                                        <exclude reference="7oJ-44-YjC"/>
+                                                        <exclude reference="Xar-8D-CkI"/>
+                                                        <exclude reference="nCD-tp-pdb"/>
                                                     </mask>
                                                 </variation>
                                                 <variation key="widthClass=compact">
@@ -4191,13 +4195,13 @@
                                                         <include reference="2hw-E3-J9d"/>
                                                     </mask>
                                                     <mask key="constraints">
-                                                        <include reference="8GE-uy-v3D"/>
                                                         <exclude reference="0Zd-b5-HYs"/>
-                                                        <include reference="Xar-8D-CkI"/>
-                                                        <include reference="nCD-tp-pdb"/>
-                                                        <include reference="7oJ-44-YjC"/>
+                                                        <include reference="8GE-uy-v3D"/>
                                                         <include reference="2Uv-Un-u7X"/>
                                                         <include reference="5Qq-nd-YTP"/>
+                                                        <include reference="7oJ-44-YjC"/>
+                                                        <include reference="Xar-8D-CkI"/>
+                                                        <include reference="nCD-tp-pdb"/>
                                                     </mask>
                                                 </variation>
                                             </view>
@@ -4209,6 +4213,100 @@ used in the grade's column</string>
                                                 <color key="textColor" red="1" green="1" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zsp-kY-8p0" userLabel="Short Name">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ws-H2-2fB" userLabel="Label">
+                                                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="31" id="QSf-6A-Bjm">
+                                                                <variation key="widthClass=compact" constant="90"/>
+                                                            </constraint>
+                                                            <constraint firstAttribute="height" constant="20" id="QXn-8e-MzS"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <variation key="default">
+                                                            <mask key="constraints">
+                                                                <exclude reference="QSf-6A-Bjm"/>
+                                                                <exclude reference="QXn-8e-MzS"/>
+                                                            </mask>
+                                                        </variation>
+                                                        <variation key="widthClass=compact">
+                                                            <mask key="constraints">
+                                                                <include reference="QSf-6A-Bjm"/>
+                                                                <include reference="QXn-8e-MzS"/>
+                                                            </mask>
+                                                        </variation>
+                                                    </label>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="DD/MM/YYYY" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yHG-ah-807" userLabel="Name Input" customClass="tchDatePickerField">
+                                                        <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="22" id="koO-kw-BHX"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="16"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                                                        <variation key="default">
+                                                            <mask key="constraints">
+                                                                <exclude reference="koO-kw-BHX"/>
+                                                            </mask>
+                                                        </variation>
+                                                        <variation key="widthClass=compact">
+                                                            <mask key="constraints">
+                                                                <include reference="koO-kw-BHX"/>
+                                                            </mask>
+                                                        </variation>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="KAA-BH-cwG" id="QNb-vX-sVo"/>
+                                                        </connections>
+                                                    </textField>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="6ws-H2-2fB" firstAttribute="leading" secondItem="Zsp-kY-8p0" secondAttribute="leading" constant="15" id="QoP-3o-lsF"/>
+                                                    <constraint firstAttribute="trailing" secondItem="yHG-ah-807" secondAttribute="trailing" constant="16" id="Zho-42-DmX"/>
+                                                    <constraint firstAttribute="width" constant="300" id="bKf-3m-ChO"/>
+                                                    <constraint firstAttribute="bottom" secondItem="6ws-H2-2fB" secondAttribute="bottom" constant="12" id="dtr-iQ-nNb">
+                                                        <variation key="widthClass=compact" constant="13"/>
+                                                    </constraint>
+                                                    <constraint firstItem="yHG-ah-807" firstAttribute="leading" secondItem="6ws-H2-2fB" secondAttribute="trailing" id="jnr-af-YRH"/>
+                                                    <constraint firstItem="yHG-ah-807" firstAttribute="baseline" secondItem="6ws-H2-2fB" secondAttribute="baseline" id="l3n-84-AwJ"/>
+                                                    <constraint firstAttribute="height" constant="50" id="oFJ-6j-kNy">
+                                                        <variation key="widthClass=compact" constant="50"/>
+                                                    </constraint>
+                                                </constraints>
+                                                <variation key="default">
+                                                    <mask key="subviews">
+                                                        <exclude reference="6ws-H2-2fB"/>
+                                                        <exclude reference="yHG-ah-807"/>
+                                                    </mask>
+                                                    <mask key="constraints">
+                                                        <exclude reference="bKf-3m-ChO"/>
+                                                        <exclude reference="oFJ-6j-kNy"/>
+                                                        <exclude reference="QoP-3o-lsF"/>
+                                                        <exclude reference="dtr-iQ-nNb"/>
+                                                        <exclude reference="Zho-42-DmX"/>
+                                                        <exclude reference="jnr-af-YRH"/>
+                                                        <exclude reference="l3n-84-AwJ"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="widthClass=compact">
+                                                    <mask key="subviews">
+                                                        <include reference="6ws-H2-2fB"/>
+                                                        <include reference="yHG-ah-807"/>
+                                                    </mask>
+                                                    <mask key="constraints">
+                                                        <exclude reference="bKf-3m-ChO"/>
+                                                        <include reference="oFJ-6j-kNy"/>
+                                                        <include reference="QoP-3o-lsF"/>
+                                                        <include reference="dtr-iQ-nNb"/>
+                                                        <include reference="Zho-42-DmX"/>
+                                                        <include reference="jnr-af-YRH"/>
+                                                        <include reference="l3n-84-AwJ"/>
+                                                    </mask>
+                                                </variation>
+                                            </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WhF-aK-Jzq" userLabel="Max">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                                 <subviews>
@@ -4276,13 +4374,13 @@ used in the grade's column</string>
                                                         <exclude reference="uq7-qg-Kz4"/>
                                                     </mask>
                                                     <mask key="constraints">
-                                                        <exclude reference="tII-1d-g0i"/>
                                                         <exclude reference="Osl-YW-eB3"/>
+                                                        <exclude reference="tII-1d-g0i"/>
                                                         <exclude reference="4tT-4C-4Kl"/>
                                                         <exclude reference="Myd-0I-UVJ"/>
-                                                        <exclude reference="eZq-57-RNW"/>
-                                                        <exclude reference="akz-OE-UlV"/>
                                                         <exclude reference="2cn-Oc-5As"/>
+                                                        <exclude reference="akz-OE-UlV"/>
+                                                        <exclude reference="eZq-57-RNW"/>
                                                     </mask>
                                                 </variation>
                                                 <variation key="widthClass=compact">
@@ -4291,13 +4389,13 @@ used in the grade's column</string>
                                                         <include reference="uq7-qg-Kz4"/>
                                                     </mask>
                                                     <mask key="constraints">
-                                                        <include reference="tII-1d-g0i"/>
                                                         <exclude reference="Osl-YW-eB3"/>
+                                                        <include reference="tII-1d-g0i"/>
                                                         <include reference="4tT-4C-4Kl"/>
                                                         <include reference="Myd-0I-UVJ"/>
-                                                        <include reference="eZq-57-RNW"/>
-                                                        <include reference="akz-OE-UlV"/>
                                                         <include reference="2cn-Oc-5As"/>
+                                                        <include reference="akz-OE-UlV"/>
+                                                        <include reference="eZq-57-RNW"/>
                                                     </mask>
                                                 </variation>
                                             </view>
@@ -4314,19 +4412,27 @@ used in the grade's column</string>
                                             <constraint firstItem="5KH-Cg-iRF" firstAttribute="leading" secondItem="2nr-el-2jK" secondAttribute="leading" constant="-129" id="O4E-dZ-Biv">
                                                 <variation key="widthClass=compact" constant="-20"/>
                                             </constraint>
+                                            <constraint firstItem="WhF-aK-Jzq" firstAttribute="top" secondItem="Zsp-kY-8p0" secondAttribute="bottom" constant="10" id="Owm-cg-kBL"/>
                                             <constraint firstItem="WhF-aK-Jzq" firstAttribute="width" secondItem="A5y-I8-ecX" secondAttribute="width" id="RqT-mV-9sR"/>
                                             <constraint firstItem="5KH-Cg-iRF" firstAttribute="top" secondItem="A5y-I8-ecX" secondAttribute="bottom" constant="10" id="TEF-fL-PWD"/>
                                             <constraint firstItem="5KH-Cg-iRF" firstAttribute="width" secondItem="A5y-I8-ecX" secondAttribute="width" id="UfR-V7-L7h"/>
                                             <constraint firstItem="A5y-I8-ecX" firstAttribute="top" secondItem="uGj-rs-h2V" secondAttribute="top" constant="10" id="VTW-0A-xmC"/>
                                             <constraint firstAttribute="bottom" secondItem="A5y-I8-ecX" secondAttribute="bottom" constant="100" id="gUB-0X-UN5">
-                                                <variation key="widthClass=compact" constant="190"/>
+                                                <variation key="widthClass=compact" constant="250"/>
+                                            </constraint>
+                                            <constraint firstItem="5KH-Cg-iRF" firstAttribute="width" secondItem="Zsp-kY-8p0" secondAttribute="width" id="gfW-Zr-J3A"/>
+                                            <constraint firstItem="Zsp-kY-8p0" firstAttribute="top" secondItem="5KH-Cg-iRF" secondAttribute="bottom" constant="83" id="gnK-E1-MXT">
+                                                <variation key="widthClass=compact" constant="70"/>
                                             </constraint>
                                             <constraint firstAttribute="trailing" secondItem="A5y-I8-ecX" secondAttribute="trailing" id="hGg-hy-pgU"/>
                                             <constraint firstItem="5KH-Cg-iRF" firstAttribute="trailing" secondItem="2nr-el-2jK" secondAttribute="trailing" constant="129" id="nZF-f8-hih">
                                                 <variation key="widthClass=compact" constant="20"/>
                                             </constraint>
+                                            <constraint firstItem="5KH-Cg-iRF" firstAttribute="leading" secondItem="Zsp-kY-8p0" secondAttribute="leading" constant="-50" id="uoh-jn-bDb">
+                                                <variation key="widthClass=compact" constant="0.0"/>
+                                            </constraint>
                                             <constraint firstItem="WhF-aK-Jzq" firstAttribute="top" secondItem="5KH-Cg-iRF" secondAttribute="bottom" constant="78" id="yFI-8B-uoc">
-                                                <variation key="widthClass=compact" constant="70"/>
+                                                <variation key="widthClass=compact" constant="130"/>
                                             </constraint>
                                         </constraints>
                                         <variation key="default">
@@ -4334,22 +4440,27 @@ used in the grade's column</string>
                                                 <exclude reference="A5y-I8-ecX"/>
                                                 <exclude reference="5KH-Cg-iRF"/>
                                                 <exclude reference="2nr-el-2jK"/>
+                                                <exclude reference="Zsp-kY-8p0"/>
                                                 <exclude reference="WhF-aK-Jzq"/>
                                             </mask>
                                             <mask key="constraints">
-                                                <exclude reference="265-4H-C8a"/>
-                                                <exclude reference="VTW-0A-xmC"/>
-                                                <exclude reference="gUB-0X-UN5"/>
-                                                <exclude reference="hGg-hy-pgU"/>
+                                                <exclude reference="Hys-SI-nNJ"/>
                                                 <exclude reference="HBA-kT-kMr"/>
                                                 <exclude reference="O4E-dZ-Biv"/>
                                                 <exclude reference="TEF-fL-PWD"/>
                                                 <exclude reference="UfR-V7-L7h"/>
+                                                <exclude reference="gfW-Zr-J3A"/>
                                                 <exclude reference="nZF-f8-hih"/>
-                                                <exclude reference="Hys-SI-nNJ"/>
+                                                <exclude reference="uoh-jn-bDb"/>
+                                                <exclude reference="265-4H-C8a"/>
+                                                <exclude reference="VTW-0A-xmC"/>
+                                                <exclude reference="gUB-0X-UN5"/>
+                                                <exclude reference="hGg-hy-pgU"/>
                                                 <exclude reference="F7R-eP-Vg4"/>
+                                                <exclude reference="Owm-cg-kBL"/>
                                                 <exclude reference="RqT-mV-9sR"/>
                                                 <exclude reference="yFI-8B-uoc"/>
+                                                <exclude reference="gnK-E1-MXT"/>
                                             </mask>
                                         </variation>
                                         <variation key="widthClass=compact">
@@ -4357,22 +4468,27 @@ used in the grade's column</string>
                                                 <include reference="A5y-I8-ecX"/>
                                                 <include reference="5KH-Cg-iRF"/>
                                                 <include reference="2nr-el-2jK"/>
+                                                <include reference="Zsp-kY-8p0"/>
                                                 <include reference="WhF-aK-Jzq"/>
                                             </mask>
                                             <mask key="constraints">
-                                                <include reference="265-4H-C8a"/>
-                                                <include reference="VTW-0A-xmC"/>
-                                                <include reference="gUB-0X-UN5"/>
-                                                <include reference="hGg-hy-pgU"/>
+                                                <include reference="Hys-SI-nNJ"/>
                                                 <include reference="HBA-kT-kMr"/>
                                                 <include reference="O4E-dZ-Biv"/>
                                                 <include reference="TEF-fL-PWD"/>
                                                 <include reference="UfR-V7-L7h"/>
+                                                <include reference="gfW-Zr-J3A"/>
                                                 <include reference="nZF-f8-hih"/>
-                                                <include reference="Hys-SI-nNJ"/>
+                                                <include reference="uoh-jn-bDb"/>
+                                                <include reference="265-4H-C8a"/>
+                                                <include reference="VTW-0A-xmC"/>
+                                                <include reference="gUB-0X-UN5"/>
+                                                <include reference="hGg-hy-pgU"/>
                                                 <include reference="F7R-eP-Vg4"/>
+                                                <include reference="Owm-cg-kBL"/>
                                                 <include reference="RqT-mV-9sR"/>
-                                                <include reference="yFI-8B-uoc"/>
+                                                <exclude reference="yFI-8B-uoc"/>
+                                                <include reference="gnK-E1-MXT"/>
                                             </mask>
                                         </variation>
                                     </scrollView>
@@ -4535,16 +4651,16 @@ used in the grade's column</string>
                                 <exclude reference="RlM-ld-lNj"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="5rk-bL-v4t"/>
-                                <exclude reference="Det-Pl-jcn"/>
-                                <exclude reference="kL5-1P-Oad"/>
+                                <exclude reference="tTW-0p-kPX"/>
                                 <exclude reference="Uww-GT-4Wi"/>
                                 <exclude reference="aWb-MB-9Uz"/>
                                 <exclude reference="rzr-Yn-AWt"/>
                                 <exclude reference="4tp-nP-Ssc"/>
                                 <exclude reference="G7Y-ex-HEW"/>
                                 <exclude reference="d0J-0g-Ju2"/>
-                                <exclude reference="tTW-0p-kPX"/>
+                                <exclude reference="5rk-bL-v4t"/>
+                                <exclude reference="Det-Pl-jcn"/>
+                                <exclude reference="kL5-1P-Oad"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -4554,21 +4670,22 @@ used in the grade's column</string>
                                 <include reference="RlM-ld-lNj"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="5rk-bL-v4t"/>
-                                <include reference="Det-Pl-jcn"/>
-                                <include reference="kL5-1P-Oad"/>
+                                <include reference="tTW-0p-kPX"/>
                                 <include reference="Uww-GT-4Wi"/>
                                 <include reference="aWb-MB-9Uz"/>
                                 <include reference="rzr-Yn-AWt"/>
                                 <include reference="4tp-nP-Ssc"/>
                                 <include reference="G7Y-ex-HEW"/>
                                 <include reference="d0J-0g-Ju2"/>
-                                <include reference="tTW-0p-kPX"/>
+                                <include reference="5rk-bL-v4t"/>
+                                <include reference="Det-Pl-jcn"/>
+                                <include reference="kL5-1P-Oad"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="bottomConstraint" destination="tTW-0p-kPX" id="DGr-9x-zuH"/>
+                        <outlet property="dateInput" destination="yHG-ah-807" id="RAG-oP-FJx"/>
                         <outlet property="maxGradeInput" destination="uq7-qg-Kz4" id="Sfk-1X-3gb"/>
                         <outlet property="nameInput" destination="14l-q6-hnH" id="qjB-Ir-F55"/>
                         <outlet property="shortInput" destination="2hw-E3-J9d" id="EPu-gN-jrz"/>

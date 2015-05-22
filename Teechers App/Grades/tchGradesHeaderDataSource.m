@@ -7,11 +7,12 @@
 //
 
 #import "tchGradesHeaderDataSource.h"
+#import "tchEvalHeaderCell.h"
 
 @interface tchGradesHeaderDataSource ()
 
 @property (strong,nonatomic) AClass *activeClass;
-@property (strong,nonatomic) NSArray *daysArray;
+@property (strong,nonatomic) NSArray *evaluationsArray;
 
 @end
 
@@ -26,32 +27,33 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     
-    // get the sorted array from the class
-    NSArray *tempArray = [self.activeClass getDaysSorted];
-    
     // pass the array to the data source class
-    self.daysArray = tempArray;
+    self.evaluationsArray = [self.activeClass getEvaluationsSorted];
     
     // Number of rows is the number of days in the array
-    return [self.daysArray count];
+    return [self.evaluationsArray count];
     
 }
 
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+- (tchEvalHeaderCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     // create the new cell
-    UICollectionViewCell *newCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"dayCell"
-                                                                      forIndexPath:indexPath];
+    //tchEvalHeaderCell *newCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"columnCell" forIndexPath:indexPath];
+    
+    tchEvalHeaderCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"columnCell"
+                                                                        forIndexPath:indexPath];
     
     // get the day for this new cell
-    //ClassDay *currentDay = [self.daysArray objectAtIndex:indexPath.row];
+    Evaluation *currentEval = [self.evaluationsArray objectAtIndex:indexPath.row];
     
     // setup the cell
-    //[newCell setupCellForDay:currentDay];
+    //[newCell setupCellForEvaluation:currentEval];
+    
+    [cell setupCellForEvaluation:currentEval];
     
     // return the cell
-    return newCell;
+    return cell;
     
 }
 

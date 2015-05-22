@@ -14,6 +14,9 @@
 - (NSInteger)getSortIndexForDay:(ClassDay*)classDay;
 - (ClassDay*)getDayForIndex:(NSInteger)index;
 
+- (NSArray*)getEvaluationsSorted;
+- (Evaluation*)getEvaluationForIndex:(NSInteger)index;
+
 //@property (retain, nonatomic) NSArray *daysSortedArray;
 
 @end

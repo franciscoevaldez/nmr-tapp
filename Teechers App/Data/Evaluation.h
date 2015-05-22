@@ -2,7 +2,7 @@
 //  Evaluation.h
 //  Teechers App
 //
-//  Created by fran on 4/21/15.
+//  Created by fran on 21/5/15.
 //  Copyright (c) 2015 nmr. All rights reserved.
 //
 
@@ -21,6 +21,8 @@
 @property (nonatomic, retain) NSString * type;
 @property (nonatomic, retain) NSData * valuesLong;
 @property (nonatomic, retain) NSData * valuesShort;
+@property (nonatomic, retain) NSString * nameShort;
+@property (nonatomic, retain) NSDate * date;
 @property (nonatomic, retain) AClass *forClass;
 @property (nonatomic, retain) NSSet *gradeRecords;
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "tchEditGrade1VC.h"
-
+#import "tchDatePickerField.h"
 #import "tchStoreCoordinator.h"
 
 @interface tchEditGrade1VC ()
@@ -18,6 +18,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *nameInput;
 @property (strong, nonatomic) IBOutlet UITextField *shortInput;
 @property (strong, nonatomic) IBOutlet UITextField *maxGradeInput;
+@property (strong, nonatomic) IBOutlet tchDatePickerField *dateInput;
 
 @property (strong,nonatomic) NSArray *usedNamesArray;
 
@@ -57,7 +58,8 @@
     
     newEvaluation = [self.storeCoordinator createAndStoreNewEvaluation:self.nameInput.text
                                                                 withID:self.shortInput.text
-                                                              maxGrade:[self.maxGradeInput.text integerValue]];
+                                                              maxGrade:[self.maxGradeInput.text integerValue]
+                                                                  date:self.dateInput.pickedDate];
     
     return newEvaluation;
 }
@@ -73,6 +75,12 @@
     
         // Second text field
     } else if (textField == self.shortInput) {
+        
+        [textField resignFirstResponder];
+        [self.dateInput becomeFirstResponder];
+        
+        // Last text field
+    } else if (textField == self.dateInput) {
         
         [textField resignFirstResponder];
         [self.maxGradeInput becomeFirstResponder];
