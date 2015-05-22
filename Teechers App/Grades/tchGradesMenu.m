@@ -13,13 +13,12 @@
 // setup the menu for the class coming from the view controller
 -(void)setupForClass:(AClass *)activeClass{
     
-    // default variable init
-    [self defaultInit];
-    
     // heights
     self.heightForFullDeploy = 160;
     self.heightForSemiDeploy = 50;
     
+    // default variable init
+    [self defaultInit];
 }
 
 -(IBAction)addGrade:(UIButton *)sender{
@@ -27,9 +26,7 @@
 }
 
 -(IBAction)editGrade:(UIButton *)sender{
-    
-    NSLog(@"edit a grade process");
-    
+        
 }
 
 -(IBAction)deleteGrade:(UIButton *)sender{

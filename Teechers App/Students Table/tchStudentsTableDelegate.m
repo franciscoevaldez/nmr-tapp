@@ -46,7 +46,8 @@
 - (CGFloat)tableView:(tchStudentsTableView*)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     //check if the index actually exists
-    if(tableView.thereIsACellDeployed && tableView.deployedPath.row == indexPath.row) {
+    if(tableView.thereIsACellDeployed &&
+       tableView.deployedPath.row == indexPath.row) {
         
         return 241;
         

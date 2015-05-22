@@ -15,8 +15,6 @@
 
 @interface tchAttInputV ()
 
-@property (strong,nonatomic) Student *activeStudent;
-@property (nonatomic) NSInteger activeColumn;
 @property (strong,nonatomic) IBOutlet tchStoreCoordinator *storeCoordinator;
 @property (strong,nonatomic) IBOutlet UIImageView *excusedCheck;
 
@@ -32,7 +30,7 @@
     self.activeStudent = student;
     
     // get the passed column to this view
-    self.activeColumn = columnIndex;
+    self.activeColumn = &(columnIndex);
     
     // mark the checked (or not) -----
     // set default for no
@@ -71,7 +69,7 @@
 - (void)updateActiveColumn:(NSInteger)columnIndex
 {
     
-    self.activeColumn = columnIndex;
+    self.activeColumn = &(columnIndex);
     
 }
 
@@ -133,13 +131,13 @@
     AClass* activeClass = self.activeStudent.inClass;
     
     // get the active day from active index
-    ClassDay* activeDay = [activeClass getDayForIndex:self.activeColumn];
+    ClassDay* activeDay = [activeClass getDayForIndex:*(self.activeColumn)];
     
     // tell the store coordinator to save as present
     [self.storeCoordinator createAttendanceRecordForStudent:self.activeStudent
                                                       atDay:activeDay
                                                  withStatus:newStatus
-                                              andOrderIndex:self.activeColumn];
+                                              andOrderIndex:*(self.activeColumn)];
     
 }
 
@@ -150,12 +148,12 @@
     AClass* activeClass = self.activeStudent.inClass;
     
     // get the active day from active index
-    ClassDay* activeDay = [activeClass getDayForIndex:self.activeColumn];
+    ClassDay* activeDay = [activeClass getDayForIndex:*(self.activeColumn)];
     
     // tell the store coordinator to toggle excused for this student and day
     BOOL newExcused = [self.storeCoordinator toggleExcusedForStudent:self.activeStudent
                                                                atDay:activeDay
-                                                           withIndex:self.activeColumn];
+                                                           withIndex:*(self.activeColumn)];
     
     // return the new excused value
     return newExcused;

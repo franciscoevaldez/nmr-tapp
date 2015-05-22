@@ -57,7 +57,17 @@
 
 #pragma mark - Dialog Handling 
 - (void)editGradeWasDismissed:(Evaluation *)changedDay{
-    NSLog(@"just dismissed");
+    
+    // if there was actually a change when editing
+    if (changedDay) {
+        
+        [self reloadViewsData];
+        
+        // scroll to the edited day
+        //[self scrollToDay:changedDay];
+        
+    }
+
 }
 
 #pragma mark - Menu Handling (ABSTRACTABLE)

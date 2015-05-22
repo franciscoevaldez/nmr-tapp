@@ -14,9 +14,6 @@
 #pragma mark - Header Setup
 - (void)setupHeaderForClass:(AClass*)classForHeader{
     
-    // initialize variables
-    [self defaultInit];
-    
     // if there is a column collection
     if (self.columnCollection) {
         
@@ -31,6 +28,8 @@
     // write the class name in the title label
     self.subTitleLabel.text = classForHeader.name;
     
+    // initialize variables
+    [self defaultInit];
     
 }
 

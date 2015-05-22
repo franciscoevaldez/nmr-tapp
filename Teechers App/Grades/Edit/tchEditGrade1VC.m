@@ -8,17 +8,10 @@
 
 #import "tchEditGrade1VC.h"
 #import "tchDatePickerField.h"
-#import "tchStoreCoordinator.h"
 
 @interface tchEditGrade1VC ()
 
-@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
-@property (strong, nonatomic) IBOutlet tchStoreCoordinator *storeCoordinator;
 
-@property (strong, nonatomic) IBOutlet UITextField *nameInput;
-@property (strong, nonatomic) IBOutlet UITextField *shortInput;
-@property (strong, nonatomic) IBOutlet UITextField *maxGradeInput;
-@property (strong, nonatomic) IBOutlet tchDatePickerField *dateInput;
 
 @property (strong,nonatomic) NSArray *usedNamesArray;
 
@@ -31,7 +24,25 @@
     // Do any additional setup after loading the view.
     
     // check if there is a evaluation to edit...
-    
+    if (self.evaluationToEdit) {
+        
+        // change the view title
+        self.titleLabel.text = @"Edit grade";
+        
+        // set name to the input
+        self.nameInput.text = self.evaluationToEdit.name;
+        
+        // set short name
+        self.shortInput.text = self.evaluationToEdit.nameShort;
+        
+        // set max grade
+        self.maxGradeInput.text = [NSString stringWithFormat:@"%@", self.evaluationToEdit.range];
+        
+        // set date to the input
+        [self.dateInput changeDatePicker:self.dateInput.pickedDate];
+        
+        
+    }
     
     // register keyboard notifications
     [self registerForKeyboardNotifications];
@@ -212,8 +223,6 @@
      */
     
     [self dismissViewControllerAnimated:YES completion:nil];
-    
-    NSLog(@"accep-ted");
     
     [_delegate editGradeWasDismissed:nil];
     

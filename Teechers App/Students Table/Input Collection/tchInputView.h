@@ -13,6 +13,7 @@
 @protocol tchInputViewProtocol <NSObject>
 
 @required
+
 - (void)setupForStudent:(Student*)student andColumn:(NSInteger)columnIndex;
 - (void)setupDelegate:(id)delegate;
 - (void)updateActiveColumn:(NSInteger)columnIndex;
@@ -31,6 +32,11 @@
 @interface tchInputView : UIView
 
 @property (nonatomic, weak) id <tchInputDelegateProtocol> delegate;
+
+@property (nonatomic,strong) IBOutlet UICollectionView *inputCollection;
+
+@property (nonatomic,strong) Student *activeStudent;
+@property (nonatomic,assign) NSInteger *activeColumn;
 
 - (void)setupForStudent:(Student*)student andColumn:(NSInteger)columnIndex;
 - (void)setupDelegate:(id)delegate;

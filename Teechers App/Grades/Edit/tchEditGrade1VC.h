@@ -10,6 +10,9 @@
 #import <UIKit/UIKit.h>
 
 #import "tchFormViewController.h"
+#import "tchDatePickerField.h"
+#import "tchStoreCoordinator.h"
+
 #import "Evaluation.h"
 
 @protocol tchEditDialogDelegate <NSObject>
@@ -24,5 +27,13 @@
 
 @property (strong, nonatomic) AClass *activeClass;
 @property (strong, nonatomic) Evaluation *evaluationToEdit;
+
+@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
+@property (strong, nonatomic) IBOutlet tchStoreCoordinator *storeCoordinator;
+
+@property (strong, nonatomic) IBOutlet UITextField *nameInput;
+@property (strong, nonatomic) IBOutlet UITextField *shortInput;
+@property (strong, nonatomic) IBOutlet UITextField *maxGradeInput;
+@property (strong, nonatomic) IBOutlet tchDatePickerField *dateInput;
 
 @end
