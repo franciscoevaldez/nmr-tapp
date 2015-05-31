@@ -34,5 +34,9 @@
                                   maxGrade:(int)maxGrade
                                       date:(NSDate*)date;
 
+- (void)createGradeRecordForStudent:(Student*)student
+                      forEvaluation:(Evaluation*)evaluation
+                          withGrade:(NSInteger*)grade
+                      andOrderIndex:(NSInteger)index;
 
 @end

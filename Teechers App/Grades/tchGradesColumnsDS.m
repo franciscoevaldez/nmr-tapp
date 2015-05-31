@@ -49,11 +49,10 @@
     Evaluation *currentEvaluation = [self.evaluationsArray objectAtIndex:indexPath.row];
     
     // look for the record belonging to that day
-    GradeRecord* currentRecord = [collectionView.student getGradeForEvaluation:currentEvaluation];
+    GradeRecord* currentRecord = [collectionView.activeStudent getGradeForEvaluation:currentEvaluation];
     
     // tell the cell to configure itself for that record
     [newCell setupForRecord:currentRecord orEvaluation:currentEvaluation];
-    
     
     // return the cell
     return newCell;

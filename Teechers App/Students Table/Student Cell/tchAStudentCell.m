@@ -8,19 +8,11 @@
 
 #import "tchAStudentCell.h"
 
-#import "Student+tchStudentsExt.h"
-#import "tchColumnsCollection.h"
-#import "tchInputView.h"
-
 @interface tchAStudentCell ()
 
 @property (strong,nonatomic) Student *studentForCell;
 
 @property (strong,nonatomic) NSIndexPath *indexPath;
-
-@property (strong,nonatomic) IBOutlet tchColumnsCollection *columnsCollection;
-@property (strong,nonatomic) IBOutlet tchInputView *inputView;
-@property (strong,nonatomic) IBOutlet UILabel *studentNameLabel;
 
 @end
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="2m8-5x-aym">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="2m8-5x-aym">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -1592,6 +1592,7 @@
                                                         </mask>
                                                     </variation>
                                                     <connections>
+                                                        <outlet property="delegate" destination="zZH-Kc-3Bo" id="rgP-ez-6y6"/>
                                                         <outlet property="excusedCheck" destination="bS6-6g-GM1" id="Qzk-z2-Ru2"/>
                                                         <outlet property="storeCoordinator" destination="xtM-7w-OMb" id="ryf-4C-aoo"/>
                                                     </connections>
@@ -3859,14 +3860,14 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="1" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <outlet property="columnsCollection" destination="LR8-Hf-M78" id="aoq-Us-BKU"/>
+                                            <outlet property="columnsCollection" destination="LR8-Hf-M78" id="cg1-ka-dVO"/>
                                             <outlet property="studentNameLabel" destination="cmh-pF-HUV" id="8va-EP-96w"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="studentCellWithInput" rowHeight="250" id="GUU-1z-S2Z" customClass="tchAStudentCell">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GUU-1z-S2Z" id="CTb-4A-d50">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GUU-1z-S2Z" id="CTb-4A-d50" userLabel="CellWithInput View">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X3v-eX-JUX">
@@ -3889,7 +3890,7 @@
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="studentDataCell" id="VhU-Gd-GKR" userLabel="Data Cell" customClass="tchAttendanceColumnVC">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="studentDataCell" id="VhU-Gd-GKR" userLabel="Data Cell" customClass="tchEvalColumnCell">
                                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -3938,9 +3939,9 @@
                                                                     <exclude reference="yBc-7C-K0D"/>
                                                                 </mask>
                                                                 <mask key="constraints">
-                                                                    <exclude reference="m5j-Rz-5M4"/>
-                                                                    <exclude reference="6K5-k8-BLa"/>
                                                                     <exclude reference="44Z-Lj-7H6"/>
+                                                                    <exclude reference="6K5-k8-BLa"/>
+                                                                    <exclude reference="m5j-Rz-5M4"/>
                                                                     <exclude reference="465-oT-2P2"/>
                                                                     <exclude reference="vSl-gr-WRd"/>
                                                                 </mask>
@@ -3951,9 +3952,9 @@
                                                                     <include reference="yBc-7C-K0D"/>
                                                                 </mask>
                                                                 <mask key="constraints">
-                                                                    <include reference="m5j-Rz-5M4"/>
-                                                                    <include reference="6K5-k8-BLa"/>
                                                                     <include reference="44Z-Lj-7H6"/>
+                                                                    <include reference="6K5-k8-BLa"/>
+                                                                    <include reference="m5j-Rz-5M4"/>
                                                                     <include reference="465-oT-2P2"/>
                                                                     <include reference="vSl-gr-WRd"/>
                                                                 </mask>
@@ -3965,21 +3966,21 @@
                                                     </cells>
                                                     <variation key="default">
                                                         <mask key="constraints">
-                                                            <exclude reference="hrE-V6-yeE"/>
                                                             <exclude reference="76E-Ik-Dlz"/>
+                                                            <exclude reference="hrE-V6-yeE"/>
                                                         </mask>
                                                     </variation>
                                                     <variation key="widthClass=compact">
                                                         <mask key="constraints">
-                                                            <include reference="hrE-V6-yeE"/>
                                                             <include reference="76E-Ik-Dlz"/>
+                                                            <include reference="hrE-V6-yeE"/>
                                                         </mask>
                                                     </variation>
                                                     <connections>
-                                                        <outlet property="dataSource" destination="OLJ-Yn-rGL" id="AP8-Ya-8Dn"/>
+                                                        <outlet property="dataSource" destination="aEP-oV-y2R" id="NPs-2z-RQd"/>
                                                     </connections>
                                                 </collectionView>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OJs-F7-MO3" userLabel="Input" customClass="tchInputView">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OJs-F7-MO3" userLabel="Input" customClass="tchGradeInputView">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                                     <subviews>
                                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sdj-OU-40W" customClass="tchInputCollection">
@@ -4076,6 +4077,8 @@
                                                             </cells>
                                                             <connections>
                                                                 <outlet property="dataSource" destination="KeT-Ip-6Le" id="Viw-rU-8U9"/>
+                                                                <outlet property="delegate" destination="fFg-Vt-MbP" id="ZFK-nH-V5h"/>
+                                                                <outlet property="inputDelegate" destination="OJs-F7-MO3" id="gUc-hZ-7NE"/>
                                                             </connections>
                                                         </collectionView>
                                                     </subviews>
@@ -4114,7 +4117,9 @@
                                                         </mask>
                                                     </variation>
                                                     <connections>
+                                                        <outlet property="delegate" destination="GUU-1z-S2Z" id="FJV-tb-mB3"/>
                                                         <outlet property="inputCollection" destination="sdj-OU-40W" id="FPO-2f-sv2"/>
+                                                        <outlet property="storeCoordinator" destination="KDE-ve-3YY" id="hin-1Q-UOB"/>
                                                     </connections>
                                                 </view>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Input" translatesAutoresizingMaskIntoConstraints="NO" id="O0R-VK-wnM" userLabel="Splitter">
@@ -4157,17 +4162,17 @@
                                                     <exclude reference="O0R-VK-wnM"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="bCz-cq-B1k"/>
-                                                    <exclude reference="Rdv-A7-rY7"/>
                                                     <exclude reference="9Ca-1r-HvR"/>
-                                                    <exclude reference="Plz-0U-8q6"/>
-                                                    <exclude reference="vJN-tR-wsc"/>
+                                                    <exclude reference="Rdv-A7-rY7"/>
+                                                    <exclude reference="bCz-cq-B1k"/>
+                                                    <exclude reference="TeW-jU-KwE"/>
                                                     <exclude reference="ZVX-9x-5zv"/>
+                                                    <exclude reference="ZdT-qb-mEz"/>
                                                     <exclude reference="aaI-3Q-QE2"/>
                                                     <exclude reference="cPR-TM-s81"/>
                                                     <exclude reference="ht4-df-kM8"/>
-                                                    <exclude reference="ZdT-qb-mEz"/>
-                                                    <exclude reference="TeW-jU-KwE"/>
+                                                    <exclude reference="Plz-0U-8q6"/>
+                                                    <exclude reference="vJN-tR-wsc"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -4178,23 +4183,23 @@
                                                     <include reference="O0R-VK-wnM"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="bCz-cq-B1k"/>
-                                                    <include reference="Rdv-A7-rY7"/>
                                                     <include reference="9Ca-1r-HvR"/>
-                                                    <include reference="Plz-0U-8q6"/>
-                                                    <include reference="vJN-tR-wsc"/>
+                                                    <include reference="Rdv-A7-rY7"/>
+                                                    <include reference="bCz-cq-B1k"/>
+                                                    <include reference="TeW-jU-KwE"/>
                                                     <include reference="ZVX-9x-5zv"/>
+                                                    <include reference="ZdT-qb-mEz"/>
                                                     <include reference="aaI-3Q-QE2"/>
                                                     <include reference="cPR-TM-s81"/>
                                                     <include reference="ht4-df-kM8"/>
-                                                    <include reference="ZdT-qb-mEz"/>
-                                                    <include reference="TeW-jU-KwE"/>
+                                                    <include reference="Plz-0U-8q6"/>
+                                                    <include reference="vJN-tR-wsc"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="1" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <outlet property="columnsCollection" destination="v2z-b7-itE" id="tIc-8H-hif"/>
+                                            <outlet property="columnsCollection" destination="v2z-b7-itE" id="Nv5-BQ-qVG"/>
                                             <outlet property="inputView" destination="OJs-F7-MO3" id="rGg-LP-I4p"/>
                                             <outlet property="studentNameLabel" destination="X3v-eX-JUX" id="ZTv-bI-HAw"/>
                                         </connections>
@@ -4278,6 +4283,7 @@
                 <customObject id="Fyv-u7-fTQ" customClass="tchGradesHeaderDataSource"/>
                 <customObject id="D12-EV-RuZ" customClass="tchColumnCollectionDelegate"/>
                 <customObject id="KeT-Ip-6Le" customClass="tchGradeInputDataSource"/>
+                <customObject id="fFg-Vt-MbP" customClass="tchInputCollectionDelegate"/>
                 <exit id="hiM-87-NOV" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="mTr-Cc-pZG" userLabel="Header Tap Recognizer">
                     <connections>

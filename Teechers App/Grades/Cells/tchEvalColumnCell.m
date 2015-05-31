@@ -20,7 +20,7 @@
 @implementation tchEvalColumnCell
 
 // setup the cell for the given record
-- (void) setupForRecord:(GradeRecord*)record orEvaluation:(Evaluation*)evaluation
+- (void)setupForRecord:(GradeRecord*)record orEvaluation:(Evaluation*)evaluation
 {
     
     // pass the given record to the property

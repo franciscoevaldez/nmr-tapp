@@ -31,6 +31,13 @@
     
 };
 
+- (void)itemWasSelected:(NSIndexPath*)indexPath{
+    
+    // tell the collection delegate to scroll
+    [_inputDelegate inputWasSelected:indexPath];
+    
+}
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

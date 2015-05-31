@@ -20,7 +20,7 @@
     
     // pass given data to properties
     self.activeStudent = student;
-    self.activeColumn = &(columnIndex);
+    self.activeColumn = columnIndex;
     
     // if there is an input collection
     if (self.inputCollection) {

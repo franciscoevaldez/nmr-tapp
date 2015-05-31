@@ -11,6 +11,7 @@
 #import "ClassDay.h"
 #import "AttendanceRecord+tchAttExt.h"
 #import "Evaluation.h"
+#import "GradeRecord.h"
 
 @implementation tchStoreCoordinator
 
@@ -298,6 +299,89 @@
     
     // return the created day
     return newEvaluation;
+    
+}
+
+#pragma mark - Grade Record Handling
+// create or update an attendance record
+- (void)createGradeRecordForStudent:(Student*)student
+                      forEvaluation:(Evaluation*)evaluation
+                          withGrade:(NSInteger*)grade
+                      andOrderIndex:(NSInteger)index
+{
+    
+    // get the managed object context
+    NSManagedObjectContext *managedOC = student.managedObjectContext;
+    
+    // create object of record
+    AttendanceRecord *recordToSave;
+    
+    recordToSave = [NSEntityDescription
+                    insertNewObjectForEntityForName:@"GradeRecord"
+                    inManagedObjectContext:managedOC];
+    
+    // get a previous record
+    /*
+    AttendanceRecord *prevRecord = [self getRecordForStudent:student andDay:classDay];
+    
+    // if that previous record exists, use it, otherwise create a new one
+    if (prevRecord) {
+        
+        recordToSave = prevRecord;
+        
+    } else {
+        
+        recordToSave = [NSEntityDescription
+                        insertNewObjectForEntityForName:@"AttendanceRecord"
+                        inManagedObjectContext:managedOC];
+        
+    }
+    */
+    
+    /*
+     ---    @dynamic grade;
+     ---    @dynamic gradeLong;
+     ---    @dynamic gradeShort;
+     ---    @dynamic orderIndex;
+     xxx    @dynamic passed;
+     ---    @dynamic percentage;
+     ---    @dynamic forClass;
+     ---    @dynamic forStudent;
+     */
+    
+    // prepare the grades as texts
+    NSString *gradeAsText = [NSString stringWithFormat:@"%ld", (long)grade];
+    
+    // prepare the percentage
+    NSInteger gradeInt = *grade;
+    NSInteger rangeInt = [evaluation.range integerValue];
+    NSNumber *gradePct = [NSNumber numberWithFloat: gradeInt / rangeInt];
+    
+    // set the value
+    [recordToSave setValue:[NSNumber numberWithInteger:gradeInt] forKey:@"grade"];
+    [recordToSave setValue:gradeAsText forKey:@"gradeLong"];
+    [recordToSave setValue:gradeAsText forKey:@"gradeShort"];
+    
+    // set the order index
+    [recordToSave setValue:[NSNumber numberWithInt:index] forKey:@"orderIndex"];
+    
+    // set the percentage
+    [recordToSave setValue:gradePct forKey:@"percentage"];
+    
+    // set the class (evaluation) it belongs to
+    [recordToSave setValue:evaluation forKey:@"forClass"];
+    
+    // set the student it belongs to
+    [recordToSave setValue:student forKey:@"forStudent"];
+    
+    
+    // write in permanent store
+    
+    NSError *recordError;
+    if (![managedOC save:&recordError]) {
+        NSLog(@"error en: %@", [recordError localizedDescription]);
+    }
+    
     
 }
 

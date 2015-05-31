@@ -76,6 +76,8 @@
 		A1C7A4061B0F8559006837D0 /* tchGradeInputDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C7A4051B0F8559006837D0 /* tchGradeInputDataSource.m */; };
 		A1C7A40A1B0F9EF3006837D0 /* tchSimpleCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C7A4091B0F9EF3006837D0 /* tchSimpleCollectionViewCell.m */; };
 		A1C7A4101B0FA6AD006837D0 /* tchInputCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C7A40F1B0FA6AD006837D0 /* tchInputCollection.m */; };
+		A1C7A4131B0FB5D7006837D0 /* tchGradeInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C7A4121B0FB5D7006837D0 /* tchGradeInputView.m */; };
+		A1C7A4161B0FB64E006837D0 /* tchInputCollectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C7A4151B0FB64E006837D0 /* tchInputCollectionDelegate.m */; };
 		A1D1A58F1B0A2E0E009245EB /* UIColor+appColorPresets.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D1A58E1B0A2E0E009245EB /* UIColor+appColorPresets.m */; };
 		A1D1A5931B0A3831009245EB /* tchGradesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D1A5921B0A3831009245EB /* tchGradesVC.m */; };
 /* End PBXBuildFile section */
@@ -227,6 +229,10 @@
 		A1C7A4091B0F9EF3006837D0 /* tchSimpleCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchSimpleCollectionViewCell.m; path = "Custom Controls/tchSimpleCollectionViewCell.m"; sourceTree = "<group>"; };
 		A1C7A40E1B0FA6AD006837D0 /* tchInputCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchInputCollection.h; path = "Students Table/Input Collection/tchInputCollection.h"; sourceTree = "<group>"; };
 		A1C7A40F1B0FA6AD006837D0 /* tchInputCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchInputCollection.m; path = "Students Table/Input Collection/tchInputCollection.m"; sourceTree = "<group>"; };
+		A1C7A4111B0FB5D7006837D0 /* tchGradeInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchGradeInputView.h; path = Grades/Input/tchGradeInputView.h; sourceTree = "<group>"; };
+		A1C7A4121B0FB5D7006837D0 /* tchGradeInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchGradeInputView.m; path = Grades/Input/tchGradeInputView.m; sourceTree = "<group>"; };
+		A1C7A4141B0FB64E006837D0 /* tchInputCollectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchInputCollectionDelegate.h; path = "Students Table/Input Collection/tchInputCollectionDelegate.h"; sourceTree = "<group>"; };
+		A1C7A4151B0FB64E006837D0 /* tchInputCollectionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchInputCollectionDelegate.m; path = "Students Table/Input Collection/tchInputCollectionDelegate.m"; sourceTree = "<group>"; };
 		A1D1A58D1B0A2E0E009245EB /* UIColor+appColorPresets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+appColorPresets.h"; path = "Custom Controls/UIColor+appColorPresets.h"; sourceTree = "<group>"; };
 		A1D1A58E1B0A2E0E009245EB /* UIColor+appColorPresets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+appColorPresets.m"; path = "Custom Controls/UIColor+appColorPresets.m"; sourceTree = "<group>"; };
 		A1D1A5911B0A3831009245EB /* tchGradesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchGradesVC.h; path = Grades/tchGradesVC.h; sourceTree = "<group>"; };
@@ -294,6 +300,8 @@
 				A1113EF11B0A93A90095CD14 /* tchInputView.m */,
 				A1C7A40E1B0FA6AD006837D0 /* tchInputCollection.h */,
 				A1C7A40F1B0FA6AD006837D0 /* tchInputCollection.m */,
+				A1C7A4141B0FB64E006837D0 /* tchInputCollectionDelegate.h */,
+				A1C7A4151B0FB64E006837D0 /* tchInputCollectionDelegate.m */,
 			);
 			name = "Input Collection";
 			sourceTree = "<group>";
@@ -589,6 +597,8 @@
 			children = (
 				A1C7A4041B0F8559006837D0 /* tchGradeInputDataSource.h */,
 				A1C7A4051B0F8559006837D0 /* tchGradeInputDataSource.m */,
+				A1C7A4111B0FB5D7006837D0 /* tchGradeInputView.h */,
+				A1C7A4121B0FB5D7006837D0 /* tchGradeInputView.m */,
 			);
 			name = Input;
 			sourceTree = "<group>";
@@ -760,6 +770,7 @@
 				A15D3C8A1AE961C7004A6DF1 /* tchOneClassTVC.m in Sources */,
 				A1A876D71B0B8398001C4D52 /* tchAttDayCVC.m in Sources */,
 				A1028AAF1AF920D900315DE5 /* tchAttInputV.m in Sources */,
+				A1C7A4131B0FB5D7006837D0 /* tchGradeInputView.m in Sources */,
 				A1D1A58F1B0A2E0E009245EB /* UIColor+appColorPresets.m in Sources */,
 				A1B713831AFAD13600A8B094 /* tchCollectionIndexed.m in Sources */,
 				A15D3C941AE98659004A6DF1 /* tchStudentDeployableTVC.m in Sources */,
@@ -779,6 +790,7 @@
 				A1BDCC381AE71F10000B0328 /* GradeRecord.m in Sources */,
 				A1113EE71B0A74760095CD14 /* tchColumnsCollection.m in Sources */,
 				A1AA54671AEA7E7900318744 /* tchAttendanceVC.m in Sources */,
+				A1C7A4161B0FB64E006837D0 /* tchInputCollectionDelegate.m in Sources */,
 				A14E133D1AE5A4F000A1CB95 /* tchImport1VC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

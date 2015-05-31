@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "tchInputView.h"
 
+#import "Student+tchStudentsExt.h"
+#import "tchColumnsCollection.h"
+#import "tchInputView.h"
+
 @protocol tchStudentCellProtocol <NSObject>
 
 -(void)collapseCellAtIndexPath:(NSIndexPath*)indexPath;
@@ -27,5 +31,9 @@
                 andDelegate:(id)tableView;
 - (void)reloadAllData;
 - (void)performDayScrollToIndex:(NSInteger)newIndex;
+
+@property (strong,nonatomic) IBOutlet tchColumnsCollection *columnsCollection;
+@property (strong,nonatomic) IBOutlet tchInputView *inputView;
+@property (strong,nonatomic) IBOutlet UILabel *studentNameLabel;
 
 @end
