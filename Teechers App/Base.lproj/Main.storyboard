@@ -3718,6 +3718,9 @@
                                                     <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="20" y="19" width="200" height="22"/>
+                                                    </variation>
                                                 </label>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="LR8-Hf-M78" userLabel="ColumnCollection" customClass="tchColumnsCollection">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -3813,7 +3816,8 @@
                                                             <exclude reference="vep-eA-FzL"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact">
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="260" y="0.0" width="60" height="60"/>
                                                         <mask key="constraints">
                                                             <include reference="fAY-fc-WCH"/>
                                                             <include reference="vep-eA-FzL"/>
@@ -3875,6 +3879,9 @@
                                                     <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="20" y="19" width="200" height="22"/>
+                                                    </variation>
                                                 </label>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="v2z-b7-itE" userLabel="Data Collection" customClass="tchColumnsCollection">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -3970,7 +3977,8 @@
                                                             <exclude reference="hrE-V6-yeE"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact">
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="260" y="0.0" width="60" height="60"/>
                                                         <mask key="constraints">
                                                             <include reference="76E-Ik-Dlz"/>
                                                             <include reference="hrE-V6-yeE"/>
@@ -4075,6 +4083,9 @@
                                                                     </connections>
                                                                 </collectionViewCell>
                                                             </cells>
+                                                            <variation key="widthClass=compact" misplaced="YES">
+                                                                <rect key="frame" x="0.0" y="0.0" width="320" height="89"/>
+                                                            </variation>
                                                             <connections>
                                                                 <outlet property="dataSource" destination="KeT-Ip-6Le" id="Viw-rU-8U9"/>
                                                                 <outlet property="delegate" destination="fFg-Vt-MbP" id="ZFK-nH-V5h"/>
@@ -4104,7 +4115,8 @@
                                                             <exclude reference="ejw-au-Q39"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact">
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="0.0" y="61" width="320" height="89"/>
                                                         <mask key="subviews">
                                                             <include reference="sdj-OU-40W"/>
                                                         </mask>
@@ -4132,7 +4144,8 @@
                                                             <exclude reference="S4s-vw-urc"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact">
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="0.0" y="51" width="320" height="10"/>
                                                         <mask key="constraints">
                                                             <include reference="S4s-vw-urc"/>
                                                         </mask>
