@@ -31,6 +31,9 @@
     // Tell the students table to setup itself
     [self.studentsTableView setupForClass:self.activeClass];
     
+    // Tell the students table the deployed cell height
+    self.studentsTableView.deployedCellHeight = 60+90;
+    
     // Setup the header for this class
     [self.headerView setupHeaderForClass:self.activeClass];
     

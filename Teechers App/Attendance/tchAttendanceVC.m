@@ -36,6 +36,9 @@
     // Pass the class to the Students data source
     [self.tchStudentsTable setupForClass:self.activeClass];
     
+    // tell the table of the deployed cell height
+    self.tchStudentsTable.deployedCellHeight = 241;
+    
     // Setup the header for this class
     [self.tchAttendanceHeader setupHeaderForClass:self.activeClass];
     

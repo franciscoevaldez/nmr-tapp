@@ -20,4 +20,6 @@
 @property (nonatomic) NSIndexPath* deployedPath;
 @property (nonatomic) BOOL thereIsACellDeployed;
 
+@property (nonatomic) NSInteger deployedCellHeight;
+
 @end

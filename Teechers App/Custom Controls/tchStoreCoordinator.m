@@ -314,40 +314,32 @@
     NSManagedObjectContext *managedOC = student.managedObjectContext;
     
     // create object of record
-    AttendanceRecord *recordToSave;
+    GradeRecord *recordToSave;
     
-    recordToSave = [NSEntityDescription
-                    insertNewObjectForEntityForName:@"GradeRecord"
-                    inManagedObjectContext:managedOC];
+    // get if there is a previous record
+    GradeRecord *prevRecord = [self getGradeForStudent:student andEvaluation:evaluation];
     
-    // get a previous record
-    /*
-    AttendanceRecord *prevRecord = [self getRecordForStudent:student andDay:classDay];
-    
-    // if that previous record exists, use it, otherwise create a new one
+    // if there is a previous record, use it
     if (prevRecord) {
         
         recordToSave = prevRecord;
         
     } else {
         
+        // otherwise, create it
+        
         recordToSave = [NSEntityDescription
-                        insertNewObjectForEntityForName:@"AttendanceRecord"
+                        insertNewObjectForEntityForName:@"GradeRecord"
                         inManagedObjectContext:managedOC];
         
+        // set the class (evaluation) it belongs to
+        [recordToSave setValue:evaluation forKey:@"forClass"];
+        
+        // set the student it belongs to
+        [recordToSave setValue:student forKey:@"forStudent"];
+        
     }
-    */
     
-    /*
-     ---    @dynamic grade;
-     ---    @dynamic gradeLong;
-     ---    @dynamic gradeShort;
-     ---    @dynamic orderIndex;
-     xxx    @dynamic passed;
-     ---    @dynamic percentage;
-     ---    @dynamic forClass;
-     ---    @dynamic forStudent;
-     */
     
     // prepare the grades as texts
     NSString *gradeAsText = [NSString stringWithFormat:@"%ld", (long)grade];
@@ -368,12 +360,6 @@
     // set the percentage
     [recordToSave setValue:gradePct forKey:@"percentage"];
     
-    // set the class (evaluation) it belongs to
-    [recordToSave setValue:evaluation forKey:@"forClass"];
-    
-    // set the student it belongs to
-    [recordToSave setValue:student forKey:@"forStudent"];
-    
     
     // write in permanent store
     
@@ -382,6 +368,33 @@
         NSLog(@"error en: %@", [recordError localizedDescription]);
     }
     
+    
+}
+
+- (GradeRecord*)getGradeForStudent:(Student*)student andEvaluation:(Evaluation*)evaluation{
+    
+    
+    GradeRecord* resultRecord;
+    
+    // get the existing records in a new array
+    NSArray* existingRecs = [student.gradeRecords allObjects];
+    
+    for (GradeRecord* currentRec in existingRecs) {
+        
+        // check for coincidence
+        if ([currentRec.forClass isEqual:evaluation]) {
+            
+            // if they are, set the returning record to this one
+            resultRecord = currentRec;
+            
+            // and exit the loop
+            return resultRecord;
+            
+        }
+        
+    }
+    
+    return resultRecord;
     
 }
 

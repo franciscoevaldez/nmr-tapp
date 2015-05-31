@@ -39,4 +39,6 @@
                           withGrade:(NSInteger*)grade
                       andOrderIndex:(NSInteger)index;
 
+- (GradeRecord*)getGradeForStudent:(Student*)student andEvaluation:(Evaluation*)evaluation;
+
 @end

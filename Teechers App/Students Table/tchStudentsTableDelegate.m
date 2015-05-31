@@ -49,7 +49,11 @@
     if(tableView.thereIsACellDeployed &&
        tableView.deployedPath.row == indexPath.row) {
         
-        return 241;
+        if (tableView.deployedCellHeight) {
+            return tableView.deployedCellHeight;
+        }
+        
+        return 200;
         
     }
     
