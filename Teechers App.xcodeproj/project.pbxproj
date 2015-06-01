@@ -56,11 +56,9 @@
 		A1A876DE1B0B83DE001C4D52 /* tchDatePickerField.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A876DB1B0B83DE001C4D52 /* tchDatePickerField.m */; };
 		A1A876DF1B0B83DE001C4D52 /* tchStoreCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A876DD1B0B83DE001C4D52 /* tchStoreCoordinator.m */; };
 		A1A876E31B0B8645001C4D52 /* tchHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A876E21B0B8645001C4D52 /* tchHeaderView.m */; };
-		A1A876E61B0B8EF7001C4D52 /* tchGradesHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A876E51B0B8EF7001C4D52 /* tchGradesHeader.m */; };
 		A1A876E91B0BB154001C4D52 /* tchHeaderColumnCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A876E81B0BB154001C4D52 /* tchHeaderColumnCollection.m */; };
 		A1A876EC1B0BB42B001C4D52 /* tchGradesHeaderDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A876EB1B0BB42B001C4D52 /* tchGradesHeaderDataSource.m */; };
 		A1A876EF1B0BB6B1001C4D52 /* tchHeaderColumnCollDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A876EE1B0BB6B1001C4D52 /* tchHeaderColumnCollDataSource.m */; };
-		A1A876F21B0BBBA5001C4D52 /* tchAttHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A876F11B0BBBA5001C4D52 /* tchAttHeader.m */; };
 		A1A876F51B0BBDA6001C4D52 /* tchAttHeaderDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A876F41B0BBDA6001C4D52 /* tchAttHeaderDataSource.m */; };
 		A1AA54671AEA7E7900318744 /* tchAttendanceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A1AA54661AEA7E7900318744 /* tchAttendanceVC.m */; };
 		A1B713831AFAD13600A8B094 /* tchCollectionIndexed.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B713821AFAD13600A8B094 /* tchCollectionIndexed.m */; };
@@ -190,16 +188,12 @@
 		A1A876DD1B0B83DE001C4D52 /* tchStoreCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchStoreCoordinator.m; path = "Custom Controls/tchStoreCoordinator.m"; sourceTree = "<group>"; };
 		A1A876E11B0B8645001C4D52 /* tchHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchHeaderView.h; path = Header/tchHeaderView.h; sourceTree = "<group>"; };
 		A1A876E21B0B8645001C4D52 /* tchHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchHeaderView.m; path = Header/tchHeaderView.m; sourceTree = "<group>"; };
-		A1A876E41B0B8EF7001C4D52 /* tchGradesHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchGradesHeader.h; path = Grades/tchGradesHeader.h; sourceTree = "<group>"; };
-		A1A876E51B0B8EF7001C4D52 /* tchGradesHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchGradesHeader.m; path = Grades/tchGradesHeader.m; sourceTree = "<group>"; };
 		A1A876E71B0BB154001C4D52 /* tchHeaderColumnCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchHeaderColumnCollection.h; path = Header/tchHeaderColumnCollection.h; sourceTree = "<group>"; };
 		A1A876E81B0BB154001C4D52 /* tchHeaderColumnCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchHeaderColumnCollection.m; path = Header/tchHeaderColumnCollection.m; sourceTree = "<group>"; };
 		A1A876EA1B0BB42B001C4D52 /* tchGradesHeaderDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchGradesHeaderDataSource.h; path = Grades/tchGradesHeaderDataSource.h; sourceTree = "<group>"; };
 		A1A876EB1B0BB42B001C4D52 /* tchGradesHeaderDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchGradesHeaderDataSource.m; path = Grades/tchGradesHeaderDataSource.m; sourceTree = "<group>"; };
 		A1A876ED1B0BB6B1001C4D52 /* tchHeaderColumnCollDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchHeaderColumnCollDataSource.h; path = Header/tchHeaderColumnCollDataSource.h; sourceTree = "<group>"; };
 		A1A876EE1B0BB6B1001C4D52 /* tchHeaderColumnCollDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchHeaderColumnCollDataSource.m; path = Header/tchHeaderColumnCollDataSource.m; sourceTree = "<group>"; };
-		A1A876F01B0BBBA5001C4D52 /* tchAttHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchAttHeader.h; path = Attendance/tchAttHeader.h; sourceTree = "<group>"; };
-		A1A876F11B0BBBA5001C4D52 /* tchAttHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchAttHeader.m; path = Attendance/tchAttHeader.m; sourceTree = "<group>"; };
 		A1A876F31B0BBDA6001C4D52 /* tchAttHeaderDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchAttHeaderDataSource.h; path = Attendance/tchAttHeaderDataSource.h; sourceTree = "<group>"; };
 		A1A876F41B0BBDA6001C4D52 /* tchAttHeaderDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchAttHeaderDataSource.m; path = Attendance/tchAttHeaderDataSource.m; sourceTree = "<group>"; };
 		A1AA54651AEA7E7900318744 /* tchAttendanceVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchAttendanceVC.h; path = Attendance/tchAttendanceVC.h; sourceTree = "<group>"; };
@@ -550,8 +544,6 @@
 				A1113EF41B0AB2890095CD14 /* tchAttendanceColumnsDS.m */,
 				A14CBAC61AF41074009F140E /* tchAttendanceColumnVC.h */,
 				A14CBAC71AF41074009F140E /* tchAttendanceColumnVC.m */,
-				A1A876F01B0BBBA5001C4D52 /* tchAttHeader.h */,
-				A1A876F11B0BBBA5001C4D52 /* tchAttHeader.m */,
 				A1A876F31B0BBDA6001C4D52 /* tchAttHeaderDataSource.h */,
 				A1A876F41B0BBDA6001C4D52 /* tchAttHeaderDataSource.m */,
 				A1028AAD1AF920D900315DE5 /* tchAttInputV.h */,
@@ -631,8 +623,6 @@
 				A1D1A5921B0A3831009245EB /* tchGradesVC.m */,
 				A1113EE91B0A7F1F0095CD14 /* tchGradesColumnsDS.h */,
 				A1113EEA1B0A7F1F0095CD14 /* tchGradesColumnsDS.m */,
-				A1A876E41B0B8EF7001C4D52 /* tchGradesHeader.h */,
-				A1A876E51B0B8EF7001C4D52 /* tchGradesHeader.m */,
 				A1A876EA1B0BB42B001C4D52 /* tchGradesHeaderDataSource.h */,
 				A1A876EB1B0BB42B001C4D52 /* tchGradesHeaderDataSource.m */,
 				A16411B81B0CD33600E2DBAE /* tchGradesMenu.h */,
@@ -786,7 +776,6 @@
 				A1BDCC441AE71F11000B0328 /* AClass.m in Sources */,
 				A1BDCC1A1AE716BF000B0328 /* tchClassImporter.m in Sources */,
 				A1028AB21AF94A6800315DE5 /* AttendanceRecord+tchAttExt.m in Sources */,
-				A1A876F21B0BBBA5001C4D52 /* tchAttHeader.m in Sources */,
 				A1113EEE1B0A876F0095CD14 /* tchColumnCollectionDataSource.m in Sources */,
 				A1113EF21B0A93A90095CD14 /* tchInputView.m in Sources */,
 				A15D3C8A1AE961C7004A6DF1 /* tchOneClassTVC.m in Sources */,
@@ -806,7 +795,6 @@
 				A1A876CD1B0B7E20001C4D52 /* tchAttendanceMenu.m in Sources */,
 				A1113EEB1B0A7F1F0095CD14 /* tchGradesColumnsDS.m in Sources */,
 				A1113EE01B0A59FC0095CD14 /* tchStudentsTableDelegate.m in Sources */,
-				A1A876E61B0B8EF7001C4D52 /* tchGradesHeader.m in Sources */,
 				A1BDCC141AE6AA08000B0328 /* tchImport2VC.m in Sources */,
 				A106AF931AE80449001323E5 /* tchClassTableDS.m in Sources */,
 				A1BDCC381AE71F10000B0328 /* GradeRecord.m in Sources */,

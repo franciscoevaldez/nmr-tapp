@@ -15,15 +15,10 @@
 
 @interface tchAttendanceVC () 
 
-@property (strong, nonatomic) IBOutlet tchAttHeader *tchAttendanceHeader;
 @property (strong, nonatomic) IBOutlet tchAttDayBandColDel *tchDayBandDelegate;
-@property (strong, nonatomic) IBOutlet tchAttendanceMenu *tchAttendanceMenu;
-@property (strong, nonatomic) IBOutlet tchStudentsTableView *tchStudentsTable;
-
-
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *menuHeightConstraint;
 
-@property (assign, nonatomic) NSInteger currentDayIndex;
+//@property (assign, nonatomic) NSInteger currentDayIndex;
 
 @end
 
@@ -33,18 +28,22 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    // Pass the class to the Students data source
-    [self.tchStudentsTable setupForClass:self.activeClass];
+    // pass the class to the children
+    [self setupForClass:self.activeClass];
     
     // tell the table of the deployed cell height
-    self.tchStudentsTable.deployedCellHeight = 241;
+    self.studentsTable.deployedCellHeight = 241;
+    
+    /*
+    // Pass the class to the Students data source
+    [self.tchStudentsTable setupForClass:self.activeClass];
     
     // Setup the header for this class
     [self.tchAttendanceHeader setupHeaderForClass:self.activeClass];
     
     // Setup the day band for this class (CHANGE!!!!)
     [self.tchAttendanceMenu setupForClass:self.activeClass];
-    
+     
     // set header delegate
     self.tchAttendanceHeader.delegate = self;
     
@@ -53,41 +52,13 @@
     
     // set menu delegate
     self.tchAttendanceMenu.delegate = self;
+     
+     */
     
     // Hide the menu
-    [self.tchAttendanceMenu setupMenu];
+    //[self.optionsMenu setupMenu];
+     
     
-}
-
-
-
-#pragma mark - Day Jumping
-- (void)scrollToIndex:(NSInteger)newIndex{
-    
-    // Tell header to scroll to new index
-    //[self.tchAttendanceHeader performDayScrollToIndex:newIndex];
-    [self.tchAttendanceHeader performColumnScrollToIndex:newIndex];
-    
-    // Tell the table to perform the scroll
-    [self.tchStudentsTable performDayScrollToIndex:newIndex];
-    
-    // If menu is deployed, close it
-    if (self.tchAttendanceMenu.deployed) {
-        
-        // close menu
-        [UIView animateWithDuration:0.5 animations:^{
-            self.menuHeightConstraint.constant = 0;
-            [self.view layoutIfNeeded];
-        }];
-        
-        [self.tchAttendanceMenu toggleMenu];
-        [self.tchAttendanceHeader menuWasToggled];
-        
-    }
-    
-    // get the new index to VC property
-    self.currentDayIndex = newIndex;
-
 }
 
 - (void)scrollToDay:(ClassDay*)classDay{
@@ -100,72 +71,11 @@
     
 }
 
-
-#pragma mark - Swipe Handling
-- (IBAction)swipeLeftDone:(id)sender {
-    
-    NSInteger maxScroll = [[self.activeClass.classDays allObjects] count];
-    
-    if (self.currentDayIndex < (maxScroll-1)){
-        
-        [self scrollToIndex:self.currentDayIndex+1];
-        
-    }
-    
+#pragma mark - Column Handling
+- (NSInteger)getMaxScroll{
+    return [[self.activeClass.classDays allObjects] count];
 }
 
-- (IBAction)swipeRightDone:(id)sender {
-    
-    // check the scroll is available
-    if (self.currentDayIndex > 0 && (!self.tchAttendanceMenu.deployed)) {
-        
-        [self scrollToIndex:self.currentDayIndex-1];
-        
-    }
-    
-}
-
-#pragma mark - Header tapped
-- (void)headerWasTapped {
-    
-    if (!self.tchAttendanceMenu.deployed) {
-        
-        [UIView animateWithDuration:0.5 animations:^{
-            self.menuHeightConstraint.constant = 210;
-            [self.view layoutIfNeeded];
-        }];
-        
-    } else {
-        
-        [UIView animateWithDuration:0.5 animations:^{
-            self.menuHeightConstraint.constant = 0;
-            [self.view layoutIfNeeded];
-        }];
-        
-    }
-    
-    [self.tchAttendanceMenu toggleMenu];
-    [self.tchAttendanceHeader menuWasToggled];
-    
-}
-
-#pragma mark - Reloading data
-// tell views to reload its data
-- (void)reloadViewsData
-{
-    
-    // refresh the students table
-    //[self.tchStudentsTable fullReload];
-    [self.tchStudentsTable reloadAllData];
-    
-    // refresh the header data source
-    [self.tchAttendanceHeader reloadData];
-    
-    // refresh the menu
-    [self.tchAttendanceMenu reloadData];
-    
-    
-}
 
 #pragma mark - Edit Day Modal handling
 - (void)editDayWasDismissed:(ClassDay*)changedDay{
@@ -191,7 +101,7 @@
     [self presentViewController:alertController animated:YES completion:nil];
     
     // If menu is deployed, close it
-    if (self.tchAttendanceMenu.deployed) {
+    if (self.optionsMenu.status) {
         
         [self headerWasTapped];
         
@@ -199,11 +109,11 @@
     
 }
 
-- (ClassDay*)getCurrentDay
+-(id)getCurrentColumnItem
 {
     
     // get the current day index
-    NSInteger dayIndex = self.currentDayIndex;
+    NSInteger dayIndex = self.currentColumnIndex;
     
     // get the day for that index
     ClassDay *currentDay = [self.activeClass getDayForIndex:dayIndex];
@@ -212,7 +122,6 @@
     return currentDay;
     
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -254,12 +163,12 @@
         [self headerWasTapped];
         
         // get currently selected day
-        if (!self.currentDayIndex) {
-            self.currentDayIndex = 0;
+        if (!self.currentColumnIndex) {
+            self.currentColumnIndex = 0;
         }
         
         NSArray *sortedDays = [self.activeClass getDaysSorted];
-        ClassDay *currentDay = [sortedDays objectAtIndex:self.currentDayIndex];
+        ClassDay *currentDay = [sortedDays objectAtIndex:self.currentColumnIndex];
         
         // prepare the edit/create view controller
         tchEditDayVC *destinationVC = [segue destinationViewController];

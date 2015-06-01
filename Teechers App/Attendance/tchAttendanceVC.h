@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "tchListViewController.h"
+
 #import "AClass+tchAClassExt.h"
 
 #import "tchAttHeader.h"
@@ -14,8 +16,6 @@
 #import "tchEditDayVC.h"
 #import "tchAttendanceMenu.h"
 
-@interface tchAttendanceVC : UIViewController <tchHeaderDelegate, tchDayBandDelegate, tchEditDayVCDelegate, tchMenuDelegate>
-
-@property (strong,nonatomic) AClass *activeClass;
+@interface tchAttendanceVC : tchListViewController <tchHeaderDelegate, tchDayBandDelegate, tchEditDayVCDelegate, tchDropMenuDelegate>
 
 @end

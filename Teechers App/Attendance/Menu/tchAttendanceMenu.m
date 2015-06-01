@@ -13,11 +13,8 @@
 
 @interface tchAttendanceMenu ()
 
-@property (strong, nonatomic) IBOutlet NSLayoutConstraint *heightConstraint;
 @property (strong, nonatomic) IBOutlet tchAttDayBandColDS *tchDayBandDataSource;
 @property (strong, nonatomic) IBOutlet UICollectionView *dayBandCollection;
-@property (strong, nonatomic) IBOutlet tchStoreCoordinator *storeCoordinator;
-
 
 @end
 
@@ -30,11 +27,13 @@
     
 }
 
+/*
 -(void)toggleMenu{
     
     self.deployed = !self.deployed;
     
 }
+ */
 
 // setup the menu for the class coming from the view controller
 -(void)setupForClass:(AClass *)activeClass{
@@ -66,13 +65,13 @@
                                handler:^(UIAlertAction *action) {
                                    
                                    // get the current day
-                                   ClassDay *currentDay = [_delegate getCurrentDay];
+                                   ClassDay *currentDay = [self.delegate getCurrentColumnItem];
                                    
                                    // tell the store coordinator to delete that day
                                    [self.storeCoordinator deleteClassDay:currentDay];
                                    
                                    // tell the delegate to reload data
-                                   [_delegate reloadViewsData];
+                                   [self.delegate reloadViewsData];
                                    
                                    
                                }];
@@ -82,7 +81,7 @@
     [alert addAction:doDelete];
     
     // tell the delegate to delete the selected day and pass the alert
-    [_delegate showAlert:alert];
+    [self.delegate showAlert:alert];
 
     
 }

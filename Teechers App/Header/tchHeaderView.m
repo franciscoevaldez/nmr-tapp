@@ -16,7 +16,21 @@
 @implementation tchHeaderView
 
 #pragma mark - Header Setup
-- (void)setupHeaderForClass:(AClass*)classForHeader{
+- (void)setupHeaderForClass:(AClass*)activeClass{
+    
+    // if there is a column collection
+    if (self.columnCollection) {
+        
+        // call the setup for it
+        [self.columnCollection setupForClass:activeClass];
+        
+    }
+    
+    // pass the class to the property
+    self.activeClass = activeClass;
+    
+    // write the class name in the title label
+    self.subTitleLabel.text = activeClass.name;
     
     /*
     // call collection view controller to get ready

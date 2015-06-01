@@ -31,7 +31,7 @@
 
 @property(nonatomic,assign) IBOutlet id <tchHeaderDelegate> delegate;
 
-- (void)setupHeaderForClass:(AClass*)classForHeader;
+- (void)setupHeaderForClass:(AClass*)activeClass;
 - (void)performColumnScrollToIndex:(NSInteger)newIndex;
 - (void)menuWasToggled;
 - (void)reloadData;

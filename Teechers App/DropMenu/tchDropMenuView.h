@@ -26,6 +26,7 @@
 @protocol tchDropMenuDelegate <NSObject>
 
 -(void)showAlert:(UIAlertController*)alertController;
+-(id)getCurrentColumnItem;
 -(void)reloadViewsData;
 - (void)scrollToIndex:(NSInteger)newIndex;
 

@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "tchDropMenuView.h"
 #import "AClass+tchAClassExt.h"
 
+/*
 @protocol tchMenuDelegate <NSObject>
 
 - (void)showAlert:(UIAlertController*)alertController;
@@ -16,15 +18,15 @@
 - (void)reloadViewsData;
 
 @end
+ */
 
-@interface tchAttendanceMenu : UIView
+@interface tchAttendanceMenu : tchDropMenuView
 
--(void)toggleMenu;
+//-(void)toggleMenu;
 -(void)setupMenu;
 -(void)setupForClass:(AClass *)activeClass;
 - (void)reloadData;
 
 @property (assign,nonatomic) BOOL deployed;
-@property (nonatomic, weak) id <tchMenuDelegate> delegate;
 
 @end

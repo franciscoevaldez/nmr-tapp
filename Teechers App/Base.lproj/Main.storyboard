@@ -238,7 +238,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vIL-7v-VuK" userLabel="Header" customClass="tchAttHeader">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vIL-7v-VuK" userLabel="Header" customClass="tchHeaderView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ezu-00-PSJ" userLabel="Back">
@@ -487,13 +487,14 @@
                                 </variation>
                                 <connections>
                                     <outlet property="columnCollection" destination="T4D-pI-1qx" id="czn-Vr-tk0"/>
+                                    <outlet property="delegate" destination="HRB-Rw-Ffv" id="44M-ff-tAn"/>
                                     <outlet property="deployIndicator" destination="wdf-vb-upe" id="Mzw-PP-nZv"/>
                                     <outlet property="subTitleLabel" destination="nnE-Wz-hEs" id="KSF-R0-9hs"/>
                                     <outlet property="titleLabel" destination="Y2b-hr-Peb" id="6pD-LQ-eSh"/>
                                     <outletCollection property="gestureRecognizers" destination="Bxw-iX-fEM" appends="YES" id="Cog-AJ-En6"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fI6-QL-4Oq" userLabel="Header Menu" customClass="tchAttendanceMenu">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fI6-QL-4Oq" userLabel="Menu" customClass="tchAttendanceMenu">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="HuJ-cx-7M7" userLabel="Day Band">
@@ -759,12 +760,13 @@
                                 </variation>
                                 <connections>
                                     <outlet property="dayBandCollection" destination="HuJ-cx-7M7" id="vXs-7x-WKs"/>
+                                    <outlet property="delegate" destination="HRB-Rw-Ffv" id="tzV-fk-LdC"/>
                                     <outlet property="heightConstraint" destination="vUZ-by-hMW" id="K2s-hv-ufP"/>
                                     <outlet property="storeCoordinator" destination="xtM-7w-OMb" id="16X-oe-he6"/>
                                     <outlet property="tchDayBandDataSource" destination="gvJ-Ve-nFq" id="9cE-0e-tUb"/>
                                 </connections>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="n1z-qS-gbS" userLabel="Body Table" customClass="tchStudentsTableView">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="n1z-qS-gbS" userLabel="Students" customClass="tchStudentsTableView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -1747,11 +1749,10 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Attendance" id="LWJ-mu-ndC"/>
                     <connections>
+                        <outlet property="headerView" destination="vIL-7v-VuK" id="i7I-kb-0R5"/>
                         <outlet property="menuHeightConstraint" destination="vUZ-by-hMW" id="17K-yL-xPw"/>
-                        <outlet property="tchAttendanceHeader" destination="vIL-7v-VuK" id="YwY-6X-Bya"/>
-                        <outlet property="tchAttendanceMenu" destination="fI6-QL-4Oq" id="Z7m-lt-neN"/>
+                        <outlet property="studentsTable" destination="n1z-qS-gbS" id="Ldo-Y7-QYg"/>
                         <outlet property="tchDayBandDelegate" destination="l25-rv-LpT" id="WUR-1e-Wsg"/>
-                        <outlet property="tchStudentsTable" destination="n1z-qS-gbS" id="L8D-yY-5qi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VNp-jN-M7J" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1769,12 +1770,12 @@
                 <customObject id="Cmm-ZW-uSJ" customClass="tchAttHeaderDataSource"/>
                 <swipeGestureRecognizer direction="left" id="OFh-3Z-piv" userLabel="Left Swipe Recognizer">
                     <connections>
-                        <action selector="swipeLeftDone:" destination="HRB-Rw-Ffv" id="DC7-na-IaU"/>
+                        <action selector="swipeLeftDone:" destination="HRB-Rw-Ffv" id="34c-uF-uBI"/>
                     </connections>
                 </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="right" id="3cW-mW-g77" userLabel="Right Swipe Recognizer">
                     <connections>
-                        <action selector="swipeRightDone:" destination="HRB-Rw-Ffv" id="44i-sW-04Y"/>
+                        <action selector="swipeRightDone:" destination="HRB-Rw-Ffv" id="CzW-on-YdB"/>
                     </connections>
                 </swipeGestureRecognizer>
                 <tapGestureRecognizer id="Bxw-iX-fEM" userLabel="Header Tap">
@@ -3186,7 +3187,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e5f-NI-gap" userLabel="Header" customClass="tchGradesHeader">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e5f-NI-gap" userLabel="Header" customClass="tchHeaderView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Izc-6O-L4f" userLabel="Back">
