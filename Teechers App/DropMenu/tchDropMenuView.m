@@ -10,6 +10,9 @@
 
 @implementation tchDropMenuView
 
+-(void)setupForClass:(AClass *)activeClass{
+}
+
 #pragma mark - Basic init
 -(void)defaultInit{
     
@@ -17,6 +20,9 @@
     self.heightConstraint.constant = 0.0f;
     
 }
+
+#pragma mark - Data Handling
+-(void)reloadData{}
 
 #pragma mark - Toggle menu
 -(void)toggleMenu{

@@ -47,6 +47,7 @@
 		A16411B71B0CC83E00E2DBAE /* tchDropMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = A16411B61B0CC83E00E2DBAE /* tchDropMenuView.m */; };
 		A16411BA1B0CD33600E2DBAE /* tchGradesMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = A16411B91B0CD33600E2DBAE /* tchGradesMenu.m */; };
 		A16411BD1B0CD99500E2DBAE /* tchColumnCollectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A16411BC1B0CD99500E2DBAE /* tchColumnCollectionDelegate.m */; };
+		A17674F51B1BD7020093F7A0 /* tchListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A17674F41B1BD7020093F7A0 /* tchListViewController.m */; };
 		A1A876CB1B0B7E20001C4D52 /* tchAttDayBandColDel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A876C61B0B7E20001C4D52 /* tchAttDayBandColDel.m */; };
 		A1A876CC1B0B7E20001C4D52 /* tchAttDayBandColDS.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A876C81B0B7E20001C4D52 /* tchAttDayBandColDS.m */; };
 		A1A876CD1B0B7E20001C4D52 /* tchAttendanceMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A876CA1B0B7E20001C4D52 /* tchAttendanceMenu.m */; };
@@ -171,6 +172,8 @@
 		A16411B91B0CD33600E2DBAE /* tchGradesMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchGradesMenu.m; path = Grades/tchGradesMenu.m; sourceTree = "<group>"; };
 		A16411BB1B0CD99500E2DBAE /* tchColumnCollectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchColumnCollectionDelegate.h; path = Header/tchColumnCollectionDelegate.h; sourceTree = "<group>"; };
 		A16411BC1B0CD99500E2DBAE /* tchColumnCollectionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchColumnCollectionDelegate.m; path = Header/tchColumnCollectionDelegate.m; sourceTree = "<group>"; };
+		A17674F31B1BD7020093F7A0 /* tchListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchListViewController.h; path = "Generics/List View Controllers/tchListViewController.h"; sourceTree = "<group>"; };
+		A17674F41B1BD7020093F7A0 /* tchListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchListViewController.m; path = "Generics/List View Controllers/tchListViewController.m"; sourceTree = "<group>"; };
 		A1A876C51B0B7E20001C4D52 /* tchAttDayBandColDel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchAttDayBandColDel.h; path = Attendance/Menu/tchAttDayBandColDel.h; sourceTree = "<group>"; };
 		A1A876C61B0B7E20001C4D52 /* tchAttDayBandColDel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchAttDayBandColDel.m; path = Attendance/Menu/tchAttDayBandColDel.m; sourceTree = "<group>"; };
 		A1A876C71B0B7E20001C4D52 /* tchAttDayBandColDS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchAttDayBandColDS.h; path = Attendance/Menu/tchAttDayBandColDS.h; sourceTree = "<group>"; };
@@ -339,6 +342,7 @@
 				A16411B41B0CC7C100E2DBAE /* DropMenu */,
 				A1113ED71B0A4DDC0095CD14 /* Students Table */,
 				A14E133A1AE5A49F00A1CB95 /* ImportSequence */,
+				A17674F11B1BD6D50093F7A0 /* Generics */,
 				A14E13031AE5470700A1CB95 /* AppDelegate.h */,
 				A14E13041AE5470700A1CB95 /* AppDelegate.m */,
 				A14E130F1AE5470700A1CB95 /* Main.storyboard */,
@@ -503,6 +507,23 @@
 				A16411B61B0CC83E00E2DBAE /* tchDropMenuView.m */,
 			);
 			name = DropMenu;
+			sourceTree = "<group>";
+		};
+		A17674F11B1BD6D50093F7A0 /* Generics */ = {
+			isa = PBXGroup;
+			children = (
+				A17674F21B1BD6DE0093F7A0 /* List View Controller */,
+			);
+			name = Generics;
+			sourceTree = "<group>";
+		};
+		A17674F21B1BD6DE0093F7A0 /* List View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A17674F31B1BD7020093F7A0 /* tchListViewController.h */,
+				A17674F41B1BD7020093F7A0 /* tchListViewController.m */,
+			);
+			name = "List View Controller";
 			sourceTree = "<group>";
 		};
 		A1A876E01B0B8545001C4D52 /* Header */ = {
@@ -745,6 +766,7 @@
 				A16411BD1B0CD99500E2DBAE /* tchColumnCollectionDelegate.m in Sources */,
 				A1A876CB1B0B7E20001C4D52 /* tchAttDayBandColDel.m in Sources */,
 				A1573C811B0EA95700B3AB50 /* Evaluation.m in Sources */,
+				A17674F51B1BD7020093F7A0 /* tchListViewController.m in Sources */,
 				A14CBAC81AF41074009F140E /* tchAttendanceColumnVC.m in Sources */,
 				A1A876EF1B0BB6B1001C4D52 /* tchHeaderColumnCollDataSource.m in Sources */,
 				A1A876D01B0B8323001C4D52 /* tchEditDayVC.m in Sources */,

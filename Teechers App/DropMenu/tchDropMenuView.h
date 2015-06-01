@@ -44,6 +44,8 @@
 @property (assign,nonatomic) int heightForFullDeploy;
 @property (assign,nonatomic) int heightForSemiDeploy;
 
+-(void)setupForClass:(AClass *)activeClass;
+-(void)reloadData;
 -(void)defaultInit;
 -(void)toggleMenu;
 
