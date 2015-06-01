@@ -7,39 +7,22 @@
 //
 
 #import "tchAttendanceMenu.h"
-#import "tchAttDayBandColDS.h"
 #import "tchStoreCoordinator.h"
 #import "ClassDay.h"
 
-@interface tchAttendanceMenu ()
-
-@property (strong, nonatomic) IBOutlet tchAttDayBandColDS *tchDayBandDataSource;
-@property (strong, nonatomic) IBOutlet UICollectionView *dayBandCollection;
-
-@end
-
 @implementation tchAttendanceMenu
 
--(void)setupMenu{
-    
-    self.deployed = FALSE;
-    self.heightConstraint.constant = 0.0f;
-    
-}
-
-/*
--(void)toggleMenu{
-    
-    self.deployed = !self.deployed;
-    
-}
- */
-
-// setup the menu for the class coming from the view controller
 -(void)setupForClass:(AClass *)activeClass{
+    
+    // heights
+    self.heightForFullDeploy = 210;
+    self.heightForSemiDeploy = 50;
+    
+    // default variable init
+    [self defaultInit];
+}
 
-    // set the day band data source
-    [self.tchDayBandDataSource setupForClass:activeClass];
+-(void)reloadData{
     
 }
 
@@ -83,14 +66,6 @@
     // tell the delegate to delete the selected day and pass the alert
     [self.delegate showAlert:alert];
 
-    
-}
-
-#pragma mark - react to data reload
-- (void)reloadData{
-    
-    [self.dayBandCollection reloadData];
-    [self.dayBandCollection reloadSections:[NSIndexSet indexSetWithIndex:0]];
     
 }
 

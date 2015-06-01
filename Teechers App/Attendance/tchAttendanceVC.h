@@ -11,11 +11,10 @@
 
 #import "AClass+tchAClassExt.h"
 
-#import "tchAttHeader.h"
-#import "tchAttDayBandColDel.h"
+#import "tchHeaderView.h"
 #import "tchEditDayVC.h"
 #import "tchAttendanceMenu.h"
 
-@interface tchAttendanceVC : tchListViewController <tchHeaderDelegate, tchDayBandDelegate, tchEditDayVCDelegate, tchDropMenuDelegate>
+@interface tchAttendanceVC : tchListViewController <tchHeaderDelegate, tchEditDayVCDelegate, tchDropMenuDelegate>
 
 @end

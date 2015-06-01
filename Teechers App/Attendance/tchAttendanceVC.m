@@ -8,19 +8,7 @@
 
 #import "tchAttendanceVC.h"
 
-#import "tchEditDayVC.h"
-#import "tchStudentsTableView.h"
-
 #import "ClassDay.h"
-
-@interface tchAttendanceVC () 
-
-@property (strong, nonatomic) IBOutlet tchAttDayBandColDel *tchDayBandDelegate;
-@property (strong, nonatomic) IBOutlet NSLayoutConstraint *menuHeightConstraint;
-
-//@property (assign, nonatomic) NSInteger currentDayIndex;
-
-@end
 
 @implementation tchAttendanceVC
 
@@ -33,27 +21,6 @@
     
     // tell the table of the deployed cell height
     self.studentsTable.deployedCellHeight = 241;
-    
-    /*
-    // Pass the class to the Students data source
-    [self.tchStudentsTable setupForClass:self.activeClass];
-    
-    // Setup the header for this class
-    [self.tchAttendanceHeader setupHeaderForClass:self.activeClass];
-    
-    // Setup the day band for this class (CHANGE!!!!)
-    [self.tchAttendanceMenu setupForClass:self.activeClass];
-     
-    // set header delegate
-    self.tchAttendanceHeader.delegate = self;
-    
-    // set day band delegate
-    self.tchDayBandDelegate.delegate = self;
-    
-    // set menu delegate
-    self.tchAttendanceMenu.delegate = self;
-     
-     */
     
     // Hide the menu
     //[self.optionsMenu setupMenu];
