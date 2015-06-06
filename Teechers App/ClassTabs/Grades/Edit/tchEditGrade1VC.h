@@ -11,9 +11,8 @@
 
 #import "tchFormViewController.h"
 #import "tchDatePickerField.h"
-#import "tchStoreCoordinator.h"
 
-#import "Evaluation.h"
+#import "Evaluation+tchEvalExt.h"
 
 @protocol tchEditDialogDelegate <NSObject>
 
@@ -29,7 +28,6 @@
 @property (strong, nonatomic) Evaluation *evaluationToEdit;
 
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
-@property (strong, nonatomic) IBOutlet tchStoreCoordinator *storeCoordinator;
 
 @property (strong, nonatomic) IBOutlet UITextField *nameInput;
 @property (strong, nonatomic) IBOutlet UITextField *shortInput;

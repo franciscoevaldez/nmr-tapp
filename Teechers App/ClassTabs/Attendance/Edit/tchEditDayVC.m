@@ -7,8 +7,6 @@
 //
 
 #import "tchEditDayVC.h"
-
-#import "tchStoreCoordinator.h"
 #import "tchDatePickerField.h"
 
 @interface tchEditDayVC ()
@@ -17,7 +15,6 @@
 @property (strong, nonatomic) IBOutlet tchDatePickerField *dateInput;
 @property (strong, nonatomic) IBOutlet UITextField *titleInput;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *bottomConstraint;
-@property (strong, nonatomic) IBOutlet tchStoreCoordinator *storeCoordinator;
 
 @end
 
@@ -47,10 +44,6 @@
     
     // give the focus to the first input
     [self.dateInput becomeFirstResponder];
-    
-    // pass the active class to the store coordinator
-    self.storeCoordinator.activeClass = self.activeClass;
-
     
 }
 
@@ -141,8 +134,8 @@
     // if theres no day to edit (means we are creating)
     if (!self.dayToEdit) {
         
-        // tell the data coordinator to add a new day
-        ClassDay *newDay = [self.storeCoordinator createAndStoreNewDay:newDate withName:newTitle];
+        // tell the class to create the new day
+        ClassDay *newDay = [self.activeClass createNewDay:newDate withName:newTitle];
         
         // dismiss the view
         [self dismissViewControllerAnimated:YES completion:nil];
@@ -152,14 +145,14 @@
         
     } else {
         
-        // tell the data coordinator to edit the day with the new data
-        ClassDay *newDay = [self.storeCoordinator updateAndStoreDay:self.dayToEdit withDate:newDate withName:newTitle];
+        // update the day data
+        ClassDay *updatedDay = [self.dayToEdit updateDayWithDate:newDate name:newTitle];
         
         // dismiss the view
         [self dismissViewControllerAnimated:YES completion:nil];
         
         // pass the new day to the delegate
-        [_delegate editDayWasDismissed:newDay];
+        [_delegate editDayWasDismissed:updatedDay];
         
     }
     

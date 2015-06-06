@@ -13,5 +13,6 @@
 
 @interface tchGradesVC : tchListViewController <tchEditDialogDelegate>
 
+-(id)getCurrentColumnItem;
 
 @end

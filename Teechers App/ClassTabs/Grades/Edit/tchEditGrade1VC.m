@@ -9,6 +9,8 @@
 #import "tchEditGrade1VC.h"
 #import "tchDatePickerField.h"
 
+#import "AClass+tchAClassExt.h"
+
 @interface tchEditGrade1VC ()
 
 
@@ -49,10 +51,7 @@
     
     // give the focus to the first input
     [self.nameInput becomeFirstResponder];
-    
-    // pass the active class to the store coordinator
-    self.storeCoordinator.activeClass = self.activeClass;
-    
+
     
 }
 
@@ -67,10 +66,10 @@
     // create a new evaluation object
     Evaluation *newEvaluation;
     
-    newEvaluation = [self.storeCoordinator createAndStoreNewEvaluation:self.nameInput.text
-                                                                withID:self.shortInput.text
-                                                              maxGrade:[self.maxGradeInput.text integerValue]
-                                                                  date:self.dateInput.pickedDate];
+    newEvaluation = [self.activeClass createAndStoreNewEvaluation:self.nameInput.text
+                                                           withID:self.shortInput.text
+                                                         maxGrade:[self.maxGradeInput.text integerValue]
+                                                             date:self.dateInput.pickedDate];
     
     return newEvaluation;
 }

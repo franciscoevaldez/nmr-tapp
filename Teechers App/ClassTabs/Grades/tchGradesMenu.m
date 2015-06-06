@@ -7,6 +7,7 @@
 //
 
 #import "tchGradesMenu.h"
+#import "Evaluation+tchEvalExt.h"
 
 @implementation tchGradesMenu
 
@@ -31,14 +32,46 @@
 
 -(IBAction)deleteGrade:(UIButton *)sender{
     
-    NSLog(@"delete a grade process");
+    // Alert style
+    UIAlertController *alert = [UIAlertController
+                                alertControllerWithTitle:@"Remove this evaluation?"
+                                message:@"This action CANNOT be undone. Are you sure?"
+                                preferredStyle:UIAlertControllerStyleAlert];
+    
+    // Make choices for the user using alert actions.
+    UIAlertAction *doDisregard = [UIAlertAction
+                                  actionWithTitle:@"No, leave it."
+                                  style:UIAlertActionStyleCancel
+                                  handler:nil];
+    
+    
+    UIAlertAction *doDelete = [UIAlertAction
+                               actionWithTitle:@"Yes, delete it."
+                               style:UIAlertActionStyleDestructive
+                               handler:^(UIAlertAction *action) {
+                                   
+                                   // get the current day
+                                   Evaluation *currentEval = [self.delegate getCurrentColumnItem];
+                                   
+                                   // tell the store coordinator to delete that day
+                                   [currentEval deleteEval];
+                                   
+                                   // tell the delegate to reload data
+                                   [self.delegate reloadViewsData];
+                                   
+                                   
+                               }];
+    
+    // Add actions to the controller so they will appear
+    [alert addAction:doDisregard];
+    [alert addAction:doDelete];
+    
+    // tell the delegate to delete the selected day and pass the alert
+    [self.delegate showAlert:alert];
     
 }
 
 
--(void)reloadData{
-    
-}
 
 /*
 // Only override drawRect: if you perform custom drawing.

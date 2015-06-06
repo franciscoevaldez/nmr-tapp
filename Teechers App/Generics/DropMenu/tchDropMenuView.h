@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 #import "tchHeaderColumnCollection.h"
-#import "tchStoreCoordinator.h"
 #import "AClass+tchAClassExt.h"
 
 #define tchMenuStatusHidden         0
@@ -40,7 +39,6 @@
 
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *heightConstraint;
 @property (strong, nonatomic) IBOutlet tchHeaderColumnCollection *columnBandCollection;
-@property (strong, nonatomic) IBOutlet tchStoreCoordinator *storeCoordinator;
 
 @property (assign,nonatomic) int heightForFullDeploy;
 @property (assign,nonatomic) int heightForSemiDeploy;

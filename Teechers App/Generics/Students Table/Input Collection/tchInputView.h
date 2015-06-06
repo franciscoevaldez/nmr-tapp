@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 #import "Student+tchStudentsExt.h"
-#import "tchStoreCoordinator.h"
 
 @protocol tchInputViewProtocol <NSObject>
 
@@ -35,7 +34,6 @@
 @property (nonatomic, weak) IBOutlet id <tchInputDelegateProtocol> delegate;
 
 @property (nonatomic,strong) IBOutlet UICollectionView *inputCollection;
-@property (strong,nonatomic) IBOutlet tchStoreCoordinator *storeCoordinator;
 
 @property (nonatomic,strong) Student *activeStudent;
 @property (nonatomic,assign) NSInteger activeColumn;

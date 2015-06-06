@@ -763,7 +763,6 @@
                                     <outlet property="columnBandCollection" destination="HuJ-cx-7M7" id="bqL-FO-jBF"/>
                                     <outlet property="delegate" destination="HRB-Rw-Ffv" id="tzV-fk-LdC"/>
                                     <outlet property="heightConstraint" destination="vUZ-by-hMW" id="bhE-qE-but"/>
-                                    <outlet property="storeCoordinator" destination="xtM-7w-OMb" id="16X-oe-he6"/>
                                 </connections>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="n1z-qS-gbS" userLabel="Students" customClass="tchStudentsTableView">
@@ -1596,7 +1595,6 @@
                                                     <connections>
                                                         <outlet property="delegate" destination="zZH-Kc-3Bo" id="rgP-ez-6y6"/>
                                                         <outlet property="excusedCheck" destination="bS6-6g-GM1" id="Qzk-z2-Ru2"/>
-                                                        <outlet property="storeCoordinator" destination="xtM-7w-OMb" id="ryf-4C-aoo"/>
                                                     </connections>
                                                 </view>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Input" translatesAutoresizingMaskIntoConstraints="NO" id="W55-lO-IFC" userLabel="Splitter">
@@ -1757,7 +1755,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VNp-jN-M7J" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Wi2-2n-5On" userLabel="Exit" sceneMemberID="exit"/>
                 <customObject id="l25-rv-LpT" userLabel="DayBand Col Delegate" customClass="tchColumnCollectionDelegate"/>
-                <customObject id="xtM-7w-OMb" customClass="tchStoreCoordinator"/>
                 <customObject id="F1C-iv-z5P" customClass="tchStudentsTableDataSource"/>
                 <customObject id="fOF-El-GBc" customClass="tchStudentsTableDelegate"/>
                 <customObject id="OLJ-Yn-rGL" customClass="tchAttendanceColumnsDS"/>
@@ -3695,7 +3692,6 @@
                                     <outlet property="columnBandCollection" destination="cTJ-3U-UbZ" id="Bxn-y6-g0I"/>
                                     <outlet property="delegate" destination="Qms-b9-6Wh" id="xtA-Wa-Lsx"/>
                                     <outlet property="heightConstraint" destination="fLI-0P-biI" id="sbv-JE-hvi"/>
-                                    <outlet property="storeCoordinator" destination="KDE-ve-3YY" id="bRX-fi-wkD"/>
                                 </connections>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="HAY-Sl-Vf7" userLabel="Students Table" customClass="tchStudentsTableView">
@@ -4114,7 +4110,6 @@
                                                     <connections>
                                                         <outlet property="delegate" destination="GUU-1z-S2Z" id="FJV-tb-mB3"/>
                                                         <outlet property="inputCollection" destination="sdj-OU-40W" id="FPO-2f-sv2"/>
-                                                        <outlet property="storeCoordinator" destination="KDE-ve-3YY" id="hin-1Q-UOB"/>
                                                     </connections>
                                                 </view>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Input" translatesAutoresizingMaskIntoConstraints="NO" id="O0R-VK-wnM" userLabel="Splitter">
@@ -4271,7 +4266,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ccy-AL-sGl" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="KDE-ve-3YY" customClass="tchStoreCoordinator"/>
                 <customObject id="qYg-xV-98e" customClass="tchStudentsTableDataSource"/>
                 <customObject id="Ruw-xh-3i9" customClass="tchStudentsTableDelegate"/>
                 <customObject id="aEP-oV-y2R" customClass="tchGradesColumnsDS"/>

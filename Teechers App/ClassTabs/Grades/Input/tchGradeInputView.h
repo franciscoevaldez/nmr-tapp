@@ -10,7 +10,6 @@
 #import "tchInputView.h"
 
 #include "tchInputCollection.h"
-#include "tchStoreCoordinator.h"
 
 @interface tchGradeInputView : tchInputView <tchInputCollectionDelegate>
 

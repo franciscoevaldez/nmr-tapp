@@ -22,7 +22,11 @@
 }
 
 #pragma mark - Data Handling
--(void)reloadData{}
+-(void)reloadData{
+    
+    [self.columnBandCollection reloadData];
+    
+}
 
 #pragma mark - Toggle menu
 -(void)toggleMenu{

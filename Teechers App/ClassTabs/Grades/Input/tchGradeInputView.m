@@ -21,11 +21,10 @@
     // get the active day from active index
     Evaluation* activeEvaluation = [activeClass getEvaluationForIndex:self.activeColumn];
     
-    // tell the store coordinator to save the index
-    [self.storeCoordinator createGradeRecordForStudent:self.activeStudent
-                                         forEvaluation:activeEvaluation
-                                             withGrade:&newMark
-                                         andOrderIndex:self.activeColumn];
+    // store the new value
+    [self.activeStudent setGradeRecordForEvaluation:activeEvaluation
+                                          withGrade:&newMark
+                                      andOrderIndex:self.activeColumn];
 
     
     // cell whould dismiss after that

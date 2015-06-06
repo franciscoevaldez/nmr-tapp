@@ -7,8 +7,7 @@
 //
 
 #import "tchAttendanceMenu.h"
-#import "tchStoreCoordinator.h"
-#import "ClassDay.h"
+#import "ClassDay+tchClassDayExt.h"
 
 @implementation tchAttendanceMenu
 
@@ -22,9 +21,6 @@
     [self defaultInit];
 }
 
--(void)reloadData{
-    
-}
 
 #pragma mark - Delete a day
 -(IBAction)removeDay:(UIButton *)sender{
@@ -51,7 +47,7 @@
                                    ClassDay *currentDay = [self.delegate getCurrentColumnItem];
                                    
                                    // tell the store coordinator to delete that day
-                                   [self.storeCoordinator deleteClassDay:currentDay];
+                                   [currentDay deleteClassDay];
                                    
                                    // tell the delegate to reload data
                                    [self.delegate reloadViewsData];

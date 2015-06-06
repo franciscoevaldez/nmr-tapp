@@ -8,8 +8,6 @@
 
 #import "tchAttInputV.h"
 
-#import "tchStoreCoordinator.h"
-
 #import "AClass+tchAClassExt.h"
 #import "AttendanceRecord+tchAttExt.h"
 
@@ -132,11 +130,10 @@
     // get the active day from active index
     ClassDay* activeDay = [activeClass getDayForIndex:self.activeColumn];
     
-    // tell the store coordinator to save as present
-    [self.storeCoordinator createAttendanceRecordForStudent:self.activeStudent
-                                                      atDay:activeDay
-                                                 withStatus:newStatus
-                                              andOrderIndex:self.activeColumn];
+    // create a new record for the active student
+    [self.activeStudent createAttendanceRecordAtDay:activeDay
+                                         withStatus:newStatus
+                                      andOrderIndex:self.activeColumn];
     
 }
 
@@ -149,10 +146,9 @@
     // get the active day from active index
     ClassDay* activeDay = [activeClass getDayForIndex:self.activeColumn];
     
-    // tell the store coordinator to toggle excused for this student and day
-    BOOL newExcused = [self.storeCoordinator toggleExcusedForStudent:self.activeStudent
-                                                               atDay:activeDay
-                                                           withIndex:self.activeColumn];
+    // tell the student to toggle excused for that record
+    BOOL newExcused = [self.activeStudent toggleExcusedAtDay:activeDay withIndex:self.activeColumn];
+    
     
     // return the new excused value
     return newExcused;

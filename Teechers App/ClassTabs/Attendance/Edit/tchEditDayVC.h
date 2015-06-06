@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AClass.h"
+#import "AClass+tchAClassExt.h"
 #import "ClassDay.h"
 
 @protocol tchEditDayVCDelegate <NSObject>

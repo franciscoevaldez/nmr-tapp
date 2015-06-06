@@ -37,7 +37,7 @@
 }
 
 
-#pragma mark - Column Handling (non-abstractable)
+#pragma mark - Column Handling
 - (NSInteger)getMaxScroll{
     return [[self.activeClass.evaluations allObjects] count];
 }
@@ -52,6 +52,32 @@
     
 }
 
+-(id)getCurrentColumnItem
+{
+    
+    // get the day for that index
+    Evaluation *currentEvaluation = [self.activeClass getEvaluationForIndex:self.currentColumnIndex];
+    
+    // return the current Day
+    return currentEvaluation;
+    
+}
+
+#pragma mark - Present Alert
+- (void)showAlert:(UIAlertController*)alertController
+{
+    
+    // Present the dialog
+    [self presentViewController:alertController animated:YES completion:nil];
+    
+    // If menu is deployed, close it
+    if (self.optionsMenu.status) {
+        
+        [self headerWasTapped];
+        
+    }
+    
+}
 
 #pragma mark - Navigation
 
