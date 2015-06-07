@@ -21,6 +21,8 @@
 @property (assign,nonatomic) NSInteger currentColumnIndex;
 @property (strong,nonatomic) tchStudentsTableDataSource *tchDataSource;
 
+@property (nonatomic) BOOL isEnabled;
+
 @end
 
 
@@ -50,6 +52,25 @@
         
     }
     
+    
+}
+
+#pragma mark - Disable table
+- (void)enableTableNewStatus:(BOOL)newStatus{
+    
+    if (!newStatus) {
+        
+        self.scrollEnabled = false;
+        
+        self.isEnabled = false;
+        
+    } else {
+    
+        self.scrollEnabled = true;
+        
+        self.isEnabled = true;
+        
+    }
     
 }
 

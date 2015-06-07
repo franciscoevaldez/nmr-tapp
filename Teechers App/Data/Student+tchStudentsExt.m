@@ -97,7 +97,7 @@
     [recordToSave setValue:[NSNumber numberWithInt:index] forKey:@"orderIndex"];
     
     // set excused to false
-    [recordToSave setValue:[NSNumber numberWithBool:tchAttendanceRecExcusedNO] forKey:@"excused"];
+    [recordToSave setValue:[NSNumber numberWithBool:tchAttendanceExcusedNo] forKey:@"excused"];
     
     // set the day of the class
     [recordToSave setValue:classDay forKey:@"classDay"];
@@ -146,7 +146,7 @@
                         inManagedObjectContext:managedOC];
         
         // set the value
-        [recordToEdit setValue:tchAttendanceRecAbsent forKey:@"status"];
+        [recordToEdit setValue:[NSString stringWithFormat:@"%i", tchAttendanceAbsent] forKey:@"status"];
         
         // set the order index
         [recordToEdit setValue:[NSNumber numberWithInt:dayIndex] forKey:@"orderIndex"];

@@ -39,7 +39,7 @@
     if (self.columnsCollection) {
         
         // …tell the column controller to set itself up
-        [self.columnsCollection setupForStudent:student];
+        [self.columnsCollection setupForStudent:student andColumn:scrollIndex];
         [self.columnsCollection reloadData];
         
     }
@@ -60,15 +60,6 @@
     // store the new index to the property
     //self.activeColumn = scrollIndex;
     
-    // pass the student to the input view
-    //[self.inputView setupForStudent:student andColumn:scrollIndex];
-    
-    // set self as delegate for input view
-    //self.inputView.delegate = self;
-    
-    // set column for the input
-    //[self.inputView updateActiveColumn:scrollIndex];
-    
     // set the indexPath for self
     self.indexPath = indexPath;
     
@@ -86,9 +77,6 @@
         //…tell it to perform the scroll
         [self.columnsCollection performColumnScrollToIndex:newIndex];
     }
-    
-    // warn the input of the change
-    //[self.inputView updateActiveColumn:newIndex];
     
 }
 

@@ -16,6 +16,7 @@
 - (void)setupForClass:(AClass*)activeClass;
 - (void)reloadAllData;
 - (void)performDayScrollToIndex:(NSInteger)newIndex;
+- (void)enableTableNewStatus:(BOOL)newStatus;
 
 @property (nonatomic) NSIndexPath* deployedPath;
 @property (nonatomic) BOOL thereIsACellDeployed;

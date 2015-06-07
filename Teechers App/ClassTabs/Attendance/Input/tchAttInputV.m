@@ -75,7 +75,7 @@
 {
     
     // call method for saving record
-    [self saveRecordWithStatus:tchAttendanceRecPresent];
+    [self saveRecordWithStatus:tchAttendancePresent];
     
     // tell the cell to dismiss the input
     [_myDelegate cellShouldDismiss];
@@ -86,7 +86,7 @@
 {
     
     // call method for saving record
-    [self saveRecordWithStatus:tchAttendanceRecAbsent];
+    [self saveRecordWithStatus:tchAttendanceAbsent];
     
     // tell the cell to dismiss the input
     [_myDelegate cellShouldDismiss];
@@ -114,15 +114,18 @@
 {
     
     // call method for saving record
-    [self saveRecordWithStatus:tchAttendanceRecLate];
+    [self saveRecordWithStatus:tchAttendanceLate];
     
     // tell the cell to dismiss the input
     [_myDelegate cellShouldDismiss];
     
 }
 
-- (void)saveRecordWithStatus:(NSString*)newStatus
+- (void)saveRecordWithStatus:(NSInteger)newStatus
 {
+    
+    // status to string (HOT FIX!!!!!)
+    NSString *statusToSave = [NSString stringWithFormat:@"%i", newStatus];
     
     // get the active class
     AClass* activeClass = self.activeStudent.inClass;
@@ -132,7 +135,7 @@
     
     // create a new record for the active student
     [self.activeStudent createAttendanceRecordAtDay:activeDay
-                                         withStatus:newStatus
+                                         withStatus:statusToSave
                                       andOrderIndex:self.activeColumn];
     
 }

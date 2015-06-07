@@ -16,5 +16,6 @@
 @property (assign,nonatomic) NSInteger activeColumn;
 
 - (void)performColumnScrollToIndex:(NSInteger)newIndex;
+- (void)skipColumnToIndex:(NSInteger)newIndex;
 
 @end

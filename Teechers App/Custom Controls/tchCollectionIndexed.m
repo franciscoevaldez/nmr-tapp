@@ -17,14 +17,26 @@
     NSIndexPath *indexForScroll = [NSIndexPath indexPathForRow:newIndex inSection:0];
     
     // perform the scroll
-    [self scrollToItemAtIndexPath:indexForScroll atScrollPosition:UICollectionViewScrollPositionLeft animated:YES];
+    [self scrollToItemAtIndexPath:indexForScroll
+                 atScrollPosition:UICollectionViewScrollPositionLeft
+                         animated:YES];
     
     // store the new index to the property
     self.activeColumn = newIndex;
     
-    // warn the input of the change
-    //[self.inputView updateActiveColumn:newIndex];
+}
+
+- (void)skipColumnToIndex:(NSInteger)newIndex{
+    // create a new index path
+    NSIndexPath *indexForScroll = [NSIndexPath indexPathForRow:newIndex inSection:0];
     
+    // perform the scroll
+    [self scrollToItemAtIndexPath:indexForScroll
+                 atScrollPosition:UICollectionViewScrollPositionLeft
+                         animated:NO];
+    
+    // store the new index to the property
+    self.activeColumn = newIndex;
 }
 
 /*

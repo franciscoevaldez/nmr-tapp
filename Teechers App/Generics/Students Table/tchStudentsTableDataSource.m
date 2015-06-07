@@ -63,7 +63,6 @@
         
         // dequeue it as cell with input…
         newCell = [tableView dequeueReusableCellWithIdentifier:@"studentCellWithInput"];
-        //newCell = [tableView dequeueReusableCellWithIdentifier:@"studentCellWithData"];
         
     } else {
         

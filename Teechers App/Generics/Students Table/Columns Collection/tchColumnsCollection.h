@@ -13,7 +13,8 @@
 
 @interface tchColumnsCollection : tchCollectionIndexed
 
-- (void)setupForStudent:(Student*)student;
+- (void)setupForStudent:(Student*)student andColumn:(NSInteger)columnIndex;
+
 @property (strong,nonatomic) Student *activeStudent;
 
 @end

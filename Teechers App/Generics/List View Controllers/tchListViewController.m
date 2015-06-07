@@ -17,6 +17,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    
+    if (self.optionsMenu) {
+        self.optionsMenu.heightConstraint.constant = 0.0;
+    }
+    
 }
 
 #pragma mark - Data distribution
@@ -65,26 +75,30 @@
     if (!self.optionsMenu.status) {
         
         // ...deploy it
-        [self dropMenuDeploy];
+        [self optionsMenuDeploy];
         
     } else {
         
         // ...otherwise close it
-        [self dropMenuClose];
+        [self optionsMenuClose];
         
     }
     
 }
 
--(void)dropMenuDeploy {
+-(void)optionsMenuDeploy {
     
     // check if menu is actually not open
     if (!self.optionsMenu.status) {
+        
+        [self.studentsTable enableTableNewStatus:false];
         
         // animate to the new height
         [UIView animateWithDuration:0.5 animations:^{
             self.optionsMenu.heightConstraint.constant = self.optionsMenu.heightForFullDeploy;
             [self.view layoutIfNeeded];
+            
+            self.studentsTable.alpha = 0.3;
         }];
         
         // tell the menu and the header to update its properties
@@ -95,27 +109,32 @@
     
 }
 
--(void)dropMenuClose {
+-(void)optionsMenuClose {
     
     // check if menu is actually not open
-    if (self.optionsMenu.status) {
+    if (self.optionsMenu.status != tchMenuIsHidden) {
+        
+        [self.studentsTable enableTableNewStatus:true];
         
         // animate to the new height
         [UIView animateWithDuration:0.5 animations:^{
             self.optionsMenu.heightConstraint.constant = 0;
             [self.view layoutIfNeeded];
+            
+            self.studentsTable.alpha = 1;
         }];
         
         // tell the menu and the header to update its properties
         [self.optionsMenu toggleMenu];
         [self.headerView menuWasToggled];
+
         
     }
     
 }
 
 
-#pragma mark - Column Handling (ABSTRACTABLE)
+#pragma mark - Column Handling
 -(NSInteger)getMaxScroll{
     return 0;
 }
@@ -154,7 +173,7 @@
     [self.studentsTable performDayScrollToIndex:newIndex];
     
     // If menu is deployed, close it
-    [self dropMenuClose];
+    [self optionsMenuClose];
     
     // get the new index to VC property
     self.currentColumnIndex = newIndex;

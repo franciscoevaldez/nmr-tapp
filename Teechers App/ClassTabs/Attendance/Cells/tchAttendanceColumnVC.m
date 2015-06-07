@@ -35,12 +35,15 @@
     // if the record exists…
     if (record.status) {
         
+        // attendance statuses array
+        NSArray *statusArray = [NSArray arrayWithObjects:@"P", @"A", @"L", nil];
+        
         // get the text for the label
-        labelText = record.status;
+        labelText = [statusArray objectAtIndex:[record.status integerValue]];
         
         // it the record is absent
-        if ([record.status isEqual: tchAttendanceRecAbsent]
-            && ([record.excused intValue] == tchAttendanceRecExcusedNO)) {
+        if ([record.status isEqual: [NSString stringWithFormat:@"%i", tchAttendanceAbsent]]
+            && ([record.excused intValue] == tchAttendanceExcusedNo)) {
             
             // set the label color to red
             self.dataLabel.textColor = [UIColor tchRed];

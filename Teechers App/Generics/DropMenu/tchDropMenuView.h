@@ -11,9 +11,11 @@
 #import "tchHeaderColumnCollection.h"
 #import "AClass+tchAClassExt.h"
 
-#define tchMenuStatusHidden         0
-#define tchMenuStatusSemiDeployed   1
-#define tchMenuStatusDeployed       2
+typedef NS_ENUM(NSInteger, tchMenuStatus) {
+    tchMenuIsHidden,
+    tchMenuIsSemiDeployed,
+    tchMenuIsDeployed
+};
 
 @protocol tchDropMenuProtocol <NSObject>
 
@@ -34,7 +36,7 @@
 @interface tchDropMenuView : UIView <tchColumnCollectionDelegate>
 
 
-@property (assign,nonatomic) int status;
+@property (assign,nonatomic) tchMenuStatus status;
 @property (nonatomic, weak) IBOutlet id <tchDropMenuDelegate> delegate;
 
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *heightConstraint;

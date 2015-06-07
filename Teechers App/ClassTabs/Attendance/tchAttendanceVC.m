@@ -23,7 +23,7 @@
     self.studentsTable.deployedCellHeight = 241;
     
     // Hide the menu
-    //[self.optionsMenu setupMenu];
+    self.optionsMenu.heightConstraint.constant = 43.0;
      
     
 }

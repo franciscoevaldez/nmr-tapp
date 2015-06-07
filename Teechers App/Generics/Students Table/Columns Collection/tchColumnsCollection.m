@@ -9,16 +9,10 @@
 #import "tchColumnsCollection.h"
 #import "tchColumnCollectionDataSource.h"
 
-@interface tchColumnsCollection ()
-
-
-
-@end
-
 @implementation tchColumnsCollection
 
 #pragma mark - Setting up for a student
-- (void)setupForStudent:(Student*)student{
+- (void)setupForStudent:(Student*)student andColumn:(NSInteger)columnIndex{
     
     // get the student to a property
     self.activeStudent = student;
@@ -28,6 +22,9 @@
     
     // pass the student to the data source
     [dataSource setupForStudent:student];
+    
+    // scroll to the column index
+    [self skipColumnToIndex:columnIndex];
     
 }
 

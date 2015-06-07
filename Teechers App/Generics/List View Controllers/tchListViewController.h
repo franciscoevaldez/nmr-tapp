@@ -28,8 +28,8 @@
 - (void)reloadViewsData;
 
 -(void)headerWasTapped;
--(void)dropMenuDeploy;
--(void)dropMenuClose;
+-(void)optionsMenuDeploy;
+-(void)optionsMenuClose;
 
 -(NSInteger)getMaxScroll;
 -(IBAction)swipeLeftDone:(id)sender;

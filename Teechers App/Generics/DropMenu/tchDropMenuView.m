@@ -16,7 +16,7 @@
 #pragma mark - Basic init
 -(void)defaultInit{
     
-    self.status = tchMenuStatusHidden;
+    self.status = tchMenuIsHidden;
     self.heightConstraint.constant = 0.0f;
     
 }
@@ -31,10 +31,10 @@
 #pragma mark - Toggle menu
 -(void)toggleMenu{
     
-    if (self.status) {
-        self.status = tchMenuStatusHidden;
+    if (self.status != tchMenuIsHidden) {
+        self.status = tchMenuIsHidden;
     } else {
-        self.status = tchMenuStatusDeployed;
+        self.status = tchMenuIsDeployed;
     };
     
 }
