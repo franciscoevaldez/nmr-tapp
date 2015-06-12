@@ -7,10 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AClass.h"
+#import "tchListViewController.h"
 
-@interface tchStudentsVC : UIViewController
-
-@property (strong,nonatomic) AClass *activeClass;
+@interface tchStudentsVC : tchListViewController
 
 @end

@@ -11,6 +11,7 @@
 
 #import "ClassDay+tchClassDayExt.h"
 #import "Evaluation+tchEvalExt.h"
+#import "StudentSummary.h"
 
 #import "AttendanceRecord+tchAttExt.h"
 #import "GradeRecord.h"

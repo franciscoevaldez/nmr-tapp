@@ -32,6 +32,7 @@
 - (void)reloadAllData;
 - (void)performDayScrollToIndex:(NSInteger)newIndex;
 
+@property (strong,nonatomic) Student *studentForCell;
 @property (strong,nonatomic) IBOutlet tchColumnsCollection *columnsCollection;
 @property (strong,nonatomic) IBOutlet tchInputView *inputView;
 @property (strong,nonatomic) IBOutlet UILabel *studentNameLabel;

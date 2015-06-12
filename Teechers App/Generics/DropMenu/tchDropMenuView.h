@@ -31,6 +31,9 @@ typedef NS_ENUM(NSInteger, tchMenuStatus) {
 -(void)reloadViewsData;
 - (void)scrollToIndex:(NSInteger)newIndex;
 
+@optional
+- (void)toggleContinuousMode;
+
 @end
 
 @interface tchDropMenuView : UIView <tchColumnCollectionDelegate>

@@ -21,6 +21,12 @@
     [self defaultInit];
 }
 
+-(IBAction)toggleAttendanceMode:(id)sender{
+    
+    [self.delegate toggleContinuousMode];
+    
+}
+
 
 #pragma mark - Delete a day
 -(IBAction)removeDay:(UIButton *)sender{

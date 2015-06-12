@@ -24,7 +24,10 @@
     
     // Hide the menu
     self.optionsMenu.heightConstraint.constant = 43.0;
-     
+    
+    // no on take attendance
+    self.takeAttendanceMode = false;
+    
     
 }
 
@@ -75,6 +78,24 @@
     }
     
 }
+
+#pragma mark - Toggle attendance mode
+- (void)toggleContinuousMode
+{
+    if (!self.takeAttendanceMode) {
+        
+        [self optionsMenuClose];
+        
+        self.takeAttendanceMode = true;
+        self.studentsTable.continuousMode = true;
+        
+        // select the first cell of the students table
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+        [self.studentsTable triggerSelectAtIndexPath:indexPath];
+        
+    }
+}
+
 
 -(id)getCurrentColumnItem
 {

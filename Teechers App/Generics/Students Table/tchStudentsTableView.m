@@ -101,8 +101,33 @@
 {
     
     // tell the table that a cell was selected
+    [self triggerSelectAtIndexPath:indexPath];
+    /*
     [self selectRowAtIndexPath:indexPath animated:TRUE scrollPosition:UITableViewScrollPositionNone];
+    [self.delegate tableView:self didSelectRowAtIndexPath:indexPath];*/
     
+    NSIndexPath *newIP = [NSIndexPath indexPathForRow:indexPath.row+1 inSection:indexPath.section];
+    
+    // if we have continuous mode on, select the following
+    if (self.continuousMode && newIP.row < self.totalCells) {
+        
+        [self triggerSelectAtIndexPath:newIP];
+        
+    } else {
+        
+        self.continuousMode = false;
+        
+    }
+    
+}
+
+- (void)triggerSelectAtIndexPath:(NSIndexPath*)indexPath
+{
+    
+    // select it
+    [self selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionTop];
+    
+    // trigger the events
     [self.delegate tableView:self didSelectRowAtIndexPath:indexPath];
     
 }

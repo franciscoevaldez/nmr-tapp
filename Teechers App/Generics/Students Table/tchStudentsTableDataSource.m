@@ -49,6 +49,8 @@
 - (NSInteger)tableView:(tchStudentsTableView*)tableView numberOfRowsInSection:(NSInteger)section {
     
     // Number of rows is the number of classes in the array
+    tableView.totalCells = [self.studentsArray count];
+    
     return [self.studentsArray count];
     
 }

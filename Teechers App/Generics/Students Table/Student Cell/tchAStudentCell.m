@@ -10,8 +10,6 @@
 
 @interface tchAStudentCell ()
 
-@property (strong,nonatomic) Student *studentForCell;
-
 @property (strong,nonatomic) NSIndexPath *indexPath;
 
 @end

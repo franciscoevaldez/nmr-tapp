@@ -113,6 +113,9 @@
         NSLog(@"error en: %@", [recordError localizedDescription]);
     }
     
+    // update the summary
+    [self updateSummary];
+    
     
 }
 
@@ -171,6 +174,9 @@
     if (![managedOC save:&recordError]) {
         NSLog(@"error en: %@", [recordError localizedDescription]);
     }
+    
+    // update the summary
+    [self updateSummary];
     
     // return the new value
     return isExcused;
@@ -252,7 +258,9 @@
     // prepare the percentage
     NSInteger gradeInt = *grade;
     NSInteger rangeInt = [evaluation.range integerValue];
-    NSNumber *gradePct = [NSNumber numberWithFloat: gradeInt / rangeInt];
+    //NSNumber *gradePct = [NSNumber numberWithFloat: gradeInt / rangeInt];
+    float gradePctF = (float)gradeInt / (float)rangeInt;
+    NSNumber *gradePct = [NSNumber numberWithFloat:gradePctF];
     
     // set the value
     [recordToSave setValue:[NSNumber numberWithInteger:gradeInt] forKey:@"grade"];
@@ -270,6 +278,130 @@
     
     NSError *recordError;
     if (![managedOC save:&recordError]) {
+        NSLog(@"error en: %@", [recordError localizedDescription]);
+    }
+    
+    // update the summary
+    [self updateSummary];
+    
+    
+}
+
+#pragma mark - Summary updating
+- (void)updateSummary{
+    
+    // initialize the summary to edit
+    StudentSummary *summary;
+    
+    // check if the student has a summary...
+    if (self.summaryRecord) {
+        
+        // ... if it does, set it as the current one
+        summary = self.summaryRecord;
+        
+    } else {
+        
+        // ... otherwise create it
+        summary = [NSEntityDescription
+                   insertNewObjectForEntityForName:@"StudentSummary"
+                   inManagedObjectContext:self.managedObjectContext];
+        
+        // set the student to self
+        [summary setValue:self forKey:@"forStudent"];
+        
+    }
+    
+    // now commence the calculations for attendance
+    int studentAbsentCount = 0;
+    int studentLateCount = 0;
+    int studentTotalCount = 0;
+    float studentAttPercentage = 0;
+    int studentAttWarning = 0;
+    
+    // get the attendance records
+    NSArray *attendanceRecords = [self.attendanceRecords allObjects];
+    
+    // loop and count attendance records
+    for (AttendanceRecord *anAttRecord in attendanceRecords) {
+        
+        studentTotalCount++;
+        
+        if ([anAttRecord.status isEqual:[NSString stringWithFormat:@"%i", tchAttendanceAbsent]]) {
+            
+            if ([anAttRecord.excused integerValue] != tchAttendanceExcusedYes) {
+                studentAbsentCount++;
+            };
+            
+        } else if ([anAttRecord.status isEqual:[NSString stringWithFormat:@"%i", tchAttendanceLate]]){
+
+            if ([anAttRecord.excused integerValue] != tchAttendanceExcusedYes) {
+                studentLateCount++;
+            };
+            
+        } else if ([anAttRecord.status isEqual:[NSString stringWithFormat:@"%i", tchAttendancePresent]]){
+
+        }
+        
+    }
+    
+    // get the percentages & warnings
+    if (studentTotalCount != 0) {
+        studentAttPercentage = 1-((float)studentAbsentCount/(float)studentTotalCount);
+    }
+    
+    studentAttWarning = 0;
+    
+    // store the attendance data
+    [summary setValue:[NSNumber numberWithInt:studentAbsentCount] forKey:@"attAbsents"];
+    [summary setValue:[NSNumber numberWithInt:studentLateCount] forKey:@"attLates"];
+    [summary setValue:[NSNumber numberWithFloat:studentAttPercentage] forKey:@"attPercentage"];
+    [summary setValue:[NSNumber numberWithInt:studentTotalCount] forKey:@"attTotal"];
+    [summary setValue:[NSNumber numberWithInt:studentAttWarning] forKey:@"attWarning"];
+    
+    
+    // get the grade records ------------
+    NSArray *gradesRecords = [self.gradeRecords allObjects];
+    
+    
+    // now commence the calculations for attendance
+    int gradesFailedCount = 0;      // leave at 0 for now
+    int gradesPassedCount = 0;      // leave at 0 for now
+    int gradesTotalCount = 0;       // add 1 for every record
+    float gradesPct = 0;            // average for every individual pct
+    int gradesWarning = 0;          // leave at 0 for now
+    
+    // init the grade accumulator
+    float gradeAcc = 0;
+    
+    // loop and count attendance records
+    for (GradeRecord *aGradeRecord in gradesRecords) {
+        
+        gradesTotalCount++;
+        
+        // get the percentage for this grade record
+        float currentPct = [aGradeRecord.percentage floatValue];
+        
+        // add to the accumulator
+        gradeAcc = gradeAcc+currentPct;
+        
+    }
+    
+    // get the average
+    gradesPct = gradeAcc / gradesTotalCount;
+    
+    // store the grades data
+    [summary setValue:[NSNumber numberWithInt:gradesFailedCount] forKey:@"grdFailed"];
+    [summary setValue:[NSNumber numberWithInt:gradesPassedCount] forKey:@"grdPassed"];
+    [summary setValue:[NSNumber numberWithFloat:gradesPct] forKey:@"grdPercentage"];
+    [summary setValue:[NSNumber numberWithInt:gradesTotalCount] forKey:@"grdTotal"];
+    [summary setValue:[NSNumber numberWithInt:gradesWarning] forKey:@"grdWarning"];
+    
+    
+    
+    // write in permanent store
+    
+    NSError *recordError;
+    if (![self.managedObjectContext save:&recordError]) {
         NSLog(@"error en: %@", [recordError localizedDescription]);
     }
     

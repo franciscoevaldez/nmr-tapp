@@ -7,13 +7,8 @@
 //
 
 #import "tchStudentsVC.h"
-#import "tchStudentsTableDS.h"
-#import "tchStudentsHeader.h"
 
 @interface tchStudentsVC ()
-
-@property (strong, nonatomic) IBOutlet tchStudentsHeader *tchStudentsHeader;
-@property (strong, nonatomic) IBOutlet tchStudentsTableDS *tchStudentsTableDataSource;
 
 @end
 
@@ -22,16 +17,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-}
-
-- (void)viewWillAppear:(BOOL)animated{
     
-    // Setup the header for this class
-    [self.tchStudentsHeader setupHeaderForClass:self.activeClass];
+    // Tell the students table the deployed cell height
+    self.studentsTable.deployedCellHeight = 60+300;
     
-    // Pass the class to the Students data source
-    [self.tchStudentsTableDataSource setupForClass:self.activeClass];
-    
+    [self setupForClass:self.activeClass];
 }
 
 - (void)didReceiveMemoryWarning {

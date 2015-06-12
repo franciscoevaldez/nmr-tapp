@@ -17,4 +17,6 @@
 
 @interface tchAttendanceVC : tchListViewController <tchHeaderDelegate, tchEditDayVCDelegate, tchDropMenuDelegate>
 
+@property (nonatomic) BOOL takeAttendanceMode;
+
 @end

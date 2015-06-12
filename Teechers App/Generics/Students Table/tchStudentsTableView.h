@@ -17,10 +17,14 @@
 - (void)reloadAllData;
 - (void)performDayScrollToIndex:(NSInteger)newIndex;
 - (void)enableTableNewStatus:(BOOL)newStatus;
+- (void)triggerSelectAtIndexPath:(NSIndexPath*)indexPath;
 
 @property (nonatomic) NSIndexPath* deployedPath;
 @property (nonatomic) BOOL thereIsACellDeployed;
 
 @property (nonatomic) NSInteger deployedCellHeight;
+@property (nonatomic) NSInteger totalCells;
+
+@property (nonatomic) BOOL continuousMode;
 
 @end
