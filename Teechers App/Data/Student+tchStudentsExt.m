@@ -94,7 +94,7 @@
     [recordToSave setValue:status forKey:@"status"];
     
     // set the order index
-    [recordToSave setValue:[NSNumber numberWithInt:index] forKey:@"orderIndex"];
+    [recordToSave setValue:[NSNumber numberWithInteger:index] forKey:@"orderIndex"];
     
     // set excused to false
     [recordToSave setValue:[NSNumber numberWithBool:tchAttendanceExcusedNo] forKey:@"excused"];
@@ -149,10 +149,10 @@
                         inManagedObjectContext:managedOC];
         
         // set the value
-        [recordToEdit setValue:[NSString stringWithFormat:@"%i", tchAttendanceAbsent] forKey:@"status"];
+        [recordToEdit setValue:[NSString stringWithFormat:@"%li", (long)tchAttendanceAbsent] forKey:@"status"];
         
         // set the order index
-        [recordToEdit setValue:[NSNumber numberWithInt:dayIndex] forKey:@"orderIndex"];
+        [recordToEdit setValue:[NSNumber numberWithInteger:dayIndex] forKey:@"orderIndex"];
         
         // set the day of the class
         [recordToEdit setValue:classDay forKey:@"classDay"];
@@ -268,7 +268,7 @@
     [recordToSave setValue:gradeAsText forKey:@"gradeShort"];
     
     // set the order index
-    [recordToSave setValue:[NSNumber numberWithInt:index] forKey:@"orderIndex"];
+    [recordToSave setValue:[NSNumber numberWithInteger:index] forKey:@"orderIndex"];
     
     // set the percentage
     [recordToSave setValue:gradePct forKey:@"percentage"];
@@ -326,19 +326,19 @@
         
         studentTotalCount++;
         
-        if ([anAttRecord.status isEqual:[NSString stringWithFormat:@"%i", tchAttendanceAbsent]]) {
+        if ([anAttRecord.status isEqual:[NSString stringWithFormat:@"%li", (long)tchAttendanceAbsent]]) {
             
             if ([anAttRecord.excused integerValue] != tchAttendanceExcusedYes) {
                 studentAbsentCount++;
             };
             
-        } else if ([anAttRecord.status isEqual:[NSString stringWithFormat:@"%i", tchAttendanceLate]]){
+        } else if ([anAttRecord.status isEqual:[NSString stringWithFormat:@"%li", (long)tchAttendanceLate]]){
 
             if ([anAttRecord.excused integerValue] != tchAttendanceExcusedYes) {
                 studentLateCount++;
             };
             
-        } else if ([anAttRecord.status isEqual:[NSString stringWithFormat:@"%i", tchAttendancePresent]]){
+        } else if ([anAttRecord.status isEqual:[NSString stringWithFormat:@"%li", (long)tchAttendancePresent]]){
 
         }
         

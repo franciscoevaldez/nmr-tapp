@@ -31,6 +31,11 @@
     self.evaluationsArray = [self.activeClass getEvaluationsSorted];
     
     // Number of rows is the number of days in the array
+    if ([self.evaluationsArray count]==0) {
+        return 1;
+    }
+    
+    // Number of rows is the number of days in the array
     return [self.evaluationsArray count];
     
 }
@@ -43,6 +48,12 @@
     
     tchEvalHeaderCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"columnCell"
                                                                         forIndexPath:indexPath];
+    
+    NSInteger dayCount = [self.evaluationsArray count];
+    
+    if (dayCount == 0) {
+        return cell;
+    }
     
     // get the day for this new cell
     Evaluation *currentEval = [self.evaluationsArray objectAtIndex:indexPath.row];

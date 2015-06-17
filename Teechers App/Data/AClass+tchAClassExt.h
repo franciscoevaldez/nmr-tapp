@@ -24,7 +24,7 @@
 
 - (Evaluation*)createAndStoreNewEvaluation:(NSString*)name
                                     withID:(NSString*)newID
-                                  maxGrade:(int)maxGrade
+                                  maxGrade:(NSInteger)maxGrade
                                       date:(NSDate*)date;
 
 @end

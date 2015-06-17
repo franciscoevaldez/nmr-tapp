@@ -40,6 +40,8 @@
     // set the table as delegate of this cell
     self.delegate = tableView;
     
+    
+    
 }
 
 

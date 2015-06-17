@@ -79,6 +79,7 @@
 		A1C651171B251C1C0011BB3C /* tchStudentSummaryDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C651161B251C1C0011BB3C /* tchStudentSummaryDataSource.m */; };
 		A1C6511A1B25387D0011BB3C /* tchStudentSummaryDataCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C651191B25387D0011BB3C /* tchStudentSummaryDataCell.m */; };
 		A1C7A40A1B0F9EF3006837D0 /* tchSimpleCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C7A4091B0F9EF3006837D0 /* tchSimpleCollectionViewCell.m */; };
+		A1CE2B041B2FBDB100385282 /* tchSuperTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1CE2B031B2FBDB100385282 /* tchSuperTextView.m */; };
 		A1D1A58F1B0A2E0E009245EB /* UIColor+appColorPresets.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D1A58E1B0A2E0E009245EB /* UIColor+appColorPresets.m */; };
 /* End PBXBuildFile section */
 
@@ -235,6 +236,8 @@
 		A1C651191B25387D0011BB3C /* tchStudentSummaryDataCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchStudentSummaryDataCell.m; path = "Summary Table/tchStudentSummaryDataCell.m"; sourceTree = "<group>"; };
 		A1C7A4081B0F9EF3006837D0 /* tchSimpleCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchSimpleCollectionViewCell.h; path = "Custom Controls/tchSimpleCollectionViewCell.h"; sourceTree = "<group>"; };
 		A1C7A4091B0F9EF3006837D0 /* tchSimpleCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchSimpleCollectionViewCell.m; path = "Custom Controls/tchSimpleCollectionViewCell.m"; sourceTree = "<group>"; };
+		A1CE2B021B2FBDB100385282 /* tchSuperTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchSuperTextView.h; path = "Custom Controls/tchSuperTextView.h"; sourceTree = "<group>"; };
+		A1CE2B031B2FBDB100385282 /* tchSuperTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchSuperTextView.m; path = "Custom Controls/tchSuperTextView.m"; sourceTree = "<group>"; };
 		A1D1A58D1B0A2E0E009245EB /* UIColor+appColorPresets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+appColorPresets.h"; path = "Custom Controls/UIColor+appColorPresets.h"; sourceTree = "<group>"; };
 		A1D1A58E1B0A2E0E009245EB /* UIColor+appColorPresets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+appColorPresets.m"; path = "Custom Controls/UIColor+appColorPresets.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -630,6 +633,8 @@
 				A1B713821AFAD13600A8B094 /* tchCollectionIndexed.m */,
 				A1A876DA1B0B83DE001C4D52 /* tchDatePickerField.h */,
 				A1A876DB1B0B83DE001C4D52 /* tchDatePickerField.m */,
+				A1CE2B021B2FBDB100385282 /* tchSuperTextView.h */,
+				A1CE2B031B2FBDB100385282 /* tchSuperTextView.m */,
 			);
 			name = "Custom Controls";
 			sourceTree = "<group>";
@@ -691,11 +696,12 @@
 		A14E12F41AE5470600A1CB95 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = nmr;
 				TargetAttributes = {
 					A14E12FB1AE5470700A1CB95 = {
 						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = K5TCFY8Y2E;
 					};
 					A14E131A1AE5470700A1CB95 = {
 						CreatedOnToolsVersion = 6.3;
@@ -816,6 +822,7 @@
 				A17675491B1BF6410093F7A0 /* tchAttendanceMenu.m in Sources */,
 				A176758E1B1BF6BF0093F7A0 /* tchStudentsTableView.m in Sources */,
 				A17675AD1B24A07B0093F7A0 /* tchHeaderColumnCollDataSource.m in Sources */,
+				A1CE2B041B2FBDB100385282 /* tchSuperTextView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -878,6 +885,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -893,7 +901,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -930,7 +938,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -941,9 +949,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Teechers App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nmr.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -951,9 +963,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Teechers App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nmr.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -971,6 +987,7 @@
 				);
 				INFOPLIST_FILE = "Teechers AppTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nmr.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Teechers App.app/Teechers App";
 			};
@@ -986,6 +1003,7 @@
 				);
 				INFOPLIST_FILE = "Teechers AppTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nmr.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Teechers App.app/Teechers App";
 			};

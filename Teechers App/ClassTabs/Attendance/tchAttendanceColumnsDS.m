@@ -29,6 +29,7 @@
     
 }
 
+
 - (NSInteger)collectionView:(tchColumnsCollection *)collectionView numberOfItemsInSection:(NSInteger)section{
     
     
@@ -39,6 +40,10 @@
     NSInteger dayCount = [[self.activeStudent.inClass.classDays allObjects] count];
     
     // Number of rows is the number of days in the array
+    if (dayCount==0) {
+        return 1;
+    }
+    
     return dayCount;
     
 }
@@ -50,6 +55,12 @@
     tchAttendanceColumnVC *newCell = [collectionView
                                       dequeueReusableCellWithReuseIdentifier:@"studentDataCell"
                                       forIndexPath:indexPath];
+    
+    NSInteger dayCount = [[self.activeStudent.inClass.classDays allObjects] count];
+    
+    if (dayCount == 0) {
+        return newCell;
+    }
     
     // get the current day
     ClassDay *currentDay = [self.daysArray objectAtIndex:indexPath.row];

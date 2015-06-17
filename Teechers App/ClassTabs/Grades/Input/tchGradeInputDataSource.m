@@ -35,7 +35,7 @@
     tchSimpleCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"simpleInputCell" forIndexPath:indexPath];
     
     // setup the main object: an ns number
-    NSNumber *inputObject = [NSNumber numberWithInt:indexPath.row+1];
+    NSNumber *inputObject = [NSNumber numberWithInteger:indexPath.row+1];
     
     // write the label: the nsnumber
     cell.mainLabel.text = [NSString stringWithFormat:@"%@", inputObject];

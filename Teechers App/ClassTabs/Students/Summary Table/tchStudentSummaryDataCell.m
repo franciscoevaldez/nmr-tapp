@@ -39,9 +39,9 @@
             self.mainLabel.text = @"Attendance";
             
             // secondaty label data
-            NSString *secondaryText = [NSString stringWithFormat:@"%i / %i",
+            NSString *secondaryText = [NSString stringWithFormat:@"%i%li",
                                        [record.attTotal integerValue] - [record.attAbsents integerValue],
-                                       [record.attTotal integerValue]];
+                                       (long)[record.attTotal integerValue]];
             
             self.secondaryLabel.text = secondaryText;
             

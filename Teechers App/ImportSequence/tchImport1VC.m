@@ -12,6 +12,7 @@
 @interface tchImport1VC ()
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *tchBottomMarginConst;
 @property (strong, nonatomic) IBOutlet UITextView *tchStudentsTextArea;
+@property (strong, nonatomic) IBOutlet UITextView *tchLineCountTextArea;
 @end
 
 @implementation tchImport1VC
@@ -19,6 +20,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.tchStudentsTextArea.text = [self.tchStudentsTextArea valueForKey:@"placeholder"];
+    self.tchStudentsTextArea.textColor = [UIColor lightGrayColor];
     
     // configurar los listeners del teclado
     [self registerForKeyboardNotifications];
@@ -45,6 +49,50 @@
                                              selector:@selector(keyboardWillBeHidden:)
                                                  name:UIKeyboardWillHideNotification object:nil];
     
+}
+
+#pragma mark - Text View placeholder
+- (BOOL) textViewShouldBeginEditing:(UITextView *)textView
+{
+    if ([self.tchStudentsTextArea.text isEqualToString:[self.tchStudentsTextArea valueForKey:@"placeholder"]]) {
+        self.tchStudentsTextArea.text = @"";
+        self.tchStudentsTextArea.textColor = [UIColor blackColor];
+    }
+
+    return YES;
+}
+
+-(void) textViewDidChange:(UITextView *)textView
+{
+    
+    if(self.tchStudentsTextArea.text.length == 0){
+        self.tchStudentsTextArea.textColor = [UIColor lightGrayColor];
+        self.tchStudentsTextArea.text = [self.tchStudentsTextArea valueForKey:@"placeholder"];
+        [self.tchStudentsTextArea resignFirstResponder];
+    }
+    
+    float nameRows = round( (textView.contentSize.height - textView.textContainerInset.top - textView.textContainerInset.bottom) / textView.font.lineHeight );
+    
+    float indexRows = round( (self.tchLineCountTextArea.contentSize.height - self.tchLineCountTextArea.textContainerInset.top - self.tchLineCountTextArea.textContainerInset.bottom) / self.tchLineCountTextArea.font.lineHeight );
+    
+    if (nameRows != indexRows) {
+        
+        NSString *newText = @"";
+        
+        for (int i=1; i<=nameRows; i++) {
+            newText = [NSString stringWithFormat:@"%@%i\n", newText, i];
+        }
+        
+        self.tchLineCountTextArea.text = newText;
+        
+    }
+    
+}
+
+#pragma mark - Parallel scrolling
+-(void)scrollViewDidScroll:(nonnull UIScrollView *)scrollView
+{
+    [self.tchLineCountTextArea setContentOffset:scrollView.contentOffset];
 }
 
 // Called when the UIKeyboardDidShowNotification is sent.
@@ -88,9 +136,20 @@
 }
 
 
+#pragma mark - dismiss view
+- (IBAction)dismissVC:(id)sender {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    // tell delegate (view controller)
+    //if ([_delegate respondsToSelector:@selector(editDayWasDismissed:changedDay:)]) {
+    //[_delegate editDayWasDismissed:nil];
+    //}
+    
+}
+
 
 #pragma mark - Navigation
-
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

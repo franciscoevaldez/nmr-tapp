@@ -35,6 +35,11 @@
     NSInteger evalCount = [self.evaluationsArray count];
     
     // Number of rows is the number of days in the array
+    if (evalCount==0) {
+        return 1;
+    }
+    
+    // Number of rows is the number of days in the array
     return evalCount;
     
 }
@@ -44,6 +49,12 @@
     
     // create the new cell
     tchEvalColumnCell *newCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"studentDataCell" forIndexPath:indexPath];
+    
+    NSInteger evalCount = [[self.activeStudent.inClass.evaluations allObjects] count];
+    
+    if (evalCount == 0) {
+        return newCell;
+    }
     
     // get the current day
     Evaluation *currentEvaluation = [self.evaluationsArray objectAtIndex:indexPath.row];

@@ -125,7 +125,7 @@
 {
     
     // status to string (HOT FIX!!!!!)
-    NSString *statusToSave = [NSString stringWithFormat:@"%i", newStatus];
+    NSString *statusToSave = [NSString stringWithFormat:@"%li", (long)newStatus];
     
     // get the active class
     AClass* activeClass = self.activeStudent.inClass;

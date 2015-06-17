@@ -94,7 +94,7 @@
     NSString *classID = self.classID;
     
     // …add one and create the DayID
-    NSString *newDayID = [NSString stringWithFormat:@"%@%i", classID, daysCount];
+    NSString *newDayID = [NSString stringWithFormat:@"%@%li", classID, (long)daysCount];
     
     // get the managed object context
     NSManagedObjectContext *managedOC = self.managedObjectContext;
@@ -168,7 +168,7 @@
 #pragma mark - Evaluations Handling
 - (Evaluation*)createAndStoreNewEvaluation:(NSString*)name
                                     withID:(NSString*)newID
-                                  maxGrade:(int)maxGrade
+                                  maxGrade:(NSInteger)maxGrade
                                       date:(NSDate*)date
 {
     
@@ -189,7 +189,7 @@
     [newEvaluation setValue:name forKey:@"name"];
     
     // set the max grade for the new evaluation
-    [newEvaluation setValue:[NSNumber numberWithInt:maxGrade] forKey:@"range"];
+    [newEvaluation setValue:[NSNumber numberWithInteger:maxGrade] forKey:@"range"];
     
     // set the type for the new evaluation (number for now)
     [newEvaluation setValue:[NSString stringWithFormat:@"number"] forKey:@"type"];
