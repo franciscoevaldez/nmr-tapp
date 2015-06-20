@@ -11,7 +11,6 @@
 #import "AClass+tchAClassExt.h"
 
 @interface tchStudentsTableView : UITableView
-//@interface tchStudentsTableView : UITableView <tchStudentCellProtocol>
 
 - (void)setupForClass:(AClass*)activeClass;
 - (void)reloadAllData;

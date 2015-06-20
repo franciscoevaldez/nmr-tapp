@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface tchStudentsTableDelegate : NSObject <UITableViewDelegate>
+@interface tchStudentsTableDelegate : NSObject <UITableViewDelegate, UIScrollViewDelegate>
 
 @end
