@@ -9,12 +9,16 @@
 #import "tchEditDayVC.h"
 #import "tchDatePickerField.h"
 
+#import "tchEditDayFormTable.h"
+
 @interface tchEditDayVC ()
 
 @property (strong, nonatomic) IBOutlet UILabel *viewTitle;
 @property (strong, nonatomic) IBOutlet tchDatePickerField *dateInput;
 @property (strong, nonatomic) IBOutlet UITextField *titleInput;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *bottomConstraint;
+
+@property (strong, nonatomic) IBOutlet tchEditFormTable *formTable;
 
 @end
 
@@ -23,6 +27,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [self.formTable setupCellArray];
+    [self.formTable reloadData];
     
     // if there is a class to edit…
     if (self.dayToEdit) {
@@ -42,8 +49,9 @@
     // register keyboard notifications
     [self registerForKeyboardNotifications];
     
+    
     // give the focus to the first input
-    [self.dateInput becomeFirstResponder];
+    //[self.dateInput becomeFirstResponder];
     
 }
 
