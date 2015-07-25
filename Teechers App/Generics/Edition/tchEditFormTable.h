@@ -8,10 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+@class tchEditFormTableCell;
+#import "tchEditFormTableCell.h"
+
 @interface tchEditFormTable : UITableView
 
 @property (strong,nonatomic) NSArray *cellsArray;
+@property (strong,nonatomic) NSArray *dataArray;
+@property (strong,nonatomic) id editableObject;
 
 -(void)setupCellArray;
+-(void)refreshDataFromCell:(tchEditFormTableCell*)cell;
+-(void)refreshData;
 
 @end

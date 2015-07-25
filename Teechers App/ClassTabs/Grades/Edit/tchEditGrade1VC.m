@@ -126,10 +126,11 @@
             // get all the names
             NSMutableArray *namesArray;
             
+            
             for (int ind=0; ind < [evaluationsArray count]; ind++) {
                 
                 Evaluation *currentEval = [evaluationsArray objectAtIndex:ind];
-                [namesArray addObject:currentEval.gradeID];
+                [namesArray addObject:currentEval.nameShort];
                 
             }
             

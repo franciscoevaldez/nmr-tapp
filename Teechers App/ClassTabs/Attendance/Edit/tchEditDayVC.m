@@ -14,11 +14,10 @@
 @interface tchEditDayVC ()
 
 @property (strong, nonatomic) IBOutlet UILabel *viewTitle;
-@property (strong, nonatomic) IBOutlet tchDatePickerField *dateInput;
-@property (strong, nonatomic) IBOutlet UITextField *titleInput;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *bottomConstraint;
 
-@property (strong, nonatomic) IBOutlet tchEditFormTable *formTable;
+@property (strong, nonatomic) IBOutlet tchEditDayFormTable *formTable;
+@property (strong, nonatomic) NSArray *dataArray;
 
 @end
 
@@ -28,23 +27,44 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    // tell the form table to set its containers
     [self.formTable setupCellArray];
-    [self.formTable reloadData];
     
-    // if there is a class to edit…
+    // if there is a class to edit, change the view title
+    if (self.dayToEdit) {
+        self.viewTitle.text = @"Edit day";
+    }
+    
+    
+    /*
+     
+    //ClassDay *dayToPass;
+     
+    // if there is a class to edit...
     if (self.dayToEdit) {
         
         // change the view title
         self.viewTitle.text = @"Edit day";
         
-        // set the date into the input
-        [self.dateInput changeDatePicker:self.dayToEdit.date];
+        // set the day to pass
+        //dayToPass = self.dayToEdit;
         
-        // set the name into the input
-        self.titleInput.text = self.dayToEdit.name;
+    } else {
         
+        // otherwise, create a blank one
+        //dayToPass = [[ClassDay alloc] init];
+        
+        // otherwise, startup a new blank one
+        //dayToPass = [NSEntityDescription insertNewObjectForEntityForName:@"ClassDay" inManagedObjectContext:self.activeClass.managedObjectContext];
         
     }
+     */
+    
+    // pass the day and class to work with to the form table
+    [self.formTable setupForClassDay:self.dayToEdit andClass:self.activeClass];
+    
+    // reload the form
+    [self.formTable reloadData];
     
     // register keyboard notifications
     [self registerForKeyboardNotifications];
@@ -65,19 +85,8 @@
 #pragma mark - acciones de text fields
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     
-    if (textField == self.dateInput) {
-        
-        [textField resignFirstResponder];
-        [self.titleInput becomeFirstResponder];
-        
-    } else if (textField == self.titleInput) {
-        
-        // here you can define what happens
-        // when user presses return on the email field
-        NSLog(@"siguiente!");
-        
-    }
     return YES;
+    
 }
 
 #pragma mark - keyboard adjustments & listeners (ABSTRACTABLE)
@@ -121,6 +130,9 @@
 #pragma mark - dismiss view
 - (IBAction)dismissVC:(id)sender {
     
+    // reset the managed object context
+    [self.activeClass.managedObjectContext rollback];
+    
     [self dismissViewControllerAnimated:YES completion:nil];
     
     // tell delegate (view controller)
@@ -133,38 +145,23 @@
 #pragma mark - confirm view
 - (IBAction)confirmVC:(id)sender {
     
-    // get data from the inputs
-    NSDate *newDate = self.dateInput.pickedDate;
-    NSString *newTitle = self.titleInput.text;
+    // get the current date object from table
+    [self.formTable refreshData];
+    ClassDay *newDay = self.formTable.editableObject;
     
-    //ClassDay *newDay = [[ClassDay alloc] init];
+    ClassDay *updatedDay;
     
-    // if theres no day to edit (means we are creating)
     if (!self.dayToEdit) {
-        
-        // tell the class to create the new day
-        ClassDay *newDay = [self.activeClass createNewDay:newDate withName:newTitle];
-        
-        // dismiss the view
-        [self dismissViewControllerAnimated:YES completion:nil];
-        
-        // pass the new day to the delegate
-        [_delegate editDayWasDismissed:newDay];
-        
+        updatedDay = [newDay updateDayWithDate:newDay.date name:newDay.name];
     } else {
-        
-        // update the day data
-        ClassDay *updatedDay = [self.dayToEdit updateDayWithDate:newDate name:newTitle];
-        
-        // dismiss the view
-        [self dismissViewControllerAnimated:YES completion:nil];
-        
-        // pass the new day to the delegate
-        [_delegate editDayWasDismissed:updatedDay];
-        
+        updatedDay = [self.dayToEdit updateDayWithDate:newDay.date name:newDay.name];
     }
     
+    // dismiss the view
+    [self dismissViewControllerAnimated:YES completion:nil];
     
+    // pass the new day to the delegate
+    [_delegate editDayWasDismissed:updatedDay];
     
     
 }

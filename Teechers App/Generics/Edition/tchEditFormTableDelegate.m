@@ -24,8 +24,10 @@
 // Handling row size
 - (CGFloat)tableView:(UITableView*)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    return 50;
+    return 60;
     
 }
+
+
 
 @end

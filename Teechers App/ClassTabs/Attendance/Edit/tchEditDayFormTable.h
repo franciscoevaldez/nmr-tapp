@@ -8,6 +8,11 @@
 
 #import "tchEditFormTable.h"
 
+#import "AClass+tchAClassExt.h"
+#import "ClassDay+tchClassDayExt.h"
+
 @interface tchEditDayFormTable : tchEditFormTable
+
+-(void)setupForClassDay:(ClassDay*)editableClassDay andClass:(AClass*)activeClass;
 
 @end

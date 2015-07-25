@@ -2,8 +2,8 @@
 //  Evaluation.h
 //  Teechers App
 //
-//  Created by fran on 21/5/15.
-//  Copyright (c) 2015 nmr. All rights reserved.
+//  Created by fran on 7/25/15.
+//  Copyright © 2015 nmr. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -11,27 +11,14 @@
 
 @class AClass, GradeRecord;
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface Evaluation : NSManagedObject
 
-@property (nonatomic, retain) NSString * gradeID;
-@property (nonatomic, retain) NSNumber * minToPass;
-@property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSNumber * range;
-@property (nonatomic, retain) NSString * rules;
-@property (nonatomic, retain) NSString * type;
-@property (nonatomic, retain) NSData * valuesLong;
-@property (nonatomic, retain) NSData * valuesShort;
-@property (nonatomic, retain) NSString * nameShort;
-@property (nonatomic, retain) NSDate * date;
-@property (nonatomic, retain) AClass *forClass;
-@property (nonatomic, retain) NSSet *gradeRecords;
-@end
-
-@interface Evaluation (CoreDataGeneratedAccessors)
-
-- (void)addGradeRecordsObject:(GradeRecord *)value;
-- (void)removeGradeRecordsObject:(GradeRecord *)value;
-- (void)addGradeRecords:(NSSet *)values;
-- (void)removeGradeRecords:(NSSet *)values;
+// Insert code here to declare functionality of your managed object subclass
 
 @end
+
+NS_ASSUME_NONNULL_END
+
+#import "Evaluation+CoreDataProperties.h"

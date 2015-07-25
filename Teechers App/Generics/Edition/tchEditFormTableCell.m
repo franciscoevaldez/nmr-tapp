@@ -17,6 +17,12 @@
 - (void)setupCell:(tchEditFormTableCell*)cellData
 {
     
+    // get the cell type
+    self.cellType = cellData.cellType;
+    
+    // setup the indexpath
+    self.indexPath = cellData.indexPath;
+    
     // setup the cell label
     if (self.inputLabel) {
         self.inputLabel.text = cellData.labelText;
@@ -34,9 +40,27 @@
         self.inputField.text = @"";
     }
     
+    // setup the value
+    if (cellData.value) {
+        
+        // get it to the property
+        self.value = cellData.value;
+        
+        // write it on the input
+        if (self.cellType == tchFormCellLabelAndDateInput) {
+            [self.datePickerField changeDatePicker:self.value];
+        }
+        
+        if (self.cellType == tchFormCellLabelAndTextInput) {
+            self.inputField.text = [NSString stringWithFormat:@"%@", self.value];
+        }
+        
+    }
+    
     
 }
 
+// from selection focus the input
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
@@ -57,6 +81,7 @@
     
 }
 
+// return the cell type
 - (NSString*)getCellTypeString{
     
     NSArray *cellTypesArray = [NSArray arrayWithObjects:@"tchFormCellLabelAndTextInput",
@@ -68,6 +93,40 @@
     
 }
 
+- (void)refreshCellValue:(id)cell{
+    
+    // if the class is a date picker
+    if (self.cellType == tchFormCellLabelAndDateInput) {
+        
+        self.value = self.datePickerField.pickedDate;
+        
+    } else if (self.cellType == tchFormCellLabelAndTextInput) {
+        
+        self.value = self.inputField.text;
+        
+    }
+    
+}
+
+// input the cell value when the input has done editing
+- (IBAction)inputEditEnded:(id)sender {
+    
+    if ([sender isKindOfClass:[tchDatePickerField class]]) {
+        
+        tchDatePickerField *castedPicker = (tchDatePickerField*)sender;
+        self.value = castedPicker.pickedDate;
+        
+    } else if ([sender isKindOfClass:[UITextField class]]) {
+        
+        UITextField *castedInput = (UITextField*)sender;
+        self.value = castedInput.text;
+        
+    }
+    
+    // tell the table to update the values
+    [self.ownerTable refreshDataFromCell:self];
+    
+}
 
 
 

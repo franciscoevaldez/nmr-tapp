@@ -85,17 +85,6 @@
 - (ClassDay*)createNewDay:(NSDate*)date withName:(NSString*)name
 {
     
-    // get the day ID
-    
-    // get the amount of existing days…
-    NSInteger daysCount = [[self.classDays allObjects] count];
-    
-    // get the classID
-    NSString *classID = self.classID;
-    
-    // …add one and create the DayID
-    NSString *newDayID = [NSString stringWithFormat:@"%@%li", classID, (long)daysCount];
-    
     // get the managed object context
     NSManagedObjectContext *managedOC = self.managedObjectContext;
     
@@ -104,11 +93,7 @@
                              insertNewObjectForEntityForName:@"ClassDay"
                              inManagedObjectContext:managedOC];
     
-    
-    // set the ID for the new day
-    [newClassDay setValue:newDayID forKey:@"dayID"];
-    
-    // set the name for the new day
+    // set the date for the new day
     [newClassDay setValue:date forKey:@"date"];
     
     // set the name for the new day
@@ -120,7 +105,7 @@
     // write in permanent store
     NSError *dayError;
     if (![managedOC save:&dayError]) {
-        NSLog(@"error en: %@", [dayError localizedDescription]);
+        NSLog(@"Unresolved error %@, %@, %@", dayError, [dayError userInfo],[dayError localizedDescription]);
     }
     
     // return the created day
@@ -182,7 +167,7 @@
     
     
     // set the ID for the new evaluation
-    [newEvaluation setValue:newID forKey:@"gradeID"];
+    //[newEvaluation setValue:newID forKey:@"gradeID"];
     [newEvaluation setValue:newID forKey:@"nameShort"];
     
     // set the name for the new evaluation

@@ -2,8 +2,8 @@
 //  Student.m
 //  Teechers App
 //
-//  Created by fran on 4/21/15.
-//  Copyright (c) 2015 nmr. All rights reserved.
+//  Created by fran on 7/25/15.
+//  Copyright © 2015 nmr. All rights reserved.
 //
 
 #import "Student.h"
@@ -13,16 +13,8 @@
 #import "StudentPicture.h"
 #import "StudentSummary.h"
 
-
 @implementation Student
 
-@dynamic name;
-@dynamic studentID;
-@dynamic surname;
-@dynamic attendanceRecords;
-@dynamic gradeRecords;
-@dynamic inClass;
-@dynamic picture;
-@dynamic summaryRecord;
+// Insert code here to add functionality to your managed object subclass
 
 @end

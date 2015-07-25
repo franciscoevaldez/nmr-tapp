@@ -20,4 +20,8 @@
 }
 */
 
+// refresh the data array with an updated cell
+-(void)refreshDataFromCell:(tchEditFormTableCell*)cell{}
+-(void)refreshData{}
+
 @end

@@ -9,7 +9,7 @@
 
 #import "tchClassImporter.h"
 
-#import "AClass.h"
+#import "AClass+tchAClassExt.h"
 #import "Student.h"
 
 @implementation tchClassImporter
@@ -22,8 +22,8 @@
                          inManagedObjectContext:self.managedObjectContext];
     
     // assign class ID
-    NSString *timestampID = [NSString stringWithFormat:@"TEECHAPP%f",[[NSDate date] timeIntervalSince1970] * 1000];
-    [aNewClass setValue:timestampID forKey:@"classID"];
+    //NSString *timestampID = [NSString stringWithFormat:@"TEECHAPP%f",[[NSDate date] timeIntervalSince1970] * 1000];
+    //[aNewClass setValue:timestampID forKey:@"classID"];
     
     // add the name attribute
     [aNewClass setValue:self.theNewClassName forKey:@"name"];
@@ -39,7 +39,7 @@
     
     
     // get the stored class for linking the students
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    /*NSFetchRequest *request = [[NSFetchRequest alloc] init];
     
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"AClass" inManagedObjectContext:self.managedObjectContext];
     [request setEntity:entity];
@@ -50,6 +50,7 @@
     NSError *error = nil;
     NSArray *results = [self.managedObjectContext executeFetchRequest:request error:&error];
     AClass *createdClass = [results objectAtIndex:0];
+     */
     
     // loop for every student
     for (int stInd=0; stInd<[self.studentsArray count]; stInd++) {
@@ -60,14 +61,14 @@
                                 inManagedObjectContext:self.managedObjectContext];
         
         // add the student id
-        NSString *studentID = [NSString stringWithFormat:@"STD%i", stInd];
-        [aNewStudent setValue:studentID forKey:@"studentID"];
+        //NSString *studentID = [NSString stringWithFormat:@"STD%i", stInd];
+        //[aNewStudent setValue:studentID forKey:@"studentID"];
         
         // add the name attribute
         [aNewStudent setValue:[self.studentsArray objectAtIndex:stInd] forKey:@"name"];
         
         // associate it to the class being created
-        [aNewStudent setValue:createdClass forKey:@"inClass"];
+        [aNewStudent setValue:aNewClass forKey:@"inClass"];
         
         
     }
