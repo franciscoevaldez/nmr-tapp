@@ -29,6 +29,7 @@ typedef NS_ENUM(NSInteger, tchFormCellType) {
 @property (nonatomic) NSString *labelText;
 @property (nonatomic) NSString *inputPlaceholder;
 @property (nonatomic) NSIndexPath *indexPath;
+@property (nonatomic) NSString *propertyName;
 
 @property (nonatomic) id value;
 
@@ -37,9 +38,12 @@ typedef NS_ENUM(NSInteger, tchFormCellType) {
 @property (strong,nonatomic) IBOutlet tchDatePickerField *datePickerField;
 @property (strong,nonatomic) IBOutlet UILabel *separatorLabel;
 
-- (void)setupCell:(tchEditFormTableCell*)cellData;
+- (void)setupCellWithStruct:(NSDictionary*)structData data:(id)data andIndexPath:(NSIndexPath*)indexPath;
+//- (void)setupCell:(tchEditFormTableCell*)cellData;
 - (void)refreshCellValue:(id)cell;
 
+
 - (NSString*)getCellTypeString;
+
 
 @end

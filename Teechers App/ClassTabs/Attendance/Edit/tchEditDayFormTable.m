@@ -15,6 +15,8 @@
 // cell for getting the cell array
 -(void)setupCellArray
 {
+    
+    /*
     // each cell is a cell element
     tchEditFormTableCell *firstCell = [[tchEditFormTableCell alloc] init];
     firstCell.cellType = tchFormCellLabelAndDateInput;
@@ -29,6 +31,16 @@
     NSArray *cellsArray = [NSArray arrayWithObjects:firstCell, secondCell, nil];
     
     self.cellsArray = cellsArray;
+     */
+    
+    // setup the url
+    NSURL *file = [[NSBundle mainBundle] URLForResource:@"tchAttendancePL" withExtension:@"plist"];
+    
+    // create a dictionary with the contents
+    NSArray *plistDict = [NSArray arrayWithContentsOfURL:file];
+    
+    // pass it to the self
+    self.formStruct = plistDict;
 
 }
 
@@ -64,20 +76,11 @@
     // get the value from the cell
     id newValue = cell.value;
     
-    // get the row of the cell
-    NSInteger cellRow = [cell.indexPath row];
-    
     // cast the editable object as a class day
     ClassDay *transitionDay = (ClassDay*)self.editableObject;
     
-    
-    // check which row was updated and change accordingly
-    if (cellRow==0) {
-        transitionDay.date = newValue;
-    }
-    if (cellRow==1) {
-        transitionDay.name = newValue;
-    }
+    // change the value for the property in that cell
+    [transitionDay setValue:newValue forKey:cell.propertyName];
     
     // update the editable object of self from the transition
     self.editableObject = transitionDay;
@@ -93,22 +96,16 @@
         [currentCell refreshCellValue:currentCell];
         
         // get the row of the cell
-        NSInteger cellRow = [currentCell.indexPath row];
+        //NSInteger cellRow = [currentCell.indexPath row];
         
         // get the value from the cell
         id newValue = currentCell.value;
         
         // cast the editable object as a class day
         ClassDay *transitionDay = (ClassDay*)self.editableObject;
-        
-        
-        // check which row was updated and change accordingly
-        if (cellRow==0) {
-            transitionDay.date = newValue;
-        }
-        if (cellRow==1) {
-            transitionDay.name = newValue;
-        }
+
+        // change the value for the property in that cell
+        [transitionDay setValue:newValue forKey:currentCell.propertyName];
         
         // update the editable object of self from the transition
         self.editableObject = transitionDay;

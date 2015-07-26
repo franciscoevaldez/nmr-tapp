@@ -14,37 +14,44 @@
     // Initialization code
 }
 
-- (void)setupCell:(tchEditFormTableCell*)cellData
+- (void)setupCellWithStruct:(NSDictionary*)structData
+                       data:(id)data
+               andIndexPath:(NSIndexPath*)indexPath
 {
     
     // get the cell type
-    self.cellType = cellData.cellType;
+    NSString *cellTypeString = [structData objectForKey:@"cellType"];
+    self.cellType = [self getCellTypeFromString:cellTypeString];
+
+    // get the property for this cell
+    self.propertyName = [structData objectForKey:@"propertyName"];
     
     // setup the indexpath
-    self.indexPath = cellData.indexPath;
+    self.indexPath = indexPath;
     
     // setup the cell label
     if (self.inputLabel) {
-        self.inputLabel.text = cellData.labelText;
+        self.inputLabel.text = [structData objectForKey:@"labelText"];
     }
     
     // setup the input placeholder
     if (self.inputField) {
-        self.inputField.placeholder = cellData.inputPlaceholder;
+        self.inputField.placeholder = [structData objectForKey:@"inputPlaceholder"];
         self.inputField.text = @"";
     }
     
     // setup the date field
     if (self.datePickerField) {
-        self.datePickerField.placeholder = cellData.inputPlaceholder;
+        self.datePickerField.placeholder = [structData objectForKey:@"inputPlaceholder"];
         self.inputField.text = @"";
     }
     
+    
     // setup the value
-    if (cellData.value) {
+    if (data) {
         
         // get it to the property
-        self.value = cellData.value;
+        self.value = data;
         
         // write it on the input
         if (self.cellType == tchFormCellLabelAndDateInput) {
@@ -93,17 +100,44 @@
     
 }
 
+// cell type from string
+- (tchFormCellType)getCellTypeFromString:(NSString*)string
+{
+    
+    if ([string isEqualToString:@"tchFormCellLabelAndTextInput"]) {
+        return tchFormCellLabelAndTextInput;
+    }
+    
+    if ([string isEqualToString:@"tchFormCellLabelAndDateInput"]) {
+        return tchFormCellLabelAndDateInput;
+    }
+    
+    if ([string isEqualToString:@"tchFormCellLabelAndNumberInput"]) {
+        return tchFormCellLabelAndNumberInput;
+    }
+    
+    if ([string isEqualToString:@"tchFormCellInstruction"]) {
+        return tchFormCellInstruction;
+    }
+    
+    
+    return tchFormCellLabelAndTextInput;
+}
+
 - (void)refreshCellValue:(id)cell{
     
-    // if the class is a date picker
-    if (self.cellType == tchFormCellLabelAndDateInput) {
-        
-        self.value = self.datePickerField.pickedDate;
-        
-    } else if (self.cellType == tchFormCellLabelAndTextInput) {
-        
-        self.value = self.inputField.text;
-        
+    // update the value according to the cell type
+    switch (self.cellType) {
+        case tchFormCellLabelAndTextInput:
+            self.value = self.inputField.text;
+            break;
+            
+        case tchFormCellLabelAndDateInput:
+            self.value = self.datePickerField.pickedDate;
+            break;
+            
+        default:
+            break;
     }
     
 }
@@ -111,17 +145,8 @@
 // input the cell value when the input has done editing
 - (IBAction)inputEditEnded:(id)sender {
     
-    if ([sender isKindOfClass:[tchDatePickerField class]]) {
-        
-        tchDatePickerField *castedPicker = (tchDatePickerField*)sender;
-        self.value = castedPicker.pickedDate;
-        
-    } else if ([sender isKindOfClass:[UITextField class]]) {
-        
-        UITextField *castedInput = (UITextField*)sender;
-        self.value = castedInput.text;
-        
-    }
+    // refresh the cell value
+    [self refreshCellValue:self];
     
     // tell the table to update the values
     [self.ownerTable refreshDataFromCell:self];

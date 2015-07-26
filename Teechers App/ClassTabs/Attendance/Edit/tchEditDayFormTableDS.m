@@ -19,54 +19,34 @@
     
 }
 
--(NSInteger)tableView:(nonnull tchEditFormTable *)tableView numberOfRowsInSection:(NSInteger)section
+-(NSInteger)tableView:(nonnull tchEditDayFormTable *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [tableView.cellsArray count];
+    return [tableView.formStruct count];
 }
 
--(tchEditFormTableCell*)tableView:(nonnull tchEditFormTable *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath
+
+-(tchEditFormTableCell*)tableView:(nonnull tchEditDayFormTable *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath
 {
-    tchEditFormTableCell *newCell;
     
-    // get the current cell from the array
-    tchEditFormTableCell *currentCell = [tableView.cellsArray objectAtIndex:indexPath.row];
+    // get the current cell data array (to keep it at hand)
+    NSDictionary *cellData = [tableView.formStruct objectAtIndex:indexPath.row];
     
-    // get the cell type
-    NSString *cellType = [currentCell getCellTypeString];
+    // get the cell type from the form struct
+    NSString *cellType = [cellData objectForKey:@"cellType"];
     
-    
-    
-    // dequeue the cell for the cell type
-    newCell = [tableView dequeueReusableCellWithIdentifier:cellType];
-    
-    
-    
-    // pass the current index path to the cell
-    currentCell.indexPath = indexPath;
-    
-    // initialize the current data
-    id currentData;
+    // cast the new cell
+    tchEditFormTableCell *newCell = [tableView dequeueReusableCellWithIdentifier:cellType];
     
     // cast the editable object
     ClassDay *dayToEdit = tableView.editableObject;
     
-    // check the data cases
-    if (indexPath.row == 0) {
-        // for the date case
-        currentData = dayToEdit.date;
-    }
+    // get the value to display
+    id currentData = [dayToEdit valueForKey:[cellData objectForKey:@"propertyName"]];
     
-    if (indexPath.row == 1) {
-        // for the day name case
-        currentData = dayToEdit.name;
-    }
+    // call the cell to setup itself passing: struct data + data to display
+    [newCell setupCellWithStruct:cellData data:currentData andIndexPath:indexPath];
     
-    currentCell.value = currentData;
-    
-    
-    // setup from the data
-    [newCell setupCell:currentCell];
-    
+    // return the new cell
     return newCell;
     
 }

@@ -35,31 +35,6 @@
         self.viewTitle.text = @"Edit day";
     }
     
-    
-    /*
-     
-    //ClassDay *dayToPass;
-     
-    // if there is a class to edit...
-    if (self.dayToEdit) {
-        
-        // change the view title
-        self.viewTitle.text = @"Edit day";
-        
-        // set the day to pass
-        //dayToPass = self.dayToEdit;
-        
-    } else {
-        
-        // otherwise, create a blank one
-        //dayToPass = [[ClassDay alloc] init];
-        
-        // otherwise, startup a new blank one
-        //dayToPass = [NSEntityDescription insertNewObjectForEntityForName:@"ClassDay" inManagedObjectContext:self.activeClass.managedObjectContext];
-        
-    }
-     */
-    
     // pass the day and class to work with to the form table
     [self.formTable setupForClassDay:self.dayToEdit andClass:self.activeClass];
     
