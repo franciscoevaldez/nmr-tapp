@@ -10,12 +10,7 @@
 #import <UIKit/UIKit.h>
 
 #import "tchEditDayFormTable.h"
-#import "ClassDay+tchClassDayExt.h"
 
 @interface tchEditDayFormTableDS : NSObject <UITableViewDataSource>
-
-@property (strong,nonatomic) ClassDay *activeDay;
-
--(void)setupForClassDay:(ClassDay*)editableDay;
 
 @end

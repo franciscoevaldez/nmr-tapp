@@ -73,17 +73,22 @@
 
     // Configure the view for the selected state
     if (selected) {
-        
-        // if it has an input field, select it
-        if (self.inputField) {
-            [self.inputField becomeFirstResponder];
-        }
-        
-        // if it has a date picker input, select it
-        if (self.datePickerField) {
-            [self.datePickerField becomeFirstResponder];
-        }
-        
+        [self getFocus];
+    }
+    
+}
+
+// recieving focus
+- (void)getFocus{
+    
+    // if it has an input field, select it
+    if (self.inputField) {
+        [self.inputField becomeFirstResponder];
+    }
+    
+    // if it has a date picker input, select it
+    if (self.datePickerField) {
+        [self.datePickerField becomeFirstResponder];
     }
     
 }

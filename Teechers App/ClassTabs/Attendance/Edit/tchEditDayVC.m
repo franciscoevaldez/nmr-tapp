@@ -14,10 +14,7 @@
 @interface tchEditDayVC ()
 
 @property (strong, nonatomic) IBOutlet UILabel *viewTitle;
-@property (strong, nonatomic) IBOutlet NSLayoutConstraint *bottomConstraint;
-
 @property (strong, nonatomic) IBOutlet tchEditDayFormTable *formTable;
-@property (strong, nonatomic) NSArray *dataArray;
 
 @end
 
@@ -38,17 +35,18 @@
     // pass the day and class to work with to the form table
     [self.formTable setupForClassDay:self.dayToEdit andClass:self.activeClass];
     
-    // reload the form
-    [self.formTable reloadData];
-    
     // register keyboard notifications
     [self registerForKeyboardNotifications];
     
+    // reload the form
+    [self.formTable reloadData];
     
     // give the focus to the first input
-    //[self.dateInput becomeFirstResponder];
+    [self.formTable focusIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    
     
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -64,47 +62,14 @@
     
 }
 
-#pragma mark - keyboard adjustments & listeners (ABSTRACTABLE)
-// registrar los listeners para el teclado
-- (void)registerForKeyboardNotifications
-{
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWasShown:)
-                                                 name:UIKeyboardDidShowNotification object:nil];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWillBeHidden:)
-                                                 name:UIKeyboardWillHideNotification object:nil];
-    
-}
-
-// Called when the UIKeyboardDidShowNotification is sent.
-- (void)keyboardWasShown:(NSNotification*)aNotification
-{
-    
-    // keyboard is shown, change the constraint to adjust the content:
-    
-    // get notification info & keyboard frame
-    NSDictionary* info = [aNotification userInfo];
-    CGRect kKeyBoardFrame = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
-    
-    // add frame height to the constraint's constant
-    self.bottomConstraint.constant = kKeyBoardFrame.size.height;
-    
-}
-
-// Called when the UIKeyboardWillHideNotification is sent
-- (void)keyboardWillBeHidden:(NSNotification*)aNotification
-{
-    
-    // keyboard will be hidden, return bottom constraint to 0:
-    self.bottomConstraint.constant = 0;
-    
-}
-
 #pragma mark - dismiss view
 - (IBAction)dismissVC:(id)sender {
     
+    // refresh and dont merge the changes
+    if (self.dayToEdit) {
+        [self.activeClass.managedObjectContext refreshObject:self.dayToEdit mergeChanges:NO];
+    }
+
     // reset the managed object context
     [self.activeClass.managedObjectContext rollback];
     
@@ -122,7 +87,7 @@
     
     // get the current date object from table
     [self.formTable refreshData];
-    ClassDay *newDay = self.formTable.editableObject;
+    ClassDay *newDay = (ClassDay*) self.formTable.editableObject;
     
     ClassDay *updatedDay;
     

@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+
+#import "tchViewKeyboardVC.h"
 #import "AClass+tchAClassExt.h"
 #import "ClassDay.h"
 
@@ -16,7 +18,7 @@
 
 @end
 
-@interface tchEditDayVC : UIViewController
+@interface tchEditDayVC : tchViewKeyboardVC
 
 @property (nonatomic, weak) id <tchEditDayVCDelegate> delegate;
 @property (strong, nonatomic) AClass *activeClass;

@@ -11,13 +11,6 @@
 
 @implementation tchEditDayFormTableDS
 
--(void)setupForClassDay:(ClassDay*)editableDay
-{
-    
-    // setup the property to the passed day
-    self.activeDay = editableDay;
-    
-}
 
 -(NSInteger)tableView:(nonnull tchEditDayFormTable *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -37,11 +30,8 @@
     // cast the new cell
     tchEditFormTableCell *newCell = [tableView dequeueReusableCellWithIdentifier:cellType];
     
-    // cast the editable object
-    ClassDay *dayToEdit = tableView.editableObject;
-    
     // get the value to display
-    id currentData = [dayToEdit valueForKey:[cellData objectForKey:@"propertyName"]];
+    id currentData = [tableView.editableObject valueForKey:[cellData objectForKey:@"propertyName"]];
     
     // call the cell to setup itself passing: struct data + data to display
     [newCell setupCellWithStruct:cellData data:currentData andIndexPath:indexPath];

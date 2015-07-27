@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AClass.h"
 
 @class tchEditFormTableCell;
 #import "tchEditFormTableCell.h"
@@ -15,8 +16,9 @@
 
 @property (strong,nonatomic) NSArray *cellsArray;
 @property (strong,nonatomic) NSArray *dataArray;
-@property (strong,nonatomic) id editableObject;
+@property (strong,nonatomic) NSManagedObject *editableObject;
 
+-(void)focusIndexPath:(NSIndexPath*)indexPath;
 -(void)setupCellArray;
 -(void)refreshDataFromCell:(tchEditFormTableCell*)cell;
 -(void)refreshData;

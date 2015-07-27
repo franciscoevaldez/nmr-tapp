@@ -42,6 +42,8 @@ typedef NS_ENUM(NSInteger, tchFormCellType) {
 //- (void)setupCell:(tchEditFormTableCell*)cellData;
 - (void)refreshCellValue:(id)cell;
 
+- (void)getFocus;
+
 
 - (NSString*)getCellTypeString;
 
