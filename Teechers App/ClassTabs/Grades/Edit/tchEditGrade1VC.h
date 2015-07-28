@@ -6,8 +6,7 @@
 //  Copyright (c) 2015 nmr. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
+#import "tchViewKeyboardVC.h"
 
 #import "tchFormViewController.h"
 #import "tchDatePickerField.h"
@@ -20,7 +19,7 @@
 
 @end
 
-@interface tchEditGrade1VC : tchFormViewController <UITextFieldDelegate>
+@interface tchEditGrade1VC : tchViewKeyboardVC <UITextFieldDelegate>
 
 @property (nonatomic, weak) id <tchEditDialogDelegate> delegate;
 
@@ -29,9 +28,10 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 
+/*
 @property (strong, nonatomic) IBOutlet UITextField *nameInput;
 @property (strong, nonatomic) IBOutlet UITextField *shortInput;
 @property (strong, nonatomic) IBOutlet UITextField *maxGradeInput;
 @property (strong, nonatomic) IBOutlet tchDatePickerField *dateInput;
-
+*/
 @end

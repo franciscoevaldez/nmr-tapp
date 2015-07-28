@@ -10,7 +10,21 @@
 
 @implementation tchEditFormTable
 
+// cell for getting the cell array
 -(void)setupCellArray{}
+-(void)setupCellArrayFromPlist:(NSString*)urlString
+{
+    
+    // setup the url
+    NSURL *file = [[NSBundle mainBundle] URLForResource:urlString withExtension:@"plist"];
+    
+    // create a dictionary with the contents
+    NSArray *plistDict = [NSArray arrayWithContentsOfURL:file];
+    
+    // pass it to the self
+    self.formStruct = plistDict;
+    
+}
 
 /*
 // Only override drawRect: if you perform custom drawing.
@@ -45,6 +59,9 @@
 
 // refresh the data array with an updated cell
 -(void)refreshDataFromCell:(tchEditFormTableCell*)cell{
+    
+    // skip if there is no property assigned
+    if ([cell.propertyName isEqualToString:@""]) {return;}
     
     // get the value from the cell
     id newValue = cell.value;

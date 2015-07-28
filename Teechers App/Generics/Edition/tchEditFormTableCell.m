@@ -62,6 +62,11 @@
             self.inputField.text = [NSString stringWithFormat:@"%@", self.value];
         }
         
+        if (self.cellType == tchFormCellLabelAndNumberInput) {
+            self.inputField.text = [NSString stringWithFormat:@"%@", self.value];
+        }
+
+        
     }
     
     
@@ -139,6 +144,14 @@
             
         case tchFormCellLabelAndDateInput:
             self.value = self.datePickerField.pickedDate;
+            break;
+            
+        case tchFormCellLabelAndNumberInput:
+            self.value = [NSNumber numberWithInteger:[self.inputField.text integerValue]];
+            break;
+            
+        case tchFormCellInstruction:
+            self.value = nil;
             break;
             
         default:

@@ -7,13 +7,14 @@
 //
 
 #import "tchEditGrade1VC.h"
-#import "tchDatePickerField.h"
-
-#import "AClass+tchAClassExt.h"
+#import "tchEditEvalFormTable.h"
+//#import "tchDatePickerField.h"
+//#import "AClass+tchAClassExt.h"
 
 @interface tchEditGrade1VC ()
 
-
+@property (strong, nonatomic) IBOutlet UILabel *viewTitle;
+@property (strong, nonatomic) IBOutlet tchEditEvalFormTable *formTable;
 
 @property (strong,nonatomic) NSArray *usedNamesArray;
 
@@ -25,32 +26,25 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    // check if there is a evaluation to edit...
+    // tell the form table to set its containers
+    [self.formTable setupCellArrayFromPlist:@"tchEvaluationsPL"];
+    
+    // if there is an evaluation to edit, change the view title
     if (self.evaluationToEdit) {
-        
-        // change the view title
-        self.titleLabel.text = @"Edit grade";
-        
-        // set name to the input
-        self.nameInput.text = self.evaluationToEdit.name;
-        
-        // set short name
-        self.shortInput.text = self.evaluationToEdit.nameShort;
-        
-        // set max grade
-        self.maxGradeInput.text = [NSString stringWithFormat:@"%@", self.evaluationToEdit.range];
-        
-        // set date to the input
-        [self.dateInput changeDatePicker:self.dateInput.pickedDate];
-        
-        
+        self.viewTitle.text = @"Edit day";
     }
+    
+    // pass the evaluation and class to the form table to work with
+    [self.formTable setupForEditableObject:self.evaluationToEdit inClass:self.activeClass];
     
     // register keyboard notifications
     [self registerForKeyboardNotifications];
     
+    // reload the form
+    [self.formTable reloadData];
+    
     // give the focus to the first input
-    [self.nameInput becomeFirstResponder];
+    [self.formTable focusIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
 
     
 }
@@ -60,6 +54,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+/*
 #pragma mark - Data handling
 - (Evaluation*)createEvaluation{
     
@@ -73,7 +68,8 @@
     
     return newEvaluation;
 }
-
+*/
+/*
 #pragma mark - Field Return Sequence
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     
@@ -174,9 +170,18 @@
     
     return YES;
 }
+ */
 
 #pragma mark - Cancelation & confirmation
 - (IBAction)dismissVC:(id)sender {
+    
+    // refresh and dont merge the changes
+    if (self.evaluationToEdit) {
+        [self.activeClass.managedObjectContext refreshObject:self.evaluationToEdit mergeChanges:NO];
+    }
+    
+    // reset the managed object context
+    [self.activeClass.managedObjectContext rollback];
     
     [self dismissViewControllerAnimated:YES completion:nil];
 
@@ -187,7 +192,7 @@
 #pragma mark - confirm view
 - (IBAction)confirmVC:(id)sender {
     
-    [self createEvaluation];
+    //[self createEvaluation];
     
     /*
     // get data from the inputs
@@ -222,9 +227,30 @@
     }
      */
     
+    // get the current date object from table
+    [self.formTable refreshData];
+    
+    Evaluation *newEval = (Evaluation*) self.formTable.editableObject;
+    
+    Evaluation *updatedEvaluation;
+    
+    if (!self.evaluationToEdit) {
+        updatedEvaluation = [newEval updateEvaluation:newEval.name
+                                        withShortName:newEval.nameShort
+                                                 date:newEval.date
+                                                range:newEval.range];
+    } else {
+        updatedEvaluation = [self.evaluationToEdit updateEvaluation:newEval.name
+                                                      withShortName:newEval.nameShort
+                                                               date:newEval.date
+                                                              range:newEval.range];
+    }
+    
+    // dismiss the view
     [self dismissViewControllerAnimated:YES completion:nil];
     
-    [_delegate editGradeWasDismissed:nil];
+    // pass the new day to the delegate
+    [_delegate editGradeWasDismissed:updatedEvaluation];
     
     
 }

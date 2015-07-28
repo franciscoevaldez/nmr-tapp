@@ -17,9 +17,11 @@
 @property (strong,nonatomic) NSArray *cellsArray;
 @property (strong,nonatomic) NSArray *dataArray;
 @property (strong,nonatomic) NSManagedObject *editableObject;
+@property (strong,nonatomic) NSArray *formStruct;
 
 -(void)focusIndexPath:(NSIndexPath*)indexPath;
 -(void)setupCellArray;
+-(void)setupCellArrayFromPlist:(NSString*)urlString;
 -(void)refreshDataFromCell:(tchEditFormTableCell*)cell;
 -(void)refreshData;
 
