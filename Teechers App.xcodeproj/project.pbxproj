@@ -88,7 +88,9 @@
 		A1CE2B041B2FBDB100385282 /* tchSuperTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1CE2B031B2FBDB100385282 /* tchSuperTextView.m */; };
 		A1CE7A0B1B6461F1003E7039 /* tchAttendancePL.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1CE7A0A1B6461F1003E7039 /* tchAttendancePL.plist */; };
 		A1CE7A0E1B659ACD003E7039 /* tchViewKeyboardVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A1CE7A0D1B659ACD003E7039 /* tchViewKeyboardVC.m */; };
-		A1CE7A101B65A98C003E7039 /* tchGradesPL.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1CE7A0F1B65A98C003E7039 /* tchGradesPL.plist */; };
+		A1CE7A101B65A98C003E7039 /* tchEvaluationsPL.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1CE7A0F1B65A98C003E7039 /* tchEvaluationsPL.plist */; };
+		A1CE7A131B65BEF7003E7039 /* tchEditEvalFormTable.m in Sources */ = {isa = PBXBuildFile; fileRef = A1CE7A121B65BEF7003E7039 /* tchEditEvalFormTable.m */; };
+		A1CE7A161B65CDAE003E7039 /* tchEditEvalFormTableDS.m in Sources */ = {isa = PBXBuildFile; fileRef = A1CE7A151B65CDAE003E7039 /* tchEditEvalFormTableDS.m */; };
 		A1D1A58F1B0A2E0E009245EB /* UIColor+appColorPresets.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D1A58E1B0A2E0E009245EB /* UIColor+appColorPresets.m */; };
 /* End PBXBuildFile section */
 
@@ -266,7 +268,11 @@
 		A1CE7A0A1B6461F1003E7039 /* tchAttendancePL.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = tchAttendancePL.plist; sourceTree = "<group>"; };
 		A1CE7A0C1B659ACD003E7039 /* tchViewKeyboardVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchViewKeyboardVC.h; path = "Custom Controls/tchViewKeyboardVC.h"; sourceTree = "<group>"; };
 		A1CE7A0D1B659ACD003E7039 /* tchViewKeyboardVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchViewKeyboardVC.m; path = "Custom Controls/tchViewKeyboardVC.m"; sourceTree = "<group>"; };
-		A1CE7A0F1B65A98C003E7039 /* tchGradesPL.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = tchGradesPL.plist; sourceTree = "<group>"; };
+		A1CE7A0F1B65A98C003E7039 /* tchEvaluationsPL.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = tchEvaluationsPL.plist; sourceTree = "<group>"; };
+		A1CE7A111B65BEF7003E7039 /* tchEditEvalFormTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tchEditEvalFormTable.h; sourceTree = "<group>"; };
+		A1CE7A121B65BEF7003E7039 /* tchEditEvalFormTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tchEditEvalFormTable.m; sourceTree = "<group>"; };
+		A1CE7A141B65CDAE003E7039 /* tchEditEvalFormTableDS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tchEditEvalFormTableDS.h; sourceTree = "<group>"; };
+		A1CE7A151B65CDAE003E7039 /* tchEditEvalFormTableDS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tchEditEvalFormTableDS.m; sourceTree = "<group>"; };
 		A1D1A58D1B0A2E0E009245EB /* UIColor+appColorPresets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+appColorPresets.h"; path = "Custom Controls/UIColor+appColorPresets.h"; sourceTree = "<group>"; };
 		A1D1A58E1B0A2E0E009245EB /* UIColor+appColorPresets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+appColorPresets.m"; path = "Custom Controls/UIColor+appColorPresets.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -544,7 +550,7 @@
 		A17675231B1BF6400093F7A0 /* Grades */ = {
 			isa = PBXGroup;
 			children = (
-				A1CE7A0F1B65A98C003E7039 /* tchGradesPL.plist */,
+				A1CE7A0F1B65A98C003E7039 /* tchEvaluationsPL.plist */,
 				A17675241B1BF6400093F7A0 /* Cells */,
 				A17675291B1BF6400093F7A0 /* Edit */,
 				A176752C1B1BF6400093F7A0 /* Input */,
@@ -576,6 +582,10 @@
 			children = (
 				A17675B91B24A3C60093F7A0 /* tchEditGrade1VC.h */,
 				A17675BA1B24A3C60093F7A0 /* tchEditGrade1VC.m */,
+				A1CE7A111B65BEF7003E7039 /* tchEditEvalFormTable.h */,
+				A1CE7A121B65BEF7003E7039 /* tchEditEvalFormTable.m */,
+				A1CE7A141B65CDAE003E7039 /* tchEditEvalFormTableDS.h */,
+				A1CE7A151B65CDAE003E7039 /* tchEditEvalFormTableDS.m */,
 			);
 			path = Edit;
 			sourceTree = "<group>";
@@ -815,7 +825,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A14E13111AE5470700A1CB95 /* Main.storyboard in Resources */,
-				A1CE7A101B65A98C003E7039 /* tchGradesPL.plist in Resources */,
+				A1CE7A101B65A98C003E7039 /* tchEvaluationsPL.plist in Resources */,
 				A1CE7A0B1B6461F1003E7039 /* tchAttendancePL.plist in Resources */,
 				A14E13161AE5470700A1CB95 /* LaunchScreen.xib in Resources */,
 				A14E13131AE5470700A1CB95 /* Images.xcassets in Resources */,
@@ -839,6 +849,7 @@
 				A176759D1B249E720093F7A0 /* tchStudentSummaryCell.m in Sources */,
 				A17675D01B24A4270093F7A0 /* tchColumnsCollection.m in Sources */,
 				A10F1FF01B35BD1B00B96AEA /* tchEditDayFormTable.m in Sources */,
+				A1CE7A161B65CDAE003E7039 /* tchEditEvalFormTableDS.m in Sources */,
 				A17675AE1B24A07B0093F7A0 /* tchHeaderColumnCollection.m in Sources */,
 				A1C651171B251C1C0011BB3C /* tchStudentSummaryDataSource.m in Sources */,
 				A17675A01B249E720093F7A0 /* tchStudentsVC.m in Sources */,
@@ -874,6 +885,7 @@
 				A17675C01B24A3D70093F7A0 /* tchGradeInputDataSource.m in Sources */,
 				A1CE7A0E1B659ACD003E7039 /* tchViewKeyboardVC.m in Sources */,
 				A17675D91B24A4310093F7A0 /* tchInputView.m in Sources */,
+				A1CE7A131B65BEF7003E7039 /* tchEditEvalFormTable.m in Sources */,
 				A17675CF1B24A4270093F7A0 /* tchColumnCollectionDataSource.m in Sources */,
 				A17675941B1C017A0093F7A0 /* Evaluation+tchEvalExt.m in Sources */,
 				A1BDCC171AE7161D000B0328 /* tchImportConfVC.m in Sources */,

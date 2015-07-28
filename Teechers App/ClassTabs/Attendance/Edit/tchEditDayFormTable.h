@@ -15,6 +15,6 @@
 
 -(void)setupForClassDay:(ClassDay*)editableClassDay andClass:(AClass*)activeClass;
 
-@property (strong,nonatomic) NSArray *formStruct;
+//@property (strong,nonatomic) NSArray *formStruct;
 
 @end
