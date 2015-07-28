@@ -50,10 +50,10 @@
 #pragma mark - Edit Day Modal handling
 - (void)editDayWasDismissed:(ClassDay*)changedDay{
     
-    [self reloadViewsData];
-    
     // if there was actually a change when editing
     if (changedDay) {
+        
+        [self reloadViewsData];
         
         // scroll to the edited day
         [self scrollToDay:changedDay];

@@ -22,30 +22,20 @@
 }
 
 #pragma mark - Dialog Handling 
-- (void)editGradeWasDismissed:(Evaluation *)changedEval{
-    
-    [self reloadViewsData];
+- (void)editGradeWasDismissed:(Evaluation *)changedDay{
     
     // if there was actually a change when editing
-    if (changedEval) {
+    if (changedDay) {
+        
+        [self reloadViewsData];
         
         // scroll to the edited day
-        [self scrollToEvaluation:changedEval];
+        //[self scrollToDay:changedDay];
         
     }
 
 }
 
-#pragma mark - Column scrolling
-- (void)scrollToEvaluation:(Evaluation*)evaluation{
-    
-    // get the index for the class day
-    NSInteger newIndex = [evaluation getSortingIndex];
-    
-    // call scroll to the index of that day
-    [self scrollToIndex:newIndex];
-    
-}
 
 #pragma mark - Column Handling
 - (NSInteger)getMaxScroll{

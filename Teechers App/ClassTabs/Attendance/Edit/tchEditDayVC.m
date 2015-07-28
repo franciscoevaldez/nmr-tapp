@@ -75,7 +75,10 @@
     
     [self dismissViewControllerAnimated:YES completion:nil];
     
+    // tell delegate (view controller)
+    //if ([_delegate respondsToSelector:@selector(editDayWasDismissed:changedDay:)]) {
     [_delegate editDayWasDismissed:nil];
+    //}
     
 }
 

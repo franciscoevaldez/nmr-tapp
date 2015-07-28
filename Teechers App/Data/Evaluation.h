@@ -16,10 +16,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface Evaluation : NSManagedObject
 
 // Insert code here to declare functionality of your managed object subclass
-- (Evaluation*)updateEvaluation:(NSString*)name withShortName:(NSString*)shortName date:(NSDate*)date range:(NSNumber*)range;
-
-- (void)deleteEval;
-- (NSInteger)getSortingIndex;
 
 @end
 

@@ -11,6 +11,6 @@
 @interface Evaluation (tchEvalExt)
 
 
-//- (void)deleteEval;
+- (void)deleteEval;
 
 @end
