@@ -10,7 +10,7 @@
 
 @interface tchFormViewController : UIViewController
 
-@property (retain, nonatomic) IBOutlet NSLayoutConstraint *bottomConstraint;
+@property (retain,nonatomic) IBOutlet NSLayoutConstraint *bottomConstraint;
 
 - (void)registerForKeyboardNotifications;
 

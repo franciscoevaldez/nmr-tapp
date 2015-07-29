@@ -28,7 +28,6 @@
     // no on take attendance
     self.takeAttendanceMode = false;
     
-    
 }
 
 - (void)scrollToDay:(ClassDay*)classDay{

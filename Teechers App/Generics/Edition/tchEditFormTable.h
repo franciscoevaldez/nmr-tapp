@@ -20,8 +20,11 @@
 @property (strong,nonatomic) NSArray *formStruct;
 
 -(void)focusIndexPath:(NSIndexPath*)indexPath;
+-(void)focusFollowingCell:(tchEditFormTableCell*)cell;
+
 -(void)setupCellArray;
 -(void)setupCellArrayFromPlist:(NSString*)urlString;
+
 -(void)refreshDataFromCell:(tchEditFormTableCell*)cell;
 -(void)refreshData;
 

@@ -23,6 +23,8 @@
 @property (strong,nonatomic) IBOutlet tchStudentsTableView *studentsTable;
 
 @property (assign, nonatomic) NSInteger currentColumnIndex;
+@property (nonatomic) CGPoint initialScrollOffset;
+
 
 -(void)setupForClass:(AClass*)activeClass;
 - (void)reloadViewsData;
@@ -30,6 +32,8 @@
 -(void)headerWasTapped;
 -(void)optionsMenuDeploy;
 -(void)optionsMenuClose;
+
+-(void)performInitialScroll;
 
 -(NSInteger)getMaxScroll;
 -(IBAction)swipeLeftDone:(id)sender;

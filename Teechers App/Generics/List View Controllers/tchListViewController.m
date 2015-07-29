@@ -23,10 +23,24 @@
 
 - (void)viewDidAppear:(BOOL)animated{
     
+    [self performInitialScroll];
+    
     if (self.optionsMenu) {
         self.optionsMenu.heightConstraint.constant = 0.0;
     }
     
+}
+
+#pragma mark - Scroll when starting
+-(void)performInitialScroll{
+    
+    // make sure there is an initial offset
+    if (self.initialScrollOffset.y) {
+        
+        // perform the scroll
+        [self.studentsTable setContentOffset:self.initialScrollOffset animated:NO];
+        
+    }
 }
 
 #pragma mark - Data distribution

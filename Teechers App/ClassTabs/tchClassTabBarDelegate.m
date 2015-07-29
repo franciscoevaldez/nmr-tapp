@@ -32,9 +32,11 @@
     tchListViewController *nextVC = (tchListViewController*) viewController;
     
     
-    
     // get the scroll position for the current view controller
     CGPoint scrollPosition = activeVC.studentsTable.contentOffset;
+    
+    // pass the scroll position to the new view controller
+    nextVC.initialScrollOffset = scrollPosition;
     
     // tell the new view controller of the scroll position
     nextVC.studentsTable.contentOffset = scrollPosition;

@@ -69,6 +69,11 @@
         
     }
     
+    // if the cell is an instruction, disable selection
+    if (self.cellType == tchFormCellInstruction) {
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
+    }
+    
     
 }
 
@@ -160,6 +165,8 @@
     
 }
 
+#pragma mark - Input handling
+
 // input the cell value when the input has done editing
 - (IBAction)inputEditEnded:(id)sender {
     
@@ -171,6 +178,20 @@
     
 }
 
+// enter has been pressed on the input
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+    // resign first responder
+    [textField resignFirstResponder];
+    
+    // call the end of the edition
+    [self inputEditEnded:self];
+    
+    // tell the cell to select the next cell
+    [self.ownerTable focusFollowingCell:self];
+    
+    return NO;
+}
 
 
 

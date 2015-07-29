@@ -21,7 +21,7 @@ typedef NS_ENUM(NSInteger, tchFormCellType) {
     tchFormCellInstruction
 };
 
-@interface tchEditFormTableCell : UITableViewCell
+@interface tchEditFormTableCell : UITableViewCell <UITextFieldDelegate>
 
 @property (strong,nonatomic) IBOutlet tchEditFormTable *ownerTable;
 

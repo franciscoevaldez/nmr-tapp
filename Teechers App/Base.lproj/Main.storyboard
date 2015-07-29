@@ -2214,6 +2214,7 @@
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
                                                         <action selector="inputEditEnded:" destination="Af5-SU-Ko3" eventType="editingDidEnd" id="g2h-ve-1QR"/>
+                                                        <outlet property="delegate" destination="Af5-SU-Ko3" id="5sk-Qc-MJ0"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -2297,6 +2298,7 @@
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     <connections>
                                                         <action selector="inputEditEnded:" destination="Uuq-74-7os" eventType="editingDidEnd" id="c1F-0n-OpD"/>
+                                                        <outlet property="delegate" destination="Uuq-74-7os" id="I8p-fV-zGi"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -5199,6 +5201,7 @@
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
                                                         <action selector="inputEditEnded:" destination="Zk5-PG-q1E" eventType="editingDidEnd" id="iln-uY-Zrt"/>
+                                                        <outlet property="delegate" destination="Zk5-PG-q1E" id="C22-Wi-nNi"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -5221,11 +5224,11 @@
                                                     <exclude reference="O6H-Ze-k0W"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="5af-RD-Z6B"/>
-                                                    <exclude reference="bed-wF-5TV"/>
+                                                    <exclude reference="JKw-tw-wVM"/>
                                                     <exclude reference="f5C-Bf-aYx"/>
                                                     <exclude reference="fSg-et-5xQ"/>
-                                                    <exclude reference="JKw-tw-wVM"/>
+                                                    <exclude reference="5af-RD-Z6B"/>
+                                                    <exclude reference="bed-wF-5TV"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -5234,11 +5237,11 @@
                                                     <include reference="O6H-Ze-k0W"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="5af-RD-Z6B"/>
-                                                    <include reference="bed-wF-5TV"/>
+                                                    <include reference="JKw-tw-wVM"/>
                                                     <include reference="f5C-Bf-aYx"/>
                                                     <include reference="fSg-et-5xQ"/>
-                                                    <include reference="JKw-tw-wVM"/>
+                                                    <include reference="5af-RD-Z6B"/>
+                                                    <include reference="bed-wF-5TV"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -5282,6 +5285,7 @@
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     <connections>
                                                         <action selector="inputEditEnded:" destination="e6M-9P-ZBV" eventType="editingDidEnd" id="hH5-Tf-7jo"/>
+                                                        <outlet property="delegate" destination="e6M-9P-ZBV" id="080-kI-HcM"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -5306,8 +5310,8 @@
                                                 <mask key="constraints">
                                                     <exclude reference="7Q5-zu-egP"/>
                                                     <exclude reference="Gsv-8Z-ZHT"/>
-                                                    <exclude reference="Gll-Br-tGy"/>
                                                     <exclude reference="2Bo-M7-V9G"/>
+                                                    <exclude reference="Gll-Br-tGy"/>
                                                     <exclude reference="dJQ-vC-iYg"/>
                                                 </mask>
                                             </variation>
@@ -5319,8 +5323,8 @@
                                                 <mask key="constraints">
                                                     <include reference="7Q5-zu-egP"/>
                                                     <include reference="Gsv-8Z-ZHT"/>
-                                                    <include reference="Gll-Br-tGy"/>
                                                     <include reference="2Bo-M7-V9G"/>
+                                                    <include reference="Gll-Br-tGy"/>
                                                     <include reference="dJQ-vC-iYg"/>
                                                 </mask>
                                             </variation>
@@ -5365,6 +5369,7 @@
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="numberPad"/>
                                                     <connections>
                                                         <action selector="inputEditEnded:" destination="utJ-jT-6lt" eventType="editingDidEnd" id="rOA-Ol-FFw"/>
+                                                        <outlet property="delegate" destination="utJ-jT-6lt" id="e7r-nr-frS"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -5387,11 +5392,11 @@
                                                     <exclude reference="WZK-hK-FE8"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="5Xr-J1-Vnf"/>
-                                                    <exclude reference="pvR-Ts-J4Z"/>
                                                     <exclude reference="5av-CQ-18A"/>
                                                     <exclude reference="KZw-n6-Qwl"/>
                                                     <exclude reference="kPo-3W-Iqh"/>
+                                                    <exclude reference="5Xr-J1-Vnf"/>
+                                                    <exclude reference="pvR-Ts-J4Z"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -5400,11 +5405,11 @@
                                                     <include reference="WZK-hK-FE8"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="5Xr-J1-Vnf"/>
-                                                    <include reference="pvR-Ts-J4Z"/>
                                                     <include reference="5av-CQ-18A"/>
                                                     <include reference="KZw-n6-Qwl"/>
                                                     <include reference="kPo-3W-Iqh"/>
+                                                    <include reference="5Xr-J1-Vnf"/>
+                                                    <include reference="pvR-Ts-J4Z"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -5495,13 +5500,13 @@
                                 <exclude reference="N2b-tY-JMD"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="5rk-bL-v4t"/>
-                                <exclude reference="Det-Pl-jcn"/>
-                                <exclude reference="kL5-1P-Oad"/>
+                                <exclude reference="Kl1-o5-D0Z"/>
                                 <exclude reference="FsN-gv-pMj"/>
                                 <exclude reference="QJG-7O-LVI"/>
                                 <exclude reference="f7j-xY-B4h"/>
-                                <exclude reference="Kl1-o5-D0Z"/>
+                                <exclude reference="5rk-bL-v4t"/>
+                                <exclude reference="Det-Pl-jcn"/>
+                                <exclude reference="kL5-1P-Oad"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -5510,13 +5515,13 @@
                                 <include reference="N2b-tY-JMD"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="5rk-bL-v4t"/>
-                                <include reference="Det-Pl-jcn"/>
-                                <include reference="kL5-1P-Oad"/>
+                                <include reference="Kl1-o5-D0Z"/>
                                 <include reference="FsN-gv-pMj"/>
                                 <include reference="QJG-7O-LVI"/>
                                 <include reference="f7j-xY-B4h"/>
-                                <include reference="Kl1-o5-D0Z"/>
+                                <include reference="5rk-bL-v4t"/>
+                                <include reference="Det-Pl-jcn"/>
+                                <include reference="kL5-1P-Oad"/>
                             </mask>
                         </variation>
                     </view>

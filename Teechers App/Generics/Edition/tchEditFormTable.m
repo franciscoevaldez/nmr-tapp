@@ -34,6 +34,7 @@
 }
 */
 
+#pragma mark - Cell focus handling
 // give focus to a specific cell
 -(void)focusIndexPath:(NSIndexPath*)indexPath{
     
@@ -43,10 +44,8 @@
     // get the count of rows in the selected section
     NSInteger rowCount = [self numberOfRowsInSection:indexPath.section];
     
-    // in either section or row count are bigger than range, return
-    if (indexPath.section > sectionCount || indexPath.row > rowCount) {
-        return;
-    }
+    // in either section or row count are bigger than range, exit
+    if (indexPath.section > sectionCount || indexPath.row > rowCount) {return;}
     
     // get the cell for that index path
     tchEditFormTableCell *activeCell = (tchEditFormTableCell*)[self cellForRowAtIndexPath:indexPath];
@@ -55,8 +54,62 @@
     [activeCell getFocus];
     
     
+    // if the cell to select is of instruction type, skip to the next
+    if (activeCell.cellType == tchFormCellInstruction) {
+        [self focusFollowingCell:activeCell];
+    }
+    
+    
 }
 
+-(void)focusFollowingCell:(tchEditFormTableCell*)cell{
+    
+    // get the index path for the passed cell
+    NSIndexPath *indexPath = cell.indexPath;
+    
+    // get row count for this section
+    NSInteger rowCount = [self numberOfRowsInSection:indexPath.section];
+    
+    // if there are rows available in this section, go for next
+    if (indexPath.row < rowCount) {
+        
+        // get the new index path
+        NSIndexPath *newIndex = [NSIndexPath indexPathForRow:indexPath.row+1 inSection:indexPath.section];
+        
+        // call the focus
+        [self focusIndexPath:newIndex];
+        
+        // exit the method
+        return;
+        
+    }
+    
+    // there are no more rows availables ... check if there are sections available
+    
+    // get the section count
+    NSInteger sectionCount = [self numberOfSections];
+    
+    // if there are sections availables, go for next section
+    if (indexPath.section < sectionCount) {
+        
+        // get the new index path
+        NSIndexPath *newIndex = [NSIndexPath indexPathForRow:0 inSection:indexPath.section+1];
+        
+        // call the focus
+        [self focusIndexPath:newIndex];
+        
+        // exit the method
+        return;
+        
+    }
+    
+    // if there are no more sections or rows available, exit
+    return;
+    
+    
+}
+
+#pragma mark - Cell data handling
 // refresh the data array with an updated cell
 -(void)refreshDataFromCell:(tchEditFormTableCell*)cell{
     
