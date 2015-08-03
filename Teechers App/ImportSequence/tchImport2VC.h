@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "tchManagedViewController.h"
 
-@interface tchImport2VC : UIViewController
+@interface tchImport2VC : tchManagedViewController
 
-@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (strong, nonatomic) NSArray *studentsData;
 
 @end

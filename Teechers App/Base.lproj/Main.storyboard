@@ -88,6 +88,10 @@
             <string>Avenir-Medium</string>
             <string>Avenir-Medium</string>
             <string>Avenir-Medium</string>
+            <string>Avenir-Heavy</string>
+            <string>Avenir-Medium</string>
+            <string>Avenir-Roman</string>
+            <string>Avenir-Roman</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -2973,14 +2977,14 @@
                                                     <exclude reference="dhu-CC-TK7"/>
                                                     <exclude reference="lgu-bm-H52"/>
                                                     <exclude reference="zU9-w5-HVf"/>
+                                                    <exclude reference="TRU-jY-lad"/>
+                                                    <exclude reference="jEW-Y0-vay"/>
+                                                    <exclude reference="uXX-yU-zbC"/>
                                                     <exclude reference="UI7-EZ-w5x"/>
                                                     <exclude reference="Yp5-H1-Jie"/>
                                                     <exclude reference="ff4-bw-bxC"/>
                                                     <exclude reference="q7K-iW-kdb"/>
                                                     <exclude reference="vRf-eI-WgH"/>
-                                                    <exclude reference="TRU-jY-lad"/>
-                                                    <exclude reference="jEW-Y0-vay"/>
-                                                    <exclude reference="uXX-yU-zbC"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -3000,14 +3004,14 @@
                                                     <exclude reference="dhu-CC-TK7"/>
                                                     <include reference="lgu-bm-H52"/>
                                                     <include reference="zU9-w5-HVf"/>
+                                                    <include reference="TRU-jY-lad"/>
+                                                    <exclude reference="jEW-Y0-vay"/>
+                                                    <include reference="uXX-yU-zbC"/>
                                                     <include reference="UI7-EZ-w5x"/>
                                                     <include reference="Yp5-H1-Jie"/>
                                                     <include reference="ff4-bw-bxC"/>
                                                     <include reference="q7K-iW-kdb"/>
                                                     <include reference="vRf-eI-WgH"/>
-                                                    <include reference="TRU-jY-lad"/>
-                                                    <exclude reference="jEW-Y0-vay"/>
-                                                    <include reference="uXX-yU-zbC"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -3103,6 +3107,185 @@
                 <customObject id="pQc-WF-kmY" customClass="tchClassTabBarDelegate"/>
             </objects>
             <point key="canvasLocation" x="1636.5" y="-247"/>
+        </scene>
+        <!--Add Class - Intro-->
+        <scene sceneID="upu-at-JEj">
+            <objects>
+                <viewController id="ice-4t-Zhd" userLabel="Add Class - Intro" customClass="tchManagedViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6V2-VS-HWx"/>
+                        <viewControllerLayoutGuide type="bottom" id="y7b-No-zDi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="miO-eL-R2T">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a new class" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHm-QI-GnK">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="28"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C6y-ty-2K5">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <string key="text">Hooray! You need 2 steps to add a class:
+1. Paste your students names
+2. Set a class for your name
+
+Ready to get started?</string>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="whB-ka-4QX" userLabel="Footer">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="cBa-DB-ONb">
+                                        <variation key="widthClass=compact" constant="1"/>
+                                    </constraint>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="cBa-DB-ONb"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="cBa-DB-ONb"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kle-gp-xxD">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="aAY-6j-gd7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="20"/>
+                                <inset key="titleEdgeInsets" minX="-40" minY="0.0" maxX="40" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="150" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Get started" image="Confirm with icon">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="aAY-6j-gd7"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="aAY-6j-gd7"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="nextButtonPressed:" destination="7Mv-Ec-zTG" eventType="touchUpInside" id="MXU-c1-ytd"/>
+                                    <segue destination="7Mv-Ec-zTG" kind="show" id="7oC-YK-9hj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZBg-Mr-6I2">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="cZY-hg-41S">
+                                        <variation key="widthClass=compact" constant="130"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="20"/>
+                                <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Back" image="Back with icon">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="cZY-hg-41S"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="cZY-hg-41S"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="nextButtonPressed:" destination="7Mv-Ec-zTG" eventType="touchUpInside" id="79B-XM-z2T"/>
+                                    <segue destination="7Kh-XT-H6k" kind="unwind" unwindAction="prepareForUnwindToMainMenu:" id="ZEc-wu-R8N"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1176470588" green="0.25490196079999999" blue="0.63529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Kle-gp-xxD" secondAttribute="trailing" constant="14" id="859-C6-BDO"/>
+                            <constraint firstItem="Kle-gp-xxD" firstAttribute="centerY" secondItem="whB-ka-4QX" secondAttribute="centerY" id="HAL-qK-dyb">
+                                <variation key="widthClass=compact" constant="30"/>
+                            </constraint>
+                            <constraint firstItem="fHm-QI-GnK" firstAttribute="leading" secondItem="miO-eL-R2T" secondAttribute="leading" constant="20" id="YQN-j1-Ny3"/>
+                            <constraint firstItem="fHm-QI-GnK" firstAttribute="top" secondItem="miO-eL-R2T" secondAttribute="topMargin" constant="96" id="Yb4-m3-uVy">
+                                <variation key="widthClass=compact" constant="110"/>
+                            </constraint>
+                            <constraint firstAttribute="trailing" secondItem="whB-ka-4QX" secondAttribute="trailing" constant="1" id="gfd-6a-eU9">
+                                <variation key="widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="C6y-ty-2K5" firstAttribute="top" secondItem="fHm-QI-GnK" secondAttribute="bottom" id="gxF-AG-Dvg"/>
+                            <constraint firstItem="ZBg-Mr-6I2" firstAttribute="leading" secondItem="miO-eL-R2T" secondAttribute="leading" constant="13" id="j3O-M1-KNG"/>
+                            <constraint firstItem="y7b-No-zDi" firstAttribute="top" secondItem="whB-ka-4QX" secondAttribute="bottom" constant="151" id="kuE-dT-xA0">
+                                <variation key="widthClass=compact" constant="60"/>
+                            </constraint>
+                            <constraint firstItem="ZBg-Mr-6I2" firstAttribute="centerY" secondItem="Kle-gp-xxD" secondAttribute="centerY" id="nRc-R3-9Wa"/>
+                            <constraint firstItem="whB-ka-4QX" firstAttribute="leading" secondItem="miO-eL-R2T" secondAttribute="leading" constant="-1" id="qXy-5I-tsF">
+                                <variation key="widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="fHm-QI-GnK" firstAttribute="leading" secondItem="C6y-ty-2K5" secondAttribute="leading" id="taf-cM-prY"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="fHm-QI-GnK"/>
+                                <exclude reference="C6y-ty-2K5"/>
+                                <exclude reference="whB-ka-4QX"/>
+                                <exclude reference="Kle-gp-xxD"/>
+                                <exclude reference="ZBg-Mr-6I2"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="YQN-j1-Ny3"/>
+                                <exclude reference="Yb4-m3-uVy"/>
+                                <exclude reference="taf-cM-prY"/>
+                                <exclude reference="gxF-AG-Dvg"/>
+                                <exclude reference="gfd-6a-eU9"/>
+                                <exclude reference="qXy-5I-tsF"/>
+                                <exclude reference="j3O-M1-KNG"/>
+                                <exclude reference="nRc-R3-9Wa"/>
+                                <exclude reference="859-C6-BDO"/>
+                                <exclude reference="HAL-qK-dyb"/>
+                                <exclude reference="kuE-dT-xA0"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="fHm-QI-GnK"/>
+                                <include reference="C6y-ty-2K5"/>
+                                <include reference="whB-ka-4QX"/>
+                                <include reference="Kle-gp-xxD"/>
+                                <include reference="ZBg-Mr-6I2"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="YQN-j1-Ny3"/>
+                                <include reference="Yb4-m3-uVy"/>
+                                <include reference="taf-cM-prY"/>
+                                <include reference="gxF-AG-Dvg"/>
+                                <include reference="gfd-6a-eU9"/>
+                                <include reference="qXy-5I-tsF"/>
+                                <include reference="j3O-M1-KNG"/>
+                                <include reference="nRc-R3-9Wa"/>
+                                <include reference="859-C6-BDO"/>
+                                <include reference="HAL-qK-dyb"/>
+                                <include reference="kuE-dT-xA0"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="ezj-uJ-AlI"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Zg-KS-h1B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="7Kh-XT-H6k" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-60" y="1330"/>
         </scene>
         <!--Add Class - Step1-->
         <scene sceneID="PxK-Tl-OwL">
@@ -3753,17 +3936,17 @@
                         </textAttributes>
                     </navigationBar>
                     <connections>
-                        <segue destination="7Mv-Ec-zTG" kind="relationship" relationship="rootViewController" id="or3-YV-0A1"/>
+                        <segue destination="ice-4t-Zhd" kind="relationship" relationship="rootViewController" id="sXM-0f-peQ"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ozx-GN-fQc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-66" y="1330"/>
+            <point key="canvasLocation" x="-825" y="1330"/>
         </scene>
         <!--Add Class - End-->
         <scene sceneID="Knj-q0-tW4">
             <objects>
-                <viewController title="Add Class - End" id="NTl-Hx-U2Q" customClass="tchImportConfVC" sceneMemberID="viewController">
+                <viewController title="Add Class - End" id="NTl-Hx-U2Q" customClass="tchManagedViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GMA-E0-HY7"/>
                         <viewControllerLayoutGuide type="bottom" id="GQE-tE-woF"/>

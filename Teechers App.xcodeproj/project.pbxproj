@@ -76,6 +76,7 @@
 		A17675D81B24A4310093F7A0 /* tchInputCollectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A17675D41B24A4310093F7A0 /* tchInputCollectionDelegate.m */; };
 		A17675D91B24A4310093F7A0 /* tchInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = A17675D61B24A4310093F7A0 /* tchInputView.m */; };
 		A17675DC1B24A43A0093F7A0 /* tchAStudentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A17675DB1B24A43A0093F7A0 /* tchAStudentCell.m */; };
+		A18F08B41B6FEB81002E0A30 /* tchManagedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A18F08B31B6FEB81002E0A30 /* tchManagedViewController.m */; };
 		A1A876DE1B0B83DE001C4D52 /* tchDatePickerField.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A876DB1B0B83DE001C4D52 /* tchDatePickerField.m */; };
 		A1B713831AFAD13600A8B094 /* tchCollectionIndexed.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B713821AFAD13600A8B094 /* tchCollectionIndexed.m */; };
 		A1BDCC141AE6AA08000B0328 /* tchImport2VC.m in Sources */ = {isa = PBXBuildFile; fileRef = A1BDCC131AE6AA08000B0328 /* tchImport2VC.m */; };
@@ -245,6 +246,8 @@
 		A17675D61B24A4310093F7A0 /* tchInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tchInputView.m; sourceTree = "<group>"; };
 		A17675DA1B24A43A0093F7A0 /* tchAStudentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tchAStudentCell.h; sourceTree = "<group>"; };
 		A17675DB1B24A43A0093F7A0 /* tchAStudentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tchAStudentCell.m; sourceTree = "<group>"; };
+		A18F08B21B6FEB81002E0A30 /* tchManagedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchManagedViewController.h; path = "Custom Controls/tchManagedViewController.h"; sourceTree = "<group>"; };
+		A18F08B31B6FEB81002E0A30 /* tchManagedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchManagedViewController.m; path = "Custom Controls/tchManagedViewController.m"; sourceTree = "<group>"; };
 		A1A876DA1B0B83DE001C4D52 /* tchDatePickerField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchDatePickerField.h; path = "Custom Controls/tchDatePickerField.h"; sourceTree = "<group>"; };
 		A1A876DB1B0B83DE001C4D52 /* tchDatePickerField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchDatePickerField.m; path = "Custom Controls/tchDatePickerField.m"; sourceTree = "<group>"; };
 		A1B713811AFAD13600A8B094 /* tchCollectionIndexed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchCollectionIndexed.h; path = "Custom Controls/tchCollectionIndexed.h"; sourceTree = "<group>"; };
@@ -726,6 +729,8 @@
 				A1A876DB1B0B83DE001C4D52 /* tchDatePickerField.m */,
 				A1CE2B021B2FBDB100385282 /* tchSuperTextView.h */,
 				A1CE2B031B2FBDB100385282 /* tchSuperTextView.m */,
+				A18F08B21B6FEB81002E0A30 /* tchManagedViewController.h */,
+				A18F08B31B6FEB81002E0A30 /* tchManagedViewController.m */,
 			);
 			name = "Custom Controls";
 			sourceTree = "<group>";
@@ -846,6 +851,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A18F08B41B6FEB81002E0A30 /* tchManagedViewController.m in Sources */,
 				A176759D1B249E720093F7A0 /* tchStudentSummaryCell.m in Sources */,
 				A17675D01B24A4270093F7A0 /* tchColumnsCollection.m in Sources */,
 				A10F1FF01B35BD1B00B96AEA /* tchEditDayFormTable.m in Sources */,

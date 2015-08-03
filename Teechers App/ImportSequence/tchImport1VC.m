@@ -27,8 +27,6 @@
     // configurar los listeners del teclado
     [self registerForKeyboardNotifications];
     
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {

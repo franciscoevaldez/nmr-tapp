@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "tchManagedViewController.h"
 
-@interface tchMainMenuVC : UIViewController
+@interface tchMainMenuVC : tchManagedViewController
 
-@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+//@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @end

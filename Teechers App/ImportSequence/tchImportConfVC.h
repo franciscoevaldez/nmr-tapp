@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "tchManagedViewController.h"
 
-@interface tchImportConfVC : UIViewController
-
-@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@interface tchImportConfVC : tchManagedViewController
 
 @end
