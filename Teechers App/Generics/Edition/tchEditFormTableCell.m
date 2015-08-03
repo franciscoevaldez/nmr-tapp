@@ -72,6 +72,15 @@
     // if the cell is an instruction, disable selection
     if (self.cellType == tchFormCellInstruction) {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        // and replace \n with line returns
+        NSString *instructionText = [structData objectForKey:@"labelText"];
+        NSString *myNewLineStr = @"\n";
+        
+        instructionText = [instructionText stringByReplacingOccurrencesOfString:@"\\n" withString:myNewLineStr];
+        
+        self.inputLabel.text = instructionText;
+        
     }
     
     

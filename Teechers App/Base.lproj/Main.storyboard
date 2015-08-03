@@ -188,7 +188,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Class Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="unI-6H-BPY">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -776,7 +776,7 @@
                                                 <variation key="widthClass=compact" constant="50"/>
                                             </constraint>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                         <state key="normal" title="Add class day" backgroundImage="Sep. Horz. White">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -802,7 +802,7 @@
                                                 <variation key="widthClass=compact" constant="50"/>
                                             </constraint>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                         <state key="normal" title="Take attendance" backgroundImage="Sep. Horz. White">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -828,7 +828,7 @@
                                                 <variation key="widthClass=compact" constant="50"/>
                                             </constraint>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                         <state key="normal" title="Remove day" backgroundImage="Sep. Horz. White">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -854,8 +854,8 @@
                                                 <variation key="widthClass=compact" constant="50"/>
                                             </constraint>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
-                                        <state key="normal" title="Day options" backgroundImage="Sep. Horz. White">
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                        <state key="normal" title="Edit this day" backgroundImage="Sep. Horz. White">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -1010,7 +1010,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kkE-aL-CUN">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1168,7 +1168,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qpr-Ta-avV">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1347,7 +1347,7 @@
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="60" id="u9S-F2-1qc"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="16"/>
+                                                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
                                                             <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="60" maxY="0.0"/>
                                                             <state key="normal" title="Present">
                                                                 <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1452,7 +1452,7 @@
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="60" id="3Af-ih-dn8"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="16"/>
+                                                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
                                                             <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="60" maxY="0.0"/>
                                                             <state key="normal" title="Absent">
                                                                 <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1540,7 +1540,7 @@
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="60" id="7GY-5X-9kC"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="16"/>
+                                                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
                                                             <inset key="titleEdgeInsets" minX="50" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                             <state key="normal" title="Excused">
                                                                 <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1647,7 +1647,7 @@
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="60" id="Tvj-xy-bfQ"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="16"/>
+                                                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
                                                             <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="60" maxY="0.0"/>
                                                             <state key="normal" title="Late">
                                                                 <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -2210,7 +2210,7 @@
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Text Input" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yaG-RC-GVU" userLabel="Input">
                                                     <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
-                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
                                                         <action selector="inputEditEnded:" destination="Af5-SU-Ko3" eventType="editingDidEnd" id="g2h-ve-1QR"/>
@@ -2294,7 +2294,7 @@
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Date Input" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s7x-Tv-LwH" userLabel="Input" customClass="tchDatePickerField">
                                                     <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
-                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     <connections>
                                                         <action selector="inputEditEnded:" destination="Uuq-74-7os" eventType="editingDidEnd" id="c1F-0n-OpD"/>
@@ -2541,7 +2541,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SJb-eZ-7vi">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -2566,7 +2566,9 @@
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="SJb-eZ-7vi" secondAttribute="trailing" constant="100" id="QYN-2i-25g"/>
+                                                <constraint firstAttribute="trailing" secondItem="SJb-eZ-7vi" secondAttribute="trailing" constant="100" id="QYN-2i-25g">
+                                                    <variation key="widthClass=compact" constant="50"/>
+                                                </constraint>
                                                 <constraint firstAttribute="trailing" secondItem="g6Z-yV-KEO" secondAttribute="trailing" constant="15" id="WCJ-R9-RDo"/>
                                                 <constraint firstAttribute="centerY" secondItem="SJb-eZ-7vi" secondAttribute="centerY" id="Z5k-bN-8h8"/>
                                                 <constraint firstAttribute="centerY" secondItem="g6Z-yV-KEO" secondAttribute="centerY" id="aqA-X7-VLx"/>
@@ -2613,7 +2615,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bi4-6E-0ap">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -2636,11 +2638,27 @@
                                                         </mask>
                                                     </variation>
                                                 </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Student" translatesAutoresizingMaskIntoConstraints="NO" id="HVm-VG-d0I" userLabel="Splitter">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="10" id="rSj-o0-BxE"/>
+                                                    </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="rSj-o0-BxE"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="widthClass=compact">
+                                                        <mask key="constraints">
+                                                            <include reference="rSj-o0-BxE"/>
+                                                        </mask>
+                                                    </variation>
+                                                </imageView>
                                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="r4b-Ph-yAb" userLabel="Summary Table" customClass="tchStudentSummaryTable">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                                    <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <color key="sectionIndexBackgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <color key="sectionIndexTrackingBackgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" red="0.85882352939999995" green="0.85882352939999995" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="sectionIndexBackgroundColor" red="0.85882352939999995" green="0.85882352939999995" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="sectionIndexTrackingBackgroundColor" red="0.85882352939999995" green="0.85882352939999995" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <prototypes>
                                                         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SummaryHeaderCell" rowHeight="60" id="bJy-Ff-aNd" userLabel="HeaderCell" customClass="tchStudentSummaryDataCell">
                                                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -2767,7 +2785,7 @@
                                                                     </mask>
                                                                 </variation>
                                                             </tableViewCellContentView>
-                                                            <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="backgroundColor" red="0.85882352939999995" green="0.85882352939999995" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <connections>
                                                                 <outlet property="mainLabel" destination="jGH-eH-Uwy" id="aVj-by-qiA"/>
                                                                 <outlet property="secondaryLabel" destination="R7z-YW-uhX" id="QRz-HQ-RBr"/>
@@ -2892,7 +2910,7 @@
                                                                     </mask>
                                                                 </variation>
                                                             </tableViewCellContentView>
-                                                            <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="backgroundColor" red="0.85882352939999995" green="0.85882352939999995" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <connections>
                                                                 <outlet property="mainLabel" destination="BLg-pe-NGv" id="xox-Zj-EER"/>
                                                                 <outlet property="secondaryLabel" destination="wNM-Ax-0eZ" id="aBA-q5-f4t"/>
@@ -2907,7 +2925,11 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Bi4-6E-0ap" firstAttribute="top" secondItem="5ZA-HF-z0M" secondAttribute="top" constant="19" id="EKx-Op-7Y6"/>
+                                                <constraint firstAttribute="trailing" secondItem="Bi4-6E-0ap" secondAttribute="trailing" constant="261" id="IKx-IB-Qbu">
+                                                    <variation key="widthClass=compact" constant="50"/>
+                                                </constraint>
                                                 <constraint firstItem="Bi4-6E-0ap" firstAttribute="leading" secondItem="5ZA-HF-z0M" secondAttribute="leading" constant="20" id="KNH-mH-pkB"/>
+                                                <constraint firstItem="HVm-VG-d0I" firstAttribute="leading" secondItem="5ZA-HF-z0M" secondAttribute="leading" id="SSj-A9-TpO"/>
                                                 <constraint firstItem="tC0-XM-Bff" firstAttribute="top" secondItem="5ZA-HF-z0M" secondAttribute="top" constant="20" id="TRU-jY-lad"/>
                                                 <constraint firstAttribute="trailing" secondItem="r4b-Ph-yAb" secondAttribute="trailing" constant="100" id="UI7-EZ-w5x">
                                                     <variation key="widthClass=compact" constant="0.0"/>
@@ -2916,54 +2938,76 @@
                                                     <variation key="widthClass=compact" constant="0.0"/>
                                                 </constraint>
                                                 <constraint firstAttribute="trailing" secondItem="Bi4-6E-0ap" secondAttribute="trailing" constant="100" id="dJ4-Ij-AC4"/>
+                                                <constraint firstItem="HVm-VG-d0I" firstAttribute="top" secondItem="5ZA-HF-z0M" secondAttribute="top" constant="145" id="dhu-CC-TK7">
+                                                    <variation key="widthClass=compact" constant="60"/>
+                                                </constraint>
                                                 <constraint firstItem="r4b-Ph-yAb" firstAttribute="top" secondItem="5ZA-HF-z0M" secondAttribute="top" constant="95" id="ff4-bw-bxC">
                                                     <variation key="widthClass=compact" constant="60"/>
                                                 </constraint>
                                                 <constraint firstAttribute="centerY" secondItem="Bi4-6E-0ap" secondAttribute="centerY" id="g9u-dh-ZOm"/>
                                                 <constraint firstAttribute="centerY" secondItem="tC0-XM-Bff" secondAttribute="centerY" id="jEW-Y0-vay"/>
+                                                <constraint firstItem="HVm-VG-d0I" firstAttribute="width" secondItem="r4b-Ph-yAb" secondAttribute="width" id="lgu-bm-H52"/>
+                                                <constraint firstItem="r4b-Ph-yAb" firstAttribute="top" secondItem="HVm-VG-d0I" secondAttribute="bottom" constant="-10" id="q7K-iW-kdb">
+                                                    <variation key="widthClass=compact" constant="0.0"/>
+                                                </constraint>
                                                 <constraint firstAttribute="trailing" secondItem="tC0-XM-Bff" secondAttribute="trailing" constant="15" id="uXX-yU-zbC"/>
                                                 <constraint firstAttribute="bottom" secondItem="r4b-Ph-yAb" secondAttribute="bottom" constant="54" id="vRf-eI-WgH">
                                                     <variation key="widthClass=compact" constant="0.0"/>
                                                 </constraint>
+                                                <constraint firstItem="HVm-VG-d0I" firstAttribute="leading" secondItem="r4b-Ph-yAb" secondAttribute="leading" id="zU9-w5-HVf"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="subviews">
                                                     <exclude reference="Bi4-6E-0ap"/>
                                                     <exclude reference="tC0-XM-Bff"/>
+                                                    <exclude reference="HVm-VG-d0I"/>
                                                     <exclude reference="r4b-Ph-yAb"/>
                                                 </mask>
                                                 <mask key="constraints">
                                                     <exclude reference="EKx-Op-7Y6"/>
+                                                    <exclude reference="IKx-IB-Qbu"/>
                                                     <exclude reference="KNH-mH-pkB"/>
                                                     <exclude reference="dJ4-Ij-AC4"/>
                                                     <exclude reference="g9u-dh-ZOm"/>
-                                                    <exclude reference="TRU-jY-lad"/>
-                                                    <exclude reference="jEW-Y0-vay"/>
-                                                    <exclude reference="uXX-yU-zbC"/>
+                                                    <exclude reference="SSj-A9-TpO"/>
+                                                    <exclude reference="dhu-CC-TK7"/>
+                                                    <exclude reference="lgu-bm-H52"/>
+                                                    <exclude reference="zU9-w5-HVf"/>
                                                     <exclude reference="UI7-EZ-w5x"/>
                                                     <exclude reference="Yp5-H1-Jie"/>
                                                     <exclude reference="ff4-bw-bxC"/>
+                                                    <exclude reference="q7K-iW-kdb"/>
                                                     <exclude reference="vRf-eI-WgH"/>
+                                                    <exclude reference="TRU-jY-lad"/>
+                                                    <exclude reference="jEW-Y0-vay"/>
+                                                    <exclude reference="uXX-yU-zbC"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
                                                 <mask key="subviews">
                                                     <include reference="Bi4-6E-0ap"/>
                                                     <include reference="tC0-XM-Bff"/>
+                                                    <include reference="HVm-VG-d0I"/>
                                                     <include reference="r4b-Ph-yAb"/>
                                                 </mask>
                                                 <mask key="constraints">
                                                     <include reference="EKx-Op-7Y6"/>
+                                                    <include reference="IKx-IB-Qbu"/>
                                                     <include reference="KNH-mH-pkB"/>
                                                     <exclude reference="dJ4-Ij-AC4"/>
                                                     <exclude reference="g9u-dh-ZOm"/>
-                                                    <include reference="TRU-jY-lad"/>
-                                                    <exclude reference="jEW-Y0-vay"/>
-                                                    <include reference="uXX-yU-zbC"/>
+                                                    <include reference="SSj-A9-TpO"/>
+                                                    <exclude reference="dhu-CC-TK7"/>
+                                                    <include reference="lgu-bm-H52"/>
+                                                    <include reference="zU9-w5-HVf"/>
                                                     <include reference="UI7-EZ-w5x"/>
                                                     <include reference="Yp5-H1-Jie"/>
                                                     <include reference="ff4-bw-bxC"/>
+                                                    <include reference="q7K-iW-kdb"/>
                                                     <include reference="vRf-eI-WgH"/>
+                                                    <include reference="TRU-jY-lad"/>
+                                                    <exclude reference="jEW-Y0-vay"/>
+                                                    <include reference="uXX-yU-zbC"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -4226,7 +4270,7 @@
                                                 <variation key="widthClass=compact" constant="50"/>
                                             </constraint>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                         <state key="normal" title="Add a grade" backgroundImage="Sep. Horz. White">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -4253,7 +4297,7 @@
                                                 <variation key="widthClass=compact" constant="50"/>
                                             </constraint>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                         <state key="normal" title="Grade settings" backgroundImage="Sep. Horz. White">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -4280,7 +4324,7 @@
                                                 <variation key="widthClass=compact" constant="50"/>
                                             </constraint>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                         <state key="normal" title="Delete grade" backgroundImage="Sep. Horz. White">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -4402,7 +4446,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cmh-pF-HUV">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -4560,7 +4604,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X3v-eX-JUX">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -5197,7 +5241,7 @@
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Text Input" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O6H-Ze-k0W" userLabel="Input">
                                                     <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
-                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
                                                         <action selector="inputEditEnded:" destination="Zk5-PG-q1E" eventType="editingDidEnd" id="iln-uY-Zrt"/>
@@ -5281,7 +5325,7 @@
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Date Input" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wgB-ZN-Jj4" userLabel="Input" customClass="tchDatePickerField">
                                                     <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
-                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     <connections>
                                                         <action selector="inputEditEnded:" destination="e6M-9P-ZBV" eventType="editingDidEnd" id="hH5-Tf-7jo"/>
@@ -5365,7 +5409,7 @@
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Number Input" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WZK-hK-FE8" userLabel="Input">
                                                     <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
-                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="numberPad"/>
                                                     <connections>
                                                         <action selector="inputEditEnded:" destination="utJ-jT-6lt" eventType="editingDidEnd" id="rOA-Ol-FFw"/>
@@ -5426,23 +5470,23 @@
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i2T-Dm-BM2" userLabel="Label">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i2T-Dm-BM2" userLabel="Label">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="i2T-Dm-BM2" firstAttribute="top" secondItem="JVq-Pr-Pir" secondAttribute="top" constant="27" id="2Ag-6v-KAo">
-                                                    <variation key="widthClass=compact" constant="20"/>
+                                                    <variation key="widthClass=compact" constant="10"/>
                                                 </constraint>
                                                 <constraint firstAttribute="trailing" secondItem="i2T-Dm-BM2" secondAttribute="trailing" constant="-25" id="jb4-xP-1yL">
-                                                    <variation key="widthClass=compact" constant="20"/>
+                                                    <variation key="widthClass=compact" constant="40"/>
                                                 </constraint>
                                                 <constraint firstItem="i2T-Dm-BM2" firstAttribute="leading" secondItem="JVq-Pr-Pir" secondAttribute="leading" constant="25" id="k39-3R-Vp7">
-                                                    <variation key="widthClass=compact" constant="20"/>
+                                                    <variation key="widthClass=compact" constant="40"/>
                                                 </constraint>
+                                                <constraint firstItem="i2T-Dm-BM2" firstAttribute="centerY" secondItem="JVq-Pr-Pir" secondAttribute="centerY" id="oh4-BA-D8g"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="subviews">
@@ -5452,6 +5496,7 @@
                                                     <exclude reference="2Ag-6v-KAo"/>
                                                     <exclude reference="jb4-xP-1yL"/>
                                                     <exclude reference="k39-3R-Vp7"/>
+                                                    <exclude reference="oh4-BA-D8g"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -5459,13 +5504,14 @@
                                                     <include reference="i2T-Dm-BM2"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="2Ag-6v-KAo"/>
+                                                    <exclude reference="2Ag-6v-KAo"/>
                                                     <include reference="jb4-xP-1yL"/>
                                                     <include reference="k39-3R-Vp7"/>
+                                                    <include reference="oh4-BA-D8g"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.23529411759999999" green="0.62745098040000002" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.82828282828282829" green="0.82828282828282829" blue="0.82828282828282829" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="inputLabel" destination="i2T-Dm-BM2" id="Pbq-La-MeV"/>
                                             <outlet property="ownerTable" destination="N2b-tY-JMD" id="jcq-rI-E83"/>
@@ -5547,9 +5593,10 @@
         <image name="Deployable - black" width="10" height="7"/>
         <image name="Deployable - white" width="10" height="7"/>
         <image name="Deployed - black" width="10" height="7"/>
-        <image name="Input" width="94" height="10"/>
+        <image name="Input" width="67" height="10"/>
         <image name="Next" width="13" height="11"/>
         <image name="Sep. Horz. White" width="26" height="3"/>
+        <image name="Student" width="70" height="10"/>
         <image name="input check unchecked" width="30" height="30"/>
         <image name="input green" width="40" height="40"/>
         <image name="input red" width="40" height="40"/>

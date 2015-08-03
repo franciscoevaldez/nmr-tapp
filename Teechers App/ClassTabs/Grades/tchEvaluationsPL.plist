@@ -32,7 +32,7 @@
 		<key>cellType</key>
 		<string>tchFormCellInstruction</string>
 		<key>labelText</key>
-		<string>This abbreviation will be used on the column&apos;s name</string>
+		<string>This abbreviation will be used\non the column&apos;s name</string>
 		<key>inputPlaceholder</key>
 		<string></string>
 		<key>propertyName</key>

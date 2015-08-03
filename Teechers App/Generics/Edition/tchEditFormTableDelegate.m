@@ -22,7 +22,17 @@
 }
 
 // Handling row size
-- (CGFloat)tableView:(UITableView*)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (CGFloat)tableView:(tchEditFormTable*)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    // check if the cell is of instruction type
+    
+    // get the current celltype
+    NSString *cellType = [[tableView.formStruct objectAtIndex:indexPath.row] objectForKey:@"cellType"];
+    
+    // if it is instruction, return more
+    if ([cellType isEqualToString:@"tchFormCellInstruction"]) {
+        return 75;
+    }
     
     return 60;
     

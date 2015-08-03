@@ -5,15 +5,15 @@
         "mode" : "3-part-horizontal",
         "center" : {
           "mode" : "fill",
-          "width" : 22
+          "width" : 23
         },
         "capInsets" : {
-          "right" : 42,
-          "left" : 3
+          "right" : 5,
+          "left" : 42
         }
       },
       "idiom" : "universal",
-      "filename" : " Input@1x.png",
+      "filename" : " Students@1x.png",
       "scale" : "1x"
     },
     {
@@ -21,15 +21,15 @@
         "mode" : "3-part-horizontal",
         "center" : {
           "mode" : "fill",
-          "width" : 42
+          "width" : 41
         },
         "capInsets" : {
-          "right" : 90,
-          "left" : 3
+          "right" : 9,
+          "left" : 82
         }
       },
       "idiom" : "universal",
-      "filename" : " Input@2x.png",
+      "filename" : " Students@2x.png",
       "scale" : "2x"
     },
     {
@@ -37,15 +37,15 @@
         "mode" : "3-part-horizontal",
         "center" : {
           "mode" : "fill",
-          "width" : 68
+          "width" : 64
         },
         "capInsets" : {
-          "right" : 124,
-          "left" : 11
+          "right" : 17,
+          "left" : 128
         }
       },
       "idiom" : "universal",
-      "filename" : " Input@3x.png",
+      "filename" : " Students@3x.png",
       "scale" : "3x"
     }
   ],
