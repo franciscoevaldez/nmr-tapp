@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14C109" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8118.17" systemVersion="14E46" minimumToolsVersion="Xcode 4.3">
     <entity name="AClass" representedClassName="AClass" syncable="YES">
         <attribute name="classColor" optional="YES" attributeType="Binary" syncable="YES"/>
-        <attribute name="classID" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="dateEnd" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="dateStart" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="institution" optional="YES" attributeType="String" syncable="YES"/>
@@ -20,15 +19,15 @@
     </entity>
     <entity name="ClassDay" representedClassName="ClassDay" syncable="YES">
         <attribute name="date" attributeType="Date" syncable="YES"/>
-        <attribute name="dayID" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="attendanceRecords" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AttendanceRecord" inverseName="classDay" inverseEntity="AttendanceRecord" syncable="YES"/>
         <relationship name="forClass" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AClass" inverseName="classDays" inverseEntity="AClass" syncable="YES"/>
     </entity>
     <entity name="Evaluation" representedClassName="Evaluation" syncable="YES">
-        <attribute name="gradeID" attributeType="String" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="minToPass" optional="YES" attributeType="Float" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nameShort" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="range" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="rules" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
@@ -49,7 +48,6 @@
     </entity>
     <entity name="Student" representedClassName="Student" syncable="YES">
         <attribute name="name" attributeType="String" syncable="YES"/>
-        <attribute name="studentID" attributeType="String" syncable="YES"/>
         <attribute name="surname" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="attendanceRecords" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AttendanceRecord" inverseName="student" inverseEntity="AttendanceRecord" syncable="YES"/>
         <relationship name="gradeRecords" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GradeRecord" inverseName="forStudent" inverseEntity="GradeRecord" syncable="YES"/>
@@ -75,12 +73,12 @@
         <relationship name="forStudent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Student" inverseName="summaryRecord" inverseEntity="Student" syncable="YES"/>
     </entity>
     <elements>
-        <element name="AClass" positionX="1267" positionY="198" width="128" height="178"/>
+        <element name="AClass" positionX="1267" positionY="198" width="128" height="165"/>
         <element name="AttendanceRecord" positionX="1789" positionY="81" width="128" height="118"/>
-        <element name="ClassDay" positionX="1519" positionY="-45" width="128" height="118"/>
-        <element name="Evaluation" positionX="1530" positionY="189" width="128" height="193"/>
+        <element name="ClassDay" positionX="1519" positionY="-45" width="128" height="105"/>
+        <element name="Evaluation" positionX="1530" positionY="189" width="128" height="210"/>
         <element name="GradeRecord" positionX="1816" positionY="243" width="128" height="163"/>
-        <element name="Student" positionX="1503" positionY="461" width="128" height="163"/>
+        <element name="Student" positionX="1503" positionY="461" width="128" height="150"/>
         <element name="StudentPicture" positionX="1843" positionY="473" width="128" height="73"/>
         <element name="StudentSummary" positionX="1807" positionY="576" width="128" height="208"/>
     </elements>

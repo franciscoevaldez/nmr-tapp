@@ -7,12 +7,25 @@
 //
 
 #import "Student.h"
-#import "AttendanceRecord.h"
 #import "AClass+tchAClassExt.h"
+
+#import "ClassDay+tchClassDayExt.h"
+#import "Evaluation+tchEvalExt.h"
+#import "StudentSummary.h"
+
+#import "AttendanceRecord+tchAttExt.h"
+#import "GradeRecord.h"
 
 @interface Student (tchStudentsExt)
 
 - (AttendanceRecord*)getAttendanceRecordForDay:(ClassDay*)classday;
 - (AttendanceRecord*)getAttendanceRecordForIndex:(NSInteger)dayIndex;
+
+- (void)createAttendanceRecordAtDay:(ClassDay*)classDay withStatus:(NSString*)status andOrderIndex:(NSInteger)index;
+- (BOOL)toggleExcusedAtDay:(ClassDay*)classDay withIndex:(NSInteger)dayIndex;
+
+- (GradeRecord*)getGradeForEvaluation:(Evaluation*)evaluation;
+
+- (void)setGradeRecordForEvaluation:(Evaluation*)evaluation withGrade:(NSInteger*)grade andOrderIndex:(NSInteger)index;
 
 @end

@@ -5,15 +5,15 @@
         "mode" : "3-part-horizontal",
         "center" : {
           "mode" : "fill",
-          "width" : 44
+          "width" : 22
         },
         "capInsets" : {
-          "right" : 40,
-          "left" : 10
+          "right" : 42,
+          "left" : 3
         }
       },
       "idiom" : "universal",
-      "filename" : " Input.png",
+      "filename" : " Input@1x.png",
       "scale" : "1x"
     },
     {
@@ -21,11 +21,11 @@
         "mode" : "3-part-horizontal",
         "center" : {
           "mode" : "fill",
-          "width" : 82
+          "width" : 42
         },
         "capInsets" : {
-          "right" : 80,
-          "left" : 20
+          "right" : 90,
+          "left" : 3
         }
       },
       "idiom" : "universal",
@@ -37,11 +37,11 @@
         "mode" : "3-part-horizontal",
         "center" : {
           "mode" : "fill",
-          "width" : 138
+          "width" : 68
         },
         "capInsets" : {
-          "right" : 120,
-          "left" : 30
+          "right" : 124,
+          "left" : 11
         }
       },
       "idiom" : "universal",

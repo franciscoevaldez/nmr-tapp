@@ -13,5 +13,9 @@
 
 @property (nonatomic) NSInteger index;
 @property (nonatomic) Student *student;
+@property (assign,nonatomic) NSInteger activeColumn;
+
+- (void)performColumnScrollToIndex:(NSInteger)newIndex;
+- (void)skipColumnToIndex:(NSInteger)newIndex;
 
 @end

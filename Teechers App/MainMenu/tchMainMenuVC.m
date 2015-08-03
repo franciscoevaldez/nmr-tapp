@@ -51,7 +51,16 @@
     // Pass the selected object to the new view controller.
     if ([[segue identifier]isEqualToString:@"toAddAClass"]) {
         
-        tchImport1VC *destinationVC = [segue destinationViewController];
+        //tchImport1VC *destinationVC = [segue destinationViewController];
+        //destinationVC.managedObjectContext = self.managedObjectContext;
+        
+        // get the navigation controller
+        UINavigationController *navController = [segue destinationViewController];
+        
+        // reference the first VC in nav controller
+        tchImport1VC *destinationVC = navController.viewControllers[0];
+        
+        // pass the MOC to that VC
         destinationVC.managedObjectContext = self.managedObjectContext;
         
     }

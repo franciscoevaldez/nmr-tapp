@@ -2,8 +2,8 @@
 //  GradeRecord.h
 //  Teechers App
 //
-//  Created by fran on 4/21/15.
-//  Copyright (c) 2015 nmr. All rights reserved.
+//  Created by fran on 7/25/15.
+//  Copyright © 2015 nmr. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -11,15 +11,14 @@
 
 @class Evaluation, Student;
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface GradeRecord : NSManagedObject
 
-@property (nonatomic, retain) NSNumber * grade;
-@property (nonatomic, retain) NSString * gradeLong;
-@property (nonatomic, retain) NSString * gradeShort;
-@property (nonatomic, retain) NSNumber * orderIndex;
-@property (nonatomic, retain) NSNumber * passed;
-@property (nonatomic, retain) NSNumber * percentage;
-@property (nonatomic, retain) Evaluation *forClass;
-@property (nonatomic, retain) Student *forStudent;
+// Insert code here to declare functionality of your managed object subclass
 
 @end
+
+NS_ASSUME_NONNULL_END
+
+#import "GradeRecord+CoreDataProperties.h"

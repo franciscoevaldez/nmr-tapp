@@ -8,12 +8,23 @@
 
 #import "AClass.h"
 
+#import "ClassDay+tchClassDayExt.h"
+
 @interface AClass (tchAClassExt)
 
 - (NSArray*)getDaysSorted;
 - (NSInteger)getSortIndexForDay:(ClassDay*)classDay;
 - (ClassDay*)getDayForIndex:(NSInteger)index;
 
-//@property (retain, nonatomic) NSArray *daysSortedArray;
+- (ClassDay*)createNewDay:(NSDate*)date withName:(NSString*)name;
+
+
+- (NSArray*)getEvaluationsSorted;
+- (Evaluation*)getEvaluationForIndex:(NSInteger)index;
+
+- (Evaluation*)createAndStoreNewEvaluation:(NSString*)name
+                                    withID:(NSString*)newID
+                                  maxGrade:(NSInteger)maxGrade
+                                      date:(NSDate*)date;
 
 @end

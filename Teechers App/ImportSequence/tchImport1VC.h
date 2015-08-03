@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface tchImport1VC : UIViewController
+@interface tchImport1VC : UIViewController <UIScrollViewDelegate>
 
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 

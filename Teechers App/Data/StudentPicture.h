@@ -2,8 +2,8 @@
 //  StudentPicture.h
 //  Teechers App
 //
-//  Created by fran on 4/21/15.
-//  Copyright (c) 2015 nmr. All rights reserved.
+//  Created by fran on 7/25/15.
+//  Copyright © 2015 nmr. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -11,9 +11,14 @@
 
 @class Student;
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface StudentPicture : NSManagedObject
 
-@property (nonatomic, retain) NSData * image;
-@property (nonatomic, retain) Student *forStudent;
+// Insert code here to declare functionality of your managed object subclass
 
 @end
+
+NS_ASSUME_NONNULL_END
+
+#import "StudentPicture+CoreDataProperties.h"

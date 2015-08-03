@@ -2,8 +2,8 @@
 //  StudentSummary.h
 //  Teechers App
 //
-//  Created by fran on 4/21/15.
-//  Copyright (c) 2015 nmr. All rights reserved.
+//  Created by fran on 7/25/15.
+//  Copyright © 2015 nmr. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -11,18 +11,14 @@
 
 @class Student;
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface StudentSummary : NSManagedObject
 
-@property (nonatomic, retain) NSNumber * attAbsents;
-@property (nonatomic, retain) NSNumber * attLates;
-@property (nonatomic, retain) NSNumber * attPercentage;
-@property (nonatomic, retain) NSNumber * attTotal;
-@property (nonatomic, retain) NSNumber * attWarning;
-@property (nonatomic, retain) NSNumber * grdFailed;
-@property (nonatomic, retain) NSNumber * grdPassed;
-@property (nonatomic, retain) NSNumber * grdPercentage;
-@property (nonatomic, retain) NSNumber * grdTotal;
-@property (nonatomic, retain) NSNumber * grdWarning;
-@property (nonatomic, retain) Student *forStudent;
+// Insert code here to declare functionality of your managed object subclass
 
 @end
+
+NS_ASSUME_NONNULL_END
+
+#import "StudentSummary+CoreDataProperties.h"
