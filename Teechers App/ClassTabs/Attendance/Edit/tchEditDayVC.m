@@ -9,12 +9,12 @@
 #import "tchEditDayVC.h"
 #import "tchDatePickerField.h"
 
-#import "tchEditDayFormTable.h"
+#import "tchEditFormTable.h"
 
 @interface tchEditDayVC ()
 
 @property (strong, nonatomic) IBOutlet UILabel *viewTitle;
-@property (strong, nonatomic) IBOutlet tchEditDayFormTable *formTable;
+@property (strong, nonatomic) IBOutlet tchEditFormTable *formTable;
 
 @end
 
@@ -25,15 +25,16 @@
     // Do any additional setup after loading the view.
     
     // tell the form table to set its containers
-    [self.formTable setupCellArray];
+    [self.formTable setupCellArrayFromPlist:@"tchAttendancePL"];
     
     // if there is a class to edit, change the view title
     if (self.dayToEdit) {
         self.viewTitle.text = @"Edit day";
-    }
     
-    // pass the day and class to work with to the form table
-    [self.formTable setupForClassDay:self.dayToEdit andClass:self.activeClass];
+        // if there is an editable object, tell the data dictionary to import it
+        [self.formTable importDataFrom:self.dayToEdit];
+        
+    }
     
     // register keyboard notifications
     [self registerForKeyboardNotifications];
@@ -65,14 +66,6 @@
 #pragma mark - dismiss view
 - (IBAction)dismissVC:(id)sender {
     
-    // refresh and dont merge the changes
-    if (self.dayToEdit) {
-        [self.activeClass.managedObjectContext refreshObject:self.dayToEdit mergeChanges:NO];
-    }
-
-    // reset the managed object context
-    [self.activeClass.managedObjectContext rollback];
-    
     [self dismissViewControllerAnimated:YES completion:nil];
     
     [_delegate editDayWasDismissed:nil];
@@ -84,21 +77,30 @@
     
     // get the current date object from table
     [self.formTable refreshData];
-    ClassDay *newDay = (ClassDay*) self.formTable.editableObject;
     
-    ClassDay *updatedDay;
+    // get the value array
+    NSDictionary *valueArray = self.formTable.formDataDict;
     
+    // if there is not a day to edit, create a new day
     if (!self.dayToEdit) {
-        updatedDay = [newDay updateDayWithDate:newDay.date name:newDay.name];
+        
+        // create the class day with the values
+        self.dayToEdit = [self.activeClass createNewDay:[valueArray valueForKey:@"date"] withName:[valueArray valueForKey:@"name"]];
+        
+        
     } else {
-        updatedDay = [self.dayToEdit updateDayWithDate:newDay.date name:newDay.name];
+        
+        // update the values for the day to edit
+        [self.dayToEdit updateDayWithDate:[valueArray valueForKey:@"date"] name:[valueArray valueForKey:@"name"]];
+        
     }
+    
     
     // dismiss the view
     [self dismissViewControllerAnimated:YES completion:nil];
     
     // pass the new day to the delegate
-    [_delegate editDayWasDismissed:updatedDay];
+    [_delegate editDayWasDismissed:self.dayToEdit];
     
     
 }

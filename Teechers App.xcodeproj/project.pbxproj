@@ -11,9 +11,7 @@
 		A106AF931AE80449001323E5 /* tchClassTableDS.m in Sources */ = {isa = PBXBuildFile; fileRef = A106AF921AE80449001323E5 /* tchClassTableDS.m */; };
 		A10F1FE91B32D16D00B96AEA /* tchClassTabBarDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A10F1FE81B32D16D00B96AEA /* tchClassTabBarDelegate.m */; };
 		A10F1FED1B35B9AE00B96AEA /* tchEditFormTable.m in Sources */ = {isa = PBXBuildFile; fileRef = A10F1FEC1B35B9AE00B96AEA /* tchEditFormTable.m */; };
-		A10F1FF01B35BD1B00B96AEA /* tchEditDayFormTable.m in Sources */ = {isa = PBXBuildFile; fileRef = A10F1FEF1B35BD1B00B96AEA /* tchEditDayFormTable.m */; };
 		A10F1FF31B35BE6B00B96AEA /* tchEditFormTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A10F1FF21B35BE6B00B96AEA /* tchEditFormTableCell.m */; };
-		A10F1FF61B35C3D000B96AEA /* tchEditDayFormTableDS.m in Sources */ = {isa = PBXBuildFile; fileRef = A10F1FF51B35C3D000B96AEA /* tchEditDayFormTableDS.m */; };
 		A10F1FF91B35CD2F00B96AEA /* tchEditFormTableDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A10F1FF81B35CD2F00B96AEA /* tchEditFormTableDelegate.m */; };
 		A14CBABE1AF27A2F009F140E /* AClass+tchAClassExt.m in Sources */ = {isa = PBXBuildFile; fileRef = A14CBABD1AF27A2F009F140E /* AClass+tchAClassExt.m */; };
 		A14CBACD1AF41679009F140E /* Student+tchStudentsExt.m in Sources */ = {isa = PBXBuildFile; fileRef = A14CBACC1AF41679009F140E /* Student+tchStudentsExt.m */; };
@@ -77,11 +75,11 @@
 		A17675D91B24A4310093F7A0 /* tchInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = A17675D61B24A4310093F7A0 /* tchInputView.m */; };
 		A17675DC1B24A43A0093F7A0 /* tchAStudentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A17675DB1B24A43A0093F7A0 /* tchAStudentCell.m */; };
 		A18F08B41B6FEB81002E0A30 /* tchManagedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A18F08B31B6FEB81002E0A30 /* tchManagedViewController.m */; };
+		A18F08B61B6FF50C002E0A30 /* inputTables.plist in Resources */ = {isa = PBXBuildFile; fileRef = A18F08B51B6FF50C002E0A30 /* inputTables.plist */; };
+		A18F08B91B6FF8B5002E0A30 /* tchEditFormTableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A18F08B81B6FF8B5002E0A30 /* tchEditFormTableDataSource.m */; };
 		A1A876DE1B0B83DE001C4D52 /* tchDatePickerField.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A876DB1B0B83DE001C4D52 /* tchDatePickerField.m */; };
 		A1B713831AFAD13600A8B094 /* tchCollectionIndexed.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B713821AFAD13600A8B094 /* tchCollectionIndexed.m */; };
 		A1BDCC141AE6AA08000B0328 /* tchImport2VC.m in Sources */ = {isa = PBXBuildFile; fileRef = A1BDCC131AE6AA08000B0328 /* tchImport2VC.m */; };
-		A1BDCC171AE7161D000B0328 /* tchImportConfVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A1BDCC161AE7161D000B0328 /* tchImportConfVC.m */; };
-		A1BDCC1A1AE716BF000B0328 /* tchClassImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = A1BDCC191AE716BF000B0328 /* tchClassImporter.m */; };
 		A1C651131B251A150011BB3C /* tchStudentSummaryTable.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C651121B251A150011BB3C /* tchStudentSummaryTable.m */; };
 		A1C651171B251C1C0011BB3C /* tchStudentSummaryDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C651161B251C1C0011BB3C /* tchStudentSummaryDataSource.m */; };
 		A1C6511A1B25387D0011BB3C /* tchStudentSummaryDataCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C651191B25387D0011BB3C /* tchStudentSummaryDataCell.m */; };
@@ -90,8 +88,6 @@
 		A1CE7A0B1B6461F1003E7039 /* tchAttendancePL.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1CE7A0A1B6461F1003E7039 /* tchAttendancePL.plist */; };
 		A1CE7A0E1B659ACD003E7039 /* tchViewKeyboardVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A1CE7A0D1B659ACD003E7039 /* tchViewKeyboardVC.m */; };
 		A1CE7A101B65A98C003E7039 /* tchEvaluationsPL.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1CE7A0F1B65A98C003E7039 /* tchEvaluationsPL.plist */; };
-		A1CE7A131B65BEF7003E7039 /* tchEditEvalFormTable.m in Sources */ = {isa = PBXBuildFile; fileRef = A1CE7A121B65BEF7003E7039 /* tchEditEvalFormTable.m */; };
-		A1CE7A161B65CDAE003E7039 /* tchEditEvalFormTableDS.m in Sources */ = {isa = PBXBuildFile; fileRef = A1CE7A151B65CDAE003E7039 /* tchEditEvalFormTableDS.m */; };
 		A1D1A58F1B0A2E0E009245EB /* UIColor+appColorPresets.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D1A58E1B0A2E0E009245EB /* UIColor+appColorPresets.m */; };
 /* End PBXBuildFile section */
 
@@ -114,12 +110,8 @@
 		A10F1FE81B32D16D00B96AEA /* tchClassTabBarDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tchClassTabBarDelegate.m; sourceTree = "<group>"; };
 		A10F1FEB1B35B9AE00B96AEA /* tchEditFormTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchEditFormTable.h; path = Edition/tchEditFormTable.h; sourceTree = "<group>"; };
 		A10F1FEC1B35B9AE00B96AEA /* tchEditFormTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchEditFormTable.m; path = Edition/tchEditFormTable.m; sourceTree = "<group>"; };
-		A10F1FEE1B35BD1B00B96AEA /* tchEditDayFormTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tchEditDayFormTable.h; sourceTree = "<group>"; };
-		A10F1FEF1B35BD1B00B96AEA /* tchEditDayFormTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tchEditDayFormTable.m; sourceTree = "<group>"; };
 		A10F1FF11B35BE6B00B96AEA /* tchEditFormTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchEditFormTableCell.h; path = Edition/tchEditFormTableCell.h; sourceTree = "<group>"; };
 		A10F1FF21B35BE6B00B96AEA /* tchEditFormTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchEditFormTableCell.m; path = Edition/tchEditFormTableCell.m; sourceTree = "<group>"; };
-		A10F1FF41B35C3D000B96AEA /* tchEditDayFormTableDS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tchEditDayFormTableDS.h; sourceTree = "<group>"; };
-		A10F1FF51B35C3D000B96AEA /* tchEditDayFormTableDS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tchEditDayFormTableDS.m; sourceTree = "<group>"; };
 		A10F1FF71B35CD2F00B96AEA /* tchEditFormTableDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchEditFormTableDelegate.h; path = Edition/tchEditFormTableDelegate.h; sourceTree = "<group>"; };
 		A10F1FF81B35CD2F00B96AEA /* tchEditFormTableDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchEditFormTableDelegate.m; path = Edition/tchEditFormTableDelegate.m; sourceTree = "<group>"; };
 		A14CBABC1AF27A2F009F140E /* AClass+tchAClassExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "AClass+tchAClassExt.h"; path = "Data/AClass+tchAClassExt.h"; sourceTree = "<group>"; };
@@ -248,16 +240,15 @@
 		A17675DB1B24A43A0093F7A0 /* tchAStudentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tchAStudentCell.m; sourceTree = "<group>"; };
 		A18F08B21B6FEB81002E0A30 /* tchManagedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchManagedViewController.h; path = "Custom Controls/tchManagedViewController.h"; sourceTree = "<group>"; };
 		A18F08B31B6FEB81002E0A30 /* tchManagedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchManagedViewController.m; path = "Custom Controls/tchManagedViewController.m"; sourceTree = "<group>"; };
+		A18F08B51B6FF50C002E0A30 /* inputTables.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = inputTables.plist; path = Assets/inputTables.plist; sourceTree = "<group>"; };
+		A18F08B71B6FF8B5002E0A30 /* tchEditFormTableDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchEditFormTableDataSource.h; path = Edition/tchEditFormTableDataSource.h; sourceTree = "<group>"; };
+		A18F08B81B6FF8B5002E0A30 /* tchEditFormTableDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchEditFormTableDataSource.m; path = Edition/tchEditFormTableDataSource.m; sourceTree = "<group>"; };
 		A1A876DA1B0B83DE001C4D52 /* tchDatePickerField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchDatePickerField.h; path = "Custom Controls/tchDatePickerField.h"; sourceTree = "<group>"; };
 		A1A876DB1B0B83DE001C4D52 /* tchDatePickerField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchDatePickerField.m; path = "Custom Controls/tchDatePickerField.m"; sourceTree = "<group>"; };
 		A1B713811AFAD13600A8B094 /* tchCollectionIndexed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchCollectionIndexed.h; path = "Custom Controls/tchCollectionIndexed.h"; sourceTree = "<group>"; };
 		A1B713821AFAD13600A8B094 /* tchCollectionIndexed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchCollectionIndexed.m; path = "Custom Controls/tchCollectionIndexed.m"; sourceTree = "<group>"; };
 		A1BDCC121AE6AA08000B0328 /* tchImport2VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchImport2VC.h; path = ImportSequence/tchImport2VC.h; sourceTree = "<group>"; };
 		A1BDCC131AE6AA08000B0328 /* tchImport2VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchImport2VC.m; path = ImportSequence/tchImport2VC.m; sourceTree = "<group>"; };
-		A1BDCC151AE7161D000B0328 /* tchImportConfVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchImportConfVC.h; path = ImportSequence/tchImportConfVC.h; sourceTree = "<group>"; };
-		A1BDCC161AE7161D000B0328 /* tchImportConfVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchImportConfVC.m; path = ImportSequence/tchImportConfVC.m; sourceTree = "<group>"; };
-		A1BDCC181AE716BF000B0328 /* tchClassImporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchClassImporter.h; path = ImportSequence/tchClassImporter.h; sourceTree = "<group>"; };
-		A1BDCC191AE716BF000B0328 /* tchClassImporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchClassImporter.m; path = ImportSequence/tchClassImporter.m; sourceTree = "<group>"; };
 		A1C651111B251A150011BB3C /* tchStudentSummaryTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchStudentSummaryTable.h; path = "Summary Table/tchStudentSummaryTable.h"; sourceTree = "<group>"; };
 		A1C651121B251A150011BB3C /* tchStudentSummaryTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchStudentSummaryTable.m; path = "Summary Table/tchStudentSummaryTable.m"; sourceTree = "<group>"; };
 		A1C651151B251C1C0011BB3C /* tchStudentSummaryDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchStudentSummaryDataSource.h; path = "Summary Table/tchStudentSummaryDataSource.h"; sourceTree = "<group>"; };
@@ -272,10 +263,6 @@
 		A1CE7A0C1B659ACD003E7039 /* tchViewKeyboardVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchViewKeyboardVC.h; path = "Custom Controls/tchViewKeyboardVC.h"; sourceTree = "<group>"; };
 		A1CE7A0D1B659ACD003E7039 /* tchViewKeyboardVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchViewKeyboardVC.m; path = "Custom Controls/tchViewKeyboardVC.m"; sourceTree = "<group>"; };
 		A1CE7A0F1B65A98C003E7039 /* tchEvaluationsPL.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = tchEvaluationsPL.plist; sourceTree = "<group>"; };
-		A1CE7A111B65BEF7003E7039 /* tchEditEvalFormTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tchEditEvalFormTable.h; sourceTree = "<group>"; };
-		A1CE7A121B65BEF7003E7039 /* tchEditEvalFormTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tchEditEvalFormTable.m; sourceTree = "<group>"; };
-		A1CE7A141B65CDAE003E7039 /* tchEditEvalFormTableDS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tchEditEvalFormTableDS.h; sourceTree = "<group>"; };
-		A1CE7A151B65CDAE003E7039 /* tchEditEvalFormTableDS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tchEditEvalFormTableDS.m; sourceTree = "<group>"; };
 		A1D1A58D1B0A2E0E009245EB /* UIColor+appColorPresets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+appColorPresets.h"; path = "Custom Controls/UIColor+appColorPresets.h"; sourceTree = "<group>"; };
 		A1D1A58E1B0A2E0E009245EB /* UIColor+appColorPresets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+appColorPresets.m"; path = "Custom Controls/UIColor+appColorPresets.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -303,6 +290,8 @@
 			children = (
 				A10F1FEB1B35B9AE00B96AEA /* tchEditFormTable.h */,
 				A10F1FEC1B35B9AE00B96AEA /* tchEditFormTable.m */,
+				A18F08B71B6FF8B5002E0A30 /* tchEditFormTableDataSource.h */,
+				A18F08B81B6FF8B5002E0A30 /* tchEditFormTableDataSource.m */,
 				A10F1FF11B35BE6B00B96AEA /* tchEditFormTableCell.h */,
 				A10F1FF21B35BE6B00B96AEA /* tchEditFormTableCell.m */,
 				A10F1FF71B35CD2F00B96AEA /* tchEditFormTableDelegate.h */,
@@ -333,7 +322,7 @@
 			isa = PBXGroup;
 			children = (
 				A1B713801AFAD10000A8B094 /* Custom Controls */,
-				A14E13301AE556C200A1CB95 /* assets_images */,
+				A14E13301AE556C200A1CB95 /* Assets */,
 				A14E13311AE556F100A1CB95 /* data */,
 				A14E132B1AE5543900A1CB95 /* MainMenu */,
 				A176750E1B1BF6400093F7A0 /* ClassTabs */,
@@ -399,12 +388,13 @@
 			name = _trash;
 			sourceTree = "<group>";
 		};
-		A14E13301AE556C200A1CB95 /* assets_images */ = {
+		A14E13301AE556C200A1CB95 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
 				A14E13121AE5470700A1CB95 /* Images.xcassets */,
+				A18F08B51B6FF50C002E0A30 /* inputTables.plist */,
 			);
-			name = assets_images;
+			name = Assets;
 			sourceTree = "<group>";
 		};
 		A14E13311AE556F100A1CB95 /* data */ = {
@@ -426,14 +416,10 @@
 		A14E133A1AE5A49F00A1CB95 /* ImportSequence */ = {
 			isa = PBXGroup;
 			children = (
-				A1BDCC181AE716BF000B0328 /* tchClassImporter.h */,
-				A1BDCC191AE716BF000B0328 /* tchClassImporter.m */,
 				A14E133B1AE5A4F000A1CB95 /* tchImport1VC.h */,
 				A14E133C1AE5A4F000A1CB95 /* tchImport1VC.m */,
 				A1BDCC121AE6AA08000B0328 /* tchImport2VC.h */,
 				A1BDCC131AE6AA08000B0328 /* tchImport2VC.m */,
-				A1BDCC151AE7161D000B0328 /* tchImportConfVC.h */,
-				A1BDCC161AE7161D000B0328 /* tchImportConfVC.m */,
 			);
 			name = ImportSequence;
 			sourceTree = "<group>";
@@ -533,10 +519,6 @@
 			children = (
 				A17675C81B24A3F90093F7A0 /* tchEditDayVC.h */,
 				A17675C91B24A3F90093F7A0 /* tchEditDayVC.m */,
-				A10F1FEE1B35BD1B00B96AEA /* tchEditDayFormTable.h */,
-				A10F1FEF1B35BD1B00B96AEA /* tchEditDayFormTable.m */,
-				A10F1FF41B35C3D000B96AEA /* tchEditDayFormTableDS.h */,
-				A10F1FF51B35C3D000B96AEA /* tchEditDayFormTableDS.m */,
 			);
 			path = Edit;
 			sourceTree = "<group>";
@@ -585,10 +567,6 @@
 			children = (
 				A17675B91B24A3C60093F7A0 /* tchEditGrade1VC.h */,
 				A17675BA1B24A3C60093F7A0 /* tchEditGrade1VC.m */,
-				A1CE7A111B65BEF7003E7039 /* tchEditEvalFormTable.h */,
-				A1CE7A121B65BEF7003E7039 /* tchEditEvalFormTable.m */,
-				A1CE7A141B65CDAE003E7039 /* tchEditEvalFormTableDS.h */,
-				A1CE7A151B65CDAE003E7039 /* tchEditEvalFormTableDS.m */,
 			);
 			path = Edit;
 			sourceTree = "<group>";
@@ -833,6 +811,7 @@
 				A1CE7A101B65A98C003E7039 /* tchEvaluationsPL.plist in Resources */,
 				A1CE7A0B1B6461F1003E7039 /* tchAttendancePL.plist in Resources */,
 				A14E13161AE5470700A1CB95 /* LaunchScreen.xib in Resources */,
+				A18F08B61B6FF50C002E0A30 /* inputTables.plist in Resources */,
 				A14E13131AE5470700A1CB95 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -854,8 +833,6 @@
 				A18F08B41B6FEB81002E0A30 /* tchManagedViewController.m in Sources */,
 				A176759D1B249E720093F7A0 /* tchStudentSummaryCell.m in Sources */,
 				A17675D01B24A4270093F7A0 /* tchColumnsCollection.m in Sources */,
-				A10F1FF01B35BD1B00B96AEA /* tchEditDayFormTable.m in Sources */,
-				A1CE7A161B65CDAE003E7039 /* tchEditEvalFormTableDS.m in Sources */,
 				A17675AE1B24A07B0093F7A0 /* tchHeaderColumnCollection.m in Sources */,
 				A1C651171B251C1C0011BB3C /* tchStudentSummaryDataSource.m in Sources */,
 				A17675A01B249E720093F7A0 /* tchStudentsVC.m in Sources */,
@@ -874,6 +851,7 @@
 				A176758C1B1BF6BF0093F7A0 /* tchStudentsTableDataSource.m in Sources */,
 				A17675511B1BF6410093F7A0 /* tchGradesColumnsDS.m in Sources */,
 				A17675471B1BF6410093F7A0 /* tchAttInputV.m in Sources */,
+				A18F08B91B6FF8B5002E0A30 /* tchEditFormTableDataSource.m in Sources */,
 				A153BA291B63E09400DC7AFF /* AttendanceRecord.m in Sources */,
 				A14E130E1AE5470700A1CB95 /* DetailViewController.m in Sources */,
 				A14E130B1AE5470700A1CB95 /* MasterViewController.m in Sources */,
@@ -885,18 +863,14 @@
 				A153BA1F1B63E09200DC7AFF /* AClass.m in Sources */,
 				A17675D81B24A4310093F7A0 /* tchInputCollectionDelegate.m in Sources */,
 				A17675911B1BFD240093F7A0 /* ClassDay+tchClassDayExt.m in Sources */,
-				A10F1FF61B35C3D000B96AEA /* tchEditDayFormTableDS.m in Sources */,
 				A14E13051AE5470700A1CB95 /* AppDelegate.m in Sources */,
 				A17675481B1BF6410093F7A0 /* tchAttendanceColumnsDS.m in Sources */,
 				A17675C01B24A3D70093F7A0 /* tchGradeInputDataSource.m in Sources */,
 				A1CE7A0E1B659ACD003E7039 /* tchViewKeyboardVC.m in Sources */,
 				A17675D91B24A4310093F7A0 /* tchInputView.m in Sources */,
-				A1CE7A131B65BEF7003E7039 /* tchEditEvalFormTable.m in Sources */,
 				A17675CF1B24A4270093F7A0 /* tchColumnCollectionDataSource.m in Sources */,
 				A17675941B1C017A0093F7A0 /* Evaluation+tchEvalExt.m in Sources */,
-				A1BDCC171AE7161D000B0328 /* tchImportConfVC.m in Sources */,
 				A17675B21B24A08B0093F7A0 /* tchDropMenuView.m in Sources */,
-				A1BDCC1A1AE716BF000B0328 /* tchClassImporter.m in Sources */,
 				A153BA181B63E09200DC7AFF /* StudentPicture.m in Sources */,
 				A17675B81B24A3B50093F7A0 /* tchEvalHeaderCell.m in Sources */,
 				A17675521B1BF6410093F7A0 /* tchGradesHeaderDataSource.m in Sources */,

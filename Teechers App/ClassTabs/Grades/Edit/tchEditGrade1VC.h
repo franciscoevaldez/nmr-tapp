@@ -11,6 +11,7 @@
 #import "tchFormViewController.h"
 #import "tchDatePickerField.h"
 
+#import "AClass+tchAClassExt.h"
 #import "Evaluation+tchEvalExt.h"
 
 @protocol tchEditDialogDelegate <NSObject>

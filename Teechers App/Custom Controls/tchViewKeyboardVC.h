@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "tchManagedViewController.h"
 
-@interface tchViewKeyboardVC : UIViewController
+@interface tchViewKeyboardVC : tchManagedViewController
 
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *bottomConstraint;
 

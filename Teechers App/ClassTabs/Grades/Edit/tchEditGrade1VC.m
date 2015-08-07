@@ -7,14 +7,13 @@
 //
 
 #import "tchEditGrade1VC.h"
-#import "tchEditEvalFormTable.h"
+#import "tchEditFormTable.h"
 //#import "tchDatePickerField.h"
 //#import "AClass+tchAClassExt.h"
 
 @interface tchEditGrade1VC ()
 
-@property (strong, nonatomic) IBOutlet UILabel *viewTitle;
-@property (strong, nonatomic) IBOutlet tchEditEvalFormTable *formTable;
+@property (strong, nonatomic) IBOutlet tchEditFormTable *formTable;
 
 @property (strong,nonatomic) NSArray *usedNamesArray;
 
@@ -24,18 +23,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
     
     // tell the form table to set its containers
     [self.formTable setupCellArrayFromPlist:@"tchEvaluationsPL"];
     
-    // if there is an evaluation to edit, change the view title
+    // if there is a class to edit, change the view title
     if (self.evaluationToEdit) {
-        self.viewTitle.text = @"Edit day";
+        
+        // change the title
+        self.titleLabel.text = @"Edit grade";
+        
+        // import data
+        [self.formTable importDataFrom:self.evaluationToEdit];
+        
     }
-    
-    // pass the evaluation and class to the form table to work with
-    [self.formTable setupForEditableObject:self.evaluationToEdit inClass:self.activeClass];
     
     // register keyboard notifications
     [self registerForKeyboardNotifications];
@@ -59,14 +61,6 @@
 #pragma mark - Cancelation & confirmation
 - (IBAction)dismissVC:(id)sender {
     
-    // refresh and dont merge the changes
-    if (self.evaluationToEdit) {
-        [self.activeClass.managedObjectContext refreshObject:self.evaluationToEdit mergeChanges:NO];
-    }
-    
-    // reset the managed object context
-    [self.activeClass.managedObjectContext rollback];
-    
     [self dismissViewControllerAnimated:YES completion:nil];
 
     [_delegate editGradeWasDismissed:nil];
@@ -79,27 +73,28 @@
     // get the current date object from table
     [self.formTable refreshData];
     
-    Evaluation *newEval = (Evaluation*) self.formTable.editableObject;
+    // get the value array
+    NSDictionary *valueArray = self.formTable.formDataDict;
     
-    Evaluation *updatedEvaluation;
-    
+    // if there is not a day to edit, create a new day
     if (!self.evaluationToEdit) {
-        updatedEvaluation = [newEval updateEvaluation:newEval.name
-                                        withShortName:newEval.nameShort
-                                                 date:newEval.date
-                                                range:newEval.range];
+        
+        // create the class day with the values
+        self.evaluationToEdit = [self.activeClass createAndStoreNewEvaluation:[valueArray valueForKey:@"name"] withID:[valueArray valueForKey:@"nameShort"] maxGrade:[[valueArray valueForKey:@"range"] integerValue] date:[valueArray valueForKey:@"date"]];
+        
     } else {
-        updatedEvaluation = [self.evaluationToEdit updateEvaluation:newEval.name
-                                                      withShortName:newEval.nameShort
-                                                               date:newEval.date
-                                                              range:newEval.range];
+        
+        // update the values for the day to edit
+        [self.evaluationToEdit updateEvaluation:[valueArray valueForKey:@"name"] withShortName:[valueArray valueForKey:@"nameShort"] date:[valueArray valueForKey:@"date"] range:[valueArray valueForKey:@"range"]];
+        
     }
+    
     
     // dismiss the view
     [self dismissViewControllerAnimated:YES completion:nil];
     
     // pass the new day to the delegate
-    [_delegate editGradeWasDismissed:updatedEvaluation];
+    [_delegate editGradeWasDismissed:self.evaluationToEdit];
     
     
 }

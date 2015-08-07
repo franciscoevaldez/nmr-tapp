@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>newClass</key>
+	<array>
+		<dict>
+			<key>name</key>
+			<string>className</string>
+			<key>cellType</key>
+			<string>tchFormCellLabelAndTextInput</string>
+			<key>labelText</key>
+			<string>Name</string>
+			<key>inputPlaceholder</key>
+			<string>Class name</string>
+			<key>propertyName</key>
+			<string>name</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>institunionName</string>
+			<key>cellType</key>
+			<string>tchFormCellLabelAndTextInput</string>
+			<key>labelText</key>
+			<string>Institution</string>
+			<key>inputPlaceholder</key>
+			<string>School name</string>
+			<key>propertyName</key>
+			<string>institution</string>
+		</dict>
+	</array>
+</dict>
+</plist>

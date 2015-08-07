@@ -7,14 +7,14 @@
 //
 
 #import "tchImport2VC.h"
-#import "tchImportConfVC.h"
-#import "tchClassImporter.h"
+
+#import "AClass+tchAClassExt.h"
+
+#import "tchEditFormTable.h"
 
 @interface tchImport2VC ()
-@property (strong, nonatomic) IBOutlet NSLayoutConstraint *tchBottomConstraint;
-@property (strong, nonatomic) IBOutlet UITextField *tchClassName;
-@property (strong, nonatomic) IBOutlet UITextField *tchInstitutionName;
-@property (strong, nonatomic) IBOutlet tchClassImporter *tchClassImporter;
+
+@property (strong,nonatomic) IBOutlet tchEditFormTable *formTable;
 
 @end
 
@@ -24,8 +24,16 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    // register the keyboard listeners
+    // tell the form table to set its containers
+    [self.formTable setupCellArrayWithName:@"newClass"];
+    
+    // register keyboard notifications
     [self registerForKeyboardNotifications];
+    
+    // reload the form
+    [self.formTable reloadData];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,81 +41,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - calling the new class importer
-- (void)callNewClassImporter
-{
-    // pass the managed object context
-    self.tchClassImporter.managedObjectContext = self.managedObjectContext;
-    
-    // pass the new class name
-    self.tchClassImporter.theNewClassName = self.tchClassName.text;
-    
-    // pass the institution name
-    self.tchClassImporter.institutionName = self.tchInstitutionName.text;
-    
-    // pass the students array
-    self.tchClassImporter.studentsArray = self.studentsData;
-    
-    // call the importing magic
-    [self.tchClassImporter parseAndSaveANewClass];
-    
-}
-
-#pragma mark - acciones de text fields
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    
-    if (textField == self.tchClassName) {
-        
-        [textField resignFirstResponder];
-        [self.tchInstitutionName becomeFirstResponder];
-        
-    } else if (textField == self.tchInstitutionName) {
-        
-        // here you can define what happens
-        // when user presses return on the email field
-        NSLog(@"siguiente!");
-        
-    }
-    return YES;
-}
-
-#pragma mark - keyboard adjustments & listeners
-// registrar los listeners para el teclado
-- (void)registerForKeyboardNotifications
-{
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWasShown:)
-                                                 name:UIKeyboardDidShowNotification object:nil];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWillBeHidden:)
-                                                 name:UIKeyboardWillHideNotification object:nil];
-    
-}
-
-// Called when the UIKeyboardDidShowNotification is sent.
-- (void)keyboardWasShown:(NSNotification*)aNotification
-{
-    
-    // keyboard is shown, change the constraint to adjust the content:
-    
-    // get notification info & keyboard frame
-    NSDictionary* info = [aNotification userInfo];
-    CGRect kKeyBoardFrame = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
-    
-    // add frame height to the constraint's constant
-    self.tchBottomConstraint.constant = kKeyBoardFrame.size.height;
-    
-}
-
-// Called when the UIKeyboardWillHideNotification is sent
-- (void)keyboardWillBeHidden:(NSNotification*)aNotification
-{
-    
-    // keyboard will be hidden, return bottom constraint to 0:
-    self.tchBottomConstraint.constant = 0;
-    
-}
 
 
 #pragma mark - Navigation
@@ -119,11 +52,15 @@
     // Pass the selected object to the new view controller.
     if ([[segue identifier]isEqualToString:@"toConfirmationStep"]) {
         
-        // call the class importer
-        [self callNewClassImporter];
+        // create the new class object
+        AClass *aNewClass = [NSEntityDescription insertNewObjectForEntityForName:@"AClass" inManagedObjectContext:self.managedObjectContext];
+        
+        // setup the class with the values
+        [aNewClass createAndStoreClassWithName:[self.formTable.formDataDict valueForKey:@"name"] institution:[self.formTable.formDataDict valueForKey:@"institution"] andStudents:self.studentsData];
+        
         
         // pass managed object context to confirmation
-        tchImportConfVC *nextViewController = [segue destinationViewController];
+        tchManagedViewController *nextViewController = [segue destinationViewController];
         nextViewController.managedObjectContext = self.managedObjectContext;
         
         

@@ -9,8 +9,11 @@
 #import "AClass.h"
 
 #import "ClassDay+tchClassDayExt.h"
+#import "Student+tchStudentsExt.h"
 
 @interface AClass (tchAClassExt)
+
+- (void)createAndStoreClassWithName:(NSString*)name institution:(NSString*)institution andStudents:(NSArray*)students;
 
 - (NSArray*)getDaysSorted;
 - (NSInteger)getSortIndexForDay:(ClassDay*)classDay;

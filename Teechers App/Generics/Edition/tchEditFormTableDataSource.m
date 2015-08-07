@@ -1,23 +1,22 @@
 //
-//  tchEditEvalFormTableDS.m
+//  tchEditFormTableDataSource.m
 //  Teechers App
 //
-//  Created by fran on 7/26/15.
+//  Created by fran on 8/3/15.
 //  Copyright © 2015 nmr. All rights reserved.
 //
 
-#import "tchEditEvalFormTableDS.h"
-#import "tchEditFormTableCell.h"
+#import "tchEditFormTableDataSource.h"
 
-@implementation tchEditEvalFormTableDS
+@implementation tchEditFormTableDataSource 
 
--(NSInteger)tableView:(nonnull tchEditDayFormTable *)tableView numberOfRowsInSection:(NSInteger)section
+-(NSInteger)tableView:(tchEditFormTable*)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [tableView.formStruct count];
 }
 
 
--(tchEditFormTableCell*)tableView:(nonnull tchEditDayFormTable *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath
+-(tchEditFormTableCell*)tableView:(tchEditFormTable*)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath
 {
     
     // get the current cell data array (to keep it at hand)
@@ -33,11 +32,21 @@
     NSString *propertyName = [cellData objectForKey:@"propertyName"];
     
     // initialize current data object
-    id currentData = nil;
+    id currentData = [tableView.formDataDict valueForKey:propertyName];
     
     // get the value to display
+    /*
     if (tableView.editableObject && ![propertyName isEqualToString:@""]) {
         currentData = [tableView.editableObject valueForKey:propertyName];
+    }
+     */
+    
+    // temp current data
+    
+    if (![currentData isEqual:@"void"] && ![propertyName isEqualToString:@""]) {
+        currentData = [tableView.formDataDict valueForKey:propertyName];
+    } else {
+        currentData = nil;
     }
     
     // call the cell to setup itself passing: struct data + data to display

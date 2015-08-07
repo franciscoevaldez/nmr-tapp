@@ -14,16 +14,20 @@
 
 @interface tchEditFormTable : UITableView
 
-@property (strong,nonatomic) NSArray *cellsArray;
-@property (strong,nonatomic) NSArray *dataArray;
+//@property (strong,nonatomic) NSArray *cellsArray;
+//@property (strong,nonatomic) NSArray *dataArray;
 @property (strong,nonatomic) NSManagedObject *editableObject;
 @property (strong,nonatomic) NSArray *formStruct;
+@property (strong,nonatomic) NSMutableDictionary *formDataDict;
 
 -(void)focusIndexPath:(NSIndexPath*)indexPath;
 -(void)focusFollowingCell:(tchEditFormTableCell*)cell;
 
 -(void)setupCellArray;
 -(void)setupCellArrayFromPlist:(NSString*)urlString;
+-(void)setupCellArrayWithName:(NSString*)name;
+
+-(void)importDataFrom:(id)dataObject;
 
 -(void)refreshDataFromCell:(tchEditFormTableCell*)cell;
 -(void)refreshData;

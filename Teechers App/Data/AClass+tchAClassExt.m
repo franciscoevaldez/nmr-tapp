@@ -12,7 +12,49 @@
 
 @implementation AClass (tchAClassExt)
 
-//@dynamic daysSortedArray;
+#pragma mark - Class creation
+- (void)createAndStoreClassWithName:(NSString*)name
+                        institution:(NSString*)institution
+                        andStudents:(NSArray*)students
+{
+    
+    // add the name attribute
+    [self setValue:name forKey:@"name"];
+    
+    // add the institution attribute
+    [self setValue:institution forKey:@"institution"];
+    
+    // save in store
+    NSError *NuError;
+    if (![self.managedObjectContext save:&NuError]) {
+        NSLog(@"error en: %@", [NuError localizedDescription]);
+    }
+    
+    
+    // loop for every student
+    for (int stInd=0; stInd<[students count]; stInd++) {
+        
+        // create a new student object
+        Student *aNewStudent = [NSEntityDescription
+                                insertNewObjectForEntityForName:@"Student"
+                                inManagedObjectContext:self.managedObjectContext];
+        
+        // add the name attribute
+        [aNewStudent setValue:[students objectAtIndex:stInd] forKey:@"name"];
+        
+        // associate it to the class being created
+        [aNewStudent setValue:self forKey:@"inClass"];
+        
+        
+    }
+    
+    // save all the students in store
+    if (![self.managedObjectContext save:&NuError]) {
+        NSLog(@"error en: %@", [NuError localizedDescription]);
+    }
+    
+}
+
 
 #pragma mark - Day handling
 

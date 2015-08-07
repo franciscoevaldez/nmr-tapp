@@ -50,7 +50,7 @@
 }
 
 #pragma mark - Text View placeholder
-- (BOOL) textViewShouldBeginEditing:(UITextView *)textView
+- (BOOL)textViewShouldBeginEditing:(UITextView *)textView
 {
     if ([self.tchStudentsTextArea.text isEqualToString:[self.tchStudentsTextArea valueForKey:@"placeholder"]]) {
         self.tchStudentsTextArea.text = @"";
@@ -60,7 +60,7 @@
     return YES;
 }
 
--(void) textViewDidChange:(UITextView *)textView
+-(void)textViewDidChange:(UITextView *)textView
 {
     
     if(self.tchStudentsTextArea.text.length == 0){

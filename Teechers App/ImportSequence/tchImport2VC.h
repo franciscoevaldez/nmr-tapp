@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "tchManagedViewController.h"
+#import "tchViewKeyboardVC.h"
 
-@interface tchImport2VC : tchManagedViewController
+@interface tchImport2VC : tchViewKeyboardVC
 
 @property (strong, nonatomic) NSArray *studentsData;
 

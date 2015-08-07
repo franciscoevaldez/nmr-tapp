@@ -24,6 +24,74 @@
     // pass it to the self
     self.formStruct = plistDict;
     
+    // create the data dictionary
+    [self createFormDataDictionary];
+    
+}
+
+-(void)setupCellArrayWithName:(NSString*)name
+{
+    // setup the url
+    NSURL *file = [[NSBundle mainBundle] URLForResource:@"inputTables" withExtension:@"plist"];
+    
+    // create a dictionary with the contents
+    NSDictionary *plistDict = [NSDictionary dictionaryWithContentsOfURL:file];
+    
+    // get the cell array from that plist dictionary
+    NSArray *cellArray = [plistDict objectForKey:name];
+    
+    // pass it to the self
+    self.formStruct = cellArray;
+    
+    
+    // create the data dictionary
+    [self createFormDataDictionary];
+    
+}
+
+-(void)createFormDataDictionary
+{
+    
+    // initialize a dummy dictionary
+    NSMutableDictionary *dummyDictionary = [NSMutableDictionary dictionary];
+    
+    // loop through every item of the struct
+    for (NSDictionary* currentRow in self.formStruct) {
+        
+        // if it is NOT an instruction
+        if (![[currentRow valueForKey:@"cellType"]
+             isEqualToString:@"tchFormCellInstruction"]) {
+            
+            // add the field to the dictionary
+            [dummyDictionary setObject:@"void" forKey:[currentRow valueForKey:@"propertyName"]];
+            
+        }
+        
+        
+    }
+    
+    // pass the new dictionary to the property
+    self.formDataDict = dummyDictionary;
+    
+}
+
+-(void)importDataFrom:(id)dataObject
+{
+    
+    // Creando un diccionario temporal en la tabla de edit para que los form trabajen con eso en vez de con un managed object temporal. La idea es editar ese, que el data source levante los datos de ahí y que al aceptar el modal actualice la base de datos persistente.
+    
+    //NSString *key in [dmgr.CategoryDictionary allKeys]
+    
+    // loop through every data object key
+    for (NSString *currentKey in [self.formDataDict allKeys]) {
+    //for (id currentKey in self.formDataDict) {
+        
+        // get the data from the object
+        [self.formDataDict setValue:[dataObject valueForKey:currentKey] forKey:currentKey];
+        
+        
+    }
+    
 }
 
 /*
@@ -119,14 +187,8 @@
     // get the value from the cell
     id newValue = cell.value;
     
-    // cast the editable object as a class day
-    NSManagedObject *tempEditableObject = self.editableObject;
-    
-    // change the value for the property in that cell
-    [tempEditableObject setValue:newValue forKey:cell.propertyName];
-    
-    // update the editable object of self from the transition
-    self.editableObject = tempEditableObject;
+    // update the value in the temp dictionary
+    [self.formDataDict setValue:newValue forKey:cell.propertyName];
     
     
 }
