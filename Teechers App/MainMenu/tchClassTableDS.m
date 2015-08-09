@@ -40,18 +40,35 @@
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
+    NSInteger cellNumber = 1;
+    
+    if (section==0) {
+        cellNumber = [self.classesArray count];
+    }
+    
     // Number of rows is the number of classes in the array
-    return [self.classesArray count];
+    return cellNumber;
     
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    // if this is the last cell, create and "add class" cell instead of a standard one
+    if (indexPath.section == 1) {
+        
+        // create the cell
+        UITableViewCell *addNewCell = [tableView dequeueReusableCellWithIdentifier:@"addClassCell"];
+        
+        // return it
+        return addNewCell;
+        
+    }
     
     // create the new cell
     tchOneClassTVC *newCell = [tableView dequeueReusableCellWithIdentifier:@"aClassCell"];
