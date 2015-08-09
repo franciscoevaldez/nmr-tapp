@@ -25,7 +25,7 @@
     // Do any additional setup after loading the view.
     
     // tell the form table to set its containers
-    [self.formTable setupCellArrayFromPlist:@"tchAttendancePL"];
+    [self.formTable setupCellArrayWithName:@"classDayEdit"];
     
     // if there is a class to edit, change the view title
     if (self.dayToEdit) {

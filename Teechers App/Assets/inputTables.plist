@@ -2,6 +2,98 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>classDayEdit</key>
+    <array>
+        <dict>
+            <key>name</key>
+            <string>date</string>
+            <key>cellType</key>
+            <string>tchFormCellLabelAndDateInput</string>
+            <key>labelText</key>
+            <string>Date</string>
+            <key>inputPlaceholder</key>
+            <string>Class Date</string>
+            <key>propertyName</key>
+            <string>date</string>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>name</string>
+            <key>cellType</key>
+            <string>tchFormCellLabelAndTextInput</string>
+            <key>labelText</key>
+            <string>Name</string>
+            <key>inputPlaceholder</key>
+            <string>(optional)</string>
+            <key>propertyName</key>
+            <string>name</string>
+        </dict>
+    </array>
+    <key>evaluationEdit</key>
+    <array>
+        <dict>
+            <key>name</key>
+            <string>name</string>
+            <key>cellType</key>
+            <string>tchFormCellLabelAndTextInput</string>
+            <key>labelText</key>
+            <string>Name</string>
+            <key>inputPlaceholder</key>
+            <string>Set a name</string>
+            <key>propertyName</key>
+            <string>name</string>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>nameShort</string>
+            <key>cellType</key>
+            <string>tchFormCellLabelAndTextInput</string>
+            <key>labelText</key>
+            <string>Abbreviation</string>
+            <key>inputPlaceholder</key>
+            <string>2 letters max</string>
+            <key>propertyName</key>
+            <string>nameShort</string>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>shortNameNote</string>
+            <key>cellType</key>
+            <string>tchFormCellInstruction</string>
+            <key>labelText</key>
+            <string>This abbreviation will be used\non the column&apos;s name</string>
+            <key>inputPlaceholder</key>
+            <string></string>
+            <key>propertyName</key>
+            <string></string>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>date</string>
+            <key>cellType</key>
+            <string>tchFormCellLabelAndDateInput</string>
+            <key>labelText</key>
+            <string>Date</string>
+            <key>inputPlaceholder</key>
+            <string>Evaluation day</string>
+            <key>propertyName</key>
+            <string>date</string>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>range</string>
+            <key>cellType</key>
+            <string>tchFormCellLabelAndNumberInput</string>
+            <key>labelText</key>
+            <string>Maximum grade</string>
+            <key>inputPlaceholder</key>
+            <string>10</string>
+            <key>defaultData</key>
+            <string>10</string>
+            <key>propertyName</key>
+            <string>range</string>
+        </dict>
+    </array>
 	<key>newClass</key>
 	<array>
 		<dict>

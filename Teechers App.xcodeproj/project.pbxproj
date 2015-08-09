@@ -85,9 +85,7 @@
 		A1C6511A1B25387D0011BB3C /* tchStudentSummaryDataCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C651191B25387D0011BB3C /* tchStudentSummaryDataCell.m */; };
 		A1C7A40A1B0F9EF3006837D0 /* tchSimpleCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C7A4091B0F9EF3006837D0 /* tchSimpleCollectionViewCell.m */; };
 		A1CE2B041B2FBDB100385282 /* tchSuperTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1CE2B031B2FBDB100385282 /* tchSuperTextView.m */; };
-		A1CE7A0B1B6461F1003E7039 /* tchAttendancePL.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1CE7A0A1B6461F1003E7039 /* tchAttendancePL.plist */; };
 		A1CE7A0E1B659ACD003E7039 /* tchViewKeyboardVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A1CE7A0D1B659ACD003E7039 /* tchViewKeyboardVC.m */; };
-		A1CE7A101B65A98C003E7039 /* tchEvaluationsPL.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1CE7A0F1B65A98C003E7039 /* tchEvaluationsPL.plist */; };
 		A1D1A58F1B0A2E0E009245EB /* UIColor+appColorPresets.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D1A58E1B0A2E0E009245EB /* UIColor+appColorPresets.m */; };
 /* End PBXBuildFile section */
 
@@ -259,10 +257,8 @@
 		A1C7A4091B0F9EF3006837D0 /* tchSimpleCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchSimpleCollectionViewCell.m; path = "Custom Controls/tchSimpleCollectionViewCell.m"; sourceTree = "<group>"; };
 		A1CE2B021B2FBDB100385282 /* tchSuperTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchSuperTextView.h; path = "Custom Controls/tchSuperTextView.h"; sourceTree = "<group>"; };
 		A1CE2B031B2FBDB100385282 /* tchSuperTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchSuperTextView.m; path = "Custom Controls/tchSuperTextView.m"; sourceTree = "<group>"; };
-		A1CE7A0A1B6461F1003E7039 /* tchAttendancePL.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = tchAttendancePL.plist; sourceTree = "<group>"; };
 		A1CE7A0C1B659ACD003E7039 /* tchViewKeyboardVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchViewKeyboardVC.h; path = "Custom Controls/tchViewKeyboardVC.h"; sourceTree = "<group>"; };
 		A1CE7A0D1B659ACD003E7039 /* tchViewKeyboardVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchViewKeyboardVC.m; path = "Custom Controls/tchViewKeyboardVC.m"; sourceTree = "<group>"; };
-		A1CE7A0F1B65A98C003E7039 /* tchEvaluationsPL.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = tchEvaluationsPL.plist; sourceTree = "<group>"; };
 		A1D1A58D1B0A2E0E009245EB /* UIColor+appColorPresets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+appColorPresets.h"; path = "Custom Controls/UIColor+appColorPresets.h"; sourceTree = "<group>"; };
 		A1D1A58E1B0A2E0E009245EB /* UIColor+appColorPresets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+appColorPresets.m"; path = "Custom Controls/UIColor+appColorPresets.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -487,7 +483,6 @@
 		A176750F1B1BF6400093F7A0 /* Attendance */ = {
 			isa = PBXGroup;
 			children = (
-				A1CE7A0A1B6461F1003E7039 /* tchAttendancePL.plist */,
 				A17675101B1BF6400093F7A0 /* Cells */,
 				A17675151B1BF6400093F7A0 /* Edit */,
 				A17675181B1BF6400093F7A0 /* Input */,
@@ -535,7 +530,6 @@
 		A17675231B1BF6400093F7A0 /* Grades */ = {
 			isa = PBXGroup;
 			children = (
-				A1CE7A0F1B65A98C003E7039 /* tchEvaluationsPL.plist */,
 				A17675241B1BF6400093F7A0 /* Cells */,
 				A17675291B1BF6400093F7A0 /* Edit */,
 				A176752C1B1BF6400093F7A0 /* Input */,
@@ -808,8 +802,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A14E13111AE5470700A1CB95 /* Main.storyboard in Resources */,
-				A1CE7A101B65A98C003E7039 /* tchEvaluationsPL.plist in Resources */,
-				A1CE7A0B1B6461F1003E7039 /* tchAttendancePL.plist in Resources */,
 				A14E13161AE5470700A1CB95 /* LaunchScreen.xib in Resources */,
 				A18F08B61B6FF50C002E0A30 /* inputTables.plist in Resources */,
 				A14E13131AE5470700A1CB95 /* Images.xcassets in Resources */,

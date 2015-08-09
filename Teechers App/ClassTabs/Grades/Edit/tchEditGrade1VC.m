@@ -26,7 +26,7 @@
     
     
     // tell the form table to set its containers
-    [self.formTable setupCellArrayFromPlist:@"tchEvaluationsPL"];
+    [self.formTable setupCellArrayWithName:@"evaluationEdit"];
     
     // if there is a class to edit, change the view title
     if (self.evaluationToEdit) {
