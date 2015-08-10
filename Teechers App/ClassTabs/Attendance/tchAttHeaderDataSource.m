@@ -59,20 +59,27 @@
 }
 
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{    
     
     
-    // if there are no class days
-    // check if there are classdays
-    if ([self.activeClass.classDays count] == 0) {
+    // section 1 is the one for the add buttons
+    if (indexPath.section == 1) {
         
-        // create a new add cell
-        UICollectionViewCell *addClassCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"addDayCell" forIndexPath:indexPath];
-        
-        // return it
-        return addClassCell;
+        // if there are no class days
+        // check if there are classdays
+        if ([self.activeClass.classDays count] == 0) {
+            
+            // create a new add cell
+            UICollectionViewCell *addClassCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"addDayCell" forIndexPath:indexPath];
+            
+            // return it
+            return addClassCell;
+            
+        }
         
     }
+    
+    
     
     
     // create the new cell

@@ -25,13 +25,18 @@
 @property (assign, nonatomic) NSInteger currentColumnIndex;
 @property (nonatomic) CGPoint initialScrollOffset;
 
+@property (nonatomic) BOOL editionEnabled;
+
 
 -(void)setupForClass:(AClass*)activeClass;
 - (void)reloadViewsData;
 
+-(void)checkEditionEnable;
+
 -(void)headerWasTapped;
 -(void)optionsMenuDeploy;
 -(void)optionsMenuClose;
+-(void)snapMenuClosed;
 
 -(void)performInitialScroll;
 

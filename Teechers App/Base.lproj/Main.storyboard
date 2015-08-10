@@ -18,6 +18,8 @@
             <string>Avenir-Heavy</string>
             <string>Avenir-Heavy</string>
             <string>Avenir-Heavy</string>
+            <string>Avenir-Heavy</string>
+            <string>Avenir-Book</string>
             <string>Avenir-Medium</string>
             <string>Avenir-Medium</string>
             <string>Avenir-Medium</string>
@@ -94,8 +96,6 @@
             <string>Avenir-Medium</string>
             <string>Avenir-Medium</string>
             <string>Avenir-Medium</string>
-            <string>Avenir-Heavy</string>
-            <string>Avenir-Book</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -234,7 +234,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KWf-t4-kXq" id="yiM-As-W03">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="59"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a new class" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mwg-uN-zBe">
@@ -289,12 +289,12 @@
                                                     <exclude reference="Jpr-9e-7td"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="Zei-6S-uf1"/>
-                                                    <exclude reference="ag7-RY-X5C"/>
                                                     <exclude reference="RUX-gZ-9E9"/>
                                                     <exclude reference="XpY-pK-2xH"/>
                                                     <exclude reference="jBL-Rf-LLo"/>
                                                     <exclude reference="jLe-cG-GPA"/>
+                                                    <exclude reference="Zei-6S-uf1"/>
+                                                    <exclude reference="ag7-RY-X5C"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -303,12 +303,12 @@
                                                     <include reference="Jpr-9e-7td"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="Zei-6S-uf1"/>
-                                                    <include reference="ag7-RY-X5C"/>
                                                     <include reference="RUX-gZ-9E9"/>
                                                     <include reference="XpY-pK-2xH"/>
                                                     <exclude reference="jBL-Rf-LLo"/>
                                                     <include reference="jLe-cG-GPA"/>
+                                                    <exclude reference="Zei-6S-uf1"/>
+                                                    <include reference="ag7-RY-X5C"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -354,6 +354,7 @@
                                 <exclude reference="VtV-Pc-5Pq"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="vLH-Zv-blY"/>
                                 <exclude reference="9k1-XA-XXt"/>
                                 <exclude reference="9ze-X3-H0p"/>
                                 <exclude reference="m35-qW-Z2r"/>
@@ -364,7 +365,6 @@
                                 <exclude reference="Ycg-pS-lZY"/>
                                 <exclude reference="g78-D7-OSU"/>
                                 <exclude reference="vEK-2T-3Kv"/>
-                                <exclude reference="vLH-Zv-blY"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -374,6 +374,7 @@
                                 <include reference="VtV-Pc-5Pq"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="vLH-Zv-blY"/>
                                 <include reference="9k1-XA-XXt"/>
                                 <include reference="9ze-X3-H0p"/>
                                 <include reference="m35-qW-Z2r"/>
@@ -384,7 +385,6 @@
                                 <include reference="Ycg-pS-lZY"/>
                                 <include reference="g78-D7-OSU"/>
                                 <include reference="vEK-2T-3Kv"/>
-                                <include reference="vLH-Zv-blY"/>
                             </mask>
                         </variation>
                     </view>
@@ -472,7 +472,7 @@
                                             </mask>
                                         </variation>
                                     </imageView>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="T4D-pI-1qx" userLabel="DaysCollection" customClass="tchHeaderColumnCollection">
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsVerticalScrollIndicator="NO" canCancelContentTouches="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="T4D-pI-1qx" userLabel="DaysCollection" customClass="tchHeaderColumnCollection">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -516,6 +516,9 @@
                                                                     <include reference="fah-uW-jfa"/>
                                                                 </mask>
                                                             </variation>
+                                                            <connections>
+                                                                <action selector="callCreateSegue:" destination="HRB-Rw-Ffv" eventType="touchUpInside" id="aYW-Ca-LEO"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -523,6 +526,9 @@
                                                 <constraints>
                                                     <constraint firstItem="w7K-oE-NAU" firstAttribute="centerX" secondItem="bLi-9E-B8W" secondAttribute="centerX" id="VbH-tL-yy9"/>
                                                     <constraint firstItem="w7K-oE-NAU" firstAttribute="centerY" secondItem="bLi-9E-B8W" secondAttribute="centerY" id="mvt-0o-ay1"/>
+                                                    <constraint firstItem="w7K-oE-NAU" firstAttribute="top" secondItem="bLi-9E-B8W" secondAttribute="top" constant="3" id="vc5-0B-aV0">
+                                                        <variation key="widthClass=compact" constant="1"/>
+                                                    </constraint>
                                                 </constraints>
                                                 <variation key="default">
                                                     <mask key="subviews">
@@ -531,6 +537,7 @@
                                                     <mask key="constraints">
                                                         <exclude reference="VbH-tL-yy9"/>
                                                         <exclude reference="mvt-0o-ay1"/>
+                                                        <exclude reference="vc5-0B-aV0"/>
                                                     </mask>
                                                 </variation>
                                                 <variation key="widthClass=compact">
@@ -539,7 +546,8 @@
                                                     </mask>
                                                     <mask key="constraints">
                                                         <include reference="VbH-tL-yy9"/>
-                                                        <include reference="mvt-0o-ay1"/>
+                                                        <exclude reference="mvt-0o-ay1"/>
+                                                        <include reference="vc5-0B-aV0"/>
                                                     </mask>
                                                 </variation>
                                             </collectionViewCell>
@@ -857,10 +865,10 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="60"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="280" height="60"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have no days for this class yet." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H6G-A5-Qhu">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This class has no days yet." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H6G-A5-Qhu">
                                                             <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                                             <color key="textColor" red="0.82745098039999998" green="0.82745098039999998" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -880,7 +888,7 @@
                                                         <variation key="widthClass=compact" constant="1"/>
                                                     </constraint>
                                                 </constraints>
-                                                <size key="customSize" width="300" height="60"/>
+                                                <size key="customSize" width="280" height="60"/>
                                                 <variation key="default">
                                                     <mask key="subviews">
                                                         <exclude reference="H6G-A5-Qhu"/>
@@ -1180,6 +1188,59 @@
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="emptyCell" id="Kow-4P-tt0">
+                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                                <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <view alpha="0.25" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iLt-ut-Ui2" userLabel="Line">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="30" id="6GH-sx-8Tr"/>
+                                                                            <constraint firstAttribute="width" constant="1" id="ySd-cp-iOg"/>
+                                                                        </constraints>
+                                                                        <variation key="default">
+                                                                            <mask key="constraints">
+                                                                                <exclude reference="ySd-cp-iOg"/>
+                                                                                <exclude reference="6GH-sx-8Tr"/>
+                                                                            </mask>
+                                                                        </variation>
+                                                                        <variation key="widthClass=compact">
+                                                                            <mask key="constraints">
+                                                                                <include reference="ySd-cp-iOg"/>
+                                                                                <include reference="6GH-sx-8Tr"/>
+                                                                            </mask>
+                                                                        </variation>
+                                                                    </view>
+                                                                </subviews>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                            </view>
+                                                            <constraints>
+                                                                <constraint firstItem="iLt-ut-Ui2" firstAttribute="centerY" secondItem="Kow-4P-tt0" secondAttribute="centerY" id="eOE-Cp-cXD"/>
+                                                                <constraint firstItem="iLt-ut-Ui2" firstAttribute="leading" secondItem="Kow-4P-tt0" secondAttribute="leading" id="xVD-MK-eFV"/>
+                                                            </constraints>
+                                                            <variation key="default">
+                                                                <mask key="subviews">
+                                                                    <exclude reference="iLt-ut-Ui2"/>
+                                                                </mask>
+                                                                <mask key="constraints">
+                                                                    <exclude reference="eOE-Cp-cXD"/>
+                                                                    <exclude reference="xVD-MK-eFV"/>
+                                                                </mask>
+                                                            </variation>
+                                                            <variation key="widthClass=compact">
+                                                                <mask key="subviews">
+                                                                    <include reference="iLt-ut-Ui2"/>
+                                                                </mask>
+                                                                <mask key="constraints">
+                                                                    <include reference="eOE-Cp-cXD"/>
+                                                                    <include reference="xVD-MK-eFV"/>
+                                                                </mask>
+                                                            </variation>
+                                                        </collectionViewCell>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="studentDataCell" id="a7C-Qd-zHK" userLabel="Data Cell" customClass="tchAttendanceColumnVC">
                                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                             <autoresizingMask key="autoresizingMask"/>
@@ -1273,7 +1334,9 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="kkE-aL-CUN" firstAttribute="leading" secondItem="jPi-Px-bBI" secondAttribute="leading" constant="20" id="g0Q-aD-RJt"/>
-                                                <constraint firstAttribute="trailing" secondItem="kkE-aL-CUN" secondAttribute="trailing" constant="100" id="nCd-wS-X9v"/>
+                                                <constraint firstAttribute="trailing" secondItem="kkE-aL-CUN" secondAttribute="trailing" constant="100" id="nCd-wS-X9v">
+                                                    <variation key="widthClass=compact" constant="65"/>
+                                                </constraint>
                                                 <constraint firstAttribute="trailing" secondItem="2TZ-Ux-kwD" secondAttribute="trailing" id="nv1-43-Mzt"/>
                                                 <constraint firstItem="kkE-aL-CUN" firstAttribute="top" secondItem="jPi-Px-bBI" secondAttribute="top" constant="19" id="sGZ-0z-CCZ"/>
                                                 <constraint firstItem="2TZ-Ux-kwD" firstAttribute="top" secondItem="jPi-Px-bBI" secondAttribute="top" id="tOr-XD-irr"/>
@@ -2002,7 +2065,9 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="pJA-xx-IQD" secondAttribute="trailing" id="0cL-wS-gs7"/>
-                                                <constraint firstAttribute="trailing" secondItem="qpr-Ta-avV" secondAttribute="trailing" constant="100" id="2Tq-2Z-qwz"/>
+                                                <constraint firstAttribute="trailing" secondItem="qpr-Ta-avV" secondAttribute="trailing" constant="100" id="2Tq-2Z-qwz">
+                                                    <variation key="widthClass=compact" constant="65"/>
+                                                </constraint>
                                                 <constraint firstItem="pJA-xx-IQD" firstAttribute="top" secondItem="rd1-dz-iFq" secondAttribute="top" constant="59" id="46h-HB-rlL">
                                                     <variation key="widthClass=compact" constant="61"/>
                                                 </constraint>
@@ -2157,7 +2222,7 @@
                 </swipeGestureRecognizer>
                 <tapGestureRecognizer id="Bxw-iX-fEM" userLabel="Header Tap">
                     <connections>
-                        <action selector="touchUpInside" destination="vIL-7v-VuK" id="Lhj-l0-jjl"/>
+                        <action selector="touchUpInside" destination="vIL-7v-VuK" id="cPR-qB-Xxw"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -5479,7 +5544,7 @@ Ready to get started?</string>
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="e5f-NI-gap" firstAttribute="top" secondItem="A67-XG-aqx" secondAttribute="bottom" constant="-20" id="5SU-wv-kzw"/>

@@ -11,7 +11,7 @@
 
 
 
-@interface tchColumnCollectionDelegate : NSObject <UICollectionViewDelegate>
+@interface tchColumnCollectionDelegate : NSObject <UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
 //@property (nonatomic, weak) id <tchColumnCollectionDelegate> myDelegate;
 

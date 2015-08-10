@@ -40,7 +40,7 @@
     NSInteger dayCount = [[self.activeStudent.inClass.classDays allObjects] count];
     
     // Number of rows is the number of days in the array
-    if (dayCount==0) {
+    if (dayCount == 0) {
         return 1;
     }
     
@@ -50,6 +50,14 @@
 
 
 - (UICollectionViewCell *)collectionView:(tchColumnsCollection *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if ([self.activeStudent.inClass.classDays count] == 0) {
+        
+        UICollectionViewCell *emptyCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"emptyCell" forIndexPath:indexPath];
+        
+        return emptyCell;
+        
+    }
     
     // create the new cell
     tchAttendanceColumnVC *newCell = [collectionView

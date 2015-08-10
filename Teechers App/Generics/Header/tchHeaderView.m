@@ -31,17 +31,7 @@
     
     // write the class name in the title label
     self.subTitleLabel.text = activeClass.name;
-    
-    /*
-    // call collection view controller to get ready
-    [self.tchHeaderDaysDataSource setupForClass:classForHeader];
-    
-    // pass class object from method to header object
-    self.activeClass = classForHeader;
-    
-    // write class name in label
-    self.classNameLabel.text = classForHeader.name;
-    */
+
     
 }
 
@@ -137,6 +127,7 @@
     
     
 }
+
 
 #pragma mark - Touch event
 - (IBAction)touchUpInside{

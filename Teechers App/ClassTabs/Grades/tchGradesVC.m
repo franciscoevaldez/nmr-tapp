@@ -14,10 +14,19 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    [self snapMenuClosed];
+    
     // Tell the students table the deployed cell height
     self.studentsTable.deployedCellHeight = 60+90;
     
     [self setupForClass:self.activeClass];
+    
+    // if there are no evaluations, disable the table
+    if ([self.activeClass.evaluations count]>0) {
+        self.editionEnabled = true;
+    } else {
+        self.editionEnabled = false;
+    }
     
 }
 

@@ -25,5 +25,6 @@
 @property (nonatomic) NSInteger totalCells;
 
 @property (nonatomic) BOOL continuousMode;
+@property (nonatomic) BOOL isEnabled;
 
 @end
