@@ -39,6 +39,8 @@
     
 }
 
+-(void)toggleEditMode:(BOOL)enabled{};
+
 #pragma mark - Column in coleccion selected
 -(void)scrollToIndex:(NSInteger)newIndex{
     

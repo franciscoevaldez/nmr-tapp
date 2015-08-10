@@ -1007,7 +1007,7 @@
                                             <action selector="removeDay:" destination="fI6-QL-4Oq" eventType="touchUpInside" id="oDi-St-Ft8"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n2Q-s3-ywE">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n2Q-s3-ywE" userLabel="Edit Day">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="zum-am-80u">
@@ -1152,6 +1152,10 @@
                                     </mask>
                                 </variation>
                                 <connections>
+                                    <outlet property="btnAddDay" destination="CDe-Oo-uXm" id="9gk-8h-Idc"/>
+                                    <outlet property="btnAttendance" destination="FmW-G3-SoS" id="RNz-Nq-PaG"/>
+                                    <outlet property="btnEdit" destination="n2Q-s3-ywE" id="uYx-1i-wa0"/>
+                                    <outlet property="btnRemove" destination="Mol-Nb-HCf" id="k4k-Ca-pnB"/>
                                     <outlet property="columnBandCollection" destination="HuJ-cx-7M7" id="bqL-FO-jBF"/>
                                     <outlet property="delegate" destination="HRB-Rw-Ffv" id="tzV-fk-LdC"/>
                                     <outlet property="heightConstraint" destination="vUZ-by-hMW" id="bhE-qE-but"/>

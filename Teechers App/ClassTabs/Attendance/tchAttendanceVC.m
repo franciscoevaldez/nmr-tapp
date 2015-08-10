@@ -45,11 +45,17 @@
 -(void)checkEditionEnable{
     
     if ([self.activeClass.classDays count]>0) {
+        
         self.editionEnabled = true;
         [self.studentsTable enableTableNewStatus:true];
+        [self.optionsMenu toggleEditMode:true];
+        
     } else {
+        
         self.editionEnabled = false;
         [self.studentsTable enableTableNewStatus:false];
+        [self.optionsMenu toggleEditMode:false];
+        
     }
     
 }

@@ -21,6 +21,24 @@
     [self defaultInit];
 }
 
+-(void)toggleEditMode:(BOOL)enabled{
+    
+    self.btnAttendance.enabled = enabled;
+    self.btnEdit.enabled = enabled;
+    self.btnRemove.enabled = enabled;
+    
+    if (enabled) {
+        self.btnAttendance.alpha = 1;
+        self.btnEdit.alpha = 1;
+        self.btnRemove.alpha = 1;
+    } else {
+        self.btnAttendance.alpha = 0.3f;
+        self.btnEdit.alpha = 0.3f;
+        self.btnRemove.alpha = 0.3f;
+    }
+    
+}
+
 -(IBAction)toggleAttendanceMode:(id)sender{
     
     [self.delegate toggleContinuousMode];
