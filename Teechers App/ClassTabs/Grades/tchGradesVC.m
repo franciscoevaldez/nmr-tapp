@@ -13,11 +13,39 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self snapMenuClosed];
     
     // Tell the students table the deployed cell height
     self.studentsTable.deployedCellHeight = 60+90;
     
     [self setupForClass:self.activeClass];
+    
+    // if there are no evaluations, disable the table
+    [self checkEditionEnable];
+    
+    if (!self.editionEnabled) {
+        // disable the students table
+        self.studentsTable.alpha = 0.3;
+    }
+    
+}
+
+#pragma mark - Edition checking
+-(void)checkEditionEnable{
+    
+    if ([self.activeClass.evaluations count]>0) {
+        
+        self.editionEnabled = true;
+        [self.studentsTable enableTableNewStatus:true];
+        [self.optionsMenu toggleEditMode:true];
+        
+    } else {
+        
+        self.editionEnabled = false;
+        [self.studentsTable enableTableNewStatus:false];
+        [self.optionsMenu toggleEditMode:false];
+        
+    }
     
 }
 
@@ -90,6 +118,12 @@
 }
 
 #pragma mark - Navigation
+- (IBAction)callCreateSegue:(id)sender {
+    
+    [self performSegueWithIdentifier:@"toAddGradeSegue" sender:sender];
+    
+}
+
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

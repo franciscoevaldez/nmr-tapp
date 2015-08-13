@@ -11,4 +11,10 @@
 
 @interface tchAttendanceMenu : tchDropMenuView
 
+@property (strong,nonatomic) IBOutlet UIButton *btnAddDay;
+@property (strong,nonatomic) IBOutlet UIButton *btnAttendance;
+@property (strong,nonatomic) IBOutlet UIButton *btnRemove;
+@property (strong,nonatomic) IBOutlet UIButton *btnEdit;
+
+
 @end

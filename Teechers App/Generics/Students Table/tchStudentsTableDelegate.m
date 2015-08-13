@@ -15,6 +15,14 @@
 - (void)tableView:(tchStudentsTableView*)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
+    // if edition is disabled, disregard the touch
+    if (!tableView.isEnabled) {
+        
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        return;
+        
+    }
+    
     // check the already selected cell
     if (tableView.thereIsACellDeployed && tableView.deployedPath.row == indexPath.row) {
         

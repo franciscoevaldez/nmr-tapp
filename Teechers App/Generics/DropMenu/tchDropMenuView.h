@@ -14,7 +14,8 @@
 typedef NS_ENUM(NSInteger, tchMenuStatus) {
     tchMenuIsHidden,
     tchMenuIsSemiDeployed,
-    tchMenuIsDeployed
+    tchMenuIsDeployed,
+    tchMenuOnlyAdd
 };
 
 @protocol tchDropMenuProtocol <NSObject>
@@ -52,6 +53,7 @@ typedef NS_ENUM(NSInteger, tchMenuStatus) {
 -(void)reloadData;
 -(void)defaultInit;
 -(void)toggleMenu;
+-(void)toggleEditMode:(BOOL)enabled;
 
 
 @end

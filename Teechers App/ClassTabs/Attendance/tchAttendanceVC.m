@@ -15,6 +15,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self snapMenuClosed];
     
     // pass the class to the children
     [self setupForClass:self.activeClass];
@@ -25,8 +26,37 @@
     // Hide the menu
     self.optionsMenu.heightConstraint.constant = 43.0;
     
+    
+    
     // no on take attendance
     self.takeAttendanceMode = false;
+    
+    // if there are no days, disable the table
+    [self checkEditionEnable];
+    
+    if (!self.editionEnabled) {
+        // disable the students table
+        self.studentsTable.alpha = 0.3;
+    }
+    
+}
+
+#pragma mark - Edition checking
+-(void)checkEditionEnable{
+    
+    if ([self.activeClass.classDays count]>0) {
+        
+        self.editionEnabled = true;
+        [self.studentsTable enableTableNewStatus:true];
+        [self.optionsMenu toggleEditMode:true];
+        
+    } else {
+        
+        self.editionEnabled = false;
+        [self.studentsTable enableTableNewStatus:false];
+        [self.optionsMenu toggleEditMode:false];
+        
+    }
     
 }
 
@@ -117,6 +147,11 @@
 
 
 #pragma mark - Navigation
+- (IBAction)callCreateSegue:(id)sender {
+    
+    [self performSegueWithIdentifier:@"toCreateDay" sender:sender];
+    
+}
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -126,8 +161,10 @@
     // to new day
     if ([[segue identifier]isEqualToString:@"toCreateDay"]) {
         
-        // toggle the menu
-        [self headerWasTapped];
+        // If menu is deployed, close it
+        if (self.optionsMenu.status) {
+            [self headerWasTapped];
+        }
         
         // prepare the edit/create view controller
         tchEditDayVC *destinationVC = [segue destinationViewController];
@@ -146,8 +183,10 @@
     // to edit this day
     if ([[segue identifier]isEqualToString:@"toEditDay"]) {
         
-        // toggle the menu
-        [self headerWasTapped];
+        // If menu is deployed, close it
+        if (self.optionsMenu.status) {
+            [self headerWasTapped];
+        }
         
         // get currently selected day
         if (!self.currentColumnIndex) {

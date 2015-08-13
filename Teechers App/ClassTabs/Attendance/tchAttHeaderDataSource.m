@@ -25,21 +25,62 @@
     
 }
 
+- (NSInteger)numberOfSectionsInCollectionView:(nonnull UICollectionView *)collectionView{
+    return 2;
+}
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     
-    // get the sorted array from the class
-    NSArray *tempArray = [self.activeClass getDaysSorted];
+    // section 0 is the one of existing items
+    if (section == 0) {
+        
+        // get the sorted array from the class
+        NSArray *tempArray = [self.activeClass getDaysSorted];
+        
+        // pass the array to the data source class
+        self.daysArray = tempArray;
+        
+        // Number of rows is the number of days in the array
+        return [self.daysArray count];
+        
+    }
     
-    // pass the array to the data source class
-    self.daysArray = tempArray;
+    // section 1 is the one for the add buttons
+    if (section == 1) {
+        
+        // check if there are classdays
+        if ([self.activeClass.classDays count] == 0) {
+            return 1;
+        }
+        
+    }
     
-    // Number of rows is the number of days in the array
-    return [self.daysArray count];
-    
+    return 0;
 }
 
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{    
+    
+    
+    // section 1 is the one for the add buttons
+    if (indexPath.section == 1) {
+        
+        // if there are no class days
+        // check if there are classdays
+        if ([self.activeClass.classDays count] == 0) {
+            
+            // create a new add cell
+            UICollectionViewCell *addClassCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"addDayCell" forIndexPath:indexPath];
+            
+            // return it
+            return addClassCell;
+            
+        }
+        
+    }
+    
+    
+    
     
     // create the new cell
     tchAttDayCVC *newCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"dayCell"

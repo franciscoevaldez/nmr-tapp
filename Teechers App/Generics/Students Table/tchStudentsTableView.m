@@ -21,8 +21,6 @@
 @property (assign,nonatomic) NSInteger currentColumnIndex;
 @property (strong,nonatomic) tchStudentsTableDataSource *tchDataSource;
 
-@property (nonatomic) BOOL isEnabled;
-
 @end
 
 

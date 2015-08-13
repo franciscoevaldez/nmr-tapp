@@ -533,14 +533,14 @@
 				A17675241B1BF6400093F7A0 /* Cells */,
 				A17675291B1BF6400093F7A0 /* Edit */,
 				A176752C1B1BF6400093F7A0 /* Input */,
+				A17675371B1BF6410093F7A0 /* tchGradesVC.h */,
+				A17675381B1BF6410093F7A0 /* tchGradesVC.m */,
 				A17675311B1BF6400093F7A0 /* tchGradesColumnsDS.h */,
 				A17675321B1BF6400093F7A0 /* tchGradesColumnsDS.m */,
 				A17675331B1BF6400093F7A0 /* tchGradesHeaderDataSource.h */,
 				A17675341B1BF6400093F7A0 /* tchGradesHeaderDataSource.m */,
 				A17675351B1BF6400093F7A0 /* tchGradesMenu.h */,
 				A17675361B1BF6400093F7A0 /* tchGradesMenu.m */,
-				A17675371B1BF6410093F7A0 /* tchGradesVC.h */,
-				A17675381B1BF6410093F7A0 /* tchGradesVC.m */,
 			);
 			path = Grades;
 			sourceTree = "<group>";

@@ -21,7 +21,10 @@
     // Tell the students table the deployed cell height
     self.studentsTable.deployedCellHeight = 60+300;
     
+    self.studentsTable.isEnabled = true;
+    
     [self setupForClass:self.activeClass];
+    
 }
 
 - (void)didReceiveMemoryWarning {
