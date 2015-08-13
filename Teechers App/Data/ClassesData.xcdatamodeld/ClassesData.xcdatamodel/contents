@@ -13,7 +13,7 @@
     <entity name="AttendanceRecord" representedClassName="AttendanceRecord" syncable="YES">
         <attribute name="excused" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="orderIndex" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="status" attributeType="String" syncable="YES"/>
+        <attribute name="status" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="classDay" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ClassDay" inverseName="attendanceRecords" inverseEntity="ClassDay" syncable="YES"/>
         <relationship name="student" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Student" inverseName="attendanceRecords" inverseEntity="Student" syncable="YES"/>
     </entity>
@@ -74,7 +74,7 @@
     </entity>
     <elements>
         <element name="AClass" positionX="1267" positionY="198" width="128" height="165"/>
-        <element name="AttendanceRecord" positionX="1789" positionY="81" width="128" height="118"/>
+        <element name="AttendanceRecord" positionX="1789" positionY="81" width="128" height="120"/>
         <element name="ClassDay" positionX="1519" positionY="-45" width="128" height="105"/>
         <element name="Evaluation" positionX="1530" positionY="189" width="128" height="210"/>
         <element name="GradeRecord" positionX="1816" positionY="243" width="128" height="163"/>

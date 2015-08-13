@@ -2,7 +2,7 @@
 //  AttendanceRecord.m
 //  Teechers App
 //
-//  Created by fran on 7/25/15.
+//  Created by fran on 8/12/15.
 //  Copyright © 2015 nmr. All rights reserved.
 //
 

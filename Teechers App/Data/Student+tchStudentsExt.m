@@ -62,7 +62,7 @@
 #pragma mark - Attendance Record Handling
 // create or update an attendance record
 - (void)createAttendanceRecordAtDay:(ClassDay*)classDay
-                         withStatus:(NSString*)status
+                         withStatus:(tchAttendanceStatus)status
                       andOrderIndex:(NSInteger)index
 {
     
@@ -91,7 +91,7 @@
     
     
     // set the value
-    [recordToSave setValue:status forKey:@"status"];
+    [recordToSave setValue:[NSNumber numberWithInteger:status] forKey:@"status"];
     
     // set the order index
     [recordToSave setValue:[NSNumber numberWithInteger:index] forKey:@"orderIndex"];

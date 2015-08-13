@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #import "tchInputView.h"
-
+#import "AttendanceRecord+tchAttExt.h"
 
 @interface tchAttInputV : tchInputView <tchInputViewProtocol>
 

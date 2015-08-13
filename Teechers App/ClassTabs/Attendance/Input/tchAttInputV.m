@@ -9,7 +9,6 @@
 #import "tchAttInputV.h"
 
 #import "AClass+tchAClassExt.h"
-#import "AttendanceRecord+tchAttExt.h"
 
 @interface tchAttInputV ()
 
@@ -121,11 +120,11 @@
     
 }
 
-- (void)saveRecordWithStatus:(NSInteger)newStatus
+- (void)saveRecordWithStatus:(tchAttendanceStatus)newStatus
 {
     
     // status to string (HOT FIX!!!!!)
-    NSString *statusToSave = [NSString stringWithFormat:@"%li", (long)newStatus];
+    //NSString *statusToSave = [NSString stringWithFormat:@"%li", (long)newStatus];
     
     // get the active class
     AClass* activeClass = self.activeStudent.inClass;
@@ -135,7 +134,7 @@
     
     // create a new record for the active student
     [self.activeStudent createAttendanceRecordAtDay:activeDay
-                                         withStatus:statusToSave
+                                         withStatus:newStatus
                                       andOrderIndex:self.activeColumn];
     
 }

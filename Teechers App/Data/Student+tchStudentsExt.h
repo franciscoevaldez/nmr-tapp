@@ -21,7 +21,7 @@
 - (AttendanceRecord*)getAttendanceRecordForDay:(ClassDay*)classday;
 - (AttendanceRecord*)getAttendanceRecordForIndex:(NSInteger)dayIndex;
 
-- (void)createAttendanceRecordAtDay:(ClassDay*)classDay withStatus:(NSString*)status andOrderIndex:(NSInteger)index;
+- (void)createAttendanceRecordAtDay:(ClassDay*)classDay withStatus:(tchAttendanceStatus)status andOrderIndex:(NSInteger)index;
 - (BOOL)toggleExcusedAtDay:(ClassDay*)classDay withIndex:(NSInteger)dayIndex;
 
 - (GradeRecord*)getGradeForEvaluation:(Evaluation*)evaluation;
