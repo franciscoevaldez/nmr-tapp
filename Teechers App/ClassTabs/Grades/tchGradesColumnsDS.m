@@ -42,10 +42,21 @@
     // Number of rows is the number of days in the array
     return evalCount;
     
+    
+    
 }
 
 
 - (UICollectionViewCell *)collectionView:(tchColumnsCollection *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    // the cell for when there are no cells
+    if ([self.activeStudent.inClass.evaluations count] == 0) {
+        
+        UICollectionViewCell *emptyCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"emptyCell" forIndexPath:indexPath];
+        
+        return emptyCell;
+        
+    }
     
     // create the new cell
     tchEvalColumnCell *newCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"studentDataCell" forIndexPath:indexPath];

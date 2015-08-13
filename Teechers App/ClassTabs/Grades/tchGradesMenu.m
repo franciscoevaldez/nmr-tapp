@@ -22,6 +22,21 @@
     [self defaultInit];
 }
 
+-(void)toggleEditMode:(BOOL)enabled{
+    
+    self.btnEdit.enabled = enabled;
+    self.btnRemove.enabled = enabled;
+    
+    if (enabled) {
+        self.btnEdit.alpha = 1;
+        self.btnRemove.alpha = 1;
+    } else {
+        self.btnEdit.alpha = 0.3f;
+        self.btnRemove.alpha = 0.3f;
+    }
+    
+}
+
 -(IBAction)addGrade:(UIButton *)sender{
     
 }

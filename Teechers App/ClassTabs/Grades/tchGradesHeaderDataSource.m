@@ -25,29 +25,62 @@
     
 }
 
+
+- (NSInteger)numberOfSectionsInCollectionView:(nonnull UICollectionView *)collectionView{
+    return 2;
+}
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     
-    // pass the array to the data source class
-    self.evaluationsArray = [self.activeClass getEvaluationsSorted];
-    
-    // Number of rows is the number of days in the array
-    if ([self.evaluationsArray count]==0) {
-        return 1;
+    // section 0 is the one of existing items
+    if (section == 0) {
+        
+        // get the sorted array from the class
+        NSArray *tempArray = [self.activeClass getEvaluationsSorted];
+        
+        // pass the array to the data source class
+        self.evaluationsArray = tempArray;
+        
+        // Number of rows is the number of days in the array
+        return [self.evaluationsArray count];
+        
     }
     
-    // Number of rows is the number of days in the array
-    return [self.evaluationsArray count];
+    // section 1 is the one for the add buttons
+    if (section == 1) {
+        
+        // check if there are classdays
+        if ([self.activeClass.evaluations count] == 0) {
+            return 1;
+        }
+        
+    }
     
+    return 0;
 }
 
 
-- (tchEvalHeaderCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    // section 1 is the one for the add buttons
+    if (indexPath.section == 1) {
+        
+        // if there are no class days
+        // check if there are classdays
+        if ([self.activeClass.evaluations count] == 0) {
+            
+            // create a new add cell
+            UICollectionViewCell *addEvaluationCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"addEvaluationCell" forIndexPath:indexPath];
+            
+            // return it
+            return addEvaluationCell;
+            
+        }
+        
+    }
     
     // create the new cell
-    //tchEvalHeaderCell *newCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"columnCell" forIndexPath:indexPath];
-    
-    tchEvalHeaderCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"columnCell"
-                                                                        forIndexPath:indexPath];
+    tchEvalHeaderCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"columnCell" forIndexPath:indexPath];
     
     NSInteger dayCount = [self.evaluationsArray count];
     

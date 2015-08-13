@@ -10,4 +10,7 @@
 
 @interface tchGradesMenu : tchDropMenuView <tchDropMenuProtocol>
 
+@property (strong,nonatomic) IBOutlet UIButton *btnRemove;
+@property (strong,nonatomic) IBOutlet UIButton *btnEdit;
+
 @end

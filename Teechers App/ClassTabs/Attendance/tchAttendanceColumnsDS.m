@@ -51,6 +51,8 @@
 
 - (UICollectionViewCell *)collectionView:(tchColumnsCollection *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
+    
+    // the cell for when there are no cells
     if ([self.activeStudent.inClass.classDays count] == 0) {
         
         UICollectionViewCell *emptyCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"emptyCell" forIndexPath:indexPath];
