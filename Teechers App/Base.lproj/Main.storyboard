@@ -87,19 +87,19 @@
             <string>Avenir-Medium</string>
             <string>Avenir-Heavy</string>
             <string>Avenir-Heavy</string>
-            <string>Avenir-Roman</string>
-            <string>Avenir-Heavy</string>
-            <string>Avenir-Roman</string>
-            <string>Avenir-Medium</string>
-            <string>Avenir-Medium</string>
-            <string>Avenir-Medium</string>
-            <string>Avenir-Medium</string>
-            <string>Avenir-Medium</string>
-            <string>Avenir-Medium</string>
-            <string>Avenir-Medium</string>
             <string>Avenir-Heavy</string>
             <string>Avenir-Heavy</string>
             <string>Avenir-Book</string>
+            <string>Avenir-Roman</string>
+            <string>Avenir-Heavy</string>
+            <string>Avenir-Roman</string>
+            <string>Avenir-Medium</string>
+            <string>Avenir-Medium</string>
+            <string>Avenir-Medium</string>
+            <string>Avenir-Medium</string>
+            <string>Avenir-Medium</string>
+            <string>Avenir-Medium</string>
+            <string>Avenir-Medium</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -5838,6 +5838,7 @@ Ready to get started?</string>
                         <viewControllerLayoutGuide type="bottom" id="zlG-vF-mt4"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="dS4-Z7-yK4">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qpp-XL-bCn" userLabel="Header" customClass="tchHeaderView">
@@ -5909,16 +5910,16 @@ Ready to get started?</string>
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="m4u-PR-gg7"/>
-                                        <exclude reference="f5h-O4-lle"/>
                                         <exclude reference="QGp-kR-nHD"/>
+                                        <exclude reference="f5h-O4-lle"/>
                                         <exclude reference="rLC-28-sWc"/>
-                                        <exclude reference="qPm-bg-4pP"/>
                                         <exclude reference="O9E-0n-VBZ"/>
                                         <exclude reference="Pid-mp-Odl"/>
-                                        <exclude reference="vhe-I8-z14"/>
+                                        <exclude reference="qPm-bg-4pP"/>
+                                        <exclude reference="5Jq-70-dbQ"/>
                                         <exclude reference="Ky8-T7-Bpv"/>
                                         <exclude reference="ia6-nd-WW3"/>
-                                        <exclude reference="5Jq-70-dbQ"/>
+                                        <exclude reference="vhe-I8-z14"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
@@ -5929,16 +5930,16 @@ Ready to get started?</string>
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="m4u-PR-gg7"/>
-                                        <include reference="f5h-O4-lle"/>
                                         <include reference="QGp-kR-nHD"/>
+                                        <include reference="f5h-O4-lle"/>
                                         <include reference="rLC-28-sWc"/>
-                                        <include reference="qPm-bg-4pP"/>
                                         <include reference="O9E-0n-VBZ"/>
                                         <include reference="Pid-mp-Odl"/>
-                                        <exclude reference="vhe-I8-z14"/>
+                                        <include reference="qPm-bg-4pP"/>
+                                        <exclude reference="5Jq-70-dbQ"/>
                                         <include reference="Ky8-T7-Bpv"/>
                                         <include reference="ia6-nd-WW3"/>
-                                        <exclude reference="5Jq-70-dbQ"/>
+                                        <exclude reference="vhe-I8-z14"/>
                                     </mask>
                                 </variation>
                                 <connections>
@@ -5956,6 +5957,7 @@ Ready to get started?</string>
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fpb-lq-hh3" id="2Y9-ga-79u">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="39"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Section name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IAB-Io-Zh1">
@@ -6026,13 +6028,13 @@ Ready to get started?</string>
                                 <exclude reference="vy2-3R-dYR"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="IvE-mf-KfK"/>
-                                <exclude reference="O9p-wU-6TQ"/>
-                                <exclude reference="VnE-bB-SP3"/>
+                                <exclude reference="PIV-mZ-M82"/>
                                 <exclude reference="HsH-T3-r97"/>
                                 <exclude reference="TaV-tz-1QV"/>
                                 <exclude reference="pCM-Um-ruT"/>
-                                <exclude reference="PIV-mZ-M82"/>
+                                <exclude reference="IvE-mf-KfK"/>
+                                <exclude reference="O9p-wU-6TQ"/>
+                                <exclude reference="VnE-bB-SP3"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -6041,13 +6043,13 @@ Ready to get started?</string>
                                 <include reference="vy2-3R-dYR"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="IvE-mf-KfK"/>
-                                <include reference="O9p-wU-6TQ"/>
-                                <include reference="VnE-bB-SP3"/>
+                                <include reference="PIV-mZ-M82"/>
                                 <include reference="HsH-T3-r97"/>
                                 <include reference="TaV-tz-1QV"/>
                                 <include reference="pCM-Um-ruT"/>
-                                <include reference="PIV-mZ-M82"/>
+                                <include reference="IvE-mf-KfK"/>
+                                <include reference="O9p-wU-6TQ"/>
+                                <include reference="VnE-bB-SP3"/>
                             </mask>
                         </variation>
                     </view>
