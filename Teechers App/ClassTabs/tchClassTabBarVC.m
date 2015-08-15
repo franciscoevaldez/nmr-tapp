@@ -41,6 +41,7 @@
     
     
     // Image setup for different tabs
+    
     [(UITabBarItem*)[[[self tabBar] items] objectAtIndex:0] setImage:[UIImage imageNamed:@"Students - Rest"]];
     [(UITabBarItem*)[[[self tabBar] items] objectAtIndex:0] setSelectedImage:[UIImage imageNamed:@"Students - Sel"]];
     
@@ -49,6 +50,9 @@
     
     [(UITabBarItem*)[[[self tabBar] items] objectAtIndex:2] setImage:[UIImage imageNamed:@"Evaluations - Rest"]];
     [(UITabBarItem*)[[[self tabBar] items] objectAtIndex:2] setSelectedImage:[UIImage imageNamed:@"Evaluations - Sel"]];
+    
+    [(UITabBarItem*)[[[self tabBar] items] objectAtIndex:3] setImage:[UIImage imageNamed:@"More - Rest"]];
+    [(UITabBarItem*)[[[self tabBar] items] objectAtIndex:3] setSelectedImage:[UIImage imageNamed:@"More - Sel"]];
     
     // font & icon color
     UIColor *highlightColor = [UIColor colorWithRed:60.0/255 green:160.0/255 blue:203.0/255 alpha:1.0];

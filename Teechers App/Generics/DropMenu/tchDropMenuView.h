@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #import "tchHeaderColumnCollection.h"
-#import "AClass+tchAClassExt.h"
+#import "AClass.h"
 
 typedef NS_ENUM(NSInteger, tchMenuStatus) {
     tchMenuIsHidden,

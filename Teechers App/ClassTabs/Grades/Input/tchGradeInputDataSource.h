@@ -10,8 +10,8 @@
 #import <UIKit/UIKit.h>
 
 #import "Evaluation.h"
-#import "Student+tchStudentsExt.h"
-#import "AClass+tchAClassExt.h"
+#import "Student.h"
+#import "AClass.h"
 
 @interface tchGradeInputDataSource : NSObject <UICollectionViewDataSource>
 

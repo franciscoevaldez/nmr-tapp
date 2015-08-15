@@ -17,6 +17,23 @@ NS_ASSUME_NONNULL_BEGIN
 
 // Insert code here to declare functionality of your managed object subclass
 
+- (void)createAndStoreClassWithName:(NSString*)name institution:(NSString*)institution andStudents:(NSArray*)students;
+
+- (NSArray*)getDaysSorted;
+- (NSInteger)getSortIndexForDay:(ClassDay*)classDay;
+- (ClassDay*)getDayForIndex:(NSInteger)index;
+
+- (ClassDay*)createNewDay:(NSDate*)date withName:(NSString*)name;
+
+
+- (NSArray*)getEvaluationsSorted;
+- (Evaluation*)getEvaluationForIndex:(NSInteger)index;
+
+- (Evaluation*)createAndStoreNewEvaluation:(NSString*)name
+                                    withID:(NSString*)newID
+                                  maxGrade:(NSInteger)maxGrade
+                                      date:(NSDate*)date;
+
 @end
 
 NS_ASSUME_NONNULL_END

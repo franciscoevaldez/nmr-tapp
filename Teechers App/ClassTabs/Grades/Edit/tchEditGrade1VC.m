@@ -8,13 +8,10 @@
 
 #import "tchEditGrade1VC.h"
 #import "tchEditFormTable.h"
-//#import "tchDatePickerField.h"
-//#import "AClass+tchAClassExt.h"
 
 @interface tchEditGrade1VC ()
 
 @property (strong, nonatomic) IBOutlet tchEditFormTable *formTable;
-
 @property (strong,nonatomic) NSArray *usedNamesArray;
 
 @end

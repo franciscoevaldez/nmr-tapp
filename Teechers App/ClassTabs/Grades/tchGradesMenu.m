@@ -7,7 +7,7 @@
 //
 
 #import "tchGradesMenu.h"
-#import "Evaluation+tchEvalExt.h"
+#import "Evaluation.h"
 
 @implementation tchGradesMenu
 

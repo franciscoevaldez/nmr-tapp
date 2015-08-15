@@ -42,8 +42,8 @@
         labelText = [statusArray objectAtIndex:[record.status integerValue]];
         
         // it the record is absent
-        if ([record.status isEqual: [NSString stringWithFormat:@"%li", (long)tchAttendanceAbsent]]
-            && ([record.excused intValue] == tchAttendanceExcusedNo)) {
+        if ([record.status integerValue] == tchAttendanceAbsent &&
+            [record.excused integerValue] == tchAttendanceExcusedNo) {
             
             // set the label color to red
             self.dataLabel.textColor = [UIColor tchRed];

@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-#import "AClass+tchAClassExt.h"
+#import "AClass.h"
 
 @interface tchStudentsTableView : UITableView
 
