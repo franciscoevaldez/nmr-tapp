@@ -11,7 +11,7 @@
 
 #import "tchAttendanceColumnVC.h"
 
-#import "AttendanceRecord+tchAttExt.h"
+#import "AttendanceRecord.h"
 
 @interface tchAttendanceColumnsDS ()
 

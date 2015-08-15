@@ -7,7 +7,7 @@
 //
 
 #import "Evaluation.h"
-#import "AClass+tchAClassExt.h"
+#import "AClass.h"
 #import "GradeRecord.h"
 
 @implementation Evaluation

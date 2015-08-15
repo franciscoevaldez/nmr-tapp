@@ -11,7 +11,7 @@
 
 #import "tchAStudentCell.h"
 
-#import "Student+tchStudentsExt.h"
+#import "Student.h"
 
 @interface tchStudentsTableDataSource()
 

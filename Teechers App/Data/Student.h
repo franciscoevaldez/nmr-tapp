@@ -9,13 +9,26 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class AClass, AttendanceRecord, GradeRecord, StudentPicture, StudentSummary;
+#import "AClass.h"
+#import "AttendanceRecord.h"
+
+@class AClass, AttendanceRecord, GradeRecord, StudentPicture, StudentSummary, ClassDay, Evaluation;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Student : NSManagedObject
 
 // Insert code here to declare functionality of your managed object subclass
+
+- (AttendanceRecord*)getAttendanceRecordForDay:(ClassDay*)classday;
+- (AttendanceRecord*)getAttendanceRecordForIndex:(NSInteger)dayIndex;
+
+- (void)createAttendanceRecordAtDay:(ClassDay*)classDay withStatus:(tchAttendanceStatus)status andOrderIndex:(NSInteger)index;
+- (BOOL)toggleExcusedAtDay:(ClassDay*)classDay withIndex:(NSInteger)dayIndex;
+
+- (GradeRecord*)getGradeForEvaluation:(Evaluation*)evaluation;
+
+- (void)setGradeRecordForEvaluation:(Evaluation*)evaluation withGrade:(NSInteger*)grade andOrderIndex:(NSInteger)index;
 
 @end
 

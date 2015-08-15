@@ -17,6 +17,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 // Insert code here to declare functionality of your managed object subclass
 
+- (ClassDay*)updateDayWithDate:(NSDate*)date name:(NSString*)name;
+- (void)deleteClassDay;
+
 @end
 
 NS_ASSUME_NONNULL_END

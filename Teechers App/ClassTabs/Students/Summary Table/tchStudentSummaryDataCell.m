@@ -8,9 +8,9 @@
 
 #import "tchStudentSummaryDataCell.h"
 
-#import "ClassDay+tchClassDayExt.h"
-#import "AttendanceRecord+tchAttExt.h"
-#import "Evaluation+tchEvalExt.h"
+#import "ClassDay.h"
+#import "AttendanceRecord.h"
+#import "Evaluation.h"
 #import "GradeRecord.h"
 #import "StudentSummary.h"
 

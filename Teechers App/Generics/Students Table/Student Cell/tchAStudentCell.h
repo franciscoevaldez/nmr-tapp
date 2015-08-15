@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "tchInputView.h"
 
-#import "Student+tchStudentsExt.h"
+#import "Student.h"
 #import "tchColumnsCollection.h"
 #import "tchInputView.h"
 

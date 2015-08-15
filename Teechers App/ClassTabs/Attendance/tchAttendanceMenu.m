@@ -7,7 +7,7 @@
 //
 
 #import "tchAttendanceMenu.h"
-#import "ClassDay+tchClassDayExt.h"
+#import "ClassDay.h"
 
 @implementation tchAttendanceMenu
 

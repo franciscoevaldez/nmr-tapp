@@ -8,8 +8,7 @@
 
 #import "tchImport2VC.h"
 
-#import "AClass+tchAClassExt.h"
-
+#import "AClass.h"
 #import "tchEditFormTable.h"
 
 @interface tchImport2VC ()

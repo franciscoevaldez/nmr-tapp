@@ -10,6 +10,8 @@
 #import <UIKit/UIKit.h>
 #import "tchHeaderColumnCollection.h"
 
+#import "AClass.h"
+
 @protocol tchHeaderColumnsDataSource <UICollectionViewDataSource>
 - (void)setupForClass:(AClass*)activeClass;
 @end

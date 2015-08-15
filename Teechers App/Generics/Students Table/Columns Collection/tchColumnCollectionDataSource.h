@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "Student+tchStudentsExt.h"
+#import "Student.h"
 
 @protocol tchColumnCollectionDSProtocol <UICollectionViewDataSource>
 

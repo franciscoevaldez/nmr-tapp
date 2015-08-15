@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
-#import "Student+tchStudentsExt.h"
+#import "Student.h"
 
 @interface tchStudentSummaryTable : UITableView
 
