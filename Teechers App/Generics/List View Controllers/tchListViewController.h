@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#import "AClass+tchAClassExt.h"
+#import "AClass.h"
 
 #import "tchStudentsTableView.h"
 #import "tchDropMenuView.h"

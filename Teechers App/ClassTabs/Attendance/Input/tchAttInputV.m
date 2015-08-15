@@ -8,7 +8,7 @@
 
 #import "tchAttInputV.h"
 
-#import "AClass+tchAClassExt.h"
+#import "AClass.h"
 
 @interface tchAttInputV ()
 

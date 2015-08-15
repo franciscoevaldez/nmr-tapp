@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "tchListViewController.h"
 
-#import "AClass+tchAClassExt.h"
+#import "AClass.h"
 
 #import "tchHeaderView.h"
 #import "tchEditDayVC.h"

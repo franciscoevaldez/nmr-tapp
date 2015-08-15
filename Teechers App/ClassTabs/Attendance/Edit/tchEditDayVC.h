@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #import "tchViewKeyboardVC.h"
-#import "AClass+tchAClassExt.h"
+#import "AClass.h"
 #import "ClassDay.h"
 
 @protocol tchEditDayVCDelegate <NSObject>

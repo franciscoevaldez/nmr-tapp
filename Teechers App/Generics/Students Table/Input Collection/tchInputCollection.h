@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Student+tchStudentsExt.h"
+#import "Student.h"
 
 @protocol tchInputCollectionDelegate <NSObject>
 

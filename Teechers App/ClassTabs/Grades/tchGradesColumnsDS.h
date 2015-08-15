@@ -8,6 +8,8 @@
 
 #import "tchColumnCollectionDataSource.h"
 
+#import "AClass.h"
+
 @interface tchGradesColumnsDS : tchColumnCollectionDataSource <tchColumnCollectionDSProtocol>
 
 - (void)setupForStudent:(Student*)activeStudent;

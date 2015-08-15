@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-#import "AClass+tchAClassExt.h"
+#import "AClass.h"
 
 @interface tchStudentsTableDataSource : NSObject <UITableViewDataSource>
 

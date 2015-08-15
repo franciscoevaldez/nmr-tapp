@@ -11,11 +11,23 @@
 
 @class ClassDay, Student;
 
+typedef NS_ENUM(NSInteger, tchAttendanceStatus){
+    tchAttendancePresent,
+    tchAttendanceAbsent,
+    tchAttendanceLate
+};
+
+typedef NS_ENUM(NSInteger, tchAttendanceExcused){
+    tchAttendanceExcusedNo = 0,
+    tchAttendanceExcusedYes = 1
+};
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AttendanceRecord : NSManagedObject
 
 // Insert code here to declare functionality of your managed object subclass
+
 
 @end
 
