@@ -3513,7 +3513,7 @@ Ready to get started?</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Zg-KS-h1B" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="7Kh-XT-H6k" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-328" y="1330"/>
+            <point key="canvasLocation" x="-457.5" y="1330"/>
         </scene>
         <!--Add Class - Step1-->
         <scene sceneID="PxK-Tl-OwL">
@@ -3814,7 +3814,7 @@ Ready to get started?</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1dS-T5-zPt" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Ord-l9-G4c" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="205" y="1330"/>
+            <point key="canvasLocation" x="240" y="1330"/>
         </scene>
         <!--Add Class - Step2-->
         <scene sceneID="YvD-Tf-msa">
@@ -4353,7 +4353,7 @@ Ready to get started?</string>
                 <customObject id="D4e-WG-Wp7" customClass="tchEditFormTableDataSource"/>
                 <customObject id="jVU-SO-Ybs" customClass="tchEditFormTableDelegate"/>
             </objects>
-            <point key="canvasLocation" x="733" y="1330"/>
+            <point key="canvasLocation" x="918" y="1330"/>
         </scene>
         <!--AddClass Nav Controller-->
         <scene sceneID="a2a-HE-exs">
@@ -4374,7 +4374,7 @@ Ready to get started?</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ozx-GN-fQc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-849" y="1330"/>
+            <point key="canvasLocation" x="-1188" y="1330"/>
         </scene>
         <!--Add Class - End-->
         <scene sceneID="Knj-q0-tW4">
@@ -4505,7 +4505,7 @@ Ready to get started?</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kpM-4E-kcq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1268" y="1330"/>
+            <point key="canvasLocation" x="1636.5" y="1330"/>
         </scene>
         <!--Delegate-->
         <scene sceneID="eV1-aY-OpF">
