@@ -21,7 +21,7 @@
 @interface tchEditDayVC : tchViewKeyboardVC
 
 @property (nonatomic, weak) id <tchEditDayVCDelegate> delegate;
-@property (strong, nonatomic) AClass *activeClass;
+//@property (strong, nonatomic) AClass *activeClass;
 @property (strong, nonatomic) ClassDay *dayToEdit;
 
 @end

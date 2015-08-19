@@ -37,7 +37,14 @@
     if ([navController isKindOfClass:[tchManagedViewController class]]) {
         
         tchManagedViewController *mvc = (tchManagedViewController*) navController;
-        mvc.managedObjectContext = self.managedObjectContext;
+        
+        if (self.managedObjectContext) {
+            mvc.managedObjectContext = self.managedObjectContext;
+        }
+        
+        if (self.activeClass) {
+            mvc.activeClass = self.activeClass;
+        }
         
     }
     

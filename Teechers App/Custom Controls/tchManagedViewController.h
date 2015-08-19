@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AClass.h"
 
 @interface tchManagedViewController : UIViewController
 
 @property (strong,nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (strong,nonatomic) AClass *activeClass;
 
 @end

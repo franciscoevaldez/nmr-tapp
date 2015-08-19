@@ -11,6 +11,7 @@
 #import "tchStudentsVC.h"
 #import "tchAttendanceVC.h"
 #import "tchGradesVC.h"
+#import "tchClassOptionsVC.h"
 
 @interface tchClassTabBarVC ()
 
@@ -28,6 +29,7 @@
     
     
     // Distribuir la clase a los view controllers
+    
     tchStudentsVC *studentsViewController = [self.viewControllers objectAtIndex:0];
     studentsViewController.activeClass = self.activeClass;
     
@@ -37,7 +39,8 @@
     tchGradesVC *gradesViewController = [self.viewControllers objectAtIndex:2];
     gradesViewController.activeClass = self.activeClass;
     
-    
+    tchClassOptionsVC *classOptionsViewController = [self.viewControllers objectAtIndex:3];
+    classOptionsViewController.activeClass = self.activeClass;
     
     
     // Image setup for different tabs
@@ -58,10 +61,7 @@
     UIColor *highlightColor = [UIColor colorWithRed:60.0/255 green:160.0/255 blue:203.0/255 alpha:1.0];
     
     // font styles
-    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
-                                                       [UIFont fontWithName:@"Avenir-Heavy" size:10.0f], NSFontAttributeName,
-                                                       nil]
-                                             forState:UIControlStateNormal];
+    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys: [UIFont fontWithName:@"Avenir-Heavy" size:10.0f], NSFontAttributeName, nil] forState:UIControlStateNormal];
     
     [[UITabBar appearance] setTintColor:highlightColor];
     

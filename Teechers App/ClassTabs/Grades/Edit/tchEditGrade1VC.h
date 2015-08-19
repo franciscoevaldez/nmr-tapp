@@ -24,7 +24,7 @@
 
 @property (nonatomic, weak) id <tchEditDialogDelegate> delegate;
 
-@property (strong, nonatomic) AClass *activeClass;
+//@property (strong, nonatomic) AClass *activeClass;
 @property (strong, nonatomic) Evaluation *evaluationToEdit;
 
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
