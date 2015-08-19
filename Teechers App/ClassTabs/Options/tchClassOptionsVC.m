@@ -140,25 +140,27 @@
 
 
 #pragma mark - Share as xls
--(void)callExportClassAs:(tchClassExportType)exportType{
+//-(void)callExportClassAs:(tchExportType)exportType{
     
-    [self.activeClass exportClassAsCSV];
+    //[self.activeClass exportClassAsCSV];
     
-}
+//}
 
 -(void)callExport{
     
     
     
-    NSString * message = @"Class sharing";
+    //NSString * message = @"Class sharing";
     
     NSString * csvFile = [self.activeClass exportClassAsCSV];
     
-    NSArray * shareItems = [NSArray arrayWithObjects:message, csvFile, nil];
+    NSLog(@"%@", csvFile);
     
-    UIActivityViewController * avc = [[UIActivityViewController alloc] initWithActivityItems:shareItems applicationActivities:nil];
+    //NSArray * shareItems = [NSArray arrayWithObjects:message, csvFile, nil];
     
-    [self presentViewController:avc animated:YES completion:nil];
+    //UIActivityViewController * avc = [[UIActivityViewController alloc] initWithActivityItems:shareItems applicationActivities:nil];
+    
+    //[self presentViewController:avc animated:YES completion:nil];
     
 }
 

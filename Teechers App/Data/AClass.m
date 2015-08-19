@@ -10,6 +10,7 @@
 #import "ClassDay.h"
 #import "Evaluation.h"
 #import "Student.h"
+#import "GradeRecord.h"
 
 @implementation AClass
 
@@ -74,7 +75,24 @@
     
 }
 
-#pragma mark - Student creation
+#pragma mark - Student handling
+- (NSArray*)getStudentsSorted
+{
+    
+    // get the students into an array
+    NSMutableArray *tempArray = [NSMutableArray arrayWithArray:[self.students allObjects]];
+    
+    // setup the sort descriptor
+    NSSortDescriptor *studentsSortDescr = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
+    
+    // sort the array
+    [tempArray sortUsingDescriptors:[NSArray arrayWithObject:studentsSortDescr]];
+    
+    // pass the array to the data source class
+    return tempArray;
+    
+}
+
 - (void)createStudentWithName:(NSString*)studentName
 {
     
@@ -276,6 +294,125 @@
     
     // return the created day
     return newEvaluation;
+    
+}
+
+#pragma mark - Exporting
+-(NSString*)exportClassAsCSV
+{
+    
+    NSMutableString *returnString = [NSMutableString stringWithString:@""];
+    
+    // PART 0: get the arrays in order --------------------------------------------------------------
+    NSArray *studentsArray = [self getStudentsSorted];
+    NSArray *daysArray = [self getDaysSorted];
+    NSArray *evalsArray = [self getEvaluationsSorted];
+    
+    // PART 1: get the titles --------------------------------------------------------------
+    NSMutableString *titleString = [NSMutableString stringWithString:@"Student name"];
+    
+    // loop the class days
+    for (ClassDay* currentDay in daysArray) {
+        
+        // get date from classDay
+        NSDate *fullDate = currentDay.date;
+        
+        // initialize date formatter
+        NSDateFormatter *tempDF = [[NSDateFormatter alloc] init];
+        
+        // get month from date
+        tempDF.dateFormat = @"MMM/dd";
+        NSString *dayText = [[tempDF stringFromDate:fullDate] uppercaseString];
+        
+        [titleString appendFormat:@",%@", dayText];
+        
+        
+    }
+    
+    // loop the evaluations
+    for (Evaluation* currentEval in evalsArray) {
+        
+        // get name from evaluation
+        NSString *evalText = currentEval.nameShort;
+        
+        // add it to the title string
+        [titleString appendFormat:@",%@", evalText];
+        
+        
+    }
+    
+    // add the title string to the return string
+    [returnString appendString:titleString];
+    
+    
+    
+    // PART 2: Loop the students --------------------------------------------------------------
+    for (Student *currentStudent in studentsArray) {
+        
+        // create a new line and add the student name
+        NSMutableString *newLine = [NSMutableString stringWithFormat:@"\n%@", currentStudent.name];
+        
+        
+        // PART 3: Loop the attendance records --------------------------------------------------------------
+        for (ClassDay *currentDay in daysArray) {
+            
+            // look for the record belonging to that day
+            AttendanceRecord* currentRecord = [currentStudent getAttendanceRecordForDay:currentDay];
+            
+            // initialize cell label
+            NSString *recordText = @"-";
+            
+            // if the record exists…
+            if (currentRecord.status) {
+                
+                // attendance statuses array
+                NSArray *statusArray = [NSArray arrayWithObjects:@"P", @"A", @"L", nil];
+                
+                // get the text
+                recordText = [statusArray objectAtIndex:[currentRecord.status integerValue]];
+                
+            }
+            
+            // add the text to the line
+            [newLine appendFormat:@",%@", recordText];
+            
+        }
+        
+        
+        
+        // PART 4: Loop the grade records --------------------------------------------------------------
+        for (Evaluation *currentEval in evalsArray) {
+            
+            // look for the record belonging to that day
+            GradeRecord* currentRecord = [currentStudent getGradeForEvaluation:currentEval];
+            
+            // initialize cell label
+            NSString *recordText = @"-";
+            
+            // if the record exists…
+            if (currentRecord.grade) {
+                
+                // get the text
+                recordText = [NSString stringWithFormat:@"%@", currentRecord.grade];
+                
+            }
+            
+            // add the text to the line
+            [newLine appendFormat:@",%@", recordText];
+            
+        }
+        
+        
+        
+        // add the new line to the return string
+        [returnString appendString:newLine];
+        
+    }
+    
+    
+    
+    
+    return returnString;
     
 }
 
