@@ -8,7 +8,10 @@
 
 #import "tchActionTableView.h"
 #import "tchActionTableDelegate.h"
+#import "tchClassOptionsTable.h"
 
 @interface tchClassOptionsDelegate : tchActionTableDelegate
+
+@property (strong,nonatomic) IBOutlet tchClassOptionsTable* ownerTable;
 
 @end

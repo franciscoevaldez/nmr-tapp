@@ -139,6 +139,29 @@
 #pragma mark - Archive class
 
 
+#pragma mark - Share as xls
+-(void)callExportClassAs:(tchClassExportType)exportType{
+    
+    [self.activeClass exportClassAsCSV];
+    
+}
+
+-(void)callExport{
+    
+    
+    
+    NSString * message = @"Class sharing";
+    
+    NSString * csvFile = [self.activeClass exportClassAsCSV];
+    
+    NSArray * shareItems = [NSArray arrayWithObjects:message, csvFile, nil];
+    
+    UIActivityViewController * avc = [[UIActivityViewController alloc] initWithActivityItems:shareItems applicationActivities:nil];
+    
+    [self presentViewController:avc animated:YES completion:nil];
+    
+}
+
 /*
 #pragma mark - Navigation
 

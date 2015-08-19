@@ -12,5 +12,7 @@
 
 -(void)callChangeName;
 -(void)callAddStudent;
+-(void)callExportClassAs:(tchClassExportType)exportType;
+-(void)callExport;
 
 @end

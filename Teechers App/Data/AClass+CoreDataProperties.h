@@ -2,7 +2,7 @@
 //  AClass+CoreDataProperties.h
 //  Teechers App
 //
-//  Created by fran on 7/25/15.
+//  Created by fran on 8/19/15.
 //  Copyright © 2015 nmr. All rights reserved.
 //
 //  Delete this file and regenerate it using "Create NSManagedObject Subclass…"
@@ -20,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSDate *dateStart;
 @property (nullable, nonatomic, retain) NSString *institution;
 @property (nullable, nonatomic, retain) NSString *name;
+@property (nullable, nonatomic, retain) NSNumber *status;
 @property (nullable, nonatomic, retain) NSSet<ClassDay *> *classDays;
 @property (nullable, nonatomic, retain) NSSet<Evaluation *> *evaluations;
 @property (nullable, nonatomic, retain) NSSet<Student *> *students;

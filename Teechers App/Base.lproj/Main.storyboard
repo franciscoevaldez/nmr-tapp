@@ -6091,7 +6091,7 @@ Ready to get started?</string>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SL8-DY-mU2">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                                    <state key="normal" title="Excel"/>
+                                                    <state key="normal" title="CSV"/>
                                                     <connections>
                                                         <action selector="xlsExportPressed:" destination="jcS-ug-KXa" eventType="touchUpInside" id="cxs-NJ-PRz"/>
                                                     </connections>
@@ -6225,7 +6225,11 @@ Ready to get started?</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EEq-yF-UhV" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="S3q-Fl-bVq" customClass="tchActionTableDataSource"/>
-                <customObject id="jcS-ug-KXa" customClass="tchClassOptionsDelegate"/>
+                <customObject id="jcS-ug-KXa" customClass="tchClassOptionsDelegate">
+                    <connections>
+                        <outlet property="ownerTable" destination="vy2-3R-dYR" id="6BB-zM-VQl"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="2560.5" y="906"/>
         </scene>
