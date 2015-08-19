@@ -19,6 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)createAndStoreClassWithName:(NSString*)name institution:(NSString*)institution andStudents:(NSArray*)students;
 
+- (void)changeClassName:(NSString*)newName;
+
 - (NSArray*)getDaysSorted;
 - (NSInteger)getSortIndexForDay:(ClassDay*)classDay;
 - (ClassDay*)getDayForIndex:(NSInteger)index;

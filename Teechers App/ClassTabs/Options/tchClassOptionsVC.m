@@ -39,11 +39,54 @@
 #pragma mark - Change class name
 -(void)callChangeName{
     
+    // Alert style
+    UIAlertController *alert = [UIAlertController
+                                alertControllerWithTitle:@"Change class name"
+                                message:@"Type in a new name"
+                                preferredStyle:UIAlertControllerStyleAlert];
     
+    // add the text input
+    [alert addTextFieldWithConfigurationHandler:^(UITextField *newNameTextField)
+     {
+         newNameTextField.placeholder = [NSString stringWithFormat:@"%@", self.activeClass.name];
+         newNameTextField.text = [NSString stringWithFormat:@"%@", self.activeClass.name];
+     }];
+    
+    
+    // Make choices for the user using alert actions.
+    UIAlertAction *doDisregard = [UIAlertAction
+                                  actionWithTitle:@"Cancel"
+                                  style:UIAlertActionStyleDefault
+                                  handler:nil];
+    
+    [alert addAction:doDisregard];
+    
+    
+    UIAlertAction *doChange = [UIAlertAction
+                               actionWithTitle:@"Confirm"
+                               style:UIAlertActionStyleDefault
+                               handler:^(UIAlertAction *action) {
+
+                                   NSString *text = ((UITextField *)[alert.textFields objectAtIndex:0]).text;
+                                   
+                                   if (text) {
+                                       
+                                       [self.activeClass changeClassName:text];
+                                       self.classNameLabel.text = text;
+                                       
+                                   }
+                                   
+                               }];
+    [alert addAction:doChange];
+    
+    
+    // show the alert
+    [self presentViewController:alert animated:YES completion:nil];
     
 }
 
 #pragma mark - Add student
+
 
 #pragma mark - Archive class
 

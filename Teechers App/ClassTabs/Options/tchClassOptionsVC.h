@@ -10,4 +10,6 @@
 
 @interface tchClassOptionsVC : tchManagedViewController
 
+-(void)callChangeName;
+
 @end

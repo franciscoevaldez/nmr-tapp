@@ -7,10 +7,12 @@
 //
 
 #import "tchActionTableView.h"
+#import "tchClassOptionsVC.h"
 #import "AClass.h"
 
 @interface tchClassOptionsTable : tchActionTableView
 
+@property (strong,nonatomic) IBOutlet tchClassOptionsVC *optionsVC;
 @property (strong,nonatomic) AClass *activeClass;
 
 @end

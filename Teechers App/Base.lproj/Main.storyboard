@@ -5830,7 +5830,7 @@ Ready to get started?</string>
             </objects>
             <point key="canvasLocation" x="2561" y="64"/>
         </scene>
-        <!--More-->
+        <!--Options VC-->
         <scene sceneID="Xjm-mU-Scv">
             <objects>
                 <viewController title="More" id="Ghp-C7-HH1" customClass="tchClassOptionsVC" sceneMemberID="viewController">
@@ -5949,7 +5949,7 @@ Ready to get started?</string>
                                     <outlet property="titleLabel" destination="7oa-fi-ad7" id="Av6-fe-muj"/>
                                 </connections>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="vy2-3R-dYR" userLabel="OptionsTable" customClass="tchActionTableView">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="vy2-3R-dYR" userLabel="OptionsTable" customClass="tchClassOptionsTable">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="ayw-uJ-6A0">
@@ -6162,6 +6162,7 @@ Ready to get started?</string>
                                 <connections>
                                     <outlet property="dataSource" destination="S3q-Fl-bVq" id="e9w-CU-Od7"/>
                                     <outlet property="delegate" destination="jcS-ug-KXa" id="XjB-in-yBN"/>
+                                    <outlet property="optionsVC" destination="Ghp-C7-HH1" id="uTN-rh-JTT"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -6217,6 +6218,10 @@ Ready to get started?</string>
                         </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="More" id="cc9-wa-LEz"/>
+                    <connections>
+                        <outlet property="classNameLabel" destination="Lf9-zY-C5Q" id="bQY-iD-E4M"/>
+                        <outlet property="optionsTable" destination="vy2-3R-dYR" id="bmj-x0-J3s"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EEq-yF-UhV" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="S3q-Fl-bVq" customClass="tchActionTableDataSource"/>

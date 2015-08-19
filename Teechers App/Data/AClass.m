@@ -58,6 +58,22 @@
     
 }
 
+#pragma mark - Class settings
+- (void)changeClassName:(NSString*)newName
+{
+    
+    if (newName) {
+        [self setValue:newName forKey:@"name"];
+    }
+    
+    // save the new name
+    NSError *NuError;
+    if (![self.managedObjectContext save:&NuError]) {
+        NSLog(@"error en: %@", [NuError localizedDescription]);
+    }
+    
+}
+
 
 #pragma mark - Day handling
 

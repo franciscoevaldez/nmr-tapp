@@ -8,6 +8,7 @@
 
 #import "tchClassOptionsDelegate.h"
 #import "tchClassOptionsTable.h"
+#import "tchClassOptionsVC.h"
 #import "AClass.h"
 
 @implementation tchClassOptionsDelegate
@@ -16,11 +17,13 @@
     
     // get the active class
     tchClassOptionsTable *castedTable = (tchClassOptionsTable*)tableView;
-    AClass *activeClass = castedTable.activeClass;
+    tchClassOptionsVC *viewController = castedTable.optionsVC;
+    
+    if ([action isEqualToString:@"toRenameClass"]) {
+        [viewController callChangeName];
+    }
     
     
-    
-    NSLog(@"%@", action);
 
 }
 
