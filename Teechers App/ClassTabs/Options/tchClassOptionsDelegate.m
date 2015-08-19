@@ -23,6 +23,10 @@
         [viewController callChangeName];
     }
     
+    if ([action isEqualToString:@"toAddStudent"]) {
+        [viewController callAddStudent];
+    }
+    
     
 
 }

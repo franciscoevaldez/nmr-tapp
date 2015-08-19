@@ -74,6 +74,28 @@
     
 }
 
+#pragma mark - Student creation
+- (void)createStudentWithName:(NSString*)studentName
+{
+    
+    // create the new student object
+    Student *newStudent = [NSEntityDescription
+                           insertNewObjectForEntityForName:@"Student"
+                           inManagedObjectContext:self.managedObjectContext];
+    
+    // add the name attribute
+    [newStudent setValue:studentName forKey:@"name"];
+    
+    // associate it with the passed class
+    [newStudent setValue:self forKey:@"inClass"];
+    
+    // save in store
+    NSError *NuError;
+    if (![self.managedObjectContext save:&NuError]) {
+        NSLog(@"error en: %@", [NuError localizedDescription]);
+    }
+    
+}
 
 #pragma mark - Day handling
 

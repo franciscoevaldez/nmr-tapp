@@ -9,6 +9,8 @@
 #import "tchClassOptionsVC.h"
 #import "tchClassOptionsTable.h"
 
+#import "Student.h"
+
 @interface tchClassOptionsVC ()
 
 @property (strong,nonatomic) IBOutlet UILabel *classNameLabel;
@@ -86,7 +88,53 @@
 }
 
 #pragma mark - Add student
-
+-(void)callAddStudent{
+    
+    // Alert style
+    UIAlertController *alert = [UIAlertController
+                                alertControllerWithTitle:@"Add a student"
+                                message:@"Type in the student's name"
+                                preferredStyle:UIAlertControllerStyleAlert];
+    
+    // add the text input
+    [alert addTextFieldWithConfigurationHandler:^(UITextField *newNameTextField)
+     {
+         newNameTextField.placeholder = @"Student name";
+     }];
+    
+    
+    // Make choices for the user using alert actions.
+    UIAlertAction *doDisregard = [UIAlertAction
+                                  actionWithTitle:@"Cancel"
+                                  style:UIAlertActionStyleDefault
+                                  handler:nil];
+    
+    [alert addAction:doDisregard];
+    
+    
+    UIAlertAction *doChange = [UIAlertAction
+                               actionWithTitle:@"Add"
+                               style:UIAlertActionStyleDefault
+                               handler:^(UIAlertAction *action) {
+                                   
+                                   NSString *text = ((UITextField *)[alert.textFields objectAtIndex:0]).text;
+                                   
+                                   if (text) {
+                                       
+                                       // Student *newStudent = [Student createStudentWithName:text inClass:self.activeClass];
+                                       [self.activeClass createStudentWithName:text];
+                                       
+                                   }
+                                   
+                                   
+                               }];
+    [alert addAction:doChange];
+    
+    
+    // show the alert
+    [self presentViewController:alert animated:YES completion:nil];
+    
+}
 
 #pragma mark - Archive class
 

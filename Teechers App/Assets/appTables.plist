@@ -32,16 +32,6 @@
 			<key>action</key>
 			<string>toAddStudent</string>
 		</dict>
-		<dict>
-			<key>name</key>
-			<string>archiveClass</string>
-			<key>cellType</key>
-			<string>tchCellTypeAction</string>
-			<key>labelText</key>
-			<string>Archive class</string>
-			<key>action</key>
-			<string>toArchiveClass</string>
-		</dict>
 	</array>
 </dict>
 </plist>

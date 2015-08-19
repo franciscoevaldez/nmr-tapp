@@ -1264,7 +1264,7 @@
          <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
-            continueAfterRunningActions = "No"
+            continueAfterRunningActions = "Yes"
             filePath = "Teechers App/ClassTabs/Options/tchClassOptionsDelegate.m"
             timestampString = "461690400.164811"
             startingColumnNumber = "9223372036854775807"
