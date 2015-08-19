@@ -5951,7 +5951,7 @@ Ready to get started?</string>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="vy2-3R-dYR" userLabel="OptionsTable" customClass="tchClassOptionsTable">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="ayw-uJ-6A0">
                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -6123,15 +6123,15 @@ Ready to get started?</string>
                                                     <exclude reference="SL8-DY-mU2"/>
                                                 </mask>
                                                 <mask key="constraints">
+                                                    <exclude reference="9R3-E4-FKv"/>
+                                                    <exclude reference="QYp-5j-l3O"/>
+                                                    <exclude reference="WBB-dJ-Uev"/>
                                                     <exclude reference="4i5-sG-RMf"/>
                                                     <exclude reference="Jfa-Dj-stE"/>
                                                     <exclude reference="WW5-L5-byT"/>
                                                     <exclude reference="4FW-BL-MeS"/>
                                                     <exclude reference="NR4-OW-ZCS"/>
                                                     <exclude reference="xc2-Yc-xOJ"/>
-                                                    <exclude reference="9R3-E4-FKv"/>
-                                                    <exclude reference="QYp-5j-l3O"/>
-                                                    <exclude reference="WBB-dJ-Uev"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -6141,15 +6141,15 @@ Ready to get started?</string>
                                                     <include reference="SL8-DY-mU2"/>
                                                 </mask>
                                                 <mask key="constraints">
+                                                    <include reference="9R3-E4-FKv"/>
+                                                    <include reference="QYp-5j-l3O"/>
+                                                    <include reference="WBB-dJ-Uev"/>
                                                     <include reference="4i5-sG-RMf"/>
                                                     <include reference="Jfa-Dj-stE"/>
                                                     <include reference="WW5-L5-byT"/>
                                                     <include reference="4FW-BL-MeS"/>
                                                     <include reference="NR4-OW-ZCS"/>
                                                     <include reference="xc2-Yc-xOJ"/>
-                                                    <include reference="9R3-E4-FKv"/>
-                                                    <include reference="QYp-5j-l3O"/>
-                                                    <include reference="WBB-dJ-Uev"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
