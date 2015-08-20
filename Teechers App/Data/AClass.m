@@ -410,9 +410,29 @@
     }
     
     
+    // create a file with the data
     
     
-    return returnString;
+    // save the file to the users directory
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsPath = [paths objectAtIndex:0]; //Get the docs directory
+    NSString *filePath = [documentsPath stringByAppendingPathComponent:@"classshare.csv"]; //Add the file name
+    
+    // create error catcher
+    NSError *error;
+    
+    // try the writing
+    BOOL res = [returnString writeToFile:filePath atomically:YES encoding:NSUTF8StringEncoding error:&error];
+    
+    // log the error if it exists
+    if (!res) {
+        NSLog(@"Error %@ while writing to file %@", [error localizedDescription], filePath);
+    }
+    
+    
+    
+    
+    return filePath;
     
 }
 

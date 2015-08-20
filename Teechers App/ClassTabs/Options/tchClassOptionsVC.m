@@ -150,17 +150,15 @@
     
     
     
-    //NSString * message = @"Class sharing";
+    NSString * message = self.activeClass.name;
     
     NSString * csvFile = [self.activeClass exportClassAsCSV];
     
-    NSLog(@"%@", csvFile);
+    NSArray * shareItems = [NSArray arrayWithObjects:message, [NSURL fileURLWithPath:csvFile], nil];
     
-    //NSArray * shareItems = [NSArray arrayWithObjects:message, csvFile, nil];
+    UIActivityViewController * avc = [[UIActivityViewController alloc] initWithActivityItems:shareItems applicationActivities:nil];
     
-    //UIActivityViewController * avc = [[UIActivityViewController alloc] initWithActivityItems:shareItems applicationActivities:nil];
-    
-    //[self presentViewController:avc animated:YES completion:nil];
+    [self presentViewController:avc animated:YES completion:nil];
     
 }
 
