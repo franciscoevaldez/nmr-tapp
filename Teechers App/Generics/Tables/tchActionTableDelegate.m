@@ -43,7 +43,7 @@
     
     // alter cell height
     if ([cellType isEqualToString:@"tchCellTypeSection"]) {return 40;}
-    if ([cellType isEqualToString:@"tchCellTypeShare"]) {return 120;}
+    if ([cellType isEqualToString:@"tchCellTypeShare"]) {return 180;}
     
     return 60;
     

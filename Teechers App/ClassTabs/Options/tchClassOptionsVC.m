@@ -9,12 +9,15 @@
 #import "tchClassOptionsVC.h"
 #import "tchClassOptionsTable.h"
 
+#import "tchClassPDFexporter.h"
+
 #import "Student.h"
 
 @interface tchClassOptionsVC ()
 
 @property (strong,nonatomic) IBOutlet UILabel *classNameLabel;
 @property (strong,nonatomic) IBOutlet tchClassOptionsTable *optionsTable;
+@property (strong,nonatomic) IBOutlet tchClassPDFexporter *pdfExporter;
 
 @end
 
