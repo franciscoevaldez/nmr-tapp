@@ -149,6 +149,22 @@
     
 //}
 
+-(void)callExportPDF
+{
+    
+    NSString * message = self.activeClass.name;
+    
+    NSString * pdfFile = [self.pdfExporter getPDF];
+    
+    NSArray * shareItems = [NSArray arrayWithObjects:message, [NSURL fileURLWithPath:pdfFile], nil];
+    
+    UIActivityViewController * avc = [[UIActivityViewController alloc] initWithActivityItems:shareItems applicationActivities:nil];
+    
+    [self presentViewController:avc animated:YES completion:nil];
+    
+}
+
+
 -(void)callExport{
     
     

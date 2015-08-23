@@ -15,5 +15,6 @@
 -(void)callAddStudent;
 //-(void)callExportClassAs:(tchExportType)exportType;
 -(void)callExport;
+-(void)callExportPDF;
 
 @end

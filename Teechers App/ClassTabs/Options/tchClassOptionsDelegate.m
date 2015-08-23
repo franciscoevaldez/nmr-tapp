@@ -23,6 +23,10 @@
         [viewController callExport];
     }
     
+    if ([action isEqualToString:@"toExportAsPDF"]) {
+        [viewController callExportPDF];
+    }
+    
     if ([action isEqualToString:@"toRenameClass"]) {
         [viewController callChangeName];
     }
