@@ -154,7 +154,7 @@
     
     NSString * message = self.activeClass.name;
     
-    NSString * pdfFile = [self.pdfExporter getPDF];
+    NSString * pdfFile = [self.pdfExporter getPDFforClass:self.activeClass];
     
     NSArray * shareItems = [NSArray arrayWithObjects:message, [NSURL fileURLWithPath:pdfFile], nil];
     

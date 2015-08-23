@@ -1291,12 +1291,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "Yes"
             filePath = "Teechers App/ClassTabs/Options/tchClassPDFexporter.m"
-            timestampString = "461980651.972108"
+            timestampString = "461989438.333982"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
-            landmarkName = "-getPDF"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "-getPDFforClass:"
             landmarkType = "5">
             <Actions>
                <BreakpointActionProxy
@@ -1316,12 +1316,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "Yes"
             filePath = "Teechers App/ClassTabs/Options/tchClassPDFexporter.m"
-            timestampString = "461980675.740617"
+            timestampString = "461989438.333982"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "-generatePDF"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "-generatePDFforClass:"
             landmarkType = "5">
             <Actions>
                <BreakpointActionProxy

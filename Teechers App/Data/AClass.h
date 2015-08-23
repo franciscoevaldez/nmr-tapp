@@ -26,6 +26,7 @@ typedef NS_ENUM(NSInteger, tchExportType){
 - (void)createAndStoreClassWithName:(NSString*)name institution:(NSString*)institution andStudents:(NSArray*)students;
 
 - (void)createStudentWithName:(NSString*)studentName;
+- (NSArray*)getStudentsSorted;
 
 - (void)changeClassName:(NSString*)newName;
 

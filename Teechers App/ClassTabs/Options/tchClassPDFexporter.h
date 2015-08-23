@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-
 #import <UIKit/UIKit.h>
+
+@class AClass;
 
 @interface tchClassPDFexporter : NSObject
 
--(NSString*)getPDF;
+-(NSString*)getPDFforClass:(AClass*)aClass;
 
 @end
