@@ -8,3 +8,5 @@ Teechers App.xcodeproj/project.xcworkspace/xcshareddata/Teechers App.xccheckout
 *.xcuserstate
 
 Teechers App.xcodeproj/project.xcworkspace/xcuserdata/fran.xcuserdatad/UserInterfaceState.xcuserstate
+
+*.xcbkptlist
