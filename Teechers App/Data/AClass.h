@@ -13,11 +13,22 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef NS_ENUM(NSInteger, tchExportType){
+    tchExportTypePDF,
+    tchExportTypeXLS,
+    tchExportTypeCSV
+};
+
 @interface AClass : NSManagedObject
 
 // Insert code here to declare functionality of your managed object subclass
 
 - (void)createAndStoreClassWithName:(NSString*)name institution:(NSString*)institution andStudents:(NSArray*)students;
+
+- (void)createStudentWithName:(NSString*)studentName;
+- (NSArray*)getStudentsSorted;
+
+- (void)changeClassName:(NSString*)newName;
 
 - (NSArray*)getDaysSorted;
 - (NSInteger)getSortIndexForDay:(ClassDay*)classDay;
@@ -33,6 +44,8 @@ NS_ASSUME_NONNULL_BEGIN
                                     withID:(NSString*)newID
                                   maxGrade:(NSInteger)maxGrade
                                       date:(NSDate*)date;
+
+-(NSString*)exportClassAsCSV;
 
 @end
 

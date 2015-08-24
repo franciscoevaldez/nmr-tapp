@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>classOptions</key>
+	<array>
+		<dict>
+			<key>name</key>
+			<string>shareCell</string>
+			<key>cellType</key>
+			<string>tchCellTypeShare</string>
+			<key>labelText</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>renameClass</string>
+			<key>cellType</key>
+			<string>tchCellTypeAction</string>
+			<key>labelText</key>
+			<string>Change name</string>
+			<key>action</key>
+			<string>toRenameClass</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>addStudent</string>
+			<key>cellType</key>
+			<string>tchCellTypeAction</string>
+			<key>labelText</key>
+			<string>Add a student</string>
+			<key>action</key>
+			<string>toAddStudent</string>
+		</dict>
+	</array>
+</dict>
+</plist>

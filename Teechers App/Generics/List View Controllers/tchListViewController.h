@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "tchManagedViewController.h"
 
 #import "AClass.h"
 
@@ -14,9 +15,7 @@
 #import "tchDropMenuView.h"
 #import "tchHeaderView.h"
 
-@interface tchListViewController : UIViewController <tchHeaderDelegate>
-
-@property (strong,nonatomic) AClass *activeClass;
+@interface tchListViewController : tchManagedViewController <tchHeaderDelegate>
 
 @property (strong,nonatomic) IBOutlet tchHeaderView *headerView;
 @property (strong,nonatomic) IBOutlet tchDropMenuView *optionsMenu;

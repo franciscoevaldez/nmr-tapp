@@ -6,6 +6,7 @@
         <attribute name="dateStart" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="institution" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="classDays" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ClassDay" inverseName="forClass" inverseEntity="ClassDay" syncable="YES"/>
         <relationship name="evaluations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Evaluation" inverseName="forClass" inverseEntity="Evaluation" syncable="YES"/>
         <relationship name="students" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Student" inverseName="inClass" inverseEntity="Student" syncable="YES"/>
@@ -73,7 +74,7 @@
         <relationship name="forStudent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Student" inverseName="summaryRecord" inverseEntity="Student" syncable="YES"/>
     </entity>
     <elements>
-        <element name="AClass" positionX="1267" positionY="198" width="128" height="165"/>
+        <element name="AClass" positionX="1267" positionY="198" width="128" height="180"/>
         <element name="AttendanceRecord" positionX="1789" positionY="81" width="128" height="120"/>
         <element name="ClassDay" positionX="1519" positionY="-45" width="128" height="105"/>
         <element name="Evaluation" positionX="1530" positionY="189" width="128" height="210"/>
