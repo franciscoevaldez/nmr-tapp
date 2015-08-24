@@ -58,18 +58,21 @@
 #pragma mark - Set PDF visual styles
 - (void)setPDFstyles{
     
+    // Page styles
+    self.pageWidth = 842.0;
+    self.pageHeight = 595.0;
+    self.pageMarginX = 40.0;
+    self.pageMarginY = 40.0;
+    
+    // Table coords
+    self.studentStartingX = 40.0;
+    self.studentStartingY = 120.0;
+    
+    // Cell Presets
     self.generalRowHeight = 20.0;
     self.generalTightColumnWidth = 30.0;
     self.generalXmargin = 2.5;
     self.generalYmargin = 2.5;
-    
-    self.pageWidth = 842.0;
-    self.pageHeight = 595.0;
-    self.pageMarginX = 40.0;
-    self.pageMarginY = 35.0;
-    
-    self.studentStartingX = 40.0;
-    self.studentStartingY = 120.0;
     
 }
 
@@ -77,20 +80,22 @@
 #pragma mark - Add Title to page
 -(void)addPageTitle
 {
-
     
-    // Add page title -------------------------------------
-    
-    // element text
+    // set text
     NSString *pageTitle = self.activeClass.name;
-    // element font
-    UIFont *pageTitleFont = [UIFont fontWithName:@"Avenir" size:24.0f];
-    // element attributes
+    
+    // set font
+    UIFont *pageTitleFont = [UIFont fontWithName:@"Avenir-Heavy" size:24.0f];
+    
+    // set attributes in a dictionary
     NSDictionary *pageTitleAttrDict = @{NSFontAttributeName:pageTitleFont};
-    // element sizing
+    
+    // get sizing
     CGSize pageTitleSize = [pageTitle sizeWithAttributes:pageTitleAttrDict];
-    // element boxing
+    
+    // create container rectangle
     CGRect pageTitleRect = CGRectMake(40.0, 40.0, pageTitleSize.width, pageTitleSize.height);
+    
     // draw in page
     [pageTitle drawInRect:pageTitleRect withAttributes:pageTitleAttrDict];
     
@@ -100,22 +105,30 @@
 #pragma mark - Add Student Name
 -(void)addCellForStudent:(Student*)student atIndex:(NSInteger)index
 {
-    float studentHeight = self.generalRowHeight;    // cell height
-    float studentWidth = 200.0;                     // cell width
     
-    UIFont *studentFont = [UIFont fontWithName:@"Avenir" size:12.0f];       // element font
-    NSDictionary *studentAttrDict = @{NSFontAttributeName:studentFont};     // element attributes
-    CGSize studentSize = CGSizeMake(studentWidth, self.generalRowHeight);   // element sizing
+    // -----------------------------------------------------------
+    // cell formatting -------------------------------------------
+    // -----------------------------------------------------------
     
-    // change the text of the element
-    NSString *studentElement = student.name;
+    float cellHeight = self.generalRowHeight;    // cell height
+    float cellWidth = 200.0;                     // cell width
+    NSString *fontName = @"Avenir";                 // font name
+    float fontSize = 12.0;                          // font size
+    NSString *cellText = student.name;        // change the text of the element
     
-    // create the rectangle
-    float currentY = (self.studentStartingY + ((studentHeight + self.generalYmargin) * index));
-    CGRect studentRect = CGRectMake(self.studentStartingX, currentY, studentSize.width, studentSize.height);
+    // -----------------------------------------------------------
+    
+    
+    UIFont *cellFont = [UIFont fontWithName:fontName size:fontSize];       // element font
+    NSDictionary *cellAttrDict = @{NSFontAttributeName:cellFont};     // element attributes
+    
+    // get the Y position
+    float cellY = (self.studentStartingY + ((cellHeight + self.generalYmargin) * index));
+    // create the object
+    CGRect cellRectangle = CGRectMake(self.studentStartingX, cellY, cellWidth, cellHeight);
     
     // add it to the page
-    [studentElement drawInRect:studentRect withAttributes:studentAttrDict];
+    [cellText drawInRect:cellRectangle withAttributes:cellAttrDict];
     
 }
 
@@ -123,56 +136,66 @@
 -(void)addCellForDayTitle:(ClassDay*)currentDay atIndex:(NSInteger)index
 {
     
-    // general  attributes & settings ---------------
-    float attendanceWidth = self.generalTightColumnWidth;
-    float attendanceHeight = self.generalRowHeight;
+    // -----------------------------------------------------------
+    // cell formatting -------------------------------------------
+    // -----------------------------------------------------------
     
+    float cellHeight = self.generalRowHeight*2;        // cell height
+    float cellWidth = self.generalTightColumnWidth;    // cell width
+    NSString *fontName = @"Avenir-Heavy";             // font name
+    float fontSize = 12.0;                             // font size
+    NSString *cellText = @"";        // change the text of the element
     
-    UIFont *attendanceFont = [UIFont fontWithName:@"Avenir" size:12.0f];               // element font
-    NSMutableParagraphStyle *attendanceParagraph = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
-    attendanceParagraph.alignment = NSTextAlignmentCenter;                             // element paragraph settings
-    NSDictionary *attendanceAttrDict = @{NSFontAttributeName:attendanceFont, NSParagraphStyleAttributeName:attendanceParagraph};                            // element attributes
-    
-    
-    CGSize attendanceSize = CGSizeMake(attendanceWidth, attendanceHeight);             // element sizing
-    
-    NSString *dayText = @"";
+    // -----------------------------------------------------------
     
     NSDate *fullDate = currentDay.date;                             // get the name for that day
     NSDateFormatter *tempDF = [[NSDateFormatter alloc] init];       // initialize date formatter
-    tempDF.dateFormat = @"MMM/dd";                                  // get month from date
-    dayText = [[tempDF stringFromDate:fullDate] uppercaseString];   // uppercase
+    tempDF.dateFormat = @"MMM\ndd";                                  // get month from date
+    cellText = [[tempDF stringFromDate:fullDate] uppercaseString];   // uppercase
+    
+    
+    
+    NSMutableParagraphStyle *cellParagraph = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
+    
+    UIFont *cellFont = [UIFont fontWithName:fontName size:fontSize];        // element font
+    cellParagraph.alignment = NSTextAlignmentCenter;                        // element paragraph settings
+    NSDictionary *cellAttrDict = @{NSFontAttributeName:cellFont, NSParagraphStyleAttributeName:cellParagraph}; // element attributes
     
     
     // create the rectangle
-    float targetX = self.attendanceStartingX + (index * (attendanceWidth + self.generalXmargin));
-    float targetY = self.attendanceStartingY - (attendanceHeight + (self.generalYmargin *2));
-    CGRect dayRect = CGRectMake(targetX, targetY, attendanceSize.width, attendanceSize.height);
+    float cellX = self.attendanceStartingX + (index * (cellWidth + self.generalXmargin));
+    float cellY = self.attendanceStartingY - (cellHeight + (self.generalYmargin *2));
+    CGRect cellRect = CGRectMake(cellX, cellY, cellWidth, cellHeight);
     
     
     // add it to the page
-    [dayText drawInRect:dayRect withAttributes:attendanceAttrDict];
+    [cellText drawInRect:cellRect withAttributes:cellAttrDict];
     
 }
 
 #pragma mark - Add day record cell
 -(void)addCellForDay:(ClassDay*)day andStudent:(Student*)aStudent withDayIndex:(NSInteger)dayIndex andStudentIndex:(NSInteger)studentIndex
 {
-    // general  attributes & settings ---------------
-    float attendanceWidth = self.generalTightColumnWidth;
-    float attendanceHeight = self.generalRowHeight;
     
-    UIFont *attendanceFont = [UIFont fontWithName:@"Avenir" size:12.0f];               // element font
-    NSMutableParagraphStyle *attendanceParagraph = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
-    attendanceParagraph.alignment = NSTextAlignmentCenter;                             // element paragraph settings
-    NSDictionary *attendanceAttrDict = @{NSFontAttributeName:attendanceFont, NSParagraphStyleAttributeName:attendanceParagraph};                            // element attributes
+    // -----------------------------------------------------------
+    // cell formatting -------------------------------------------
+    // -----------------------------------------------------------
+    
+    float cellHeight = self.generalRowHeight;          // cell height
+    float cellWidth = self.generalTightColumnWidth;    // cell width
+    NSString *fontName = @"Avenir";                    // font name
+    float fontSize = 12.0;                             // font size
+    NSString *cellText = @"";        // change the text of the element
+    
+    // -----------------------------------------------------------
     
     
-    CGSize attendanceSize = CGSizeMake(attendanceWidth, attendanceHeight);             // element sizing
+    NSMutableParagraphStyle *cellParagraph = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
     
+    UIFont *cellFont = [UIFont fontWithName:fontName size:fontSize];        // element font
+    cellParagraph.alignment = NSTextAlignmentCenter;                        // element paragraph settings
+    NSDictionary *cellAttrDict = @{NSFontAttributeName:cellFont, NSParagraphStyleAttributeName:cellParagraph}; // element attributes
     
-    // create the return string
-    NSString *attendanceText = @"-";
     
     // look for the record belonging to that day
     AttendanceRecord *currentRecord = [aStudent getAttendanceRecordForDay:day];
@@ -184,49 +207,50 @@
         NSArray *statusArray = [NSArray arrayWithObjects:@"P", @"A", @"L", nil];
         
         // get the text
-        attendanceText = [statusArray objectAtIndex:[currentRecord.status integerValue]];
+        cellText = [statusArray objectAtIndex:[currentRecord.status integerValue]];
         
     }
     
     // create the rectangle
-    float targetX = self.attendanceStartingX + (dayIndex * (attendanceWidth + self.generalXmargin));
-    float targetY = self.attendanceStartingY + (studentIndex * (attendanceHeight + self.generalYmargin));
-    CGRect attendanceRect = CGRectMake(targetX, targetY, attendanceSize.width, attendanceSize.height);
+    float cellX = self.attendanceStartingX + (dayIndex * (cellWidth + self.generalXmargin));
+    float cellY = self.attendanceStartingY + (studentIndex * (cellHeight + self.generalYmargin));
+    CGRect cellRect = CGRectMake(cellX, cellY, cellWidth, cellHeight);
     
     // add it to the page
-    [attendanceText drawInRect:attendanceRect withAttributes:attendanceAttrDict];
+    [cellText drawInRect:cellRect withAttributes:cellAttrDict];
     
 }
 
 #pragma mark - Add grade title
 -(void)addCellForGradeTitle:(Evaluation*)evaluation atIndex:(NSInteger)index
 {
+    // -----------------------------------------------------------
+    // cell formatting -------------------------------------------
+    // -----------------------------------------------------------
+    
+    float cellHeight = self.generalRowHeight*2;        // cell height
+    float cellWidth = self.generalTightColumnWidth;    // cell width
+    NSString *fontName = @"Avenir-Heavy";             // font name
+    float fontSize = 12.0;                             // font size
+    NSString *cellText = evaluation.nameShort;        // change the text of the element
+    
+    // -----------------------------------------------------------
     
     
-    float gradeWidth = self.generalTightColumnWidth;
-    float gradeHeight = self.generalRowHeight;
+    NSMutableParagraphStyle *cellParagraph = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
     
-    // element font
-    UIFont *gradeFont = [UIFont fontWithName:@"Avenir" size:12.0f];
-    // element paragraph settings
-    NSMutableParagraphStyle *gradeParagraph = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
-    gradeParagraph.alignment = NSTextAlignmentCenter;
-    // element attributes
-    NSDictionary *gradeAttrDict = @{NSFontAttributeName:gradeFont, NSParagraphStyleAttributeName:gradeParagraph};
-    // element sizing
-    CGSize gradeSize = CGSizeMake(gradeWidth, gradeHeight);
+    UIFont *cellFont = [UIFont fontWithName:fontName size:fontSize];        // element font
+    cellParagraph.alignment = NSTextAlignmentCenter;                        // element paragraph settings
+    NSDictionary *cellAttrDict = @{NSFontAttributeName:cellFont, NSParagraphStyleAttributeName:cellParagraph}; // element attributes
     
-    
-    // get the name for that day
-    NSString *evalText = evaluation.nameShort;
     
     // create the rectangle
-    float targetX = self.gradesStartingX + (index * (gradeWidth + self.generalXmargin));
-    float targetY = self.gradesStartingY - (gradeHeight + (self.generalYmargin *2));
-    CGRect gradeRect = CGRectMake(targetX, targetY, gradeSize.width, gradeSize.height);
+    float cellX = self.gradesStartingX + (index * (cellWidth + self.generalXmargin));
+    float cellY = self.gradesStartingY - (cellHeight + (self.generalYmargin *2));
+    CGRect cellRect = CGRectMake(cellX, cellY, cellWidth, cellHeight);
     
     // add it to the page
-    [evalText drawInRect:gradeRect withAttributes:gradeAttrDict];
+    [cellText drawInRect:cellRect withAttributes:cellAttrDict];
     
     
 }
@@ -234,19 +258,25 @@
 #pragma mark - Add grade record cell
 -(void)addCellForGrade:(Evaluation*)grade andStudent:(Student*)aStudent withGradeIndex:(NSInteger)gradeIndex andStudentIndex:(NSInteger)studentIndex
 {
-    float gradeWidth = self.generalTightColumnWidth;
-    float gradeHeight = self.generalRowHeight;
+    // -----------------------------------------------------------
+    // cell formatting -------------------------------------------
+    // -----------------------------------------------------------
+    
+    float cellHeight = self.generalRowHeight;          // cell height
+    float cellWidth = self.generalTightColumnWidth;    // cell width
+    NSString *fontName = @"Avenir";                    // font name
+    float fontSize = 12.0;                             // font size
+    NSString *cellText = @"";        // change the text of the element
+    
+    // -----------------------------------------------------------
     
     
-    UIFont *gradeFont = [UIFont fontWithName:@"Avenir" size:12.0f];     // element font
-    NSMutableParagraphStyle *gradeParagraph = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];   // element paragraph settings
-    gradeParagraph.alignment = NSTextAlignmentCenter;
-    NSDictionary *gradeAttrDict = @{NSFontAttributeName:gradeFont, NSParagraphStyleAttributeName:gradeParagraph};   // element attributes
-    CGSize gradeSize = CGSizeMake(gradeWidth, gradeHeight); // element sizing
+    NSMutableParagraphStyle *cellParagraph = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
     
+    UIFont *cellFont = [UIFont fontWithName:fontName size:fontSize];        // element font
+    cellParagraph.alignment = NSTextAlignmentCenter;                        // element paragraph settings
+    NSDictionary *cellAttrDict = @{NSFontAttributeName:cellFont, NSParagraphStyleAttributeName:cellParagraph}; // element attributes
     
-    // reset text
-    NSString *gradeText = @"-";
     
     // look for the record belonging to that day
     GradeRecord* currentRecord = [aStudent getGradeForEvaluation:grade];
@@ -254,16 +284,44 @@
     // if the record exists…
     if (currentRecord.grade) {
         // get the text
-        gradeText = [NSString stringWithFormat:@"%@", currentRecord.grade];
+        cellText = [NSString stringWithFormat:@"%@", currentRecord.grade];
     }
     
     // create the rectangle
-    float targetX = self.gradesStartingX + (gradeIndex * (gradeWidth + self.generalXmargin));
-    float targetY = self.gradesStartingY + (studentIndex * (gradeHeight + self.generalYmargin));
-    CGRect gradeRect = CGRectMake(targetX, targetY, gradeSize.width, gradeSize.height);
+    float cellX = self.gradesStartingX + (gradeIndex * (cellWidth + self.generalXmargin));
+    float cellY = self.gradesStartingY + (studentIndex * (cellHeight + self.generalYmargin));
+    CGRect cellRect = CGRectMake(cellX, cellY, cellWidth, cellHeight);
     
     // add it to the page
-    [gradeText drawInRect:gradeRect withAttributes:gradeAttrDict];
+    [cellText drawInRect:cellRect withAttributes:cellAttrDict];
+    
+}
+
+#pragma mark - add row background
+-(void)addRowBackgroundForIndex:(NSInteger)index
+{
+    // -----------------------------------------------------------
+    // cell formatting -------------------------------------------
+    // -----------------------------------------------------------
+    
+    float cellHeight = self.generalRowHeight;          // cell height
+    float cellWidth = self.pageWidth - (self.pageMarginX * 2);    // cell width
+    
+    // -----------------------------------------------------------
+    
+    // Get the graphics context.
+    CGContextRef currentContext = UIGraphicsGetCurrentContext();
+    
+    // create the rectangle
+    float cellX = self.studentStartingX;
+    float cellY = (self.studentStartingY + ((cellHeight + self.generalYmargin) * index) - 4);
+    
+    CGRect drawingRect = CGRectMake(cellX, cellY, cellWidth, cellHeight);
+    [[UIColor colorWithWhite:0.9 alpha:1] set];
+    
+    CGContextFillRect( currentContext, drawingRect);
+
+    
     
 }
 
@@ -347,8 +405,9 @@
         
         // get looping for attendance headers… ---------------
         
-        self.attendanceStartingX = self.studentStartingX + 200 + (self.generalXmargin * 2);     // set starting X for attendance
-        self.attendanceStartingY = self.studentStartingY;                                       // set starting Y for attendance
+        // set starting X & Y for attendance
+        self.attendanceStartingX = self.studentStartingX + 200 + (self.generalXmargin * 2);
+        self.attendanceStartingY = self.studentStartingY;
         
         for (ClassDay *currentDay in self.daysArray) {
             
@@ -362,8 +421,9 @@
         
         // get looping for grades headers… ---------------
         
-        self.gradesStartingX = self.attendanceStartingX + ((self.generalTightColumnWidth + self.generalXmargin) * [aClass.classDays count]) + (self.generalXmargin * 4);     // set starting X for attendance
-        self.gradesStartingY = self.studentStartingY;                                       // set starting Y for attendance
+        // set starting grades X & Y
+        self.gradesStartingX = self.attendanceStartingX + ((self.generalTightColumnWidth + self.generalXmargin) * [aClass.classDays count]) + (self.generalXmargin * 4);
+        self.gradesStartingY = self.studentStartingY;
         
         for (Evaluation *currentEval in self.evaluationsArray) {
             
@@ -382,6 +442,11 @@
             
             // get the row index
             NSInteger rowIndex = studentIndex - (currentPage * rowAmount);
+            
+            // set the row background
+            if (!(rowIndex % 2)){
+                [self addRowBackgroundForIndex:rowIndex];
+            }
             
             // get the current student
             Student *currentStudent = [self.studentArray objectAtIndex:studentIndex];

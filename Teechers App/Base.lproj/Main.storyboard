@@ -91,12 +91,12 @@
             <string>Avenir-Heavy</string>
             <string>Avenir-Medium</string>
             <string>Avenir-Medium</string>
+            <string>Avenir-Medium</string>
+            <string>Avenir-Medium</string>
+            <string>Avenir-Medium</string>
             <string>Avenir-Roman</string>
             <string>Avenir-Heavy</string>
             <string>Avenir-Roman</string>
-            <string>Avenir-Medium</string>
-            <string>Avenir-Medium</string>
-            <string>Avenir-Medium</string>
             <string>Avenir-Medium</string>
             <string>Avenir-Medium</string>
             <string>Avenir-Medium</string>
@@ -5407,6 +5407,9 @@ Ready to get started?</string>
                                                     <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="20" y="19" width="200" height="24"/>
+                                                    </variation>
                                                 </label>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="v2z-b7-itE" userLabel="Data Collection" customClass="tchColumnsCollection">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -5502,7 +5505,8 @@ Ready to get started?</string>
                                                             <exclude reference="hrE-V6-yeE"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact">
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="260" y="0.0" width="60" height="60"/>
                                                         <mask key="constraints">
                                                             <include reference="76E-Ik-Dlz"/>
                                                             <include reference="hrE-V6-yeE"/>
@@ -5607,6 +5611,9 @@ Ready to get started?</string>
                                                                     </connections>
                                                                 </collectionViewCell>
                                                             </cells>
+                                                            <variation key="widthClass=compact" misplaced="YES">
+                                                                <rect key="frame" x="0.0" y="0.0" width="320" height="89"/>
+                                                            </variation>
                                                             <connections>
                                                                 <outlet property="dataSource" destination="KeT-Ip-6Le" id="Viw-rU-8U9"/>
                                                                 <outlet property="delegate" destination="fFg-Vt-MbP" id="ZFK-nH-V5h"/>
@@ -5636,7 +5643,8 @@ Ready to get started?</string>
                                                             <exclude reference="ejw-au-Q39"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact">
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="0.0" y="61" width="320" height="89"/>
                                                         <mask key="subviews">
                                                             <include reference="sdj-OU-40W"/>
                                                         </mask>
@@ -5663,7 +5671,8 @@ Ready to get started?</string>
                                                             <exclude reference="S4s-vw-urc"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact">
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="0.0" y="51" width="320" height="10"/>
                                                         <mask key="constraints">
                                                             <include reference="S4s-vw-urc"/>
                                                         </mask>
@@ -6066,7 +6075,7 @@ Ready to get started?</string>
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Z7S-oX-gjl" id="Qne-zC-fD6">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="119"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="179"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yEH-om-MSI" userLabel="Splitter">
@@ -6254,17 +6263,17 @@ Ready to get started?</string>
                                                     <exclude reference="CqV-gw-NLO"/>
                                                     <exclude reference="hKv-vW-NJO"/>
                                                     <exclude reference="tK0-Hf-Mx6"/>
-                                                    <exclude reference="3N3-fQ-bdx"/>
-                                                    <exclude reference="Sj0-Rq-j11"/>
-                                                    <exclude reference="VOP-Zv-3f7"/>
-                                                    <exclude reference="bb9-Xz-3rg"/>
-                                                    <exclude reference="4FW-BL-MeS"/>
-                                                    <exclude reference="NR4-OW-ZCS"/>
-                                                    <exclude reference="xc2-Yc-xOJ"/>
                                                     <exclude reference="2A4-u6-8di"/>
                                                     <exclude reference="cBO-ES-lT6"/>
                                                     <exclude reference="cYS-c2-PXL"/>
                                                     <exclude reference="jgA-N8-O8N"/>
+                                                    <exclude reference="4FW-BL-MeS"/>
+                                                    <exclude reference="NR4-OW-ZCS"/>
+                                                    <exclude reference="xc2-Yc-xOJ"/>
+                                                    <exclude reference="3N3-fQ-bdx"/>
+                                                    <exclude reference="Sj0-Rq-j11"/>
+                                                    <exclude reference="VOP-Zv-3f7"/>
+                                                    <exclude reference="bb9-Xz-3rg"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -6278,17 +6287,17 @@ Ready to get started?</string>
                                                     <include reference="CqV-gw-NLO"/>
                                                     <include reference="hKv-vW-NJO"/>
                                                     <include reference="tK0-Hf-Mx6"/>
-                                                    <include reference="3N3-fQ-bdx"/>
-                                                    <include reference="Sj0-Rq-j11"/>
-                                                    <include reference="VOP-Zv-3f7"/>
-                                                    <include reference="bb9-Xz-3rg"/>
-                                                    <include reference="4FW-BL-MeS"/>
-                                                    <include reference="NR4-OW-ZCS"/>
-                                                    <include reference="xc2-Yc-xOJ"/>
                                                     <include reference="2A4-u6-8di"/>
                                                     <include reference="cBO-ES-lT6"/>
                                                     <include reference="cYS-c2-PXL"/>
                                                     <include reference="jgA-N8-O8N"/>
+                                                    <include reference="4FW-BL-MeS"/>
+                                                    <include reference="NR4-OW-ZCS"/>
+                                                    <include reference="xc2-Yc-xOJ"/>
+                                                    <include reference="3N3-fQ-bdx"/>
+                                                    <include reference="Sj0-Rq-j11"/>
+                                                    <include reference="VOP-Zv-3f7"/>
+                                                    <include reference="bb9-Xz-3rg"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
