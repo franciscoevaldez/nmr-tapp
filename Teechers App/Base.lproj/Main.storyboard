@@ -5407,9 +5407,6 @@ Ready to get started?</string>
                                                     <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="20" y="19" width="200" height="24"/>
-                                                    </variation>
                                                 </label>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="v2z-b7-itE" userLabel="Data Collection" customClass="tchColumnsCollection">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -5505,8 +5502,7 @@ Ready to get started?</string>
                                                             <exclude reference="hrE-V6-yeE"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="260" y="0.0" width="60" height="60"/>
+                                                    <variation key="widthClass=compact">
                                                         <mask key="constraints">
                                                             <include reference="76E-Ik-Dlz"/>
                                                             <include reference="hrE-V6-yeE"/>
@@ -5611,9 +5607,6 @@ Ready to get started?</string>
                                                                     </connections>
                                                                 </collectionViewCell>
                                                             </cells>
-                                                            <variation key="widthClass=compact" misplaced="YES">
-                                                                <rect key="frame" x="0.0" y="0.0" width="320" height="89"/>
-                                                            </variation>
                                                             <connections>
                                                                 <outlet property="dataSource" destination="KeT-Ip-6Le" id="Viw-rU-8U9"/>
                                                                 <outlet property="delegate" destination="fFg-Vt-MbP" id="ZFK-nH-V5h"/>
@@ -5643,8 +5636,7 @@ Ready to get started?</string>
                                                             <exclude reference="ejw-au-Q39"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="0.0" y="61" width="320" height="89"/>
+                                                    <variation key="widthClass=compact">
                                                         <mask key="subviews">
                                                             <include reference="sdj-OU-40W"/>
                                                         </mask>
@@ -5671,8 +5663,7 @@ Ready to get started?</string>
                                                             <exclude reference="S4s-vw-urc"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="0.0" y="51" width="320" height="10"/>
+                                                    <variation key="widthClass=compact">
                                                         <mask key="constraints">
                                                             <include reference="S4s-vw-urc"/>
                                                         </mask>
