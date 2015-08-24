@@ -7,10 +7,14 @@
 //
 
 #import "tchManagedViewController.h"
+#import "AClass.h"
 
 @interface tchClassOptionsVC : tchManagedViewController
 
 -(void)callChangeName;
 -(void)callAddStudent;
+//-(void)callExportClassAs:(tchExportType)exportType;
+-(void)callExport;
+-(void)callExportPDF;
 
 @end

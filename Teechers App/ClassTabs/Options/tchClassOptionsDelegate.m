@@ -7,7 +7,6 @@
 //
 
 #import "tchClassOptionsDelegate.h"
-#import "tchClassOptionsTable.h"
 #import "tchClassOptionsVC.h"
 #import "AClass.h"
 
@@ -18,6 +17,15 @@
     // get the active class
     tchClassOptionsTable *castedTable = (tchClassOptionsTable*)tableView;
     tchClassOptionsVC *viewController = castedTable.optionsVC;
+
+    if ([action isEqualToString:@"toExportAsXLS"]) {
+        //[viewController callExportClassAs:tchClassExportTypeCSV];
+        [viewController callExport];
+    }
+    
+    if ([action isEqualToString:@"toExportAsPDF"]) {
+        [viewController callExportPDF];
+    }
     
     if ([action isEqualToString:@"toRenameClass"]) {
         [viewController callChangeName];
@@ -26,20 +34,18 @@
     if ([action isEqualToString:@"toAddStudent"]) {
         [viewController callAddStudent];
     }
-    
-    
 
 }
 
 - (IBAction)pdfExportPressed:(id)sender {
     
-    [self tableView:nil runAction:@"toExportAsPDF"];
+    [self tableView:self.ownerTable runAction:@"toExportAsPDF"];
     
 }
 
 - (IBAction)xlsExportPressed:(id)sender {
     
-    [self tableView:nil runAction:@"toExportAsXLS"];
+    [self tableView:self.ownerTable runAction:@"toExportAsXLS"];
     
 }
 

@@ -9,12 +9,15 @@
 #import "tchClassOptionsVC.h"
 #import "tchClassOptionsTable.h"
 
+#import "tchClassPDFexporter.h"
+
 #import "Student.h"
 
 @interface tchClassOptionsVC ()
 
 @property (strong,nonatomic) IBOutlet UILabel *classNameLabel;
 @property (strong,nonatomic) IBOutlet tchClassOptionsTable *optionsTable;
+@property (strong,nonatomic) IBOutlet tchClassPDFexporter *pdfExporter;
 
 @end
 
@@ -138,6 +141,45 @@
 
 #pragma mark - Archive class
 
+
+#pragma mark - Share as xls
+//-(void)callExportClassAs:(tchExportType)exportType{
+    
+    //[self.activeClass exportClassAsCSV];
+    
+//}
+
+-(void)callExportPDF
+{
+    
+    NSString * message = self.activeClass.name;
+    
+    NSString * pdfFile = [self.pdfExporter getPDFforClass:self.activeClass];
+    
+    NSArray * shareItems = [NSArray arrayWithObjects:message, [NSURL fileURLWithPath:pdfFile], nil];
+    
+    UIActivityViewController * avc = [[UIActivityViewController alloc] initWithActivityItems:shareItems applicationActivities:nil];
+    
+    [self presentViewController:avc animated:YES completion:nil];
+    
+}
+
+
+-(void)callExport{
+    
+    
+    
+    NSString * message = self.activeClass.name;
+    
+    NSString * csvFile = [self.activeClass exportClassAsCSV];
+    
+    NSArray * shareItems = [NSArray arrayWithObjects:message, [NSURL fileURLWithPath:csvFile], nil];
+    
+    UIActivityViewController * avc = [[UIActivityViewController alloc] initWithActivityItems:shareItems applicationActivities:nil];
+    
+    [self presentViewController:avc animated:YES completion:nil];
+    
+}
 
 /*
 #pragma mark - Navigation
