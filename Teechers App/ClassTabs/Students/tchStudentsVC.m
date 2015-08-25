@@ -18,8 +18,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    // get the screen height
+    CGRect screenBound = [[UIScreen mainScreen] bounds];
+    CGSize screenSize = screenBound.size;
+    CGFloat screenHeight = screenSize.height;
+    
     // Tell the students table the deployed cell height
-    self.studentsTable.deployedCellHeight = 60+300;
+    self.studentsTable.deployedCellHeight = 60.0 + (screenHeight - 60.0) - 80.0 - 54.0;
     
     self.studentsTable.isEnabled = true;
     
