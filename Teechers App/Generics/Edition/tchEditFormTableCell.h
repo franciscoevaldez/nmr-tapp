@@ -30,6 +30,7 @@ typedef NS_ENUM(NSInteger, tchFormCellType) {
 @property (nonatomic) NSString *inputPlaceholder;
 @property (nonatomic) NSIndexPath *indexPath;
 @property (nonatomic) NSString *propertyName;
+@property (nonatomic) NSString *inputDefault;
 
 @property (nonatomic) id value;
 

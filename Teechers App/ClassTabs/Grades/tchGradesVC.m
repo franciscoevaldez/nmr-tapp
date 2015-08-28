@@ -131,8 +131,10 @@
     // to new grade
     if ([[segue identifier]isEqualToString:@"toAddGradeSegue"]) {
         
-        // toggle the menu
-        [self headerWasTapped];
+        // If menu is deployed, close it
+        if (self.optionsMenu.status) {
+            [self headerWasTapped];
+        }
         
         // prepare the edit/create view controller
         tchEditGrade1VC *destinationVC = [segue destinationViewController];

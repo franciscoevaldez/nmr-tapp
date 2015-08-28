@@ -58,15 +58,22 @@
             [self.datePickerField changeDatePicker:self.value];
         }
         
-        if (self.cellType == tchFormCellLabelAndTextInput) {
+        if (self.cellType == tchFormCellLabelAndTextInput ||
+            self.cellType == tchFormCellLabelAndNumberInput) {
             self.inputField.text = [NSString stringWithFormat:@"%@", self.value];
         }
         
+        /*
         if (self.cellType == tchFormCellLabelAndNumberInput) {
             self.inputField.text = [NSString stringWithFormat:@"%@", self.value];
         }
+         */
 
         
+    }
+    
+    if ([structData objectForKey:@"inputDefault"]) {
+        self.inputDefault = [structData objectForKey:@"inputDefault"];
     }
     
     // if the cell is an instruction, disable selection
