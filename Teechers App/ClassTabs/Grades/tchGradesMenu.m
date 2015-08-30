@@ -71,6 +71,9 @@
                                    // tell the store coordinator to delete that day
                                    [currentEval deleteEval];
                                    
+                                   // tell the delegate to scroll to the previous column
+                                   [self.delegate scrollToIndex:-1];
+                                   
                                    // tell the delegate to reload data
                                    [self.delegate reloadViewsData];
                                    

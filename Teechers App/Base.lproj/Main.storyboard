@@ -2474,7 +2474,7 @@
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Text Input" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yaG-RC-GVU" userLabel="Input">
                                                     <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     <connections>
                                                         <action selector="inputEditEnded:" destination="Af5-SU-Ko3" eventType="editingDidEnd" id="g2h-ve-1QR"/>
                                                         <outlet property="delegate" destination="Af5-SU-Ko3" id="5sk-Qc-MJ0"/>
@@ -4045,7 +4045,7 @@ Ready to get started?</string>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Text Input" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4EZ-28-A1r" userLabel="Input">
                                                     <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                                     <connections>
                                                         <action selector="inputEditEnded:" destination="EMi-2c-ktt" eventType="editingDidEnd" id="fTa-Q4-JSx"/>
                                                         <outlet property="delegate" destination="EMi-2c-ktt" id="U4m-10-cSj"/>
@@ -6644,7 +6644,7 @@ Ready to get started?</string>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Text Input" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O6H-Ze-k0W" userLabel="Input">
                                                     <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     <connections>
                                                         <action selector="inputEditEnded:" destination="Zk5-PG-q1E" eventType="editingDidEnd" id="iln-uY-Zrt"/>
                                                         <outlet property="delegate" destination="Zk5-PG-q1E" id="C22-Wi-nNi"/>

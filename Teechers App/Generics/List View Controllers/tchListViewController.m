@@ -238,6 +238,17 @@
 
 -(void)scrollToIndex:(NSInteger)newIndex{
     
+    
+    // if you get a -1 as index, that means scroll to the previous column
+    if (newIndex == -1) {
+        newIndex = self.currentColumnIndex-1;
+    }
+    
+    // now, if the current scroll is -1, normalize to 0
+    newIndex = (newIndex<0) ? 0 : newIndex;
+    
+    // if the scroll index
+    
     // Tell header to scroll to new index
     //[self.tchAttendanceHeader performDayScrollToIndex:newIndex];
     [self.headerView performColumnScrollToIndex:newIndex];
