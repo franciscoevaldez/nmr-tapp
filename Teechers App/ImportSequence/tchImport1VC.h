@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "tchManagedViewController.h"
+#import "tchViewKeyboardVC.h"
 
-@interface tchImport1VC : tchManagedViewController <UIScrollViewDelegate>
+@interface tchImport1VC : tchViewKeyboardVC <UITextViewDelegate>
 
 @end

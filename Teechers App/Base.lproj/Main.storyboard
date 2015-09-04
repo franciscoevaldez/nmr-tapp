@@ -3716,7 +3716,7 @@ Ready to get started?</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SAr-dy-O6d" userLabel="Body">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" keyboardDismissMode="onDrag" text="Here come the names!" translatesAutoresizingMaskIntoConstraints="NO" id="WGe-tJ-Gfn" customClass="tchSuperTextView">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" text="Here come the names!" translatesAutoresizingMaskIntoConstraints="NO" id="WGe-tJ-Gfn" customClass="tchSuperTextView">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no"/>
@@ -3752,8 +3752,10 @@ Ready to get started?</string>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="WGe-tJ-Gfn" secondAttribute="bottom" constant="16" id="ExU-Ni-JeB"/>
                                     <constraint firstItem="WGe-tJ-Gfn" firstAttribute="leading" secondItem="Q7C-fh-CeO" secondAttribute="trailing" constant="6" id="Iqu-Iu-gu9"/>
                                     <constraint firstAttribute="trailing" secondItem="WGe-tJ-Gfn" secondAttribute="trailing" constant="16" id="OXN-4G-LHB"/>
+                                    <constraint firstItem="WGe-tJ-Gfn" firstAttribute="top" secondItem="SAr-dy-O6d" secondAttribute="top" constant="16" id="PF1-Tv-0zx"/>
                                     <constraint firstItem="Q7C-fh-CeO" firstAttribute="bottom" secondItem="WGe-tJ-Gfn" secondAttribute="bottom" id="mOU-FZ-UlK"/>
                                     <constraint firstItem="Q7C-fh-CeO" firstAttribute="top" secondItem="WGe-tJ-Gfn" secondAttribute="top" id="qfa-WS-h1z"/>
                                     <constraint firstAttribute="bottom" secondItem="WGe-tJ-Gfn" secondAttribute="bottom" constant="16" id="r84-Wq-nGh"/>
@@ -3771,8 +3773,10 @@ Ready to get started?</string>
                                         <exclude reference="mOU-FZ-UlK"/>
                                         <exclude reference="qfa-WS-h1z"/>
                                         <exclude reference="yh6-6G-oVU"/>
+                                        <exclude reference="ExU-Ni-JeB"/>
                                         <exclude reference="Iqu-Iu-gu9"/>
                                         <exclude reference="OXN-4G-LHB"/>
+                                        <exclude reference="PF1-Tv-0zx"/>
                                         <exclude reference="r84-Wq-nGh"/>
                                         <exclude reference="uPJ-1U-ash"/>
                                     </mask>
@@ -3786,10 +3790,12 @@ Ready to get started?</string>
                                         <include reference="mOU-FZ-UlK"/>
                                         <include reference="qfa-WS-h1z"/>
                                         <include reference="yh6-6G-oVU"/>
+                                        <include reference="ExU-Ni-JeB"/>
                                         <include reference="Iqu-Iu-gu9"/>
                                         <include reference="OXN-4G-LHB"/>
-                                        <include reference="r84-Wq-nGh"/>
-                                        <include reference="uPJ-1U-ash"/>
+                                        <include reference="PF1-Tv-0zx"/>
+                                        <exclude reference="r84-Wq-nGh"/>
+                                        <exclude reference="uPJ-1U-ash"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -3840,6 +3846,7 @@ Ready to get started?</string>
                     <navigationItem key="navigationItem" id="A4Z-Ug-V0N"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="bottomConstraint" destination="JOC-G5-IgJ" id="3e8-Xb-9uc"/>
                         <outlet property="tchLineCountTextArea" destination="Q7C-fh-CeO" id="ENY-E8-BDl"/>
                         <outlet property="tchStudentsTextArea" destination="WGe-tJ-Gfn" id="fIy-Qv-SJQ"/>
                     </connections>
@@ -4378,6 +4385,7 @@ Ready to get started?</string>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="bottomConstraint" destination="8DW-be-afK" id="nbP-Mq-UPv"/>
                         <outlet property="formTable" destination="pbZ-3O-Ohx" id="Wt8-qY-daO"/>
                     </connections>
                 </viewController>
@@ -6083,7 +6091,7 @@ Ready to get started?</string>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Action cell" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ie7-5t-Jls">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -6151,7 +6159,7 @@ Ready to get started?</string>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share class data…" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ko-Go-S5W">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zID-oq-0cL" userLabel="leftAlign">

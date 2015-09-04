@@ -10,9 +10,10 @@
 #import "tchImport2VC.h"
 
 @interface tchImport1VC ()
-@property (strong, nonatomic) IBOutlet NSLayoutConstraint *tchBottomMarginConst;
+
 @property (strong, nonatomic) IBOutlet UITextView *tchStudentsTextArea;
 @property (strong, nonatomic) IBOutlet UITextView *tchLineCountTextArea;
+
 @end
 
 @implementation tchImport1VC
@@ -35,19 +36,6 @@
 }
 
 
-#pragma mark - keyboard adjustments & listeners
-// registrar los listeners para el teclado
-- (void)registerForKeyboardNotifications
-{
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWasShown:)
-                                                 name:UIKeyboardDidShowNotification object:nil];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWillBeHidden:)
-                                                 name:UIKeyboardWillHideNotification object:nil];
-    
-}
 
 #pragma mark - Text View placeholder
 - (BOOL)textViewShouldBeginEditing:(UITextView *)textView
@@ -69,7 +57,24 @@
         [self.tchStudentsTextArea resignFirstResponder];
     }
     
-    float nameRows = round( (textView.contentSize.height - textView.textContainerInset.top - textView.textContainerInset.bottom) / textView.font.lineHeight );
+    //[self checkTextLines];
+    
+}
+
+-(BOOL)textView:(nonnull UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(nonnull NSString *)text
+{
+    
+    [self checkTextLines];
+    
+    return YES;
+    
+}
+
+-(void)checkTextLines
+{
+    /*
+    float nameRows = round( (self.tchStudentsTextArea.contentSize.height - self.tchStudentsTextArea.textContainerInset.top - self.tchStudentsTextArea.textContainerInset.bottom) / self.tchStudentsTextArea.font.lineHeight );
+     
     
     float indexRows = round( (self.tchLineCountTextArea.contentSize.height - self.tchLineCountTextArea.textContainerInset.top - self.tchLineCountTextArea.textContainerInset.bottom) / self.tchLineCountTextArea.font.lineHeight );
     
@@ -84,6 +89,52 @@
         self.tchLineCountTextArea.text = newText;
         
     }
+     */
+    
+    // line count
+    /*
+    NSString *namesStrings = self.tchStudentsTextArea.text;
+    NSInteger numberOfLines, index, stringLength = [namesStrings length];
+    
+    for (index = 0, numberOfLines = 0; index < stringLength; numberOfLines++)
+        index = NSMaxRange([namesStrings lineRangeForRange:NSMakeRange(index, 0)]);
+    
+    
+     */
+    
+    
+    // new line counter text
+    NSString *lineCounterText = @"";
+    
+    // second line count
+    NSLayoutManager *layoutManager = [self.tchStudentsTextArea layoutManager];
+    NSInteger NnumberOfLines, Nindex, NlineNumber, numberOfGlyphs = [layoutManager numberOfGlyphs];
+    NSRange lineRange;
+    NSString *currentText = self.tchStudentsTextArea.text;
+    
+    for (NnumberOfLines = 0, Nindex = 0, NlineNumber = 0; Nindex < numberOfGlyphs; NnumberOfLines++){
+        
+        (void) [layoutManager lineFragmentRectForGlyphAtIndex:Nindex
+                                               effectiveRange:&lineRange];
+        
+        Nindex = NSMaxRange(lineRange);
+        
+        // get text for range
+        NSString *currentLine = [currentText substringWithRange:lineRange];
+        NSString *currentNumber = @"";
+        
+        if ([currentLine rangeOfString:@"\n"].location == NSNotFound) {
+            
+        } else {
+            NlineNumber++;
+            currentNumber = [NSString stringWithFormat:@"%ld", (long)NlineNumber];
+        }
+        
+        lineCounterText = [NSString stringWithFormat:@"%@%@\n", lineCounterText, currentNumber];
+        
+    }
+    
+    self.tchLineCountTextArea.text = lineCounterText;
     
 }
 
@@ -93,29 +144,6 @@
     [self.tchLineCountTextArea setContentOffset:scrollView.contentOffset];
 }
 
-// Called when the UIKeyboardDidShowNotification is sent.
-- (void)keyboardWasShown:(NSNotification*)aNotification
-{
-    
-    // keyboard is shown, change the constraint to adjust the content:
-
-    // get notification info & keyboard frame
-    NSDictionary* info = [aNotification userInfo];
-    CGRect kKeyBoardFrame = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
-    
-    // add frame height to the constraint's constant
-    self.tchBottomMarginConst.constant = kKeyBoardFrame.size.height;
-    
-}
-
-// Called when the UIKeyboardWillHideNotification is sent
-- (void)keyboardWillBeHidden:(NSNotification*)aNotification
-{
-    
-    // keyboard will be hidden, return bottom constraint to 0:
-    self.tchBottomMarginConst.constant = 0;
-    
-}
 
 
 #pragma mark - Input Parse
