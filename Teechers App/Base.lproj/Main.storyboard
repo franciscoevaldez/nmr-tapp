@@ -3716,7 +3716,7 @@ Ready to get started?</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SAr-dy-O6d" userLabel="Body">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" text="Here come the names!" translatesAutoresizingMaskIntoConstraints="NO" id="WGe-tJ-Gfn" customClass="tchSuperTextView">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" text="Paste your names here" translatesAutoresizingMaskIntoConstraints="NO" id="WGe-tJ-Gfn" customClass="tchSuperTextView">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no"/>
@@ -3766,7 +3766,6 @@ Ready to get started?</string>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="subviews">
-                                        <exclude reference="WGe-tJ-Gfn"/>
                                         <exclude reference="Q7C-fh-CeO"/>
                                     </mask>
                                     <mask key="constraints">
@@ -3783,7 +3782,6 @@ Ready to get started?</string>
                                 </variation>
                                 <variation key="widthClass=compact">
                                     <mask key="subviews">
-                                        <include reference="WGe-tJ-Gfn"/>
                                         <include reference="Q7C-fh-CeO"/>
                                     </mask>
                                     <mask key="constraints">

@@ -531,7 +531,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "Yes"
             filePath = "Teechers App/ImportSequence/tchImport1VC.m"
@@ -585,11 +585,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "Yes"
             filePath = "Teechers App/ImportSequence/tchImport1VC.m"
-            timestampString = "463026086.209912"
+            timestampString = "463056998.986396"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
             landmarkName = "-checkTextLines"
             landmarkType = "5">
             <Actions>
@@ -610,11 +610,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "Yes"
             filePath = "Teechers App/ImportSequence/tchImport1VC.m"
-            timestampString = "463025716.22473"
+            timestampString = "463056998.986396"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
+            landmarkName = "-checkTextLines"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Teechers App/ImportSequence/tchImport1VC.m"
+            timestampString = "463056998.986396"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
             landmarkName = "-checkTextLines"
             landmarkType = "5">
          </BreakpointContent>

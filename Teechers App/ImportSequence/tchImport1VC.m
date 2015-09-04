@@ -104,31 +104,62 @@
     
     
     // new line counter text
-    NSString *lineCounterText = @"";
+    NSString *lineCounterText = @"1";
     
     // second line count
     NSLayoutManager *layoutManager = [self.tchStudentsTextArea layoutManager];
-    NSInteger NnumberOfLines, Nindex, NlineNumber, numberOfGlyphs = [layoutManager numberOfGlyphs];
+    NSInteger numberOfLines, cIndex, numberForPrint, numberOfGlyphs = [layoutManager numberOfGlyphs];
     NSRange lineRange;
     NSString *currentText = self.tchStudentsTextArea.text;
+    NSString *currentNumber = @"";
+    NSString *prevLine = @"";
+    BOOL print = false;
     
-    for (NnumberOfLines = 0, Nindex = 0, NlineNumber = 0; Nindex < numberOfGlyphs; NnumberOfLines++){
+    for (numberOfLines = 0, cIndex = 0, numberForPrint = 1; cIndex < numberOfGlyphs; numberOfLines++){
         
-        (void) [layoutManager lineFragmentRectForGlyphAtIndex:Nindex
+        currentNumber = @"";
+        print = false;
+        
+        (void) [layoutManager lineFragmentRectForGlyphAtIndex:cIndex
                                                effectiveRange:&lineRange];
         
-        Nindex = NSMaxRange(lineRange);
+        cIndex = NSMaxRange(lineRange);
+        
         
         // get text for range
         NSString *currentLine = [currentText substringWithRange:lineRange];
-        NSString *currentNumber = @"";
         
-        if ([currentLine rangeOfString:@"\n"].location == NSNotFound) {
-            
-        } else {
-            NlineNumber++;
-            currentNumber = [NSString stringWithFormat:@"%ld", (long)NlineNumber];
+        // if current line has return, and the previous does, print
+        if (!([currentLine rangeOfString:@"\n"].location == NSNotFound)
+            && (!([prevLine rangeOfString:@"\n"].location == NSNotFound))) {
+            print = true;
         }
+        
+        
+        // if the current line doesnt have a return, but the previous one does, print
+        if (([currentLine rangeOfString:@"\n"].location == NSNotFound)
+            && (!([prevLine rangeOfString:@"\n"].location == NSNotFound))) {
+            print = true;
+        }
+        
+        // if the current line is the last, print
+        if (cIndex == numberOfGlyphs && numberForPrint > 1) {
+            print = true;
+        }
+        
+        
+        if (print) {
+            
+            // count next number
+            numberForPrint++;
+            
+            // add it
+            currentNumber = [NSString stringWithFormat:@"%ld", (long)numberForPrint];
+            
+        }
+        
+        // set this as a previous line (for the next loop)
+        prevLine = currentLine;
         
         lineCounterText = [NSString stringWithFormat:@"%@%@\n", lineCounterText, currentNumber];
         
