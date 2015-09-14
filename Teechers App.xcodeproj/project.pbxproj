@@ -20,6 +20,7 @@
 		A140FD821B8374BD000ED024 /* tchActionTableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A140FD811B8374BD000ED024 /* tchActionTableDataSource.m */; };
 		A140FD851B837541000ED024 /* tchActionTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = A140FD841B837541000ED024 /* tchActionTableView.m */; };
 		A140FD881B8377FE000ED024 /* tchActionTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A140FD871B8377FE000ED024 /* tchActionTableCell.m */; };
+		A14113121BA49CA200ADD567 /* tchStudentSummaryDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A14113111BA49CA200ADD567 /* tchStudentSummaryDelegate.m */; };
 		A14B2FDE1B8500C5000D69DF /* AClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A14B2FDD1B8500C5000D69DF /* AClass.m */; };
 		A14E13021AE5470700A1CB95 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A14E13011AE5470700A1CB95 /* main.m */; };
 		A14E13051AE5470700A1CB95 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A14E13041AE5470700A1CB95 /* AppDelegate.m */; };
@@ -129,6 +130,8 @@
 		A140FD841B837541000ED024 /* tchActionTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchActionTableView.m; path = Tables/tchActionTableView.m; sourceTree = "<group>"; };
 		A140FD861B8377FE000ED024 /* tchActionTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchActionTableCell.h; path = Tables/tchActionTableCell.h; sourceTree = "<group>"; };
 		A140FD871B8377FE000ED024 /* tchActionTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchActionTableCell.m; path = Tables/tchActionTableCell.m; sourceTree = "<group>"; };
+		A14113101BA49CA200ADD567 /* tchStudentSummaryDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tchStudentSummaryDelegate.h; sourceTree = "<group>"; };
+		A14113111BA49CA200ADD567 /* tchStudentSummaryDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tchStudentSummaryDelegate.m; sourceTree = "<group>"; };
 		A14B2FDB1B8500C5000D69DF /* AClass+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "AClass+CoreDataProperties.h"; path = "Data/AClass+CoreDataProperties.h"; sourceTree = "<group>"; };
 		A14B2FDC1B8500C5000D69DF /* AClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AClass.h; path = Data/AClass.h; sourceTree = "<group>"; };
 		A14B2FDD1B8500C5000D69DF /* AClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AClass.m; path = Data/AClass.m; sourceTree = "<group>"; };
@@ -750,6 +753,8 @@
 				A1C651121B251A150011BB3C /* tchStudentSummaryTable.m */,
 				A1C651151B251C1C0011BB3C /* tchStudentSummaryDataSource.h */,
 				A1C651161B251C1C0011BB3C /* tchStudentSummaryDataSource.m */,
+				A14113101BA49CA200ADD567 /* tchStudentSummaryDelegate.h */,
+				A14113111BA49CA200ADD567 /* tchStudentSummaryDelegate.m */,
 				A1C651181B25387D0011BB3C /* tchStudentSummaryDataCell.h */,
 				A1C651191B25387D0011BB3C /* tchStudentSummaryDataCell.m */,
 			);
@@ -891,6 +896,7 @@
 				A17675541B1BF6410093F7A0 /* tchGradesVC.m in Sources */,
 				A17675D81B24A4310093F7A0 /* tchInputCollectionDelegate.m in Sources */,
 				A14E13051AE5470700A1CB95 /* AppDelegate.m in Sources */,
+				A14113121BA49CA200ADD567 /* tchStudentSummaryDelegate.m in Sources */,
 				A17675481B1BF6410093F7A0 /* tchAttendanceColumnsDS.m in Sources */,
 				A17675C01B24A3D70093F7A0 /* tchGradeInputDataSource.m in Sources */,
 				A1CE7A0E1B659ACD003E7039 /* tchViewKeyboardVC.m in Sources */,

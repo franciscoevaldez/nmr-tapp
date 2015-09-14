@@ -42,6 +42,16 @@
     
 }
 
+- (void)reloadStudentsArray
+{
+    
+    if (!self.activeClass) {return;}
+    
+    self.studentsArray = [self.activeClass getStudentsSorted];
+    
+    
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }

@@ -7,9 +7,34 @@
 //
 
 #import "tchStudentsTableDelegate.h"
-#import "tchStudentsTableView.h"
 
 @implementation tchStudentsTableDelegate
+
+- (void)clearSelectionForTableView:(tchStudentsTableView*)tableView
+{
+    
+    // delete the selected cell
+    //[tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:tableView.deployedPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    
+    NSIndexPath *oldIndexPath = tableView.deployedPath;
+    
+    [self tableView:tableView didSelectRowAtIndexPath:oldIndexPath];
+    
+    // reload the table view
+    [tableView reloadData];
+    
+    
+}
+
+- (void)reloadSelectedCellInTableView:(tchStudentsTableView*)tableView
+{
+    if (tableView.thereIsACellDeployed) {
+        
+        // tap the active cell
+        [self tableView:tableView didSelectRowAtIndexPath:tableView.deployedPath];
+        
+    }
+}
 
 // Handling row selection
 - (void)tableView:(tchStudentsTableView*)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

@@ -22,20 +22,6 @@
     // pass the student to the data source
     [dataSource setupForStudent:student];
     
-    /*
-     // get the student to a property
-     self.activeStudent = student;
-     
-     // cast the data source
-     tchColumnCollectionDataSource *dataSource = self.dataSource;
-     
-     // pass the student to the data source
-     [dataSource setupForStudent:student];
-     
-     // scroll to the column index
-     [self skipColumnToIndex:columnIndex];
-     */
-    
 }
 
 @end

@@ -14,6 +14,7 @@
 @interface tchStudentsTableDataSource : NSObject <UITableViewDataSource>
 
 - (void)setupForClass:(AClass*)activeClass;
+- (void)reloadStudentsArray;
 
 @property (assign,nonatomic) NSInteger currentScrollIndex;
 

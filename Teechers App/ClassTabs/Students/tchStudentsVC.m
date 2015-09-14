@@ -8,6 +8,8 @@
 
 #import "tchStudentsVC.h"
 
+#import "tchAStudentCell.h"
+
 @interface tchStudentsVC ()
 
 @end
@@ -35,6 +37,45 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Get currently selected student
+- (Student*)getSelectedStudent
+{
+    
+    // check the existance of a selected element
+    NSInteger selectedIndex =  self.studentsTable.deployedPath.row;
+    
+    if (!selectedIndex) {
+        return nil;
+    }
+    
+    // pick up the student element
+    NSIndexPath *selectedIndexPath = [NSIndexPath indexPathForRow:selectedIndex inSection:0];
+    tchAStudentCell *selectedCell = (tchAStudentCell*)[self.studentsTable cellForRowAtIndexPath:selectedIndexPath];
+    Student *selectedStudent = selectedCell.studentForCell;
+    
+    // return it
+    return selectedStudent;
+    
+}
+
+#pragma mark - Edition checking
+-(void)checkEditionEnable{
+    
+    self.editionEnabled = true;
+    [self.studentsTable enableTableNewStatus:true];
+    
+}
+
+#pragma mark - Present Alert
+- (void)showAlert:(UIAlertController*)alertController
+{
+    
+    // Present the dialog
+    [self presentViewController:alertController animated:YES completion:nil];
+    
+    
 }
 
 /*

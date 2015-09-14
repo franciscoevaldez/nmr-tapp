@@ -29,7 +29,7 @@
 };
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 2;
+    return 3;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -43,6 +43,10 @@
         return [self.gradeRecArray count]+1;
     }
     
+    if (section==2) {
+        return 1;
+    }
+    
     return 0;
 }
 
@@ -51,7 +55,7 @@
     tchStudentSummaryDataCell *cell;
     
     // get the current row, if it is 1...
-    if (indexPath.row == 0) {
+    if (indexPath.row == 0 && indexPath.section<2) {
         
         cell = [tableView dequeueReusableCellWithIdentifier:@"SummaryHeaderCell"];
         
@@ -67,6 +71,12 @@
         
         [cell setupCellForData:self.activeStudent.summaryRecord atIndexPath:indexPath];
         
+        
+    } else if (indexPath.section == 2 && indexPath.row == 0){
+      
+        // setting up the edition option cell
+        
+        cell = [tableView dequeueReusableCellWithIdentifier:@"SummaryEditionCell"];
         
     } else {
         

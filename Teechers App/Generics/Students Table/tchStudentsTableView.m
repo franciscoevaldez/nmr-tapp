@@ -36,6 +36,9 @@
 #pragma mark - Full Reloading
 - (void)reloadAllData{
     
+    // reload the students array
+    [(tchStudentsTableDataSource*)self.dataSource reloadStudentsArray];
+    
     // reload the cells
     [self reloadData];
     

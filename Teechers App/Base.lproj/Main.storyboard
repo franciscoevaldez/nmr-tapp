@@ -52,6 +52,8 @@
             <string>Avenir-Book</string>
             <string>Avenir-Book</string>
             <string>Avenir-Heavy</string>
+            <string>Avenir-Medium</string>
+            <string>Avenir-Medium</string>
             <string>Avenir-Heavy</string>
             <string>Avenir-Medium</string>
             <string>Avenir-Roman</string>
@@ -2679,7 +2681,7 @@
             </objects>
             <point key="canvasLocation" x="3414" y="-640"/>
         </scene>
-        <!--Students-->
+        <!--Owner View Controller-->
         <scene sceneID="Qhn-A5-8Da">
             <objects>
                 <viewController title="Students" id="8Ft-ua-lVu" customClass="tchStudentsVC" sceneMemberID="viewController">
@@ -3180,9 +3182,111 @@
                                                                 <outlet property="terciaryLabel" destination="VY2-x1-9YL" id="HBc-Zk-Ldr"/>
                                                             </connections>
                                                         </tableViewCell>
+                                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SummaryEditionCell" rowHeight="50" id="Z6f-oA-ZQ8" userLabel="EditionCell">
+                                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Z6f-oA-ZQ8" id="clT-AQ-Uh0">
+                                                                <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ps-oE-RcO">
+                                                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="30" id="blg-ZI-A1o">
+                                                                                <variation key="widthClass=compact" constant="50"/>
+                                                                            </constraint>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                                                        <state key="normal" title="Adjust name">
+                                                                            <color key="titleColor" red="0.1176470588" green="0.25490196079999999" blue="0.63529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        </state>
+                                                                        <variation key="default">
+                                                                            <mask key="constraints">
+                                                                                <exclude reference="blg-ZI-A1o"/>
+                                                                            </mask>
+                                                                        </variation>
+                                                                        <variation key="widthClass=compact">
+                                                                            <mask key="constraints">
+                                                                                <include reference="blg-ZI-A1o"/>
+                                                                            </mask>
+                                                                        </variation>
+                                                                        <connections>
+                                                                            <action selector="changeNamePressed:" destination="ZkL-jf-FQa" eventType="touchUpInside" id="yVK-jJ-gYp"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5sn-XK-kuA">
+                                                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="30" id="lai-dm-OSy">
+                                                                                <variation key="widthClass=compact" constant="50"/>
+                                                                            </constraint>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                                                        <state key="normal" title="Delete">
+                                                                            <color key="titleColor" red="0.1176470588" green="0.25490196079999999" blue="0.63529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        </state>
+                                                                        <variation key="default">
+                                                                            <mask key="constraints">
+                                                                                <exclude reference="lai-dm-OSy"/>
+                                                                            </mask>
+                                                                        </variation>
+                                                                        <variation key="widthClass=compact">
+                                                                            <mask key="constraints">
+                                                                                <include reference="lai-dm-OSy"/>
+                                                                            </mask>
+                                                                        </variation>
+                                                                        <connections>
+                                                                            <action selector="deleteStudentPressed:" destination="ZkL-jf-FQa" eventType="touchUpInside" id="Bl0-bd-MNH"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="trailing" secondItem="5sn-XK-kuA" secondAttribute="trailing" constant="148" id="kOI-dj-yX6">
+                                                                        <variation key="widthClass=compact" constant="0.0"/>
+                                                                    </constraint>
+                                                                    <constraint firstItem="5sn-XK-kuA" firstAttribute="centerY" secondItem="clT-AQ-Uh0" secondAttribute="centerY" id="q0M-Hi-R7l"/>
+                                                                    <constraint firstItem="5sn-XK-kuA" firstAttribute="width" secondItem="clT-AQ-Uh0" secondAttribute="width" multiplier="0.5" id="rMh-Lf-7xF"/>
+                                                                    <constraint firstItem="7ps-oE-RcO" firstAttribute="centerY" secondItem="clT-AQ-Uh0" secondAttribute="centerY" id="v4B-Ff-oCl"/>
+                                                                    <constraint firstItem="7ps-oE-RcO" firstAttribute="width" secondItem="clT-AQ-Uh0" secondAttribute="width" multiplier="0.5" id="vRA-M0-GJt"/>
+                                                                    <constraint firstItem="7ps-oE-RcO" firstAttribute="leading" secondItem="clT-AQ-Uh0" secondAttribute="leading" constant="52" id="w16-CZ-tP0">
+                                                                        <variation key="widthClass=compact" constant="0.0"/>
+                                                                    </constraint>
+                                                                </constraints>
+                                                                <variation key="default">
+                                                                    <mask key="subviews">
+                                                                        <exclude reference="7ps-oE-RcO"/>
+                                                                        <exclude reference="5sn-XK-kuA"/>
+                                                                    </mask>
+                                                                    <mask key="constraints">
+                                                                        <exclude reference="kOI-dj-yX6"/>
+                                                                        <exclude reference="q0M-Hi-R7l"/>
+                                                                        <exclude reference="rMh-Lf-7xF"/>
+                                                                        <exclude reference="v4B-Ff-oCl"/>
+                                                                        <exclude reference="vRA-M0-GJt"/>
+                                                                        <exclude reference="w16-CZ-tP0"/>
+                                                                    </mask>
+                                                                </variation>
+                                                                <variation key="widthClass=compact">
+                                                                    <mask key="subviews">
+                                                                        <include reference="7ps-oE-RcO"/>
+                                                                        <include reference="5sn-XK-kuA"/>
+                                                                    </mask>
+                                                                    <mask key="constraints">
+                                                                        <include reference="kOI-dj-yX6"/>
+                                                                        <include reference="q0M-Hi-R7l"/>
+                                                                        <include reference="rMh-Lf-7xF"/>
+                                                                        <include reference="v4B-Ff-oCl"/>
+                                                                        <include reference="vRA-M0-GJt"/>
+                                                                        <include reference="w16-CZ-tP0"/>
+                                                                    </mask>
+                                                                </variation>
+                                                            </tableViewCellContentView>
+                                                            <color key="backgroundColor" red="0.85882352939999995" green="0.85882352939999995" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </tableViewCell>
                                                     </prototypes>
                                                     <connections>
                                                         <outlet property="dataSource" destination="wz9-PY-guG" id="97b-TW-z8V"/>
+                                                        <outlet property="delegate" destination="ZkL-jf-FQa" id="blv-yy-Hb5"/>
                                                     </connections>
                                                 </tableView>
                                             </subviews>
@@ -3339,8 +3443,13 @@
                 <customObject id="R44-r0-cc7" customClass="tchStudentsTableDataSource"/>
                 <customObject id="mul-29-tXX" customClass="tchStudentsTableDelegate"/>
                 <customObject id="wz9-PY-guG" customClass="tchStudentSummaryDataSource"/>
+                <customObject id="ZkL-jf-FQa" customClass="tchStudentSummaryDelegate">
+                    <connections>
+                        <outlet property="ownerViewController" destination="8Ft-ua-lVu" id="DoN-8r-LNE"/>
+                    </connections>
+                </customObject>
             </objects>
-            <point key="canvasLocation" x="2561" y="-1362"/>
+            <point key="canvasLocation" x="2560.5" y="-1362"/>
         </scene>
         <!--Class Tab Controller-->
         <scene sceneID="7wx-fz-HQu">
