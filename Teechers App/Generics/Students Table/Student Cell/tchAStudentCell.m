@@ -47,6 +47,11 @@
         
         // …tell the input to set itself up
         [self.inputView setupForStudent:student andColumn:scrollIndex];
+        
+        if (self.inputView) {
+            [self.inputView.inputCollection reloadData];
+        }
+        
         [self.inputView setupDelegate:self];
         
     }

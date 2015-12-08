@@ -414,5 +414,41 @@
     
 }
 
+#pragma mark - Edition
+-(void)changeStudentNameTo:(NSString*)newName
+{
+    
+    if (newName) {
+        [self setValue:newName forKey:@"name"];
+    }
+    
+    // write in permanent store
+    
+    NSError *recordError;
+    if (![self.managedObjectContext save:&recordError]) {
+        NSLog(@"error en: %@", [recordError localizedDescription]);
+    }
+    
+}
+
+#pragma mark - Delete
+// delete this student
+- (void)deleteStudent
+{
+    
+    // get managed object context
+    NSManagedObjectContext *managedOC = self.managedObjectContext;
+    
+    // deleted the object
+    [managedOC deleteObject:self];
+    
+    // write in permanent store
+    NSError *dayError;
+    if (![managedOC save:&dayError]) {
+        NSLog(@"error en: %@", [dayError localizedDescription]);
+    }
+    
+    
+}
 
 @end

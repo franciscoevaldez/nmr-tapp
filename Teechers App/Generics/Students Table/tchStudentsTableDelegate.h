@@ -9,6 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+#import "tchStudentsTableView.h"
+
 @interface tchStudentsTableDelegate : NSObject <UITableViewDelegate, UIScrollViewDelegate>
+
+- (void)clearSelectionForTableView:(tchStudentsTableView*)tableView;
+- (void)reloadSelectedCellInTableView:(tchStudentsTableView*)tableView;
 
 @end

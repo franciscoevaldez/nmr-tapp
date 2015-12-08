@@ -23,6 +23,8 @@
 
 - (void)viewDidAppear:(BOOL)animated{
     
+    [self reloadViewsData];
+    
     [self performInitialScroll];
     
     if (self.optionsMenu) {

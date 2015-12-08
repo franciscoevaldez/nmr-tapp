@@ -30,6 +30,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)setGradeRecordForEvaluation:(Evaluation*)evaluation withGrade:(NSInteger*)grade andOrderIndex:(NSInteger)index;
 
+-(void)changeStudentNameTo:(NSString*)newName;
+
+- (void)deleteStudent;
+
 @end
 
 NS_ASSUME_NONNULL_END

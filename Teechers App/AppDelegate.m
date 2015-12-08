@@ -23,6 +23,7 @@
     //UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
     tchMainMenuVC *mainMenuController = (tchMainMenuVC *)self.window.rootViewController;
     mainMenuController.managedObjectContext = self.managedObjectContext;
+    
     return YES;
 }
 

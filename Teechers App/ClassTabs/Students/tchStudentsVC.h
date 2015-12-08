@@ -11,4 +11,10 @@
 
 @interface tchStudentsVC : tchListViewController
 
+- (void)showAlert:(UIAlertController*)alertController;
+
+- (Student*)getSelectedStudent;
+
+-(void)checkEditionEnable;
+
 @end
