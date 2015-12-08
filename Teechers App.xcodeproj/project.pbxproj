@@ -82,6 +82,7 @@
 		A18F08B61B6FF50C002E0A30 /* inputTables.plist in Resources */ = {isa = PBXBuildFile; fileRef = A18F08B51B6FF50C002E0A30 /* inputTables.plist */; };
 		A18F08B91B6FF8B5002E0A30 /* tchEditFormTableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A18F08B81B6FF8B5002E0A30 /* tchEditFormTableDataSource.m */; };
 		A1A876DE1B0B83DE001C4D52 /* tchDatePickerField.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A876DB1B0B83DE001C4D52 /* tchDatePickerField.m */; };
+		A1AD09BD1C17906B00A80D42 /* tchEditGradesDel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1AD09BC1C17906B00A80D42 /* tchEditGradesDel.m */; };
 		A1B713831AFAD13600A8B094 /* tchCollectionIndexed.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B713821AFAD13600A8B094 /* tchCollectionIndexed.m */; };
 		A1BDCC141AE6AA08000B0328 /* tchImport2VC.m in Sources */ = {isa = PBXBuildFile; fileRef = A1BDCC131AE6AA08000B0328 /* tchImport2VC.m */; };
 		A1BF46D51B88E443008309E2 /* tchClassPDFexporter.m in Sources */ = {isa = PBXBuildFile; fileRef = A1BF46D41B88E443008309E2 /* tchClassPDFexporter.m */; };
@@ -256,6 +257,8 @@
 		A18F08B81B6FF8B5002E0A30 /* tchEditFormTableDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchEditFormTableDataSource.m; path = Edition/tchEditFormTableDataSource.m; sourceTree = "<group>"; };
 		A1A876DA1B0B83DE001C4D52 /* tchDatePickerField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchDatePickerField.h; path = "Custom Controls/tchDatePickerField.h"; sourceTree = "<group>"; };
 		A1A876DB1B0B83DE001C4D52 /* tchDatePickerField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchDatePickerField.m; path = "Custom Controls/tchDatePickerField.m"; sourceTree = "<group>"; };
+		A1AD09BB1C17906B00A80D42 /* tchEditGradesDel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tchEditGradesDel.h; sourceTree = "<group>"; };
+		A1AD09BC1C17906B00A80D42 /* tchEditGradesDel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tchEditGradesDel.m; sourceTree = "<group>"; };
 		A1B713811AFAD13600A8B094 /* tchCollectionIndexed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchCollectionIndexed.h; path = "Custom Controls/tchCollectionIndexed.h"; sourceTree = "<group>"; };
 		A1B713821AFAD13600A8B094 /* tchCollectionIndexed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tchCollectionIndexed.m; path = "Custom Controls/tchCollectionIndexed.m"; sourceTree = "<group>"; };
 		A1BDCC121AE6AA08000B0328 /* tchImport2VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tchImport2VC.h; path = ImportSequence/tchImport2VC.h; sourceTree = "<group>"; };
@@ -599,6 +602,8 @@
 			children = (
 				A17675B91B24A3C60093F7A0 /* tchEditGrade1VC.h */,
 				A17675BA1B24A3C60093F7A0 /* tchEditGrade1VC.m */,
+				A1AD09BB1C17906B00A80D42 /* tchEditGradesDel.h */,
+				A1AD09BC1C17906B00A80D42 /* tchEditGradesDel.m */,
 			);
 			path = Edit;
 			sourceTree = "<group>";
@@ -909,6 +914,7 @@
 				A17675591B1BF6410093F7A0 /* tchClassTabBarVC.m in Sources */,
 				A17675BB1B24A3C60093F7A0 /* tchEditGrade1VC.m in Sources */,
 				A17675A31B24A0430093F7A0 /* tchListViewController.m in Sources */,
+				A1AD09BD1C17906B00A80D42 /* tchEditGradesDel.m in Sources */,
 				A17675531B1BF6410093F7A0 /* tchGradesMenu.m in Sources */,
 				A15D3C8A1AE961C7004A6DF1 /* tchOneClassTVC.m in Sources */,
 				A17675C11B24A3D70093F7A0 /* tchGradeInputView.m in Sources */,
@@ -1074,7 +1080,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Teechers App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nmr.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1089,7 +1095,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Teechers App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nmr.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";

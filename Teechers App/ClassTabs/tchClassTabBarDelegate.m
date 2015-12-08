@@ -7,6 +7,7 @@
 //
 
 #import "tchClassTabBarDelegate.h"
+#import "tchManagedViewController.h"
 #import "tchListViewController.h"
 
 @implementation tchClassTabBarDelegate
@@ -17,20 +18,17 @@
     // get the current view controller
     UIViewController *currentVC = tabBarController.selectedViewController;
     
-    if (![currentVC isKindOfClass:[tchListViewController class]]) {
+    
+    // if the current or the next are not a list view, just return yes
+    if (![currentVC isKindOfClass:[tchListViewController class]]
+        || ![viewController isKindOfClass:[tchListViewController class]]) {
         return YES;
     }
     
+    
+    // cast the current & next view controller
     tchListViewController *activeVC = (tchListViewController*) currentVC;
-    
-    
-    
-    if (![viewController isKindOfClass:[tchListViewController class]]) {
-        return YES;
-    }
-    
     tchListViewController *nextVC = (tchListViewController*) viewController;
-    
     
     // get the scroll position for the current view controller
     CGPoint scrollPosition = activeVC.studentsTable.contentOffset;

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Teechers App/Generics/Students Table/Student Cell/tchAStudentCell.m"
-            timestampString = "455418494.90986"
+            timestampString = "470154644.009969"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
             landmarkName = "-performDayScrollToIndex:"
             landmarkType = "5">
          </BreakpointContent>
@@ -346,11 +346,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "Yes"
             filePath = "Teechers App/ClassTabs/Options/tchClassOptionsVC.m"
-            timestampString = "461980629.884031"
+            timestampString = "470363151.943603"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "155"
-            endingLineNumber = "155"
+            startingLineNumber = "156"
+            endingLineNumber = "156"
             landmarkName = "-callExportPDF"
             landmarkType = "5">
             <Actions>
@@ -403,11 +403,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "Yes"
             filePath = "Teechers App/Generics/List View Controllers/tchListViewController.m"
-            timestampString = "462644069.441308"
+            timestampString = "470363151.943603"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "254"
-            endingLineNumber = "254"
+            startingLineNumber = "256"
+            endingLineNumber = "256"
             landmarkName = "-scrollToIndex:"
             landmarkType = "5">
             <Actions>
@@ -428,11 +428,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "Yes"
             filePath = "Teechers App/Generics/List View Controllers/tchListViewController.m"
-            timestampString = "462644069.441308"
+            timestampString = "470363151.943603"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "257"
-            endingLineNumber = "257"
+            startingLineNumber = "259"
+            endingLineNumber = "259"
             landmarkName = "-scrollToIndex:"
             landmarkType = "5">
             <Actions>
@@ -453,11 +453,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "Yes"
             filePath = "Teechers App/Generics/List View Controllers/tchListViewController.m"
-            timestampString = "462644069.441308"
+            timestampString = "470363151.943603"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "260"
-            endingLineNumber = "260"
+            startingLineNumber = "262"
+            endingLineNumber = "262"
             landmarkName = "-scrollToIndex:"
             landmarkType = "5">
             <Actions>
@@ -510,11 +510,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "Yes"
             filePath = "Teechers App/Generics/List View Controllers/tchListViewController.m"
-            timestampString = "462644264.341523"
+            timestampString = "470363151.943603"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "250"
-            endingLineNumber = "250"
+            startingLineNumber = "252"
+            endingLineNumber = "252"
             landmarkName = "-scrollToIndex:"
             landmarkType = "5">
             <Actions>
@@ -714,6 +714,81 @@
                   ActionExtensionID = "Xcode.BreakpointAction.DebuggerCommand">
                   <ActionContent
                      consoleCommand = "po self.studentNameLabel.text">
+                  </ActionContent>
+               </BreakpointActionProxy>
+            </Actions>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "Yes"
+            filePath = "Teechers App/ClassTabs/Grades/Input/tchGradeInputDataSource.m"
+            timestampString = "470152773.05703"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "-collectionView:numberOfItemsInSection:"
+            landmarkType = "5">
+            <Actions>
+               <BreakpointActionProxy
+                  ActionExtensionID = "Xcode.BreakpointAction.Log">
+                  <ActionContent
+                     message = "getting max grade"
+                     conveyanceType = "0">
+                  </ActionContent>
+               </BreakpointActionProxy>
+            </Actions>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "Yes"
+            filePath = "Teechers App/ClassTabs/Grades/Input/tchGradeInputDataSource.m"
+            timestampString = "470153842.382224"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "-setupForStudent:columnIndex:"
+            landmarkType = "5">
+            <Actions>
+               <BreakpointActionProxy
+                  ActionExtensionID = "Xcode.BreakpointAction.Log">
+                  <ActionContent
+                     message = "Method: setup for student"
+                     conveyanceType = "0">
+                  </ActionContent>
+               </BreakpointActionProxy>
+            </Actions>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "Yes"
+            filePath = "Teechers App/Generics/Students Table/Student Cell/tchAStudentCell.m"
+            timestampString = "470154644.009969"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "-setupCellForStudent:atScrollIndex:withIndexPath:andDelegate:"
+            landmarkType = "5">
+            <Actions>
+               <BreakpointActionProxy
+                  ActionExtensionID = "Xcode.BreakpointAction.Log">
+                  <ActionContent
+                     message = "Call setup for student"
+                     conveyanceType = "0">
                   </ActionContent>
                </BreakpointActionProxy>
             </Actions>

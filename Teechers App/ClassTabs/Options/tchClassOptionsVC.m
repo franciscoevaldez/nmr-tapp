@@ -124,8 +124,9 @@
                                    
                                    if (text) {
                                        
-                                       // Student *newStudent = [Student createStudentWithName:text inClass:self.activeClass];
+                                       // Create the student
                                        [self.activeClass createStudentWithName:text];
+                                       
                                        
                                    }
                                    

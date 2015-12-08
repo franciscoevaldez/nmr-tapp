@@ -66,8 +66,11 @@
 }
 
 
-#pragma mark - Column Reloading
+#pragma mark - Data Reloading
 - (void)reloadData{
+    
+    // write the class name in the title label
+    self.subTitleLabel.text = self.activeClass.name;
     
     if (!self.columnCollection) {
         return;

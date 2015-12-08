@@ -76,8 +76,11 @@
                                        // tell the active student to change its name
                                        [selectedStudent changeStudentNameTo:text];
                                        
+                                       // tell the table to deselect its cell
+                                       [(tchStudentsTableDelegate*)self.ownerViewController.studentsTable.delegate clearSelectionForTableView:self.ownerViewController.studentsTable];
+                                       
                                        // tell the students table to reload itself
-                                       [self.ownerViewController.studentsTable reloadData];
+                                       [self.ownerViewController.studentsTable reloadAllData];
                                        
                                    }
                                    
@@ -115,14 +118,12 @@
                                    // get the current selected student
                                    Student *selectedStudent = [self.ownerViewController getSelectedStudent];
                                    
-                                   // collapse the cell
-                                   //[(tchStudentsTableDelegate*)self.ownerViewController.studentsTable.delegate reloadSelectedCellInTableView:self.ownerViewController.studentsTable];
+                                   // delete the student
+                                   [selectedStudent deleteStudent];
+                                   
                                    
                                    // tell the table to deselect its cell
                                    [(tchStudentsTableDelegate*)self.ownerViewController.studentsTable.delegate clearSelectionForTableView:self.ownerViewController.studentsTable];
-                                   
-                                   // delete the student
-                                   [selectedStudent deleteStudent];
                                    
                                    // tell the view to reload the data
                                    [self.ownerViewController reloadViewsData];
