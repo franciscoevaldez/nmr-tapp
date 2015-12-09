@@ -251,7 +251,25 @@
     
 }
 
-#pragma mark - Evaluations Handling
+// get the abbreviation for all evaluations
+- (NSArray*)getEvalAbbreviations
+{
+    
+    NSMutableArray *abbsArray = [NSMutableArray new];
+    
+    for (Evaluation *currentEval in [self.evaluations allObjects]) {
+        
+        NSString *currentAbbreviation = currentEval.nameShort;
+        
+        [abbsArray addObject:currentAbbreviation];
+        
+    }
+    
+    return [NSArray arrayWithArray:abbsArray];
+    
+}
+
+// create a new evaluation
 - (Evaluation*)createAndStoreNewEvaluation:(NSString*)name
                                     withID:(NSString*)newID
                                   maxGrade:(NSInteger)maxGrade

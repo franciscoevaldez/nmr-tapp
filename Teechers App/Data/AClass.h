@@ -39,6 +39,7 @@ typedef NS_ENUM(NSInteger, tchExportType){
 
 - (NSArray*)getEvaluationsSorted;
 - (Evaluation*)getEvaluationForIndex:(NSInteger)index;
+- (NSArray*)getEvalAbbreviations;
 
 - (Evaluation*)createAndStoreNewEvaluation:(NSString*)name
                                     withID:(NSString*)newID
