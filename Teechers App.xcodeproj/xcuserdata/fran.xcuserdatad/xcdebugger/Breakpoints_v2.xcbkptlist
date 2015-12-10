@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Teechers App/Generics/Students Table/Student Cell/tchAStudentCell.m"
-            timestampString = "470154644.009969"
+            timestampString = "471394575.432869"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
             landmarkName = "-performDayScrollToIndex:"
             landmarkType = "5">
          </BreakpointContent>
@@ -403,11 +403,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "Yes"
             filePath = "Teechers App/Generics/List View Controllers/tchListViewController.m"
-            timestampString = "470363151.943603"
+            timestampString = "471358468.155362"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "256"
-            endingLineNumber = "256"
+            startingLineNumber = "261"
+            endingLineNumber = "261"
             landmarkName = "-scrollToIndex:"
             landmarkType = "5">
             <Actions>
@@ -428,11 +428,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "Yes"
             filePath = "Teechers App/Generics/List View Controllers/tchListViewController.m"
-            timestampString = "470363151.943603"
+            timestampString = "471358468.155362"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "259"
-            endingLineNumber = "259"
+            startingLineNumber = "264"
+            endingLineNumber = "264"
             landmarkName = "-scrollToIndex:"
             landmarkType = "5">
             <Actions>
@@ -453,11 +453,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "Yes"
             filePath = "Teechers App/Generics/List View Controllers/tchListViewController.m"
-            timestampString = "470363151.943603"
+            timestampString = "471358468.155362"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "262"
-            endingLineNumber = "262"
+            startingLineNumber = "267"
+            endingLineNumber = "267"
             landmarkName = "-scrollToIndex:"
             landmarkType = "5">
             <Actions>
@@ -510,11 +510,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "Yes"
             filePath = "Teechers App/Generics/List View Controllers/tchListViewController.m"
-            timestampString = "470363151.943603"
+            timestampString = "471358468.155362"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "252"
-            endingLineNumber = "252"
+            startingLineNumber = "257"
+            endingLineNumber = "257"
             landmarkName = "-scrollToIndex:"
             landmarkType = "5">
             <Actions>
@@ -642,11 +642,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "Yes"
             filePath = "Teechers App/Generics/Students Table/Student Cell/tchAStudentCell.m"
-            timestampString = "469573085.808458"
+            timestampString = "471394575.432869"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
             landmarkName = "-setupCellForStudent:atScrollIndex:withIndexPath:andDelegate:"
             landmarkType = "5">
             <Actions>
@@ -702,11 +702,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "Yes"
             filePath = "Teechers App/Generics/Students Table/Student Cell/tchAStudentCell.m"
-            timestampString = "469573883.857333"
+            timestampString = "471394575.432869"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
             landmarkName = "-setupCellForStudent:atScrollIndex:withIndexPath:andDelegate:"
             landmarkType = "5">
             <Actions>
@@ -776,11 +776,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "Yes"
             filePath = "Teechers App/Generics/Students Table/Student Cell/tchAStudentCell.m"
-            timestampString = "470154644.009969"
+            timestampString = "471394575.432869"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
             landmarkName = "-setupCellForStudent:atScrollIndex:withIndexPath:andDelegate:"
             landmarkType = "5">
             <Actions>
@@ -792,6 +792,47 @@
                   </ActionContent>
                </BreakpointActionProxy>
             </Actions>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "Yes"
+            filePath = "Teechers App/Generics/Edition/tchEditFormTableCell.m"
+            timestampString = "471306752.477591"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "193"
+            endingLineNumber = "193"
+            landmarkName = "-inputEditEnded:"
+            landmarkType = "5">
+            <Actions>
+               <BreakpointActionProxy
+                  ActionExtensionID = "Xcode.BreakpointAction.Log">
+                  <ActionContent
+                     message = "changed"
+                     conveyanceType = "0">
+                  </ActionContent>
+               </BreakpointActionProxy>
+            </Actions>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Teechers App/Generics/Students Table/tchStudentsTableDelegate.m"
+            timestampString = "471394722.059971"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "-tableView:didSelectRowAtIndexPath:"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

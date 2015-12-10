@@ -658,7 +658,7 @@
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2TZ-Ux-kwD" userLabel="Data Collection" customClass="tchColumnsCollection">
                                                     <rect key="frame" x="260" y="0.0" width="60" height="60"/>
                                                     <animations/>
-                                                    <color key="backgroundColor" red="1" green="1" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="60" id="Rb6-bR-eXF"/>
                                                         <constraint firstAttribute="height" constant="60" id="ZyZ-ym-efQ"/>
@@ -738,6 +738,7 @@
                                                     </cells>
                                                     <connections>
                                                         <outlet property="dataSource" destination="OLJ-Yn-rGL" id="22g-vk-gM3"/>
+                                                        <outlet property="delegate" destination="yg6-nT-E2C" id="BLh-Cn-aPx"/>
                                                     </connections>
                                                 </collectionView>
                                             </subviews>
@@ -774,7 +775,7 @@
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5MA-gJ-SMx" userLabel="Data Collection" customClass="tchColumnsCollection">
                                                     <rect key="frame" x="260" y="0.0" width="60" height="60"/>
                                                     <animations/>
-                                                    <color key="backgroundColor" red="1" green="1" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="60" id="QSF-Mv-8VV"/>
                                                         <constraint firstAttribute="width" constant="60" id="uZX-xc-5CW"/>
@@ -828,6 +829,7 @@
                                                     </cells>
                                                     <connections>
                                                         <outlet property="dataSource" destination="OLJ-Yn-rGL" id="C8m-Qn-TCZ"/>
+                                                        <outlet property="delegate" destination="zZH-Kc-3Bo" id="sw1-nb-wXd"/>
                                                     </connections>
                                                 </collectionView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pJA-xx-IQD" userLabel="Input" customClass="tchAttInputV">
@@ -1145,6 +1147,7 @@
                 <customObject id="fOF-El-GBc" customClass="tchStudentsTableDelegate"/>
                 <customObject id="OLJ-Yn-rGL" customClass="tchAttendanceColumnsDS"/>
                 <customObject id="Cmm-ZW-uSJ" customClass="tchAttHeaderDataSource"/>
+                <customObject id="6A2-nN-BLV"/>
                 <swipeGestureRecognizer direction="left" id="OFh-3Z-piv" userLabel="Left Swipe Recognizer">
                     <connections>
                         <action selector="swipeLeftDone:" destination="HRB-Rw-Ffv" id="34c-uF-uBI"/>
@@ -2426,7 +2429,7 @@ Ready to get started?</string>
                                             <constraint firstAttribute="height" constant="20" id="bsT-kE-L69"/>
                                         </constraints>
                                     </imageView>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4Ud-7K-I4d" userLabel="GradeCollection" customClass="tchHeaderColumnCollection">
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4Ud-7K-I4d" userLabel="GradeCollection" customClass="tchHeaderColumnCollection">
                                         <rect key="frame" x="260" y="25" width="60" height="60"/>
                                         <animations/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -2725,10 +2728,10 @@ Ready to get started?</string>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="LR8-Hf-M78" userLabel="ColumnCollection" customClass="tchColumnsCollection">
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="LR8-Hf-M78" userLabel="ColumnCollection" customClass="tchColumnsCollection">
                                                     <rect key="frame" x="260" y="0.0" width="60" height="60"/>
                                                     <animations/>
-                                                    <color key="backgroundColor" red="1" green="1" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="60" id="fAY-fc-WCH"/>
                                                         <constraint firstAttribute="height" constant="60" id="vep-eA-FzL"/>
@@ -2808,6 +2811,7 @@ Ready to get started?</string>
                                                     </cells>
                                                     <connections>
                                                         <outlet property="dataSource" destination="aEP-oV-y2R" id="piA-No-cxV"/>
+                                                        <outlet property="delegate" destination="ORI-Fe-UHP" id="JgR-CJ-FRj"/>
                                                     </connections>
                                                 </collectionView>
                                             </subviews>
@@ -2841,10 +2845,10 @@ Ready to get started?</string>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="v2z-b7-itE" userLabel="Data Collection" customClass="tchColumnsCollection">
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="v2z-b7-itE" userLabel="Data Collection" customClass="tchColumnsCollection">
                                                     <rect key="frame" x="260" y="0.0" width="60" height="60"/>
                                                     <animations/>
-                                                    <color key="backgroundColor" red="1" green="1" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="60" id="76E-Ik-Dlz"/>
                                                         <constraint firstAttribute="height" constant="60" id="hrE-V6-yeE"/>
@@ -2898,6 +2902,7 @@ Ready to get started?</string>
                                                     </cells>
                                                     <connections>
                                                         <outlet property="dataSource" destination="aEP-oV-y2R" id="NPs-2z-RQd"/>
+                                                        <outlet property="delegate" destination="GUU-1z-S2Z" id="jTO-Nw-cOB"/>
                                                     </connections>
                                                 </collectionView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OJs-F7-MO3" userLabel="Input" customClass="tchGradeInputView">
@@ -3418,7 +3423,7 @@ Ready to get started?</string>
                                     <constraint firstAttribute="height" constant="80" id="vaG-Zg-7fL"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="N2b-tY-JMD" userLabel="Form Table" customClass="tchEditFormTable">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="N2b-tY-JMD" userLabel="Form Table" customClass="tchEditGradeTable">
                                 <rect key="frame" x="0.0" y="80" width="320" height="488"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.23529411759999999" green="0.62745098040000002" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -3617,7 +3622,7 @@ Ready to get started?</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n2y-WU-f0Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="m0a-Iz-VRu" customClass="tchEditFormTableDataSource"/>
-                <customObject id="U3t-X6-mju" customClass="tchEditGradesDel"/>
+                <customObject id="U3t-X6-mju" customClass="tchEditFormTableDelegate"/>
             </objects>
             <point key="canvasLocation" x="1820.8" y="60.586666666666666"/>
         </scene>

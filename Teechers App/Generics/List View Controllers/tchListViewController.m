@@ -217,9 +217,12 @@
 
 -(IBAction)swipeLeftDone:(id)sender {
     
+    
     NSInteger maxScroll = [self getMaxScroll];
     
-    if (self.currentColumnIndex < (maxScroll-1) && (!self.optionsMenu.status)){
+    if (self.currentColumnIndex < (maxScroll-1)
+        && (!self.optionsMenu.status)
+        && (!self.studentsTable.thereIsACellDeployed)){
         
         [self scrollToIndex:self.currentColumnIndex+1];
         
@@ -230,7 +233,9 @@
 -(IBAction)swipeRightDone:(id)sender {
     
     // check the scroll is available
-    if (self.currentColumnIndex > 0 && (!self.optionsMenu.status)) {
+    if (self.currentColumnIndex > 0
+        && (!self.optionsMenu.status)
+        && (!self.studentsTable.thereIsACellDeployed)) {
         
         [self scrollToIndex:self.currentColumnIndex-1];
         

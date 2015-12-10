@@ -7,6 +7,7 @@
 //
 
 #import "tchAStudentCell.h"
+#import "tchStudentsTableView.h"
 
 @interface tchAStudentCell ()
 
@@ -107,6 +108,19 @@
     
     // Configure the view for the selected state
     
+    
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    tchStudentsTableView* ownerTable = (tchStudentsTableView*) self.delegate;
+    
+    [ownerTable selectRowAtIndexPath:self.indexPath animated:false scrollPosition:UITableViewScrollPositionTop];
+    
+    [ownerTable.delegate tableView:ownerTable didSelectRowAtIndexPath:self.indexPath];
+    
+    //[self setSelected:true];
     
 }
 

@@ -21,7 +21,7 @@
 
 
 
-@interface tchAStudentCell : UITableViewCell <tchInputDelegateProtocol>
+@interface tchAStudentCell : UITableViewCell <tchInputDelegateProtocol, UICollectionViewDelegate>
 
 @property (nonatomic, weak) id <tchStudentCellProtocol> delegate;
 

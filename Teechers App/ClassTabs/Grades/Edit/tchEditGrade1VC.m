@@ -8,10 +8,11 @@
 
 #import "tchEditGrade1VC.h"
 #import "tchEditFormTable.h"
+#import "tchEditGradeTable.h"
 
 @interface tchEditGrade1VC ()
 
-@property (strong, nonatomic) IBOutlet tchEditFormTable *formTable;
+@property (strong, nonatomic) IBOutlet tchEditGradeTable *formTable;
 @property (strong,nonatomic) NSArray *usedNamesArray;
 
 @end
@@ -38,6 +39,9 @@
     
     // register keyboard notifications
     [self registerForKeyboardNotifications];
+    
+    // pass the active class to the table
+    self.formTable.activeClass = self.activeClass;
     
     // reload the form
     [self.formTable reloadData];
