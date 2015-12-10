@@ -738,6 +738,7 @@
                                                     </cells>
                                                     <connections>
                                                         <outlet property="dataSource" destination="OLJ-Yn-rGL" id="22g-vk-gM3"/>
+                                                        <outlet property="delegate" destination="yg6-nT-E2C" id="BLh-Cn-aPx"/>
                                                     </connections>
                                                 </collectionView>
                                             </subviews>
@@ -828,6 +829,7 @@
                                                     </cells>
                                                     <connections>
                                                         <outlet property="dataSource" destination="OLJ-Yn-rGL" id="C8m-Qn-TCZ"/>
+                                                        <outlet property="delegate" destination="zZH-Kc-3Bo" id="sw1-nb-wXd"/>
                                                     </connections>
                                                 </collectionView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pJA-xx-IQD" userLabel="Input" customClass="tchAttInputV">
@@ -2809,6 +2811,7 @@ Ready to get started?</string>
                                                     </cells>
                                                     <connections>
                                                         <outlet property="dataSource" destination="aEP-oV-y2R" id="piA-No-cxV"/>
+                                                        <outlet property="delegate" destination="ORI-Fe-UHP" id="JgR-CJ-FRj"/>
                                                     </connections>
                                                 </collectionView>
                                             </subviews>
@@ -2899,6 +2902,7 @@ Ready to get started?</string>
                                                     </cells>
                                                     <connections>
                                                         <outlet property="dataSource" destination="aEP-oV-y2R" id="NPs-2z-RQd"/>
+                                                        <outlet property="delegate" destination="GUU-1z-S2Z" id="jTO-Nw-cOB"/>
                                                     </connections>
                                                 </collectionView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OJs-F7-MO3" userLabel="Input" customClass="tchGradeInputView">
