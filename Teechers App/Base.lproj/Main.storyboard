@@ -105,6 +105,7 @@
             <string>Avenir-Medium</string>
             <string>Avenir-Medium</string>
             <string>Avenir-Medium</string>
+            <string>Avenir-Heavy</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -162,7 +163,7 @@
                                 <color key="sectionIndexBackgroundColor" red="1" green="1" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexTrackingBackgroundColor" red="1" green="1" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="y4i-Ik-mYT">
-                                    <rect key="frame" x="0.0" y="142" width="320" height="128"/>
+                                    <rect key="frame" x="0.0" y="202" width="320" height="128"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <animations/>
                                     <color key="backgroundColor" red="1" green="1" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -232,6 +233,40 @@
                                         <connections>
                                             <segue destination="5Y6-dG-gvs" kind="modal" identifier="toAddAClass" id="xCr-qx-TJv"/>
                                         </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="addFirstClassCell" rowHeight="60" id="mZ1-JF-GOp" userLabel="Add First Class Cell">
+                                        <rect key="frame" x="0.0" y="142" width="320" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mZ1-JF-GOp" id="DL2-hv-abJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add your first class!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mRH-Z0-Vzm">
+                                                    <rect key="frame" x="99" y="17" width="158" height="24"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
+                                                    <color key="textColor" red="0.23529411759999999" green="0.62745098040000002" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="New Blue" translatesAutoresizingMaskIntoConstraints="NO" id="sU0-Zb-vQx">
+                                                    <rect key="frame" x="63" y="16" width="25" height="25"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="2wq-tL-2ze"/>
+                                                        <constraint firstAttribute="width" constant="25" id="VQj-OF-suF"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstItem="mRH-Z0-Vzm" firstAttribute="leading" secondItem="sU0-Zb-vQx" secondAttribute="trailing" constant="11" id="U2P-f1-GyG"/>
+                                                <constraint firstAttribute="centerY" secondItem="mRH-Z0-Vzm" secondAttribute="centerY" constant="0.5" id="ivt-mf-lsz"/>
+                                                <constraint firstItem="mRH-Z0-Vzm" firstAttribute="centerX" secondItem="DL2-hv-abJ" secondAttribute="centerX" constant="18" id="k35-Kc-azn"/>
+                                                <constraint firstItem="sU0-Zb-vQx" firstAttribute="centerY" secondItem="DL2-hv-abJ" secondAttribute="centerY" constant="-1" id="nfm-QX-ADq"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                        <color key="backgroundColor" red="1" green="1" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

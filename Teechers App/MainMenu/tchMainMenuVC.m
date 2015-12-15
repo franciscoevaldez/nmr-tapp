@@ -25,7 +25,19 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    // User default for onboarding messages
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
+    // check for the key
+    if (! [defaults boolForKey:@"firstClassShown"]) {
+        
+        // do this…
+        
+        // set the key to yes, so it won't show again
+        [defaults setBool:YES forKey:@"firstClassShown"];
+    }
+    
+    [defaults setBool:NO forKey:@"firstClassShown"];
     
 }
 

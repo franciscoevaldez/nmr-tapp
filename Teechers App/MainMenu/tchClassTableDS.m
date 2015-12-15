@@ -65,6 +65,18 @@
         // create the cell
         UITableViewCell *addNewCell = [tableView dequeueReusableCellWithIdentifier:@"addClassCell"];
         
+        // if this is the first time the app is run, show the other add class cell
+        NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+        if (! [defaults boolForKey:@"firstClassShown"]) {
+            
+            // change the cell type
+            addNewCell = [tableView dequeueReusableCellWithIdentifier:@"addFirstClassCell"];
+            
+            [defaults setBool:YES forKey:@"firstClassShown"];
+        }
+        
+        [defaults setBool:NO forKey:@"firstClassShown"];
+        
         // return it
         return addNewCell;
         
