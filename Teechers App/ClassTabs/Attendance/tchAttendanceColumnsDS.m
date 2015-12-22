@@ -62,9 +62,7 @@
     }
     
     // create the new cell
-    tchAttendanceColumnVC *newCell = [collectionView
-                                      dequeueReusableCellWithReuseIdentifier:@"studentDataCell"
-                                      forIndexPath:indexPath];
+    tchAttendanceColumnVC *newCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"studentDataCell" forIndexPath:indexPath];
     
     NSInteger dayCount = [[self.activeStudent.inClass.classDays allObjects] count];
     

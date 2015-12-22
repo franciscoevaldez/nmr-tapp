@@ -60,6 +60,9 @@
     // perform the scroll
     [self.columnCollection scrollToItemAtIndexPath:indexForScroll atScrollPosition:UICollectionViewScrollPositionLeft animated:YES];
     
+    // set the active column
+    self.columnCollection.activeColumn = indexForScroll.row;
+    
     // store the new index to the property
     self.activeColumnIndex = newIndex;
     
@@ -99,9 +102,9 @@
         
         // change deploy indicator
         self.deployIndicator.image = [UIImage imageNamed:@"Deployed - white"];
-        
+                
         // lighten collection view
-        self.columnCollection.layer.opacity = 0.25f;
+        self.columnCollection.layer.opacity = 0.10f;
         
         // change the value
         self.isHighlighted = !self.isHighlighted;

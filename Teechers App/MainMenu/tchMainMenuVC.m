@@ -61,7 +61,8 @@
     
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    if ([[segue identifier]isEqualToString:@"toAddAClass"]) {
+    if ([[segue identifier]isEqualToString:@"toAddAClass"]
+        || [[segue identifier]isEqualToString:@"toAddFirstClass"]) {
         
         // get the navigation controller
         UINavigationController *navController = [segue destinationViewController];

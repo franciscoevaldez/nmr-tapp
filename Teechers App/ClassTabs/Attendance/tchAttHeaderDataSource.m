@@ -7,6 +7,7 @@
 //
 
 #import "tchAttHeaderDataSource.h"
+#import "tchHeaderColumnCollection.h"
 #import "tchAttDayCVC.h"
 
 @interface tchAttHeaderDataSource ()
@@ -59,7 +60,7 @@
 }
 
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{    
+- (UICollectionViewCell *)collectionView:(tchHeaderColumnCollection *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     
     // section 1 is the one for the add buttons
@@ -79,12 +80,17 @@
         
     }
     
+    // standard cell identifier
+    NSString *cellType = @"dayCell";
     
+    // check if this is the active column cell
+    if (collectionView.activeColumn == indexPath.row) {
+        cellType = @"dayCellActive";
+    }
     
     
     // create the new cell
-    tchAttDayCVC *newCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"dayCell"
-                                                                      forIndexPath:indexPath];
+    tchAttDayCVC *newCell = [collectionView dequeueReusableCellWithReuseIdentifier:cellType forIndexPath:indexPath];
     
     // get the day for this new cell
     ClassDay *currentDay = [self.daysArray objectAtIndex:indexPath.row];

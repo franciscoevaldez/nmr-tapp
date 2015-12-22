@@ -124,7 +124,7 @@
         
         [self.studentsTable enableTableNewStatus:false];
         
-        // show the table
+        // show the menu
         self.optionsMenu.hidden = false;
         
         
@@ -262,6 +262,9 @@
     
     // Tell the table to perform the scroll
     [self.studentsTable performDayScrollToIndex:newIndex];
+    
+    // Tell the options menu of the scroll
+    [self.optionsMenu performDayScrollToIndex:newIndex];
     
     // If menu is deployed, close it
     [self optionsMenuClose];

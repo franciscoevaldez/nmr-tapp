@@ -23,6 +23,7 @@
 @property (nonatomic, weak) IBOutlet id <tchColumnCollectionDelegate> columnDelegate;
 
 @property (strong,nonatomic) AClass *activeClass;
+
 - (void)setupForClass:(AClass*)activeClass;
 - (void)columnWasSelected:(NSInteger)columnIndex;
 

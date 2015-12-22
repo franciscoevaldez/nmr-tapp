@@ -32,14 +32,29 @@
 -(void)toggleMenu{
     
     if (self.status != tchMenuIsHidden) {
+        
         self.status = tchMenuIsHidden;
+        
     } else {
+        
         self.status = tchMenuIsDeployed;
+        
+        // reload column band collections
+        [self.columnBandCollection reloadData];
+        
     };
     
 }
 
 -(void)toggleEditMode:(BOOL)enabled{};
+
+#pragma mark - Handling column change
+-(void)performDayScrollToIndex:(NSInteger)newIndex{
+    
+    // tell the column band collection of the column change
+    self.columnBandCollection.activeColumn = newIndex;
+    
+}
 
 #pragma mark - Column in coleccion selected
 -(void)scrollToIndex:(NSInteger)newIndex{

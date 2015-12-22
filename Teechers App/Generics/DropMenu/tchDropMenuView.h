@@ -54,6 +54,7 @@ typedef NS_ENUM(NSInteger, tchMenuStatus) {
 -(void)defaultInit;
 -(void)toggleMenu;
 -(void)toggleEditMode:(BOOL)enabled;
+-(void)performDayScrollToIndex:(NSInteger)newIndex;
 
 
 @end
