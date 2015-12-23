@@ -8,6 +8,7 @@
 
 #import "tchGradesHeaderDataSource.h"
 #import "tchEvalHeaderCell.h"
+#import "tchHeaderColumnCollection.h"
 
 @interface tchGradesHeaderDataSource ()
 
@@ -30,7 +31,7 @@
     return 2;
 }
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+- (NSInteger)collectionView:(tchHeaderColumnCollection *)collectionView numberOfItemsInSection:(NSInteger)section{
     
     // section 0 is the one of existing items
     if (section == 0) {
@@ -60,7 +61,7 @@
 }
 
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+- (UICollectionViewCell *)collectionView:(tchHeaderColumnCollection *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     // section 1 is the one for the add buttons
     if (indexPath.section == 1) {
@@ -79,8 +80,16 @@
         
     }
     
+    // standard cell identifier
+    NSString *cellType = @"columnCell";
+    
+    // check if this is the active column cell
+    if (collectionView.activeColumn == indexPath.row) {
+        cellType = @"columnCellActive";
+    }
+    
     // create the new cell
-    tchEvalHeaderCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"columnCell" forIndexPath:indexPath];
+    tchEvalHeaderCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellType forIndexPath:indexPath];
     
     NSInteger dayCount = [self.evaluationsArray count];
     

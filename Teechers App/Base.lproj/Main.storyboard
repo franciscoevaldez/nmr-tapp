@@ -110,6 +110,8 @@
             <string>Avenir-Heavy</string>
             <string>Avenir-Heavy</string>
             <string>Avenir-Heavy</string>
+            <string>Avenir-Heavy</string>
+            <string>Avenir-Heavy</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -2469,8 +2471,43 @@ Ready to get started?</string>
                                                     <outlet property="titleLabel" destination="iqj-iQ-W7V" id="lxQ-8q-zoo"/>
                                                 </connections>
                                             </collectionViewCell>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="addEvaluationCell" id="eqR-61-PSN" userLabel="AddCell">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="columnCellActive" id="mhA-p7-dnB" userLabel="ColumnCellActive" customClass="tchEvalHeaderCell">
                                                 <rect key="frame" x="60" y="0.0" width="60" height="60"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <view alpha="0.25" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l9y-cf-BAh" userLabel="Line">
+                                                            <rect key="frame" x="0.0" y="3" width="1" height="54"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="1" id="asn-11-dxF"/>
+                                                            </constraints>
+                                                        </view>
+                                                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NNN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X0z-Tm-BQx" userLabel="Title">
+                                                            <rect key="frame" x="1" y="15" width="58" height="31"/>
+                                                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="22"/>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <constraints>
+                                                    <constraint firstItem="X0z-Tm-BQx" firstAttribute="centerY" secondItem="l9y-cf-BAh" secondAttribute="centerY" id="BZ6-Sa-bDJ"/>
+                                                    <constraint firstItem="l9y-cf-BAh" firstAttribute="leading" secondItem="mhA-p7-dnB" secondAttribute="leading" id="Xfb-6f-hld"/>
+                                                    <constraint firstItem="l9y-cf-BAh" firstAttribute="height" secondItem="mhA-p7-dnB" secondAttribute="height" multiplier="0.9" id="i9s-WJ-7c8"/>
+                                                    <constraint firstAttribute="centerY" secondItem="l9y-cf-BAh" secondAttribute="centerY" id="jAZ-QE-SZt"/>
+                                                    <constraint firstAttribute="trailing" secondItem="X0z-Tm-BQx" secondAttribute="trailing" constant="1" id="shn-3Q-zQh"/>
+                                                    <constraint firstItem="X0z-Tm-BQx" firstAttribute="leading" secondItem="mhA-p7-dnB" secondAttribute="leading" constant="1" id="xuj-7X-mwX"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="titleLabel" destination="X0z-Tm-BQx" id="alF-Zr-kbA"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="addEvaluationCell" id="eqR-61-PSN" userLabel="AddCell">
+                                                <rect key="frame" x="120" y="0.0" width="60" height="60"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                     <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
@@ -2532,8 +2569,8 @@ Ready to get started?</string>
                                 <rect key="frame" x="0.0" y="85" width="320" height="160"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cTJ-3U-UbZ" userLabel="ColumnBand" customClass="tchHeaderColumnCollection">
-                                        <rect key="frame" x="10" y="0.0" width="300" height="60"/>
-                                        <color key="backgroundColor" red="0.23529411759999999" green="0.62745098040000002" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                                        <color key="backgroundColor" red="0.047058823530000002" green="0.21176470589999999" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="DDZ-ml-4p3"/>
                                         </constraints>
@@ -2541,11 +2578,11 @@ Ready to get started?</string>
                                             <size key="itemSize" width="60" height="60"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="columnCell" id="VlD-Ed-4mz" userLabel="ColumnCell" customClass="tchEvalHeaderCell">
-                                                <rect key="frame" x="120" y="0.0" width="60" height="60"/>
+                                                <rect key="frame" x="10" y="0.0" width="60" height="60"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                     <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
@@ -2579,6 +2616,42 @@ Ready to get started?</string>
                                                     <outlet property="titleLabel" destination="lZI-wU-6W0" id="Ps0-vG-TjC"/>
                                                 </connections>
                                             </collectionViewCell>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="columnCellActive" id="FNl-t5-3Hp" userLabel="ColumnCellActive" customClass="tchEvalHeaderCell">
+                                                <rect key="frame" x="250" y="0.0" width="60" height="60"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <view alpha="0.25" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qOD-6D-2HB" userLabel="Line">
+                                                            <rect key="frame" x="0.0" y="15" width="1" height="30"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="1" id="QHC-VV-OfV"/>
+                                                                <constraint firstAttribute="height" constant="30" id="lom-sx-Ret"/>
+                                                            </constraints>
+                                                        </view>
+                                                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NNN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W2R-L0-ai1" userLabel="Day">
+                                                            <rect key="frame" x="1" y="15" width="58" height="31"/>
+                                                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="22"/>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <color key="backgroundColor" red="0.13725490200000001" green="0.35294117650000001" blue="0.67450980390000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="W2R-L0-ai1" firstAttribute="leading" secondItem="FNl-t5-3Hp" secondAttribute="leading" constant="1" id="8RU-Ef-Sxc"/>
+                                                    <constraint firstAttribute="trailing" secondItem="W2R-L0-ai1" secondAttribute="trailing" constant="1" id="9Ri-Os-suG"/>
+                                                    <constraint firstItem="qOD-6D-2HB" firstAttribute="leading" secondItem="FNl-t5-3Hp" secondAttribute="leading" id="Ek7-zv-IJg"/>
+                                                    <constraint firstItem="W2R-L0-ai1" firstAttribute="centerY" secondItem="qOD-6D-2HB" secondAttribute="centerY" id="sBE-OF-hHD"/>
+                                                    <constraint firstAttribute="centerY" secondItem="qOD-6D-2HB" secondAttribute="centerY" id="vvP-Jr-0WR"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="titleLabel" destination="W2R-L0-ai1" id="TGG-4a-0me"/>
+                                                </connections>
+                                            </collectionViewCell>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="addEvaluationCell" id="ioY-qC-npj" userLabel="AddCell">
                                                 <rect key="frame" x="10" y="60" width="280" height="60"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -2609,28 +2682,20 @@ Ready to get started?</string>
                                             <outlet property="delegate" destination="D12-EV-RuZ" id="FRN-Zj-5GF"/>
                                         </connections>
                                     </collectionView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6g-2X-88t" userLabel="Add a grade">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c7T-qi-SPt" userLabel="Options Container">
                                         <rect key="frame" x="0.0" y="60" width="320" height="50"/>
+                                        <color key="backgroundColor" red="0.13725490196078433" green="0.3529411764705882" blue="0.67450980392156867" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="avx-Ys-ZOh"/>
+                                            <constraint firstAttribute="height" constant="50" id="so1-JV-bK0"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
-                                        <state key="normal" title="Add a grade" backgroundImage="Sep. Horz. White">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="addGrade:" destination="4cY-Yd-huB" eventType="touchUpInside" id="XvR-1o-EKY"/>
-                                            <segue destination="KAA-BH-cwG" kind="modal" identifier="toAddGradeSegue" id="8oE-Yo-UmO"/>
-                                        </connections>
-                                    </button>
+                                    </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T5v-wU-IHD" userLabel="Grade options">
-                                        <rect key="frame" x="0.0" y="110" width="160" height="50"/>
+                                        <rect key="frame" x="0.0" y="60" width="160" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Ket-Py-EEd"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
-                                        <state key="normal" title="Grade settings" backgroundImage="Sep. Horz. White">
+                                        <state key="normal" title="Grade settings">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -2639,13 +2704,20 @@ Ready to get started?</string>
                                             <segue destination="KAA-BH-cwG" kind="modal" identifier="toEditGradeSegue" id="0OG-aE-DO1"/>
                                         </connections>
                                     </button>
+                                    <view alpha="0.25" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fFo-xG-Twx" userLabel="Separator">
+                                        <rect key="frame" x="160" y="65" width="1" height="40"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="1" id="g8u-9W-lI6"/>
+                                        </constraints>
+                                    </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6BU-Tm-zJz" userLabel="Remove Grades">
-                                        <rect key="frame" x="160" y="110" width="160" height="50"/>
+                                        <rect key="frame" x="160" y="60" width="160" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="w9p-ek-J4A"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
-                                        <state key="normal" title="Delete grade" backgroundImage="Sep. Horz. White">
+                                        <state key="normal" title="Delete grade">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -2654,22 +2726,45 @@ Ready to get started?</string>
                                             <action selector="removeDay:" destination="fI6-QL-4Oq" eventType="touchUpInside" id="udB-6R-qgd"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6g-2X-88t" userLabel="Add a grade">
+                                        <rect key="frame" x="0.0" y="110" width="320" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="avx-Ys-ZOh"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                        <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Add a grade" image="New white">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addGrade:" destination="4cY-Yd-huB" eventType="touchUpInside" id="XvR-1o-EKY"/>
+                                            <segue destination="KAA-BH-cwG" kind="modal" identifier="toAddGradeSegue" id="8oE-Yo-UmO"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.23529411759999999" green="0.62745098040000002" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="c6g-2X-88t" secondAttribute="bottom" id="6mu-9K-R59"/>
                                     <constraint firstItem="T5v-wU-IHD" firstAttribute="width" secondItem="4cY-Yd-huB" secondAttribute="width" multiplier="0.5" id="7ze-ng-Spq"/>
-                                    <constraint firstItem="c6g-2X-88t" firstAttribute="top" secondItem="4cY-Yd-huB" secondAttribute="top" constant="60" id="JuR-rO-skr"/>
-                                    <constraint firstAttribute="trailing" secondItem="cTJ-3U-UbZ" secondAttribute="trailing" constant="10" id="NuQ-60-RkR"/>
-                                    <constraint firstItem="cTJ-3U-UbZ" firstAttribute="leading" secondItem="4cY-Yd-huB" secondAttribute="leading" constant="10" id="UNh-bT-K9d"/>
-                                    <constraint firstItem="cTJ-3U-UbZ" firstAttribute="top" secondItem="4cY-Yd-huB" secondAttribute="top" id="VzM-oC-PKz"/>
+                                    <constraint firstItem="fFo-xG-Twx" firstAttribute="top" secondItem="c7T-qi-SPt" secondAttribute="top" constant="5" id="8e7-BB-EwN"/>
+                                    <constraint firstAttribute="trailing" secondItem="c7T-qi-SPt" secondAttribute="trailing" id="CEE-hZ-TuI"/>
+                                    <constraint firstItem="c7T-qi-SPt" firstAttribute="leading" secondItem="4cY-Yd-huB" secondAttribute="leading" id="GAG-xD-iuA"/>
+                                    <constraint firstItem="T5v-wU-IHD" firstAttribute="bottom" secondItem="c7T-qi-SPt" secondAttribute="bottom" id="IYo-th-ri2"/>
+                                    <constraint firstAttribute="trailing" secondItem="cTJ-3U-UbZ" secondAttribute="trailing" id="NuQ-60-RkR"/>
+                                    <constraint firstItem="cTJ-3U-UbZ" firstAttribute="leading" secondItem="4cY-Yd-huB" secondAttribute="leading" id="UNh-bT-K9d"/>
                                     <constraint firstAttribute="width" secondItem="6BU-Tm-zJz" secondAttribute="width" multiplier="2" id="XVq-0f-Y1b"/>
+                                    <constraint firstAttribute="bottom" secondItem="c7T-qi-SPt" secondAttribute="bottom" constant="50" id="Z49-Ov-1xH"/>
+                                    <constraint firstAttribute="bottom" secondItem="cTJ-3U-UbZ" secondAttribute="bottom" constant="100" id="dje-2c-ER2"/>
                                     <constraint firstAttribute="trailing" secondItem="c6g-2X-88t" secondAttribute="trailing" id="e9e-Fe-gPQ"/>
                                     <constraint firstAttribute="height" constant="160" id="fLI-0P-biI"/>
                                     <constraint firstItem="T5v-wU-IHD" firstAttribute="leading" secondItem="4cY-Yd-huB" secondAttribute="leading" id="ftK-SY-vZ3"/>
+                                    <constraint firstItem="6BU-Tm-zJz" firstAttribute="top" secondItem="T5v-wU-IHD" secondAttribute="top" id="lN5-fK-JM9"/>
+                                    <constraint firstItem="fFo-xG-Twx" firstAttribute="bottom" secondItem="c7T-qi-SPt" secondAttribute="bottom" constant="-5" id="pwz-qt-IjK"/>
                                     <constraint firstItem="c6g-2X-88t" firstAttribute="leading" secondItem="4cY-Yd-huB" secondAttribute="leading" id="qG3-tk-Dap"/>
                                     <constraint firstAttribute="trailing" secondItem="6BU-Tm-zJz" secondAttribute="trailing" id="snU-Oa-qFt"/>
-                                    <constraint firstItem="6BU-Tm-zJz" firstAttribute="top" secondItem="4cY-Yd-huB" secondAttribute="top" constant="110" id="wWK-1J-HmP"/>
-                                    <constraint firstItem="T5v-wU-IHD" firstAttribute="top" secondItem="4cY-Yd-huB" secondAttribute="top" constant="110" id="xbc-b3-4BE"/>
+                                    <constraint firstItem="fFo-xG-Twx" firstAttribute="centerX" secondItem="c7T-qi-SPt" secondAttribute="centerX" id="wg3-bB-yPw"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="btnEdit" destination="T5v-wU-IHD" id="rmo-c5-3C8"/>
@@ -3542,7 +3637,6 @@ Ready to get started?</string>
         <image name="New Blue" width="25" height="25"/>
         <image name="New white" width="25" height="25"/>
         <image name="Next" width="13" height="11"/>
-        <image name="Sep. Horz. White" width="26" height="3"/>
         <image name="Student" width="70" height="10"/>
         <image name="Students - Rest" width="21" height="28"/>
         <image name="input check unchecked" width="30" height="30"/>
