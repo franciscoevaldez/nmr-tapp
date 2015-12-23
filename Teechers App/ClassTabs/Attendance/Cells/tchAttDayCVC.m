@@ -11,12 +11,13 @@
 @interface tchAttDayCVC ()
 @property (strong, nonatomic) IBOutlet UILabel *monthLabel;
 @property (strong, nonatomic) IBOutlet UILabel *dayLabel;
+@property (strong, nonatomic) IBOutlet UIView *separatorView;
 
 @end
 
 @implementation tchAttDayCVC
 
-- (void)setupCellForDay:(ClassDay*)classDay{
+-(void)setupCellForDay:(ClassDay*)classDay withSeparator:(BOOL)showSeparator{
     
     // set classday to self
     self.dayInCell = classDay;
@@ -41,6 +42,12 @@
     // write day in label
     self.dayLabel.text = labelDayText;
     
+    // remove the separator
+    if (self.separatorView && !(showSeparator)) {
+        self.separatorView.hidden = YES;
+    } else {
+        self.separatorView.hidden = NO;
+    }
     
 }
 

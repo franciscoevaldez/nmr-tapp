@@ -12,6 +12,7 @@
 @interface tchAttDayCVC : UICollectionViewCell
 
 @property (strong,nonatomic) ClassDay *dayInCell;
-- (void)setupCellForDay:(ClassDay*)classDay;
+//- (void)setupCellForDay:(ClassDay*)classDay;
+-(void)setupCellForDay:(ClassDay*)classDay withSeparator:(BOOL)separator;
 
 @end

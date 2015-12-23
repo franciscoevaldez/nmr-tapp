@@ -534,18 +534,11 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <view alpha="0.12" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oR8-Zv-DWE" userLabel="Line">
-                                                            <rect key="frame" x="0.0" y="10" width="1" height="50"/>
-                                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <view alpha="0.25" tag="10" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mlo-lw-7WD">
+                                                            <rect key="frame" x="0.0" y="10" width="1" height="40"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="1" id="Bpq-k0-c0J"/>
-                                                            </constraints>
-                                                        </view>
-                                                        <view alpha="0.11999999731779099" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XMb-nK-NUu" userLabel="Line">
-                                                            <rect key="frame" x="59" y="10" width="1" height="50"/>
-                                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="1" id="pUK-4G-QPN"/>
+                                                                <constraint firstAttribute="width" constant="1" id="wmK-yL-SCE"/>
                                                             </constraints>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MMM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fRv-HI-fxQ" userLabel="Month">
@@ -564,22 +557,20 @@
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
                                                 <constraints>
-                                                    <constraint firstItem="XMb-nK-NUu" firstAttribute="height" secondItem="oR8-Zv-DWE" secondAttribute="height" id="0Vo-Pw-K3c"/>
-                                                    <constraint firstAttribute="bottom" secondItem="oR8-Zv-DWE" secondAttribute="bottom" id="4MX-We-dFC"/>
-                                                    <constraint firstItem="oR8-Zv-DWE" firstAttribute="leading" secondItem="mrX-GN-S3y" secondAttribute="leading" id="83c-Y3-wRG"/>
                                                     <constraint firstItem="fRv-HI-fxQ" firstAttribute="leading" secondItem="mrX-GN-S3y" secondAttribute="leading" constant="2" id="Hax-eh-yGa"/>
+                                                    <constraint firstItem="mlo-lw-7WD" firstAttribute="leading" secondItem="mrX-GN-S3y" secondAttribute="leading" id="Img-N9-jRN"/>
+                                                    <constraint firstItem="mlo-lw-7WD" firstAttribute="top" secondItem="mrX-GN-S3y" secondAttribute="top" constant="10" id="Nt7-is-B6l"/>
                                                     <constraint firstItem="yjs-8W-yvX" firstAttribute="top" secondItem="fRv-HI-fxQ" secondAttribute="bottom" constant="-6" id="Ogm-C2-MED"/>
-                                                    <constraint firstItem="oR8-Zv-DWE" firstAttribute="top" secondItem="mrX-GN-S3y" secondAttribute="top" constant="10" id="SpZ-VD-9fg"/>
-                                                    <constraint firstAttribute="trailing" secondItem="XMb-nK-NUu" secondAttribute="trailing" id="UVY-ES-LP2"/>
+                                                    <constraint firstAttribute="bottom" secondItem="mlo-lw-7WD" secondAttribute="bottom" constant="10" id="P1O-Yw-GTH"/>
                                                     <constraint firstAttribute="trailing" secondItem="fRv-HI-fxQ" secondAttribute="trailing" constant="2" id="ler-f0-F8w"/>
                                                     <constraint firstAttribute="trailing" secondItem="yjs-8W-yvX" secondAttribute="trailing" constant="2" id="pD0-y9-Kdl"/>
                                                     <constraint firstItem="fRv-HI-fxQ" firstAttribute="top" secondItem="mrX-GN-S3y" secondAttribute="top" constant="10" id="sLN-ck-das"/>
-                                                    <constraint firstItem="XMb-nK-NUu" firstAttribute="centerY" secondItem="oR8-Zv-DWE" secondAttribute="centerY" id="tLv-Ab-X8V"/>
                                                     <constraint firstItem="yjs-8W-yvX" firstAttribute="leading" secondItem="mrX-GN-S3y" secondAttribute="leading" constant="2" id="zIF-oe-cBI"/>
                                                 </constraints>
                                                 <connections>
                                                     <outlet property="dayLabel" destination="yjs-8W-yvX" id="8Co-WQ-j2B"/>
                                                     <outlet property="monthLabel" destination="fRv-HI-fxQ" id="sh8-56-qgb"/>
+                                                    <outlet property="separatorView" destination="mlo-lw-7WD" id="fNA-sZ-taU"/>
                                                 </connections>
                                             </collectionViewCell>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="dayCellActive" id="9Cc-It-ixw" userLabel="DayCellActive" customClass="tchAttDayCVC">
@@ -1232,7 +1223,6 @@
                 <customObject id="fOF-El-GBc" customClass="tchStudentsTableDelegate"/>
                 <customObject id="OLJ-Yn-rGL" customClass="tchAttendanceColumnsDS"/>
                 <customObject id="Cmm-ZW-uSJ" customClass="tchAttHeaderDataSource"/>
-                <customObject id="6A2-nN-BLV"/>
                 <swipeGestureRecognizer direction="left" id="OFh-3Z-piv" userLabel="Left Swipe Recognizer">
                     <connections>
                         <action selector="swipeLeftDone:" destination="HRB-Rw-Ffv" id="34c-uF-uBI"/>
@@ -2589,11 +2579,10 @@ Ready to get started?</string>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view alpha="0.25" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SV4-fy-qQd" userLabel="Line">
-                                                            <rect key="frame" x="0.0" y="15" width="1" height="30"/>
+                                                            <rect key="frame" x="0.0" y="10" width="1" height="40"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="1" id="6t3-ME-Xsj"/>
-                                                                <constraint firstAttribute="height" constant="30" id="zeM-Bt-jG6"/>
                                                             </constraints>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NNN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZI-wU-6W0" userLabel="Day">
@@ -2606,13 +2595,15 @@ Ready to get started?</string>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
                                                 <constraints>
-                                                    <constraint firstAttribute="centerY" secondItem="SV4-fy-qQd" secondAttribute="centerY" id="AZU-kG-0I0"/>
                                                     <constraint firstItem="lZI-wU-6W0" firstAttribute="leading" secondItem="VlD-Ed-4mz" secondAttribute="leading" constant="1" id="CFM-f8-8Cb"/>
                                                     <constraint firstAttribute="trailing" secondItem="lZI-wU-6W0" secondAttribute="trailing" constant="1" id="Kio-rc-G2e"/>
+                                                    <constraint firstItem="SV4-fy-qQd" firstAttribute="top" secondItem="VlD-Ed-4mz" secondAttribute="top" constant="10" id="MNX-Ow-tDl"/>
+                                                    <constraint firstItem="lZI-wU-6W0" firstAttribute="centerY" secondItem="VlD-Ed-4mz" secondAttribute="centerY" id="SGV-9o-KI7"/>
                                                     <constraint firstItem="SV4-fy-qQd" firstAttribute="leading" secondItem="VlD-Ed-4mz" secondAttribute="leading" id="a1G-ao-V0m"/>
-                                                    <constraint firstItem="lZI-wU-6W0" firstAttribute="centerY" secondItem="SV4-fy-qQd" secondAttribute="centerY" id="icu-5R-CAH"/>
+                                                    <constraint firstAttribute="bottom" secondItem="SV4-fy-qQd" secondAttribute="bottom" constant="10" id="rgJ-Lq-fHm"/>
                                                 </constraints>
                                                 <connections>
+                                                    <outlet property="separatorView" destination="SV4-fy-qQd" id="7P4-b5-1FB"/>
                                                     <outlet property="titleLabel" destination="lZI-wU-6W0" id="Ps0-vG-TjC"/>
                                                 </connections>
                                             </collectionViewCell>
@@ -2623,14 +2614,6 @@ Ready to get started?</string>
                                                     <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <view alpha="0.25" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qOD-6D-2HB" userLabel="Line">
-                                                            <rect key="frame" x="0.0" y="15" width="1" height="30"/>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="1" id="QHC-VV-OfV"/>
-                                                                <constraint firstAttribute="height" constant="30" id="lom-sx-Ret"/>
-                                                            </constraints>
-                                                        </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NNN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W2R-L0-ai1" userLabel="Day">
                                                             <rect key="frame" x="1" y="15" width="58" height="31"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="22"/>
@@ -2642,11 +2625,9 @@ Ready to get started?</string>
                                                 </view>
                                                 <color key="backgroundColor" red="0.13725490200000001" green="0.35294117650000001" blue="0.67450980390000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
+                                                    <constraint firstItem="W2R-L0-ai1" firstAttribute="centerY" secondItem="FNl-t5-3Hp" secondAttribute="centerY" id="2hT-O7-OMg"/>
                                                     <constraint firstItem="W2R-L0-ai1" firstAttribute="leading" secondItem="FNl-t5-3Hp" secondAttribute="leading" constant="1" id="8RU-Ef-Sxc"/>
                                                     <constraint firstAttribute="trailing" secondItem="W2R-L0-ai1" secondAttribute="trailing" constant="1" id="9Ri-Os-suG"/>
-                                                    <constraint firstItem="qOD-6D-2HB" firstAttribute="leading" secondItem="FNl-t5-3Hp" secondAttribute="leading" id="Ek7-zv-IJg"/>
-                                                    <constraint firstItem="W2R-L0-ai1" firstAttribute="centerY" secondItem="qOD-6D-2HB" secondAttribute="centerY" id="sBE-OF-hHD"/>
-                                                    <constraint firstAttribute="centerY" secondItem="qOD-6D-2HB" secondAttribute="centerY" id="vvP-Jr-0WR"/>
                                                 </constraints>
                                                 <connections>
                                                     <outlet property="titleLabel" destination="W2R-L0-ai1" id="TGG-4a-0me"/>

@@ -14,6 +14,7 @@
 @interface tchEvalHeaderCell : UICollectionViewCell
 
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
-- (void)setupCellForEvaluation:(Evaluation*)evaluation;
+//- (void)setupCellForEvaluation:(Evaluation*)evaluation;
+- (void)setupCellForEvaluation:(Evaluation*)evaluation withSeparator:(BOOL)showSeparator;
 
 @end

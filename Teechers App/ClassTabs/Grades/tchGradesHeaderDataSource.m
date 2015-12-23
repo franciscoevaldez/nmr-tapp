@@ -100,10 +100,14 @@
     // get the day for this new cell
     Evaluation *currentEval = [self.evaluationsArray objectAtIndex:indexPath.row];
     
-    // setup the cell
-    //[newCell setupCellForEvaluation:currentEval];
+    // if this is the first cell or the first after the selected, remove the line
+    bool useSeparator = YES;
+    if (indexPath.row == 0 || (collectionView.activeColumn+1 == indexPath.row)) {
+        useSeparator = NO;
+    }
     
-    [cell setupCellForEvaluation:currentEval];
+    // setup the cell
+    [cell setupCellForEvaluation:currentEval withSeparator:useSeparator];
     
     // return the cell
     return cell;

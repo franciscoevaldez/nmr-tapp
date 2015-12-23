@@ -95,8 +95,14 @@
     // get the day for this new cell
     ClassDay *currentDay = [self.daysArray objectAtIndex:indexPath.row];
     
+    // if this is the first cell or the first after the selected, remove the line
+    bool useSeparator = YES;
+    if (indexPath.row == 0 || (collectionView.activeColumn+1 == indexPath.row)) {
+        useSeparator = NO;
+    }
+    
     // setup the cell
-    [newCell setupCellForDay:currentDay];
+    [newCell setupCellForDay:currentDay withSeparator:useSeparator];
     
     // return the cell
     return newCell;

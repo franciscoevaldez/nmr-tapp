@@ -11,18 +11,26 @@
 @interface tchEvalHeaderCell ()
 
 @property (strong,nonatomic) Evaluation *evaluationInCell;
+@property (strong, nonatomic) IBOutlet UIView *separatorView;
 
 @end
 
 @implementation tchEvalHeaderCell
 
-- (void)setupCellForEvaluation:(Evaluation*)evaluation{
+- (void)setupCellForEvaluation:(Evaluation*)evaluation withSeparator:(BOOL)showSeparator{
     
     // set evaluation for class
     self.evaluationInCell = evaluation;
     
     // get short name
     NSString *shortName = evaluation.nameShort;
+    
+    // remove the separator
+    if (self.separatorView && !(showSeparator)) {
+        self.separatorView.hidden = YES;
+    } else {
+        self.separatorView.hidden = NO;
+    }
     
     // write month in label
     self.titleLabel.text = shortName;
