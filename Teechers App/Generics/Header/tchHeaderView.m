@@ -97,7 +97,7 @@
         //self.layer.backgroundColor = darkerColor.CGColor;
         
         [UIView animateWithDuration:0.5 animations:^{
-            self.layer.backgroundColor = [UIColor tchBlueMedium].CGColor;
+            self.layer.backgroundColor = [UIColor tchBlueDeep].CGColor;
         }];
         
         // change deploy indicator
