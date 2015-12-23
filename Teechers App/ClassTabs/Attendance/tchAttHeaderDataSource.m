@@ -12,8 +12,8 @@
 
 @interface tchAttHeaderDataSource ()
 
-@property (strong,nonatomic) AClass *activeClass;
-@property (strong,nonatomic) NSArray *daysArray;
+//@property (strong,nonatomic) AClass *activeClass;
+//@property (strong,nonatomic) NSArray *daysArray;
 
 @end
 
@@ -21,6 +21,8 @@
 
 // setup and sort the students for usage
 - (void)setupForClass:(AClass*)activeClass{
+    
+    self.dataType = @"attendance";
     
     self.activeClass = activeClass;
     
@@ -39,10 +41,10 @@
         NSArray *tempArray = [self.activeClass getDaysSorted];
         
         // pass the array to the data source class
-        self.daysArray = tempArray;
+        self.dataArray = tempArray;
         
         // Number of rows is the number of days in the array
-        return [self.daysArray count];
+        return [self.dataArray count];
         
     }
     
@@ -93,7 +95,7 @@
     tchAttDayCVC *newCell = [collectionView dequeueReusableCellWithReuseIdentifier:cellType forIndexPath:indexPath];
     
     // get the day for this new cell
-    ClassDay *currentDay = [self.daysArray objectAtIndex:indexPath.row];
+    ClassDay *currentDay = [self.dataArray objectAtIndex:indexPath.row];
     
     // if this is the first cell or the first after the selected, remove the line
     bool useSeparator = YES;

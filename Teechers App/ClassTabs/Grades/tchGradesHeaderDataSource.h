@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 #import "tchHeaderColumnCollDataSource.h"
 
-@interface tchGradesHeaderDataSource : NSObject <tchHeaderColumnsDataSource>
+@interface tchGradesHeaderDataSource : tchHeaderColumnCollDataSource <tchHeaderColumnsDataSource>
 
 - (void)setupForClass:(AClass*)activeClass;
 

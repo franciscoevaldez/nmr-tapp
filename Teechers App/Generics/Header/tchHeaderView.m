@@ -8,6 +8,10 @@
 
 #import "tchHeaderView.h"
 #import "UIColor+appColorPresets.h"
+#import "tchHeaderColumnCollDataSource.h"
+
+#import "ClassDay.h"
+#import "Evaluation.h"
 
 @interface tchHeaderView ()
 @end
@@ -65,6 +69,26 @@
     
     // store the new index to the property
     self.activeColumnIndex = newIndex;
+    
+    // write the new name of the column into the subtitle
+    tchHeaderColumnCollDataSource *dataSource = self.columnCollection.dataSource;
+    NSString *elementName = @"";
+    
+    if ([dataSource.dataType isEqualToString:@"attendance"]) {
+        ClassDay *currentDay = [dataSource.dataArray objectAtIndex:newIndex];
+        elementName = currentDay.name;
+    }
+    
+    if ([dataSource.dataType isEqualToString:@"grades"]) {
+        Evaluation *currentEval = [dataSource.dataArray objectAtIndex:newIndex];
+        elementName = currentEval.name;
+    }
+    
+    if (![elementName isEqualToString:@""]) {
+        self.subTitleLabel.text = [NSString stringWithFormat:@"%@ - %@", self.activeClass.name, elementName];
+    } else {
+        self.subTitleLabel.text = self.activeClass.name;
+    }
     
 }
 

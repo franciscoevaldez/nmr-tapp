@@ -18,6 +18,10 @@
 
 @interface tchHeaderColumnCollDataSource : NSObject <UICollectionViewDataSource>
 
+@property (strong,nonatomic) NSArray *dataArray;
+@property (strong,nonatomic) AClass *activeClass;
+@property (strong,nonatomic) NSString *dataType;
+
 - (void)setupForClass:(AClass*)activeClass;
 
 @end

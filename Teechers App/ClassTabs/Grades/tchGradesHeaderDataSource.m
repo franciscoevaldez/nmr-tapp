@@ -12,8 +12,8 @@
 
 @interface tchGradesHeaderDataSource ()
 
-@property (strong,nonatomic) AClass *activeClass;
-@property (strong,nonatomic) NSArray *evaluationsArray;
+//@property (strong,nonatomic) AClass *activeClass;
+//@property (strong,nonatomic) NSArray *evaluationsArray;
 
 @end
 
@@ -21,6 +21,8 @@
 
 // setup and sort the students for usage
 - (void)setupForClass:(AClass*)activeClass{
+    
+    self.dataType = @"grades";
     
     self.activeClass = activeClass;
     
@@ -40,10 +42,10 @@
         NSArray *tempArray = [self.activeClass getEvaluationsSorted];
         
         // pass the array to the data source class
-        self.evaluationsArray = tempArray;
+        self.dataArray = tempArray;
         
         // Number of rows is the number of days in the array
-        return [self.evaluationsArray count];
+        return [self.dataArray count];
         
     }
     
@@ -91,14 +93,14 @@
     // create the new cell
     tchEvalHeaderCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellType forIndexPath:indexPath];
     
-    NSInteger dayCount = [self.evaluationsArray count];
+    NSInteger evalCount = [self.dataArray count];
     
-    if (dayCount == 0) {
+    if (evalCount == 0) {
         return cell;
     }
     
     // get the day for this new cell
-    Evaluation *currentEval = [self.evaluationsArray objectAtIndex:indexPath.row];
+    Evaluation *currentEval = [self.dataArray objectAtIndex:indexPath.row];
     
     // if this is the first cell or the first after the selected, remove the line
     bool useSeparator = YES;
