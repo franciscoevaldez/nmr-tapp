@@ -7,8 +7,8 @@
 //
 
 #import "tchColumnCollectionDelegate.h"
-
 #import "tchHeaderColumnCollection.h"
+#import "UIColor+appColorPresets.h"
 
 @implementation tchColumnCollectionDelegate
 
@@ -36,6 +36,20 @@
     
     // tell the collection a column was selected
     [collectionView columnWasSelected:newIndex];
+    
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didHighlightItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
+    cell.contentView.backgroundColor = [UIColor tchBlueMedium];
+    
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didUnhighlightItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
+    cell.contentView.backgroundColor = [UIColor tchBlueDeep];
     
 }
 

@@ -29,6 +29,9 @@
     // tell the collection delegate to scroll
     [_columnDelegate scrollToIndex:columnIndex];
     
+    // reload the cell
+    [self reloadData];
+    
 }
 
 /*
